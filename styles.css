@@ -141,8 +141,8 @@ a {
       rgba(4, 5, 3, 0.28) 60%,
       rgba(4, 5, 3, 0.18) 100%
     ),
-    url("assets/sarvam-hero.png");
-
+  url("assets/sarvam-hero.png?v=2");
+  
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
