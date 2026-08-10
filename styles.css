@@ -510,3 +510,14 @@ footer{
   }
 
 }
+.hero{
+  min-height:820px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:150px 7% 90px;
+  background-image:url("assets/sarvam-hero.png");
+  background-size:cover;
+  background-position:center right;
+  background-repeat:no-repeat;
+}
