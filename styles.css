@@ -498,3 +498,6 @@ footer {
     font-size: 38px;
   }
 }
+body {
+  outline: 10px solid red !important;
+}
