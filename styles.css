@@ -7,6 +7,10 @@
   --line: rgba(240, 201, 109, 0.28);
 }
 
+/* =========================
+   GLOBAL
+========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -59,6 +63,7 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
+
   flex-shrink: 0;
   min-width: 300px;
 }
@@ -66,8 +71,10 @@ a {
 .brand-logo {
   width: 58px;
   height: 58px;
+
   object-fit: cover;
   border-radius: 50%;
+
   border: 1px solid var(--gold);
 }
 
@@ -85,6 +92,7 @@ a {
 .brand small {
   font: 12px Arial, sans-serif;
   color: var(--gold2);
+
   letter-spacing: 1.5px;
   margin-top: 6px;
 }
@@ -108,7 +116,9 @@ a {
 
 .main-nav a {
   padding: 9px 0;
+
   white-space: nowrap;
+
   transition: 0.25s ease;
 }
 
@@ -120,16 +130,20 @@ a {
 
 .menu-toggle {
   display: none;
+
   margin-left: auto;
 
   background: transparent;
   color: white;
 
   border: 1px solid var(--line);
+
   padding: 8px 11px;
+
   border-radius: 4px;
 
   font-size: 20px;
+
   cursor: pointer;
 }
 
@@ -141,20 +155,21 @@ a {
   min-height: 900px;
 
   position: relative;
-  display: flex;
-  align-items: center;
 
-  padding: 170px 7% 110px;
+  display: flex;
+  align-items: flex-start;
+
+  padding: 190px 7% 110px;
 
   background-image:
     linear-gradient(
       90deg,
-      rgba(4, 5, 3, 0.88) 0%,
-      rgba(4, 5, 3, 0.68) 30%,
-      rgba(4, 5, 3, 0.28) 60%,
-      rgba(4, 5, 3, 0.18) 100%
+      rgba(4, 5, 3, 0.90) 0%,
+      rgba(4, 5, 3, 0.72) 30%,
+      rgba(4, 5, 3, 0.30) 62%,
+      rgba(4, 5, 3, 0.20) 100%
     ),
-    url("assets/sarvam-hero.png?v=2");
+    url("assets/sarvam-hero.png?v=3");
 
   background-size: cover;
   background-position: center center;
@@ -168,6 +183,7 @@ a {
 
   position: absolute;
   inset: 0;
+
   z-index: -1;
 
   background:
@@ -187,7 +203,9 @@ a {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
+
   z-index: 0;
 
   background:
@@ -203,26 +221,34 @@ a {
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 
-  max-width: 720px;
+  width: 100%;
+  max-width: 760px;
+
+  padding-top: 15px;
 }
 
 .eyebrow {
   color: var(--gold2);
 
   font: 14px Arial, sans-serif;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: clamp(58px, 6.7vw, 108px);
+  font-size: clamp(56px, 6.3vw, 102px);
+
   line-height: 0.88;
 
   margin: 22px 0 28px;
 
   font-weight: 500;
+
   letter-spacing: -3px;
 }
 
@@ -230,56 +256,80 @@ a {
   display: block;
 
   color: var(--gold2);
+
   font-style: italic;
 }
 
 .hero-text {
-  font-size: 20px;
-  max-width: 650px;
+  font-size: 19px;
+
+  line-height: 1.65;
+
+  max-width: 610px;
+
   color: #f1eadf;
 }
 
 .hero-actions {
   display: flex;
+
+  align-items: center;
+
   gap: 14px;
 
-  margin-top: 30px;
+  margin-top: 28px;
 
   flex-wrap: wrap;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 .btn {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   padding: 14px 24px;
+
+  min-height: 52px;
 
   border-radius: 4px;
 
   font: 600 16px Arial, sans-serif;
 
   transition: 0.25s ease;
+
+  cursor: pointer;
 }
 
 .btn-primary {
   background: var(--gold);
+
   color: #171006;
+
+  border: 1px solid var(--gold);
 }
 
 .btn-primary:hover {
   background: var(--gold2);
+
   transform: translateY(-2px);
 }
 
 .btn-outline {
   border: 1px solid var(--gold);
+
   background: rgba(0, 0, 0, 0.30);
+
   color: var(--ink);
 }
 
 .btn-outline:hover {
   background: rgba(217, 166, 59, 0.14);
+
   transform: translateY(-2px);
 }
 
@@ -289,17 +339,21 @@ a {
 
 .quick-links {
   position: relative;
+
   z-index: 5;
 
   max-width: 1280px;
+
   margin: -35px auto 0;
 
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   background: rgba(10, 7, 4, 0.91);
 
   border: 1px solid var(--line);
+
   border-radius: 12px;
 
   overflow: hidden;
@@ -313,6 +367,7 @@ a {
   border-right: 1px solid var(--line);
 
   display: flex;
+
   flex-direction: column;
 
   transition: 0.25s ease;
@@ -331,6 +386,7 @@ a {
   color: var(--gold2);
 
   font: 14px Arial, sans-serif;
+
   letter-spacing: 1px;
 }
 
@@ -347,6 +403,7 @@ a {
   max-width: 1280px;
 
   margin: auto;
+
   padding: 110px 7%;
 
   text-align: center;
@@ -402,19 +459,21 @@ footer {
 
   .main-nav {
     gap: 17px;
+
     font-size: 12px;
+
     letter-spacing: 1.5px;
   }
 
   .hero {
     min-height: 820px;
+
     padding: 150px 6% 90px;
   }
 
   .hero h1 {
     font-size: clamp(58px, 7.5vw, 92px);
   }
-
 }
 
 /* =========================
@@ -425,6 +484,7 @@ footer {
 
   .site-header {
     min-height: 78px;
+
     padding: 10px 18px;
   }
 
@@ -438,17 +498,20 @@ footer {
     position: absolute;
 
     top: 78px;
+
     left: 0;
     right: 0;
 
     background: rgba(8, 7, 5, 0.97);
 
     backdrop-filter: blur(14px);
+
     -webkit-backdrop-filter: blur(14px);
 
     padding: 20px;
 
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 4px;
@@ -462,6 +525,7 @@ footer {
 
   .main-nav a {
     width: 100%;
+
     padding: 12px 4px;
   }
 
@@ -470,33 +534,40 @@ footer {
   }
 
   .hero {
-    min-height: 780px;
-    padding: 135px 6% 80px;
+    min-height: 820px;
+
+    padding: 145px 6% 80px;
 
     background-position: 65% center;
   }
 
   .hero-content {
     max-width: 680px;
+
+    padding-top: 10px;
   }
 
   .hero h1 {
-    font-size: clamp(55px, 10vw, 82px);
+    font-size: clamp(52px, 10vw, 82px);
+
+    line-height: 0.90;
   }
 
   .hero-text {
     font-size: 18px;
+
+    max-width: 620px;
   }
 
   .quick-links {
     margin: 0 18px;
+
     grid-template-columns: repeat(2, 1fr);
   }
 
   .quick-links a:nth-child(2) {
     border-right: 0;
   }
-
 }
 
 /* =========================
@@ -507,6 +578,7 @@ footer {
 
   .site-header {
     min-height: 68px;
+
     padding: 8px 14px;
   }
 
@@ -516,17 +588,21 @@ footer {
 
   .brand-logo {
     width: 48px;
+
     height: 48px;
   }
 
   .brand strong {
     font-size: 19px;
+
     letter-spacing: 1.5px;
   }
 
   .brand small {
     font-size: 10px;
+
     letter-spacing: 1px;
+
     margin-top: 3px;
   }
 
@@ -537,15 +613,15 @@ footer {
   .hero {
     min-height: 760px;
 
-    padding: 125px 6% 70px;
+    padding: 120px 6% 70px;
 
     background-position: 62% center;
   }
 
   .hero h1 {
-    font-size: 58px;
+    font-size: 56px;
 
-    line-height: 0.91;
+    line-height: 0.92;
 
     letter-spacing: -2px;
 
@@ -554,6 +630,7 @@ footer {
 
   .hero-text {
     font-size: 17px;
+
     line-height: 1.55;
   }
 
@@ -567,11 +644,13 @@ footer {
 
   .quick-links {
     grid-template-columns: 1fr;
+
     margin: 0 14px;
   }
 
   .quick-links a {
     border-right: 0;
+
     border-bottom: 1px solid var(--line);
   }
 
@@ -586,7 +665,6 @@ footer {
   .section h2 {
     font-size: 38px;
   }
-
 }
 
 /* =========================
@@ -606,5 +684,4 @@ footer {
   .hero h1 {
     font-size: 50px;
   }
-
 }
