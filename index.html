@@ -10,51 +10,55 @@
   :root{
     --green-deep:#0F2E23; --green-black:#081A14; --green-panel:#123529;
     --gold:#C9A227; --gold-bright:#E8C468;
+    --maroon:#8A3324; --maroon-bright:#B84B37;
+    --saffron:#E08E27; --saffron-bright:#F2A93C;
+    --sky:#3E7C8C; --sky-bright:#5AA3B5;
+    --lotus:#B14C6B; --lotus-bright:#D06A8A;
     --ivory:#F3EAD6; --ivory-dim:#B9C4BC;
     --line: rgba(201,162,39,0.22);
-    --ok:#4C9A6A; --warn:#D98B3C;
+    --ok:#4C9A6A; --warn:#D98B3C; --bad:#B3261E;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--green-black); color:var(--ivory); font-family:'Jost',sans-serif; font-weight:300;}
   h1,h2,h3{font-family:'Cormorant Garamond',serif; font-weight:600;}
   .sc{font-family:'Marcellus SC',serif; letter-spacing:0.14em; text-transform:uppercase;}
   a{color:inherit; text-decoration:none;}
+  button{font-family:'Jost',sans-serif; cursor:pointer;}
 
-  /* Top strip */
-  .topstrip{background:var(--green-black); border-bottom:1px solid var(--line); padding:8px 4vw; display:flex; justify-content:space-between; font-size:0.72rem; letter-spacing:0.04em; color:var(--ivory-dim);}
-  .topstrip a{opacity:0.85;} .topstrip a:hover{color:var(--gold-bright);}
+  .topstrip{background:var(--green-black); border-bottom:1px solid var(--line); padding:8px 4vw; display:flex; justify-content:space-between; font-size:0.72rem; color:var(--ivory-dim);}
   .topstrip .right{display:flex; gap:20px;}
+  .topstrip a:hover{color:var(--gold-bright);}
 
-  /* Header */
-  header{background:var(--green-deep); padding:20px 4vw; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--gold); flex-wrap:wrap; gap:16px;}
+  header{background:var(--green-deep); padding:20px 4vw; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--gold); flex-wrap:wrap; gap:16px; position:sticky; top:0; z-index:50;}
   .brand{display:flex; align-items:center; gap:14px;}
   .brand .mark{width:46px; height:46px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Marcellus SC',serif; color:var(--gold-bright); font-size:1.1rem;}
-  .brand .name{font-size:0.72rem;} .brand .name .sc{display:block; font-size:0.95rem; color:var(--gold-bright); margin-bottom:2px;}
-  .navlinks{display:flex; gap:28px; font-size:0.8rem; letter-spacing:0.04em;}
+  .brand .name .sc{display:block; font-size:0.95rem; color:var(--gold-bright); margin-bottom:2px;}
+  .navlinks{display:flex; gap:26px; font-size:0.8rem;}
   .navlinks a{opacity:0.85; padding:6px 0; border-bottom:2px solid transparent;}
   .navlinks a:hover, .navlinks a.active{opacity:1; color:var(--gold-bright); border-color:var(--gold);}
-  .login-btn{background:var(--gold); color:var(--green-black); padding:10px 22px; font-size:0.78rem; letter-spacing:0.08em; border-radius:3px; font-weight:500;}
-  @media(max-width:900px){.navlinks{display:none;}}
+  .header-right{display:flex; align-items:center; gap:16px;}
+  .bell{position:relative; font-size:1.2rem; color:var(--gold-bright); cursor:pointer;}
+  .bell .badge{position:absolute; top:-6px; right:-8px; background:var(--maroon-bright); color:#fff; font-size:0.6rem; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .login-btn{background:var(--gold); color:var(--green-black); padding:10px 22px; font-size:0.78rem; letter-spacing:0.08em; border-radius:3px; font-weight:500; border:none;}
+  @media(max-width:960px){.navlinks{display:none;}}
 
-  /* Announcement ticker */
-  .ticker{background:var(--maroon,#6E2A22); background:#4A1F19; border-bottom:1px solid var(--line); padding:10px 4vw; display:flex; align-items:center; gap:16px; overflow:hidden;}
+  .ticker{background:#4A1F19; border-bottom:1px solid var(--line); padding:10px 4vw; display:flex; align-items:center; gap:16px; overflow:hidden;}
   .ticker .tag{background:var(--gold); color:var(--green-black); font-size:0.68rem; letter-spacing:0.1em; padding:4px 10px; border-radius:2px; white-space:nowrap; font-weight:600;}
-  .ticker-track{white-space:nowrap; animation:scroll-left 28s linear infinite; font-size:0.85rem; color:var(--ivory-dim);}
+  .ticker-track{white-space:nowrap; animation:scroll-left 26s linear infinite; font-size:0.85rem; color:var(--ivory-dim);}
   .ticker-track span{margin-right:60px;}
   @keyframes scroll-left{0%{transform:translateX(0);} 100%{transform:translateX(-50%);}}
 
-  .wrap{max-width:1200px; margin:0 auto; padding:0 4vw;}
+  .wrap{max-width:1220px; margin:0 auto; padding:0 4vw;}
 
-  /* Hero band */
-  .heroband{padding:46px 0 10px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;}
-  .heroband h1{font-size:2.1rem; color:var(--ivory);}
-  .heroband p{color:var(--ivory-dim); margin-top:8px; font-size:0.95rem; max-width:50ch;}
+  .heroband{padding:40px 0 10px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;}
+  .heroband h1{font-size:2.1rem;}
+  .heroband p{color:var(--ivory-dim); margin-top:8px; font-size:0.95rem; max-width:52ch;}
+  .countdown{font-size:0.72rem; letter-spacing:0.06em; color:var(--gold-bright); margin-top:10px;}
   .quick-stats{display:flex; gap:14px; flex-wrap:wrap;}
   .qs{background:var(--green-panel); border:1px solid var(--line); padding:12px 18px; border-radius:4px; min-width:120px;}
   .qs .n{font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold-bright);}
   .qs .l{font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ivory-dim);}
 
-  /* Service grid */
   .section-label{display:flex; align-items:center; gap:14px; margin:44px 0 20px;}
   .section-label h2{font-size:1.5rem;}
   .section-label .rule{flex:1; height:1px; background:var(--line);}
@@ -63,25 +67,21 @@
   @media(max-width:980px){.service-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.service-grid{grid-template-columns:1fr;}}
 
-  .card{
-    background:var(--green-panel); border:1px solid var(--line); border-radius:6px; padding:24px;
-    display:flex; flex-direction:column; gap:12px; transition:border-color .3s, transform .3s;
-  }
-  .card:hover{border-color:var(--gold); transform:translateY(-3px);}
-  .card .icon{width:44px; height:44px; border-radius:50%; background:rgba(201,162,39,0.12); display:flex; align-items:center; justify-content:center; color:var(--gold-bright); font-size:1.3rem;}
-  .card h3{font-size:1.2rem; color:var(--ivory);}
+  .card{background:var(--green-panel); border:1px solid var(--line); border-left:3px solid var(--accent, var(--gold)); border-radius:6px; padding:24px; display:flex; flex-direction:column; gap:12px; transition:transform .3s, box-shadow .3s;}
+  .card:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,0.35);}
+  .card .icon{width:44px; height:44px; border-radius:50%; background:color-mix(in srgb, var(--accent, var(--gold)) 18%, transparent); display:flex; align-items:center; justify-content:center; color:var(--accent, var(--gold-bright)); font-size:1.3rem;}
+  .card h3{font-size:1.2rem;}
   .card p{font-size:0.84rem; color:var(--ivory-dim); line-height:1.55; flex:1;}
   .card .status{font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; display:flex; align-items:center; gap:6px;}
   .dot{width:7px; height:7px; border-radius:50%;}
-  .dot.ok{background:var(--ok);} .dot.warn{background:var(--warn);}
-  .card .cta{margin-top:6px; font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--gold); text-align:center; padding:10px; border-radius:3px; transition:background .3s;}
-  .card .cta:hover{background:var(--gold); color:var(--green-black);}
+  .dot.ok{background:var(--ok);} .dot.warn{background:var(--warn);} .dot.bad{background:var(--bad);}
+  .card .cta{margin-top:6px; font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent, var(--gold-bright)); border:1px solid var(--accent, var(--gold)); text-align:center; padding:10px; border-radius:3px; transition:background .3s, color .3s; background:none;}
+  .card .cta:hover{background:var(--accent, var(--gold)); color:var(--green-black);}
 
-  /* Booking panel (tabs) */
   .booking-panel{margin-top:20px; background:var(--green-panel); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
   .tabs{display:flex; border-bottom:1px solid var(--line); overflow-x:auto;}
-  .tab{padding:16px 26px; font-size:0.82rem; letter-spacing:0.04em; white-space:nowrap; cursor:pointer; opacity:0.7; border-bottom:2px solid transparent;}
-  .tab.active{opacity:1; color:var(--gold-bright); border-color:var(--gold); background:rgba(201,162,39,0.06);}
+  .tab{padding:16px 26px; font-size:0.82rem; white-space:nowrap; cursor:pointer; opacity:0.7; border-bottom:2px solid transparent; background:none; color:var(--ivory); border-top:none; border-left:none; border-right:none;}
+  .tab.active{opacity:1; color:var(--gold-bright); border-bottom-color:var(--gold); background:rgba(201,162,39,0.06);}
   .tab-body{padding:30px;}
   .form-row{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:20px;}
   @media(max-width:700px){.form-row{grid-template-columns:1fr;}}
@@ -89,32 +89,53 @@
   .field select, .field input{width:100%; background:var(--green-black); border:1px solid var(--line); color:var(--ivory); padding:12px 14px; border-radius:4px; font-family:'Jost',sans-serif; font-size:0.9rem;}
   .field select:focus, .field input:focus{outline:none; border-color:var(--gold);}
   .avail-strip{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0;}
-  .slot{padding:9px 16px; border:1px solid var(--line); border-radius:4px; font-size:0.78rem; cursor:pointer;}
+  .slot{padding:9px 16px; border:1px solid var(--line); border-radius:4px; font-size:0.78rem; cursor:pointer; background:none; color:var(--ivory);}
   .slot.full{opacity:0.35; text-decoration:line-through; cursor:not-allowed;}
   .slot.open:hover, .slot.selected{border-color:var(--gold); color:var(--gold-bright); background:rgba(201,162,39,0.08);}
-  .book-btn{margin-top:10px; background:var(--gold); color:var(--green-black); padding:14px 34px; border-radius:4px; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; border:none; cursor:pointer;}
+  .book-btn{margin-top:10px; background:var(--gold); color:var(--green-black); padding:14px 34px; border-radius:4px; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:500; border:none;}
   .book-btn:hover{background:var(--gold-bright);}
 
-  /* Donation panel */
   .donate-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:30px; margin-top:20px;}
   @media(max-width:900px){.donate-grid{grid-template-columns:1fr;}}
   .donate-panel{background:var(--green-panel); border:1px solid var(--line); border-radius:6px; padding:30px;}
   .amt-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:16px 0 20px;}
   @media(max-width:560px){.amt-grid{grid-template-columns:repeat(2,1fr);}}
-  .amt{padding:14px 6px; text-align:center; border:1px solid var(--line); border-radius:4px; font-size:0.9rem; cursor:pointer;}
-  .amt:hover, .amt.selected{border-color:var(--gold); color:var(--gold-bright); background:rgba(201,162,39,0.08);}
+  .amt{padding:14px 6px; text-align:center; border:1px solid var(--line); border-radius:4px; font-size:0.9rem; cursor:pointer; background:none; color:var(--ivory);}
+  .amt:hover, .amt.selected{border-color:var(--saffron); color:var(--saffron-bright); background:rgba(224,142,39,0.1);}
   .scheme-list{display:flex; flex-direction:column; gap:14px;}
-  .scheme{display:flex; justify-content:space-between; align-items:center; background:var(--green-black); border:1px solid var(--line); border-radius:5px; padding:16px 18px;}
-  .scheme .t{font-size:0.9rem; color:var(--ivory);}
+  .scheme{display:flex; justify-content:space-between; align-items:center; background:var(--green-black); border:1px solid var(--line); border-left:3px solid var(--accent,var(--gold)); border-radius:5px; padding:16px 18px;}
+  .scheme .t{font-size:0.9rem;}
   .scheme .d{font-size:0.72rem; color:var(--ivory-dim); margin-top:3px;}
-  .scheme a{font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--gold); padding:8px 16px; border-radius:3px; white-space:nowrap;}
+  .scheme a{font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent,var(--gold-bright)); border:1px solid var(--accent,var(--gold)); padding:8px 16px; border-radius:3px; white-space:nowrap;}
 
-  /* Live darshan */
   .live-box{position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,#0c241c,#173a2b); border:1px solid var(--line); border-radius:6px; display:flex; align-items:center; justify-content:center; overflow:hidden;}
-  .live-box .badge{position:absolute; top:14px; left:14px; background:#B3261E; color:#fff; font-size:0.68rem; letter-spacing:0.08em; padding:5px 10px; border-radius:3px; display:flex; align-items:center; gap:6px;}
+  .live-box .badge{position:absolute; top:14px; left:14px; background:var(--bad); color:#fff; font-size:0.68rem; letter-spacing:0.08em; padding:5px 10px; border-radius:3px; display:flex; align-items:center; gap:6px;}
   .badge .pulse{width:7px; height:7px; border-radius:50%; background:#fff; animation:blink 1.4s infinite;}
   @keyframes blink{50%{opacity:0.2;}}
   .live-box .playbtn{width:64px; height:64px; border-radius:50%; border:2px solid var(--gold-bright); display:flex; align-items:center; justify-content:center; color:var(--gold-bright); font-size:1.4rem;}
+
+  /* My Bookings */
+  .booking-list{display:flex; flex-direction:column; gap:12px;}
+  .brow{display:flex; justify-content:space-between; align-items:center; background:var(--green-panel); border:1px solid var(--line); border-radius:6px; padding:18px 22px; flex-wrap:wrap; gap:10px;}
+  .brow .l{font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ivory-dim);}
+  .brow .t{font-size:1rem; margin-top:2px;}
+  .pill{font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; padding:5px 12px; border-radius:20px;}
+  .pill.confirmed{background:rgba(76,154,106,0.18); color:var(--ok);}
+  .pill.pending{background:rgba(217,139,60,0.18); color:var(--warn);}
+
+  /* Notifications panel */
+  .notif-panel{position:fixed; top:0; right:-380px; width:360px; height:100%; background:var(--green-deep); border-left:1px solid var(--line); z-index:200; transition:right .4s ease; padding:24px; overflow-y:auto;}
+  .notif-panel.open{right:0;}
+  .notif-panel h3{margin-bottom:18px;}
+  .notif-item{border-bottom:1px solid var(--line); padding:14px 0; font-size:0.85rem;}
+  .notif-item .time{font-size:0.68rem; color:var(--ivory-dim); margin-top:4px;}
+  .notif-close{float:right; cursor:pointer; color:var(--gold-bright); font-size:1.2rem;}
+  .overlay{position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:150; opacity:0; pointer-events:none; transition:opacity .4s;}
+  .overlay.open{opacity:1; pointer-events:auto;}
+
+  /* Toast */
+  #toast{position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--gold); color:var(--green-black); padding:14px 28px; border-radius:6px; font-size:0.85rem; font-weight:500; opacity:0; pointer-events:none; transition:all .4s; z-index:300; box-shadow:0 10px 30px rgba(0,0,0,0.4);}
+  #toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
   footer{margin-top:70px; border-top:1px solid var(--line); padding:36px 4vw; text-align:center; color:var(--ivory-dim); font-size:0.76rem;}
   footer .mantra{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gold-bright); margin-bottom:10px; font-size:1rem;}
@@ -124,9 +145,7 @@
 
 <div class="topstrip">
   <div>Swamiye Sharanam Ayyappa</div>
-  <div class="right">
-    <a href="#">Help</a><a href="#">Telugu / English</a><a href="#contact">Contact</a>
-  </div>
+  <div class="right"><a href="#">Help</a><a href="#">Telugu / English</a><a href="#contact">Contact</a></div>
 </div>
 
 <header>
@@ -139,18 +158,21 @@
     <a href="#booking">Darshan &amp; Seva</a>
     <a href="#donate">Donations</a>
     <a href="#live">Live Darshan</a>
-    <a href="#">My Bookings</a>
+    <a href="#mybookings">My Bookings</a>
   </div>
-  <a href="#" class="login-btn">Devotee Login</a>
+  <div class="header-right">
+    <div class="bell" id="bellBtn">&#128276;<span class="badge">3</span></div>
+    <button class="login-btn">Devotee Login</button>
+  </div>
 </header>
 
 <div class="ticker">
   <div class="tag">Notice</div>
   <div class="ticker-track">
-    <span>Vratham registrations for this Mandalam are now open &mdash; enrol before the 10th.</span>
+    <span>Vratham registrations for this Mandalam are now open — enrol before the 10th.</span>
     <span>Karpoora Aarti seva slots for this weekend are filling fast.</span>
     <span>Annadanam seva bookings open for the upcoming Pooja week.</span>
-    <span>Vratham registrations for this Mandalam are now open &mdash; enrol before the 10th.</span>
+    <span>Vratham registrations for this Mandalam are now open — enrol before the 10th.</span>
     <span>Karpoora Aarti seva slots for this weekend are filling fast.</span>
     <span>Annadanam seva bookings open for the upcoming Pooja week.</span>
   </div>
@@ -161,40 +183,40 @@
   <div class="heroband">
     <div>
       <h1>Namaskaram, Devotee.</h1>
-      <p>Book your darshan and seva, track your vratham, and offer to the temple &mdash; all from one quiet place.</p>
+      <p>Book your darshan and seva, track your vratham, and offer to the temple — all from one quiet place.</p>
+      <div class="countdown" id="countdown">Loading next darshan window…</div>
     </div>
     <div class="quick-stats">
-      <div class="qs"><div class="n">3</div><div class="l">Open Slots Today</div></div>
+      <div class="qs"><div class="n" id="slotsToday">3</div><div class="l">Open Slots Today</div></div>
       <div class="qs"><div class="n">41</div><div class="l">Vratham Day</div></div>
-      <div class="qs"><div class="n">2</div><div class="l">Active Bookings</div></div>
+      <div class="qs" id="bookingCountBox"><div class="n" id="bookingCount">2</div><div class="l">Active Bookings</div></div>
     </div>
   </div>
 
-  <!-- SERVICE CARDS -->
   <div class="section-label"><h2>Devotee Services</h2><div class="rule"></div></div>
   <div class="service-grid">
-    <div class="card">
+    <div class="card" style="--accent:var(--gold)">
       <div class="icon">&#9741;</div>
       <h3>Darshan Booking</h3>
       <p>Reserve your slot for Sannidhanam darshan on your chosen date.</p>
       <div class="status"><span class="dot ok"></span>Slots open</div>
       <a href="#booking" class="cta">Book Darshan</a>
     </div>
-    <div class="card">
+    <div class="card" style="--accent:var(--maroon-bright)">
       <div class="icon">&#128293;</div>
       <h3>Seva Booking</h3>
       <p>Karpoora Aarti, Neyyabhishekam and other sevas, by appointment.</p>
       <div class="status"><span class="dot ok"></span>Slots open</div>
       <a href="#booking" class="cta">Book Seva</a>
     </div>
-    <div class="card">
+    <div class="card" style="--accent:var(--sky-bright)">
       <div class="icon">&#127968;</div>
       <h3>Accommodation</h3>
       <p>Rest houses near Pampa and Sannidhanam for the vratham period.</p>
       <div class="status"><span class="dot warn"></span>Limited</div>
       <a href="#" class="cta">Check Availability</a>
     </div>
-    <div class="card">
+    <div class="card" style="--accent:var(--lotus-bright)">
       <div class="icon">&#128204;</div>
       <h3>Annadanam Seva</h3>
       <p>Sponsor a meal offering for pilgrims on the day of your choosing.</p>
@@ -203,18 +225,17 @@
     </div>
   </div>
 
-  <!-- BOOKING PANEL -->
   <div class="section-label" id="booking"><h2>Book Darshan &amp; Seva</h2><div class="rule"></div></div>
   <div class="booking-panel">
     <div class="tabs">
-      <div class="tab active">Darshan</div>
-      <div class="tab">Karpoora Aarti</div>
-      <div class="tab">Neyyabhishekam</div>
-      <div class="tab">Annadanam</div>
+      <button class="tab active">Darshan</button>
+      <button class="tab">Karpoora Aarti</button>
+      <button class="tab">Neyyabhishekam</button>
+      <button class="tab">Annadanam</button>
     </div>
     <div class="tab-body">
       <div class="form-row">
-        <div class="field"><label>Devotee Name</label><input type="text" placeholder="Full name as per ID"></div>
+        <div class="field"><label>Devotee Name</label><input id="bkName" type="text" placeholder="Full name as per ID"></div>
         <div class="field"><label>Mobile Number</label><input type="tel" placeholder="+91"></div>
       </div>
       <div class="form-row">
@@ -223,64 +244,160 @@
       </div>
       <label style="display:block; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Available Slots</label>
       <div class="avail-strip">
-        <div class="slot open selected">6:00 – 7:00 AM</div>
-        <div class="slot open">7:00 – 8:00 AM</div>
-        <div class="slot full">8:00 – 9:00 AM</div>
-        <div class="slot open">9:00 – 10:00 AM</div>
-        <div class="slot full">4:00 – 5:00 PM</div>
-        <div class="slot open">5:00 – 6:00 PM</div>
+        <button class="slot open selected">6:00 – 7:00 AM</button>
+        <button class="slot open">7:00 – 8:00 AM</button>
+        <button class="slot full" disabled>8:00 – 9:00 AM</button>
+        <button class="slot open">9:00 – 10:00 AM</button>
+        <button class="slot full" disabled>4:00 – 5:00 PM</button>
+        <button class="slot open">5:00 – 6:00 PM</button>
       </div>
-      <button class="book-btn">Confirm Booking</button>
+      <button class="book-btn" id="confirmBookBtn">Confirm Booking</button>
     </div>
   </div>
 
-  <!-- DONATIONS -->
   <div class="section-label" id="donate"><h2>Donations &amp; Seva Schemes</h2><div class="rule"></div></div>
   <div class="donate-grid">
     <div class="donate-panel">
       <h3 style="font-size:1.1rem; margin-bottom:6px;">Offer to the Temple</h3>
       <p style="color:var(--ivory-dim); font-size:0.85rem;">Every offering supports the lamp, the sanctum, and the seva of fellow pilgrims.</p>
       <div class="amt-grid">
-        <div class="amt">₹101</div><div class="amt selected">₹501</div><div class="amt">₹1,001</div><div class="amt">Other</div>
+        <button class="amt">₹101</button><button class="amt selected">₹501</button><button class="amt">₹1,001</button><button class="amt">Other</button>
       </div>
       <div class="field" style="margin-bottom:16px;"><label>Devotee Name</label><input type="text" placeholder="For the receipt"></div>
-      <button class="book-btn">Proceed to Offer</button>
+      <button class="book-btn" id="offerBtn">Proceed to Offer</button>
     </div>
     <div class="scheme-list">
-      <div class="scheme"><div><div class="t">Nithya Deepam</div><div class="d">Sponsor the sanctum lamp for a day</div></div><a href="#">Offer</a></div>
-      <div class="scheme"><div><div class="t">Anna Prasadam Trust</div><div class="d">Fund meals for pilgrims on vratham</div></div><a href="#">Offer</a></div>
-      <div class="scheme"><div><div class="t">Path Renovation Fund</div><div class="d">Support the upkeep of Pathinettampadi</div></div><a href="#">Offer</a></div>
-      <div class="scheme"><div><div class="t">General Hundi</div><div class="d">Open offering to Lord Ayyappa</div></div><a href="#">Offer</a></div>
+      <div class="scheme" style="--accent:var(--saffron-bright)"><div><div class="t">Nithya Deepam</div><div class="d">Sponsor the sanctum lamp for a day</div></div><a href="#" class="offer-link">Offer</a></div>
+      <div class="scheme" style="--accent:var(--sky-bright)"><div><div class="t">Anna Prasadam Trust</div><div class="d">Fund meals for pilgrims on vratham</div></div><a href="#" class="offer-link">Offer</a></div>
+      <div class="scheme" style="--accent:var(--lotus-bright)"><div><div class="t">Path Renovation Fund</div><div class="d">Support the upkeep of Pathinettampadi</div></div><a href="#" class="offer-link">Offer</a></div>
+      <div class="scheme" style="--accent:var(--gold-bright)"><div><div class="t">General Hundi</div><div class="d">Open offering to Lord Ayyappa</div></div><a href="#" class="offer-link">Offer</a></div>
     </div>
   </div>
 
-  <!-- LIVE DARSHAN -->
   <div class="section-label" id="live"><h2>Live Darshan</h2><div class="rule"></div></div>
   <div class="live-box">
     <div class="badge"><span class="pulse"></span>LIVE</div>
     <div class="playbtn">&#9658;</div>
   </div>
 
+  <div class="section-label" id="mybookings"><h2>My Bookings</h2><div class="rule"></div></div>
+  <div class="booking-list" id="bookingList">
+    <div class="brow">
+      <div><div class="l">Darshan · Sannidhanam</div><div class="t">Sat, 6:00 – 7:00 AM · 2 devotees</div></div>
+      <div class="pill confirmed">Confirmed</div>
+    </div>
+    <div class="brow">
+      <div><div class="l">Seva · Karpoora Aarti</div><div class="t">Sun, 5:00 – 6:00 PM · 1 devotee</div></div>
+      <div class="pill pending">Pending</div>
+    </div>
+  </div>
+
 </div>
+
+<div class="overlay" id="overlay"></div>
+<div class="notif-panel" id="notifPanel">
+  <span class="notif-close" id="notifClose">&times;</span>
+  <h3>Notifications</h3>
+  <div class="notif-item"><div>Your Darshan booking for Saturday is confirmed.</div><div class="time">2 hours ago</div></div>
+  <div class="notif-item"><div>New Karpoora Aarti slots released for next week.</div><div class="time">1 day ago</div></div>
+  <div class="notif-item"><div>Vratham reminder: Day 41 begins tomorrow.</div><div class="time">2 days ago</div></div>
+</div>
+
+<div id="toast"></div>
 
 <footer>
   <div class="mantra">Swamiye Sharanam Ayyappa</div>
-  Sarvam Sabarigireesha &middot; Devotee Services Dashboard &middot; For seva and support, reach us on WhatsApp +91 89194 62503
+  Sarvam Sabarigireesha · Devotee Services Dashboard · For seva and support, reach us on WhatsApp +91 89194 62503
 </footer>
 
 <script>
+  // Tabs
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
   }));
+
+  // Slot selection
   document.querySelectorAll('.slot.open').forEach(s=>s.addEventListener('click',()=>{
     document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));
     s.classList.add('selected');
   }));
+
+  // Amount selection
   document.querySelectorAll('.amt').forEach(a=>a.addEventListener('click',()=>{
     document.querySelectorAll('.amt').forEach(x=>x.classList.remove('selected'));
     a.classList.add('selected');
   }));
+
+  // Toast helper
+  const toast = document.getElementById('toast');
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(()=>toast.classList.remove('show'), 3200);
+  }
+
+  // Booking automation: confirm booking -> add to My Bookings + update stat + toast
+  let bookingCount = 2;
+  document.getElementById('confirmBookBtn').addEventListener('click', ()=>{
+    const name = document.getElementById('bkName').value.trim() || 'Devotee';
+    const slot = document.querySelector('.slot.selected');
+    const slotText = slot ? slot.textContent : 'a selected slot';
+    const list = document.getElementById('bookingList');
+    const row = document.createElement('div');
+    row.className = 'brow';
+    row.innerHTML = `<div><div class="l">Darshan · Sannidhanam</div><div class="t">New · ${slotText}</div></div><div class="pill pending">Pending</div>`;
+    list.prepend(row);
+    bookingCount++;
+    document.getElementById('bookingCount').textContent = bookingCount;
+    showToast(`Swamiye Sharanam, ${name} — your booking request for ${slotText} has been received.`);
+  });
+
+  // Donation automation
+  document.getElementById('offerBtn').addEventListener('click', ()=>{
+    const amt = document.querySelector('.amt.selected');
+    showToast(`Thank you — your offering of ${amt ? amt.textContent : 'your chosen amount'} has been recorded.`);
+  });
+  document.querySelectorAll('.offer-link').forEach(l=>l.addEventListener('click', e=>{
+    e.preventDefault();
+    showToast('Redirecting to the offering counter for this scheme…');
+  }));
+
+  // Notifications drawer
+  const notifPanel = document.getElementById('notifPanel');
+  const overlay = document.getElementById('overlay');
+  document.getElementById('bellBtn').addEventListener('click', ()=>{ notifPanel.classList.add('open'); overlay.classList.add('open'); });
+  function closeNotif(){ notifPanel.classList.remove('open'); overlay.classList.remove('open'); }
+  document.getElementById('notifClose').addEventListener('click', closeNotif);
+  overlay.addEventListener('click', closeNotif);
+
+  // Live countdown to next darshan window (automation)
+  function updateCountdown(){
+    const now = new Date();
+    const windows = [6,7,9,17,18]; // hours when a fresh window opens
+    let next = null;
+    for(const h of windows){
+      const t = new Date(now); t.setHours(h,0,0,0);
+      if(t > now){ next = t; break; }
+    }
+    if(!next){ next = new Date(now); next.setDate(next.getDate()+1); next.setHours(6,0,0,0); }
+    const diff = next - now;
+    const hrs = Math.floor(diff/3600000);
+    const mins = Math.floor((diff%3600000)/60000);
+    const secs = Math.floor((diff%60000)/1000);
+    document.getElementById('countdown').textContent =
+      `Next darshan window opens in ${hrs}h ${mins}m ${secs}s`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Slight live "slots today" fluctuation for realism
+  setInterval(()=>{
+    const el = document.getElementById('slotsToday');
+    let v = parseInt(el.textContent,10);
+    if(Math.random() < 0.15 && v > 1) el.textContent = v - 1;
+  }, 8000);
 </script>
 
 </body>
