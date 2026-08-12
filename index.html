@@ -1,21 +1,246 @@
-from pathlib import Path
-import re
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THATHWAMASI — The Digital Home of Sarvam Sabarigireesha</title>
+<meta name="description" content="THATHWAMASI — The Digital Home of Sarvam Sabarigireesha. A sacred digital pilgrimage in devotion of Lord Ayyappa. Swamiye Sharanam Ayyappa.">
+<meta name="theme-color" content="#0F2E23">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#0F2E23;
+    --bg-panel:#153328;
+    --bg-cream:#F6F1E6;
+    --gold:#C9A15C;
+    --gold-bright:#E6C583;
+    --ink:#F3EFE6;
+    --stone:#A9B8AE;
+    --line:rgba(230,197,131,0.18);
+    --serif: 'Fraunces', serif;
+    --sans: 'Inter', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:500;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:450;letter-spacing:-0.01em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
 
-src_path = Path("/mnt/data/Pasted text(1).txt")
-text = src_path.read_text(encoding="utf-8")
+  /* Header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(15,46,35,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold) 60%, #8a6b32 100%);
+    flex-shrink:0;
+  }
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text strong{font-family:var(--serif);font-size:1.05rem;color:var(--gold-bright);font-weight:600;}
+  .brand-text span{font-size:.68rem;color:var(--stone);letter-spacing:.05em;}
+  nav.links{display:flex;gap:30px;font-size:.85rem;}
+  nav.links a{color:var(--stone);transition:color .2s;position:relative;}
+  nav.links a:hover, nav.links a:focus-visible{color:var(--gold-bright);}
+  .cta-btn{
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    padding:10px 22px;border-radius:999px;
+    font-size:.8rem;letter-spacing:.03em;
+    transition:all .25s;
+  }
+  .cta-btn:hover{background:var(--gold);color:var(--bg-deep);}
+  .cta-btn.solid{background:var(--gold);color:var(--bg-deep);border-color:var(--gold);}
+  .cta-btn.solid:hover{background:var(--gold-bright);border-color:var(--gold-bright);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold-bright);width:42px;height:42px;border-radius:8px;font-size:1.1rem;}
 
-# Keep the first THATHWAMASI document only. The uploaded file contains a second,
-# conflicting complete HTML document after the first </html>.
-first_end = text.find("</html>")
-if first_end == -1:
-    raise RuntimeError("Could not find the first </html> in the supplied file.")
-base = text[:first_end + len("</html>")]
+  @media(max-width:900px){
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+  }
 
-# Remove the first closing html/body so we can inject the merged sections/scripts
-# before closing the document.
-base = base.replace("</body>\n</html>", "", 1)
+  /* Hero */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:flex-end;
+    padding-bottom:90px;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,26,20,.55) 0%, rgba(10,26,20,.35) 40%, rgba(10,26,20,.92) 100%),
+      url('https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/839jot75_WhatsApp%20Image%202026-07-23%20at%2011.08.35%20AM.jpeg') center/cover no-repeat;
+  }
+  .hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center;padding:0 24px;}
+  .hero-kicker{color:var(--gold-bright);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.6rem);
+    color:var(--ink);
+    margin:10px 0 22px;
+  }
+  .hero h1 em{color:var(--gold-bright);font-style:normal;}
+  .hero p.lede{
+    color:var(--stone);font-size:1.05rem;max-width:640px;margin:0 auto 34px;
+  }
+  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:44px;}
+  .marquee{
+    overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;
+  }
+  .marquee-track{display:flex;gap:40px;white-space:nowrap;animation:scroll 32s linear infinite;font-size:.8rem;letter-spacing:.1em;color:var(--stone);text-transform:uppercase;}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
 
-extra_css = r"""
+  /* Sections */
+  section{padding:110px 0;position:relative;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:10px;color:var(--ink);}
+  .divider{width:56px;height:1px;background:var(--gold);margin:18px 0;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center;}
+  .about-grid img{border-radius:4px;}
+  .about-copy .label{color:var(--gold);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+  .about-copy blockquote{font-family:var(--serif);font-size:1.5rem;color:var(--gold-bright);margin-bottom:20px;font-style:italic;}
+  .about-copy p{color:var(--stone);}
+  .about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:70px;}
+  .about-card{border-top:1px solid var(--line);padding-top:20px;}
+  .about-card .num{font-family:var(--serif);color:var(--gold);font-size:.95rem;}
+  .about-card h3{font-size:1.1rem;margin:10px 0 10px;color:var(--ink);}
+  .about-card p{color:var(--stone);font-size:.92rem;}
+  .vow-banner{
+    margin-top:70px;position:relative;border-radius:6px;overflow:hidden;min-height:280px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+  }
+  .vow-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.4);}
+  .vow-banner blockquote{position:relative;z-index:2;font-family:var(--serif);font-size:1.6rem;color:var(--ink);max-width:600px;padding:0 24px;font-style:italic;}
+
+  /* Community */
+  .community{background:var(--bg-panel);}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px;}
+  .stat{border:1px solid var(--line);border-radius:6px;padding:26px 20px;text-align:center;}
+  .stat .n{font-family:var(--serif);font-size:1.9rem;color:var(--gold-bright);}
+  .stat .lbl{font-size:.78rem;color:var(--stone);margin-top:6px;letter-spacing:.05em;}
+  .pledge{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .pledge blockquote{font-family:var(--serif);font-size:1.7rem;color:var(--gold-bright);margin-bottom:18px;font-style:italic;}
+  .pledge p{color:var(--stone);margin-bottom:26px;}
+  .pledge img{border-radius:6px;}
+
+  /* Blessing */
+  .blessing{text-align:center;background:linear-gradient(180deg,var(--bg-deep),var(--bg-panel));}
+  .blessing .mark{color:var(--gold);letter-spacing:.3em;font-size:.8rem;margin-bottom:22px;}
+  .blessing blockquote{font-family:var(--serif);font-size:1.6rem;font-style:italic;max-width:640px;margin:0 auto 26px;color:var(--ink);}
+  .blessing .cta-btn{margin-top:10px;}
+
+  /* Reels / Videos */
+  .strip-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:12px;}
+  .strip-head a.follow{color:var(--gold);font-size:.85rem;border-bottom:1px solid var(--gold);padding-bottom:2px;}
+  .card-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .media-card{
+    aspect-ratio:9/14;border-radius:8px;overflow:hidden;position:relative;
+    background:linear-gradient(160deg,var(--bg-panel),#0b241b);
+    border:1px solid var(--line);
+    display:flex;align-items:flex-end;padding:14px;
+  }
+  .media-card span{font-size:.82rem;color:var(--ink);font-weight:400;line-height:1.3;}
+  .media-card::before{content:'▶';position:absolute;top:14px;right:14px;color:var(--gold-bright);font-size:.8rem;opacity:.8;}
+  @media(max-width:900px){.card-row{grid-template-columns:repeat(2,1fr);}}
+
+  /* Gallery */
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .gallery-item{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:16px;
+    background:linear-gradient(180deg,transparent,rgba(0,0,0,.75));
+    font-size:.85rem;color:var(--ink);
+  }
+  .gallery-cap .place{display:block;color:var(--gold-bright);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+  @media(max-width:760px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* Journey */
+  .journey-list{display:flex;flex-direction:column;}
+  .journey-item{
+    display:grid;grid-template-columns:220px 90px 1fr;gap:30px;align-items:center;
+    padding:34px 0;border-top:1px solid var(--line);
+  }
+  .journey-item:last-child{border-bottom:1px solid var(--line);}
+  .journey-item img{width:100%;height:130px;object-fit:cover;border-radius:6px;}
+  .journey-item .num{font-family:var(--serif);font-size:1.6rem;color:var(--gold);text-align:center;}
+  .journey-item h3{color:var(--ink);font-size:1.25rem;margin-bottom:8px;}
+  .journey-item p{color:var(--stone);font-size:.94rem;}
+  .journey-item .stage{color:var(--gold-bright);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;display:block;}
+  @media(max-width:760px){
+    .journey-item{grid-template-columns:1fr;gap:14px;}
+    .journey-item img{height:180px;}
+    .journey-item .num{text-align:left;}
+  }
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
+  .form-group{margin-bottom:18px;}
+  label{display:block;font-size:.78rem;color:var(--stone);margin-bottom:8px;letter-spacing:.03em;}
+  input,textarea{
+    width:100%;background:var(--bg-panel);border:1px solid var(--line);
+    color:var(--ink);padding:12px 14px;border-radius:5px;font-family:var(--sans);font-size:.92rem;
+  }
+  input:focus,textarea:focus{outline:1px solid var(--gold);border-color:var(--gold);}
+  textarea{min-height:120px;resize:vertical;}
+  .contact-info-item{margin-bottom:26px;}
+  .contact-info-item .lbl{color:var(--gold);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;}
+  .contact-info-item .val{font-size:1.05rem;color:var(--ink);}
+  .contact-info-item .val a{border-bottom:1px solid transparent;}
+  .contact-info-item .val a:hover{border-color:var(--gold);}
+
+  /* Footer */
+  footer{background:#0a1f18;padding:70px 0 30px;border-top:1px solid var(--line);}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px;}
+  .footer-brand strong{font-family:var(--serif);color:var(--gold-bright);font-size:1.2rem;}
+  .footer-brand p{color:var(--stone);font-size:.85rem;margin-top:10px;}
+  .footer-col h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .footer-col a{display:block;color:var(--stone);font-size:.88rem;margin-bottom:10px;}
+  .footer-col a:hover{color:var(--gold-bright);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    border-top:1px solid var(--line);padding-top:26px;color:var(--stone);font-size:.8rem;
+  }
+  .footer-bottom .mantra{color:var(--gold-bright);font-family:var(--serif);font-style:italic;}
+
+  @media(max-width:900px){
+    .about-grid,.pledge,.contact-grid{grid-template-columns:1fr;}
+    .about-cards{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .card-row{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+
 /* =========================
 MERGED FEATURES
 ========================= */
@@ -227,13 +452,11 @@ MERGED FEATURES
   .site-header{top:30px;}
   .site-topbar button{padding:3px 6px;font-size:9px;}
 }
-"""
 
-# Inject CSS before the original closing </style>
-base = base.replace("</style>", extra_css + "\n</style>", 1)
+</style>
+</head>
+<body>
 
-# Add language/topbar controls at the beginning of body.
-topbar = r"""
 <div class="site-topbar">
   <div class="lang-switch" aria-label="Language selector">
     <button type="button" data-lang="en" class="active">EN</button>
@@ -244,53 +467,120 @@ topbar = r"""
     <button type="button" data-lang="ta">தமி</button>
   </div>
 </div>
-"""
-base = base.replace("<body>", "<body>\n" + topbar, 1)
 
-# Expand the existing nav with useful operational sections.
-old_nav = """      <a href="#journey">Journey</a>
-      <a href="/calendar.html">Calendar</a>
-      <a href="#contact">Contact</a>"""
-new_nav = """      <a href="#journey">Journey</a>
+
+<header>
+  <div class="nav-row">
+    <a href="#hero" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <strong>THATHWAMASI</strong>
+        <span>Sarvam Sabarigireesha</span>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#community">Community</a>
+      <a href="#reels">Reels</a>
+      <a href="#videos">Videos</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#journey">Journey</a>
       <a href="#timings" data-i18n="nav_timings">Darshan</a>
       <a href="#updates" data-i18n="nav_updates">Updates</a>
       <a href="#prasadam" data-i18n="nav_prasadam">Prasadam</a>
       <a href="/calendar.html">Calendar</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>"""
-base = base.replace(old_nav, new_nav, 1)
-
-# Add a compact mobile-friendly menu button to the existing header.
-header_close = """  </div>
-</header>"""
-header_close_new = """    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">☰</button>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <a href="#community" class="cta-btn solid">Join the Community</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">☰</button>
   </div>
-</header>"""
-base = base.replace(header_close, header_close_new, 1)
+</header>
 
-# Add data-i18n markers to important existing hero elements.
-replacements = {
-    '<div class="hero-kicker">Sarvam Sabarigireesha · Est. Anantam</div>':
-        '<div class="hero-kicker" data-i18n="hero_kicker">Sarvam Sabarigireesha · Est. Anantam</div>',
-    '<div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;">Pathinettampadi · The Eighteen Steps</div>':
-        '<div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;" data-i18n="hero_line1">Pathinettampadi · The Eighteen Steps</div>',
-    '<div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;margin-top:4px;">Chapter I · The Threshold — Sannidhanam, at golden hour</div>':
-        '<div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;margin-top:4px;" data-i18n="hero_line2">Chapter I · The Threshold — Sannidhanam, at golden hour</div>',
-    '<p style="margin-top:22px;color:var(--gold-bright);font-family:var(--serif);font-style:italic;font-size:1.1rem;">Swamiye Sharanam Ayyappa</p>':
-        '<p style="margin-top:22px;color:var(--gold-bright);font-family:var(--serif);font-style:italic;font-size:1.1rem;" data-i18n="mantra">Swamiye Sharanam Ayyappa</p>',
-    '<h1>Begin the sacred <em>pilgrimage.</em></h1>':
-        '<h1 data-i18n="hero_title">Begin the sacred <em>pilgrimage.</em></h1>',
-    '<p class="lede">A quiet, unhurried threshold to Lord Ayyappa\'s eternal presence — drawn from the granite silence of Sabarimala, the mist of the Western Ghats, and the golden lamps that keep the sanctum awake.</p>':
-        '<p class="lede" data-i18n="hero_lede">A quiet, unhurried threshold to Lord Ayyappa\'s eternal presence — drawn from the granite silence of Sabarimala, the mist of the Western Ghats, and the golden lamps that keep the sanctum awake.</p>',
-    '<a href="#about" class="cta-btn solid">Enter the Sanctum</a>':
-        '<a href="#about" class="cta-btn solid" data-i18n="hero_enter">Enter the Sanctum</a>',
-    '<a href="#journey" class="cta-btn">The Pilgrimage</a>':
-        '<a href="#journey" class="cta-btn" data-i18n="hero_journey">The Pilgrimage</a>',
-}
-for a,b in replacements.items():
-    base = base.replace(a,b,1)
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker" data-i18n="hero_kicker">Sarvam Sabarigireesha · Est. Anantam</div>
+    <div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;" data-i18n="hero_line1">Pathinettampadi · The Eighteen Steps</div>
+    <div class="eyebrow" style="color:var(--stone);letter-spacing:.14em;margin-top:4px;" data-i18n="hero_line2">Chapter I · The Threshold — Sannidhanam, at golden hour</div>
+    <p style="margin-top:22px;color:var(--gold-bright);font-family:var(--serif);font-style:italic;font-size:1.1rem;" data-i18n="mantra">Swamiye Sharanam Ayyappa</p>
+    <h1 data-i18n="hero_title">Begin the sacred <em>pilgrimage.</em></h1>
+    <p class="lede" data-i18n="hero_lede">A quiet, unhurried threshold to Lord Ayyappa's eternal presence — drawn from the granite silence of Sabarimala, the mist of the Western Ghats, and the golden lamps that keep the sanctum awake.</p>
+    <div class="hero-ctas">
+      <a href="#about" class="cta-btn solid" data-i18n="hero_enter">Enter the Sanctum</a>
+      <a href="#journey" class="cta-btn" data-i18n="hero_journey">The Pilgrimage</a>
+    </div>
+  </div>
+</section>
 
-# Insert operational sections before the blessing section.
-new_sections = r"""
+<div class="marquee">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About THATHWAMASI</div>
+    <div class="section-head">
+      <h2>A digital sanctum, quietly built in the shadow of the Western Ghats.</h2>
+    </div>
+    <div class="about-grid">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/9uf9vjrn_WhatsApp%20Image%202026-07-22%20at%201.04.49%20PM.jpeg" alt="Sarvam Sabarigireesha emblem">
+      <div class="about-copy">
+        <div class="label">Our Name, Our Vow</div>
+        <blockquote>"Thathwamasi" — Thou art That.</blockquote>
+        <p>THATHWAMASI is not a website. It is a threshold — a quiet, unhurried place for the devotees of Lord Ayyappa. A place to return to between pilgrimages, to remember why you climb, and to keep the lamp lit when you cannot be at Sannidhanam.</p>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="num">01</div>
+        <h3>Tathwamasi — Thou Art That</h3>
+        <p>The Upanishadic mahavakya at our name reminds us that the divine we seek in Sabarimala is not distant. Every pilgrim who climbs the eighteen steps is discovering something already within.</p>
+      </div>
+      <div class="about-card">
+        <div class="num">02</div>
+        <h3>The Kerala Threshold</h3>
+        <p>Rooted in Kerala's temple tradition — the ochre stone, the teak-oiled sanctum, the rain-soaked forest — we treat every pixel with the same restraint a temple architect reserves for granite.</p>
+      </div>
+      <div class="about-card">
+        <div class="num">03</div>
+        <h3>The Sarvam Sabarigireesha Vow</h3>
+        <p>We serve a growing community of devotees who have taken the sacred vratham. This is their digital home — a place of stillness, resource, and shared devotion between two pilgrimages.</p>
+      </div>
+    </div>
+    <div class="vow-banner">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/noh4iepb_02-aboutfeature.jpeg" alt="Temple architecture at dusk">
+      <blockquote>"We keep the sacred lamp lit, so every devotee finds the path to Lord Ayyappa."</blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap">
+    <div class="eyebrow">The Community</div>
+    <div class="section-head">
+      <h2>The Sarvam Sabarigireesha family.</h2>
+      <p style="color:var(--stone);margin-top:14px;">A quiet gathering of devotees who have taken the sacred vratham — bound by the same vow, the same climb, the same silence at the eighteen steps. Every hand that lights a lamp here is one hand closer to Sannidhanam.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">—</div><div class="lbl">Devotees</div></div>
+      <div class="stat"><div class="n">—</div><div class="lbl">Chapters</div></div>
+      <div class="stat"><div class="n">—</div><div class="lbl">Pilgrimages</div></div>
+      <div class="stat"><div class="n">—</div><div class="lbl">Years of Seva</div></div>
+    </div>
+    <div class="pledge">
+      <div>
+        <div class="label" style="color:var(--gold);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;">The Pledge</div>
+        <blockquote>"When one of us climbs, all of us climb."</blockquote>
+        <p>We keep a shared journal of pilgrimages, offer support during vratham, and gather for the great festivals through the year.</p>
+        <a href="#contact" class="cta-btn solid">Join the community</a>
+      </div>
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/oj1yh378_03-communitymoment.webp" alt="Devotional lamps">
+    </div>
+  </div>
+</section>
+
+
 <!-- =========================
 DARSHAN TIMINGS
 ========================= -->
@@ -411,14 +701,181 @@ SOCIAL
     </div>
   </div>
 </section>
-"""
-base = base.replace('<section class="blessing">', new_sections + '\n<section class="blessing">', 1)
 
-# Fix the missing blessing anchor.
-base = base.replace('<section class="blessing">', '<section class="blessing" id="blessing">', 1)
+<section class="blessing" id="blessing">
+  <div class="wrap">
+    <div class="mark">✦ TODAY'S BLESSING ✦</div>
+    <p style="color:var(--gold-bright);font-family:var(--serif);font-style:italic;">Swamiye Sharanam Ayyappa</p>
+    <blockquote>"May every step you take today bring you closer to wisdom, devotion, and inner peace."</blockquote>
+    <p style="color:var(--stone);font-size:.85rem;">Receive a new blessing every day</p>
+  </div>
+</section>
 
-# Add a simple, safe mobile menu overlay and the merged scripts before </body>.
-mobile_menu = r"""
+<section id="reels">
+  <div class="wrap">
+    <div class="strip-head">
+      <div>
+        <div class="eyebrow">Latest Reels</div>
+        <h2 style="font-size:1.9rem;margin-top:10px;">Fragments from the sanctum.</h2>
+      </div>
+      <a class="follow" href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener">@sarvam_sabarigireesha</a>
+    </div>
+    <div class="card-row">
+      <a class="media-card" href="https://www.instagram.com/reel/DbDVF0ptDiM/" target="_blank" rel="noopener"><span>From the sanctum</span></a>
+      <a class="media-card" href="https://www.instagram.com/p/DP4GhVKiTc4/" target="_blank" rel="noopener"><span>Together in devotion</span></a>
+      <a class="media-card" href="https://www.instagram.com/reel/DaZNBb4NqL9/" target="_blank" rel="noopener"><span>Preparing the vratham</span></a>
+      <a class="media-card" href="https://www.instagram.com/reel/DaB4bP5tD3U/" target="_blank" rel="noopener"><span>Erumeli, illuminated</span></a>
+      <a class="media-card" href="https://www.instagram.com/reel/DZrylYrNaJR/" target="_blank" rel="noopener"><span>Pampa, at dawn</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="videos" style="background:var(--bg-panel);">
+  <div class="wrap">
+    <div class="strip-head">
+      <div>
+        <div class="eyebrow">Latest Videos</div>
+        <h2 style="font-size:1.9rem;margin-top:10px;">Devotional cinema, filmed in candlelight.</h2>
+      </div>
+      <a class="follow" href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener">@sarvamsabarigireesha</a>
+    </div>
+    <div class="card-row">
+      <a class="media-card" href="https://youtube.com/shorts/NFBYWYRFciY" target="_blank" rel="noopener"><span>Devotional Short 05</span></a>
+      <a class="media-card" href="https://youtube.com/shorts/oYDVF-ehp8s" target="_blank" rel="noopener"><span>Devotional Short 04</span></a>
+      <a class="media-card" href="https://youtube.com/shorts/dPlOmlRxzA4" target="_blank" rel="noopener"><span>Devotional Short 03</span></a>
+      <a class="media-card" href="https://youtube.com/shorts/7xMctjiKAPg" target="_blank" rel="noopener"><span>Devotional Short 02</span></a>
+      <a class="media-card" href="https://youtube.com/shorts/XxogvRLD120" target="_blank" rel="noopener"><span>Devotional Short 01</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow">Temple Gallery</div>
+    <div class="section-head">
+      <h2>Kerala's sacred geography, photographed with restraint.</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt="Sannidhanam"><div class="gallery-cap"><span class="place">Sabarimala</span>Sannidhanam</div></div>
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/4kppnmz2_journey.pathinettampadi.jpeg" alt="Pathinettampadi"><div class="gallery-cap"><span class="place">Sabarimala</span>Pathinettampadi — the eighteen steps</div></div>
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/nlafnr7q_journey.vratham.jpeg" alt="Lamp of the vratham"><div class="gallery-cap"><span class="place">Home Shrine</span>Lamp of the vratham</div></div>
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/ggrumedx_journey.pampa.jpeg" alt="Pampa river"><div class="gallery-cap"><span class="place">Pampa</span>Pampa river, at dawn</div></div>
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/6nkytx07_journey.erumeli.jpeg" alt="Erumeli"><div class="gallery-cap"><span class="place">Erumeli</span>Erumeli, illuminated</div></div>
+      <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/839jot75_WhatsApp%20Image%202026-07-23%20at%2011.08.35%20AM.jpeg" alt="Temple at golden hour"><div class="gallery-cap"><span class="place">Kerala</span>Temple at golden hour</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" style="background:var(--bg-panel);">
+  <div class="wrap">
+    <div class="eyebrow">The Journey</div>
+    <div class="section-head">
+      <h2>Six thresholds, one path to Sannidhanam.</h2>
+      <p style="color:var(--stone);margin-top:14px;">The Sabarimala pilgrimage is one of the great yatras of India — not merely a walk to a shrine, but a slow, deliberate ascent through inner and outer landscape.</p>
+    </div>
+    <div class="journey-list">
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/nlafnr7q_journey.vratham.jpeg" alt="Vratham">
+        <div class="num">01</div>
+        <div><span class="stage">Stage 01 of 06 · The lamp of vratham</span><h3>Vratham</h3><p>The forty-one day vow. Discipline, restraint, and a slow turning inward. The pilgrim begins here, in silence, at home.</p></div>
+      </div>
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/0uohf6s7_irumudi.jpeg" alt="Irumudi">
+        <div class="num">02</div>
+        <div><span class="stage">Stage 02 of 06 · Irumudi kettu, the sacred burden</span><h3>Irumudi</h3><p>Carrying the Irumudi is not just about balancing a bundle on the head; it is about balancing the mind, surrendering worldly desires, and ascending the steps of devotion.</p></div>
+      </div>
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/6nkytx07_journey.erumeli.jpeg" alt="Erumeli">
+        <div class="num">03</div>
+        <div><span class="stage">Stage 03 of 06 · The crossing</span><h3>Erumeli</h3><p>The threshold of the forest. Where the two paths — the traditional and the modern — meet, and the pilgrim leaves the world behind.</p></div>
+      </div>
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/ggrumedx_journey.pampa.jpeg" alt="Pampa">
+        <div class="num">04</div>
+        <div><span class="stage">Stage 04 of 06 · The still water</span><h3>Pampa</h3><p>The sacred river. A bath of clarity before the climb — the mist rising off the water as the forest listens.</p></div>
+      </div>
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/4kppnmz2_journey.pathinettampadi.jpeg" alt="Pathinettampadi">
+        <div class="num">05</div>
+        <div><span class="stage">Stage 05 of 06 · The eighteen steps</span><h3>Pathinettampadi</h3><p>The eighteen sacred steps. Not a staircase — a ledger of eighteen inner virtues offered at the feet of Ayyappa.</p></div>
+      </div>
+      <div class="journey-item">
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt="Sannidhanam">
+        <div class="num">06</div>
+        <div><span class="stage">Stage 06 of 06 · The arrival</span><h3>Sannidhanam</h3><p>The sanctum. Karpoora aarti, the deep silence of granite, and the recognition — Thathwamasi — thou art That.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Write To Us</div>
+    <div class="section-head">
+      <h2>A letter, a question, a quiet word.</h2>
+      <p style="color:var(--stone);margin-top:14px;">We read every message ourselves. Expect a reply within a few slow, unhurried days.</p>
+    </div>
+    <div class="contact-grid">
+      <form onsubmit="event.preventDefault(); alert('Thank you — your message has been received.'); this.reset();">
+        <div class="form-group"><label for="name">Name</label><input id="name" type="text" required></div>
+        <div class="form-group"><label for="email">Email</label><input id="email" type="email" required></div>
+        <div class="form-group"><label for="msg">Message</label><textarea id="msg" required></textarea></div>
+        <button type="submit" class="cta-btn solid" style="border:none;cursor:pointer;">Send Message</button>
+      </form>
+      <div>
+        <div class="contact-info-item"><div class="lbl">Correspondence</div><div class="val"><a href="mailto:contact@sarvamsabarigireesha.com">contact@sarvamsabarigireesha.com</a></div></div>
+        <div class="contact-info-item"><div class="lbl">Phone</div><div class="val"><a href="tel:+918919462503">+91 89194 62503</a></div></div>
+        <div class="contact-info-item"><div class="lbl">WhatsApp</div><div class="val"><a href="https://wa.me/918919462503" target="_blank" rel="noopener">Chat on WhatsApp</a></div></div>
+        <div class="contact-info-item"><div class="lbl">Sanctum</div><div class="val" style="color:var(--stone);">Address to be added</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <strong>THATHWAMASI</strong>
+        <p>The Digital Home of Sarvam Sabarigireesha<br>Swamiye Sharanam Ayyappa</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sanctum</h4>
+        <a href="#about">About</a>
+        <a href="#community">Community</a>
+        <a href="#blessing">Today's Blessing</a>
+        <a href="#journey">Journey</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#reels">Reels</a>
+        <a href="#videos">Videos</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://wa.me/918919462503" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sarvam Sabarigireesha · All rights reserved. Crafted with devotion.</span>
+      <span class="mantra">Sharanam · THATHWAMASI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const words = ["Swamiye Sharanam Ayyappa","Sabarimala","Pathinettampadi","Sarvam Sabarigireesha","Karpoora Aarti"];
+  const track = document.getElementById('marquee-track');
+  const full = [...words, ...words, ...words, ...words];
+  track.innerHTML = full.map(w => `<span>${w} ✦</span>`).join('');
+</script>
+
+
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <a href="#hero">Home</a>
   <a href="#about">About</a>
@@ -458,9 +915,7 @@ mobile_menu = r"""
 @media(min-width:901px){.mobile-nav{display:none!important;}}
 @media(max-width:600px){.mobile-nav{top:72px;}}
 </style>
-"""
 
-script = r"""
 <script>
 /* =========================
 MERGED SITE JS
@@ -707,35 +1162,6 @@ document.querySelectorAll(".footer-bottom span").forEach(el=>{
   if(el.textContent.includes("2026")) el.textContent = el.textContent.replace("2026",new Date().getFullYear());
 });
 </script>
-"""
 
-# Insert mobile nav + script immediately before body close.
-base = base + mobile_menu + script + "\n</body>\n</html>\n"
-
-# Clean a couple of potential accidental duplicate blank lines and validate basic structure.
-base = re.sub(r"\n{4,}", "\n\n\n", base)
-
-out = Path("/mnt/data/index_merged_thathwamasi.html")
-out.write_text(base, encoding="utf-8")
-
-# Basic sanity checks
-checks = {
-    "single_doctype": base.lower().count("<!doctype html>") == 1,
-    "single_html_open": base.lower().count("<html") == 1,
-    "single_html_close": base.lower().count("</html>") == 1,
-    "single_body_open": base.lower().count("<body>") == 1,
-    "single_body_close": base.lower().count("</body>") == 1,
-    "timings": 'id="timings"' in base,
-    "updates": 'id="updates"' in base,
-    "prasadam": 'id="prasadam"' in base,
-    "blessing_anchor": 'id="blessing"' in base,
-    "language_switch": 'data-lang="te"' in base and 'data-lang="ml"' in base,
-    "no_second_doctype": base.lower().count("<!doctype html>") == 1,
-}
-failed = [k for k,v in checks.items() if not v]
-if failed:
-    raise RuntimeError(f"Validation failed: {failed}")
-
-print(f"Created: {out}")
-print(f"Size: {out.stat().st_size:,} bytes")
-print("Validation:", "PASS" if not failed else failed)
+</body>
+</html>
