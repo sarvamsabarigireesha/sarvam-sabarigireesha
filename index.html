@@ -730,6 +730,23 @@ img, video, iframe{
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Noto+Sans+Kannada:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@300;400;500;600&family=Noto+Sans+Tamil:wght@300;400;500;600&family=Noto+Sans+Telugu:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style id="cms-content-style">
+.cms-section{max-width:1280px;margin:auto;padding:90px 7%;border-top:1px solid var(--line)}
+.cms-head{text-align:center;margin-bottom:35px}
+.cms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cms-card{background:rgba(20,14,8,.72);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s ease}
+.cms-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cms-card img{width:100%;height:210px;object-fit:cover;display:block}
+.cms-card-body{padding:20px}
+.cms-card-type{font:12px Arial,sans-serif;color:var(--gold2);letter-spacing:1.5px;text-transform:uppercase}
+.cms-card h3{margin:7px 0;font-size:24px;font-weight:500}
+.cms-card p{font-size:15px;color:var(--muted);margin:0}
+.cms-empty{color:var(--muted);text-align:center}
+@media(max-width:900px){.cms-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.cms-grid{grid-template-columns:1fr}.cms-section{padding:70px 6%}}
+</style>
+
 </head>
 <body>
 
@@ -1135,6 +1152,16 @@ SOCIAL
       </div>
     </div>
   </div>
+</section>
+
+
+<section class="cms-section" id="latestContent" hidden>
+  <div class="cms-head">
+    <div class="eyebrow">Latest</div>
+    <h2>Latest from Sarvam Sabarigireesha</h2>
+  </div>
+  <div class="cms-grid" id="cmsGrid"></div>
+  <p class="cms-empty" id="cmsEmpty" hidden>No published content yet.</p>
 </section>
 
 <footer>
@@ -1581,6 +1608,57 @@ applyLanguage(savedLang);
 document.querySelectorAll(".footer-bottom span").forEach(el=>{
   if(el.textContent.includes("2026")) el.textContent = el.textContent.replace("2026",new Date().getFullYear());
 });
+
+/* =========================
+   CONTENT CMS
+========================= */
+const CONTENT_API_URL = "PASTE_YOUR_CONTENT_API_URL_HERE";
+
+function escapeHtml_(value){
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[ch]));
+}
+
+async function loadPublishedContent(){
+  const section = document.getElementById("latestContent");
+  const grid = document.getElementById("cmsGrid");
+  const empty = document.getElementById("cmsEmpty");
+
+  if(!section || !grid || CONTENT_API_URL.includes("PASTE_YOUR_")) return;
+
+  try{
+    const response = await fetch(CONTENT_API_URL + "?action=listPublished");
+    const result = await response.json();
+
+    if(!result.ok || !Array.isArray(result.items)) return;
+
+    const items = result.items.slice(0, 12);
+
+    section.hidden = false;
+
+    if(!items.length){
+      empty.hidden = false;
+      return;
+    }
+
+    grid.innerHTML = items.map(item => `
+      <article class="cms-card">
+        ${item.image ? `<img src="${escapeHtml_(item.image)}" alt="${escapeHtml_(item.title)}" loading="lazy">` : ""}
+        <div class="cms-card-body">
+          <div class="cms-card-type">${escapeHtml_(item.type || "Update")}</div>
+          <h3>${escapeHtml_(item.title || "")}</h3>
+          <p>${escapeHtml_(item.description || "")}</p>
+        </div>
+      </article>
+    `).join("");
+  }catch(err){
+    console.warn("CMS unavailable:", err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadPublishedContent);
+
 </script>
 
 </body>
