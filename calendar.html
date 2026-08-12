@@ -570,6 +570,14 @@ VERY SMALL
       <button class="btn gold" onclick="scrollToMonth(1)">
         NEXT
       </button>
+
+      <button class="btn" onclick="downloadCalendarICS()" id="downloadBtn">
+        ⬇ DOWNLOAD
+      </button>
+
+      <button class="btn" onclick="shareCalendar()" id="shareBtn">
+        ⤴ SHARE
+      </button>
     </div>
 
   </div>
@@ -913,6 +921,90 @@ function scrollToMonth(direction){
 
   }
 
+}
+
+
+/* =====================================================
+   DOWNLOAD AS CALENDAR FILE (.ics)
+   One-click — opens directly in Google/Apple/Outlook Calendar
+   ===================================================== */
+
+function pad2(n){
+  return String(n).padStart(2,"0");
+}
+
+function buildICS(){
+  const lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Sarvam Sabarigireesha//Sabarimala Calendar 2026//EN",
+    "CALSCALE:GREGORIAN",
+    "X-WR-CALNAME:Sabarimala 2026 Calendar - Sarvam Sabarigireesha",
+    "X-WR-TIMEZONE:Asia/Kolkata"
+  ];
+
+  calendarData.forEach(monthData=>{
+    monthData.events.forEach(([day,title])=>{
+      const dateStr = `2026${pad2(monthData.month+1)}${pad2(Number(day))}`;
+      const uid = `${dateStr}-${monthData.month}-${day}-sarvamsabarigireesha@sarvamsabarigireesha.com`;
+      lines.push(
+        "BEGIN:VEVENT",
+        `UID:${uid}`,
+        `DTSTAMP:${dateStr}T000000Z`,
+        `DTSTART;VALUE=DATE:${dateStr}`,
+        `SUMMARY:${title.replace(/,/g,"\\,")}`,
+        "DESCRIPTION:Sabarimala 2026 sacred date — Sarvam Sabarigireesha",
+        "END:VEVENT"
+      );
+    });
+  });
+
+  lines.push("END:VCALENDAR");
+  return lines.join("\r\n");
+}
+
+function downloadCalendarICS(){
+  const icsContent = buildICS();
+  const blob = new Blob([icsContent], {type:"text/calendar;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Sabarimala-2026-Calendar.ics";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+
+/* =====================================================
+   SHARE — native share sheet with clipboard fallback
+   ===================================================== */
+
+async function shareCalendar(){
+  const shareData = {
+    title:"Sabarimala 2026 Calendar",
+    text:"Sacred dates, Uthiram, Sreekovil openings and Mandala Pooja — Sabarimala 2026 Calendar from Sarvam Sabarigireesha.",
+    url: window.location.href
+  };
+
+  if(navigator.share){
+    try{
+      await navigator.share(shareData);
+    }catch(err){
+      /* user cancelled share — no action needed */
+    }
+  } else {
+    try{
+      await navigator.clipboard.writeText(shareData.url);
+      const btn = document.getElementById("shareBtn");
+      const original = btn.textContent;
+      btn.textContent = "✓ LINK COPIED";
+      setTimeout(()=>{ btn.textContent = original; }, 2000);
+    }catch(err){
+      alert(shareData.url);
+    }
+  }
 }
 
 </script>
