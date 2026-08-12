@@ -454,6 +454,282 @@ MERGED FEATURES
 }
 
 </style>
+
+<style id="final-responsive-fix">
+/* ===== FINAL RESPONSIVE / MULTI-LANGUAGE LAYOUT FIX ===== */
+
+/* Keep every section inside the viewport instead of letting navigation force
+   the page wider than the browser. */
+html, body { max-width:100%; overflow-x:hidden; }
+*, *::before, *::after { box-sizing:border-box; }
+
+.site-topbar{
+  height:32px;
+  padding:0 18px;
+  overflow:hidden;
+}
+
+header.site-header, header{
+  top:32px;
+  width:100%;
+}
+
+.nav-row{
+  width:100%;
+  max-width:none;
+  padding:14px 24px;
+  gap:18px;
+}
+
+.brand{
+  flex:0 0 auto;
+  min-width:220px;
+}
+
+nav.links{
+  flex:1 1 auto;
+  min-width:0;
+  justify-content:flex-end;
+  gap:clamp(12px,1.25vw,22px);
+  font-size:clamp(.68rem,.72vw,.82rem);
+}
+
+nav.links a{
+  white-space:nowrap;
+}
+
+header > .nav-row > .cta-btn{
+  flex:0 0 auto;
+  white-space:nowrap;
+  padding:9px 16px;
+  font-size:.72rem;
+}
+
+/* Desktop hero: center the content vertically so translations don't get
+   pushed below the viewport. */
+.hero{
+  min-height:100svh;
+  height:auto;
+  align-items:center;
+  padding:150px 24px 80px;
+}
+
+.hero-inner{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+}
+
+.hero h1{
+  font-size:clamp(2.55rem,5.2vw,4.6rem);
+  line-height:1.02;
+  overflow-wrap:anywhere;
+}
+
+.hero p.lede{
+  width:100%;
+  max-width:760px;
+}
+
+/* Indic-script fonts: prevent Telugu/Hindi/Malayalam/Kannada/Tamil from
+   becoming oversized and clipping the hero. */
+html[lang="te"] .hero-inner,
+html[lang="hi"] .hero-inner,
+html[lang="ml"] .hero-inner,
+html[lang="kn"] .hero-inner,
+html[lang="ta"] .hero-inner{
+  font-family:"Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Malayalam",
+               "Noto Sans Kannada","Noto Sans Tamil",var(--sans),sans-serif;
+}
+
+html[lang="te"] .hero h1,
+html[lang="hi"] .hero h1,
+html[lang="ml"] .hero h1,
+html[lang="kn"] .hero h1,
+html[lang="ta"] .hero h1{
+  font-size:clamp(2.15rem,4.7vw,4rem);
+  line-height:1.16;
+  letter-spacing:0;
+}
+
+html[lang="te"] .hero p,
+html[lang="hi"] .hero p,
+html[lang="ml"] .hero p,
+html[lang="kn"] .hero p,
+html[lang="ta"] .hero p{
+  line-height:1.7;
+}
+
+/* Sections never create horizontal overflow. */
+.wrap{
+  width:100%;
+  max-width:1180px;
+}
+
+section{
+  width:100%;
+  overflow:hidden;
+}
+
+img, video, iframe{
+  max-width:100%;
+}
+
+/* Medium desktop/tablet: switch to a clean hamburger before the nav starts
+   colliding. */
+@media (max-width:1200px){
+  .nav-row{padding:13px 20px;}
+  .brand{min-width:200px;}
+  nav.links{gap:13px;font-size:.68rem;}
+  header > .nav-row > .cta-btn{display:none;}
+}
+
+@media (max-width:1100px){
+  nav.links{display:none !important;}
+  header > .nav-row > .cta-btn{display:none;}
+  .menu-toggle{display:block !important;margin-left:auto;}
+  .nav-row{padding:12px 18px;}
+  .hero{padding-top:145px;}
+}
+
+/* Mobile menu must sit below BOTH the language bar and header. */
+@media (max-width:900px){
+  .mobile-nav{
+    top:104px !important;
+    max-height:calc(100svh - 118px);
+    overflow-y:auto;
+  }
+  .hero{
+    min-height:calc(100svh - 32px);
+    padding:132px 20px 60px;
+  }
+  .hero-inner{max-width:720px;}
+  .hero h1{
+    font-size:clamp(2.3rem,8.5vw,4rem);
+  }
+  .hero-ctas .cta-btn{width:auto;}
+}
+
+@media (max-width:600px){
+  .site-topbar{
+    height:30px;
+    padding:0 8px;
+    justify-content:center;
+  }
+  .site-topbar .lang-switch{gap:3px;}
+  .site-topbar button{
+    padding:3px 6px;
+    font-size:9px;
+  }
+
+  header.site-header, header{top:30px;}
+  .nav-row{
+    min-height:68px;
+    padding:9px 14px;
+  }
+  .brand{min-width:0;gap:9px;}
+  .brand-mark{width:42px;height:42px;}
+  .brand-text strong{font-size:1rem;}
+  .brand-text span{font-size:.62rem;}
+
+  .mobile-nav{
+    top:98px !important;
+    left:10px;
+    right:10px;
+  }
+
+  .hero{
+    min-height:calc(100svh - 30px);
+    padding:118px 16px 48px;
+  }
+
+  .hero-kicker{font-size:.64rem;letter-spacing:.12em;}
+  .hero h1{
+    font-size:clamp(2rem,10vw,3.2rem);
+    line-height:1.12;
+    margin:12px 0 18px;
+  }
+  .hero p.lede{
+    font-size:.92rem;
+    line-height:1.65;
+    margin-bottom:24px;
+  }
+  .hero-ctas{
+    margin-bottom:20px;
+    gap:10px;
+  }
+  .hero-ctas .cta-btn{
+    width:100%;
+  }
+
+  section{padding:78px 0;}
+  .wrap{padding:0 16px;}
+
+  .about-grid,.pledge,.contact-grid,
+  .info-grid,.lottery-wrap{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .about-cards,
+  .stat-grid,
+  .card-row,
+  .gallery-grid,
+  .update-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .journey-item{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  .journey-item img{height:190px;}
+
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+
+@media (max-width:420px){
+  .site-topbar button{
+    padding:3px 5px;
+    font-size:8px;
+  }
+
+  .hero{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .hero h1{
+    font-size:clamp(1.8rem,9.5vw,2.7rem);
+  }
+
+  html[lang="te"] .hero h1,
+  html[lang="hi"] .hero h1,
+  html[lang="ml"] .hero h1,
+  html[lang="kn"] .hero h1,
+  html[lang="ta"] .hero h1{
+    font-size:clamp(1.75rem,8.8vw,2.65rem);
+  }
+
+  .about-cards,
+  .stat-grid,
+  .card-row,
+  .gallery-grid,
+  .update-grid,
+  .footer-top{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Don't let long translated words break cards or navigation. */
+[data-i18n], .section-head, .info-card, .update-card,
+.about-copy, .pledge, .contact-grid, footer{
+  overflow-wrap:anywhere;
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600&family=Noto+Sans+Kannada:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@300;400;500;600&family=Noto+Sans+Tamil:wght@300;400;500;600&family=Noto+Sans+Telugu:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
