@@ -869,9 +869,9 @@ SOCIAL
 </footer>
 
 <script>
-  const words = ["Swamiye Sharanam Ayyappa","Sabarimala","Pathinettampadi","Sarvam Sabarigireesha","Karpoora Aarti"];
+  const marqueeWords = ["Swamiye Sharanam Ayyappa","Sabarimala","Pathinettampadi","Sarvam Sabarigireesha","Karpoora Aarti"];
   const track = document.getElementById('marquee-track');
-  const full = [...words, ...words, ...words, ...words];
+  const full = [...marqueeWords, ...marqueeWords, ...marqueeWords, ...marqueeWords];
   track.innerHTML = full.map(w => `<span>${w} ✦</span>`).join('');
 </script>
 
@@ -1151,10 +1151,16 @@ function applyLanguage(lang){
   try{ localStorage.setItem("ss_language",lang); }catch(e){}
 }
 document.querySelectorAll(".lang-switch button").forEach(btn=>{
-  btn.addEventListener("click",()=>applyLanguage(btn.dataset.lang));
+  btn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    applyLanguage(btn.dataset.lang);
+  });
 });
 let savedLang = "en";
-try{ savedLang = localStorage.getItem("ss_language") || "en"; }catch(e){}
+try{
+  const stored = localStorage.getItem("ss_language");
+  if(["en","te","hi","ml","kn","ta"].includes(stored)) savedLang = stored;
+}catch(e){}
 applyLanguage(savedLang);
 
 /* Dynamic copyright year */
