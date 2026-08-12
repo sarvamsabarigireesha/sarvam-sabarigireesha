@@ -253,7 +253,8 @@ MERGED FEATURES
   height:32px;
   display:flex;
   align-items:center;
-  justify-content:flex-end;
+  justify-content:space-between;
+  gap:20px;
   padding:0 34px;
   background:rgba(5,18,13,.94);
   border-bottom:1px solid rgba(230,197,131,.10);
@@ -261,6 +262,18 @@ MERGED FEATURES
   letter-spacing:.08em;
   color:var(--stone);
 }
+.notice-ticker{display:flex;align-items:center;gap:12px;flex:1;min-width:0;overflow:hidden;}
+.notice-label{
+  flex-shrink:0;color:var(--bg-deep);background:var(--gold);
+  padding:3px 10px;border-radius:999px;font:10px Inter,Arial,sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+}
+.notice-track-wrap{flex:1;overflow:hidden;white-space:nowrap;position:relative;}
+.notice-track{display:inline-flex;gap:56px;animation:notice-scroll 38s linear infinite;padding-left:100%;}
+.notice-track span{color:var(--stone);font:11px Inter,Arial,sans-serif;letter-spacing:.02em;text-transform:none;}
+@keyframes notice-scroll{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+@media(prefers-reduced-motion: reduce){.notice-track{animation:none;padding-left:0;}}
+@media(max-width:900px){.notice-ticker{display:none;}.site-topbar{justify-content:center;}}
 .site-topbar .lang-switch{
   display:flex;
   gap:5px;
@@ -751,6 +764,12 @@ img, video, iframe{
 <body>
 
 <div class="site-topbar">
+  <div class="notice-ticker" aria-label="Official notices">
+    <span class="notice-label" data-i18n="notice_label">Notices</span>
+    <div class="notice-track-wrap">
+      <div class="notice-track" id="noticeTrack"></div>
+    </div>
+  </div>
   <div class="lang-switch" aria-label="Language selector">
     <button type="button" data-lang="en" class="active">EN</button>
     <button type="button" data-lang="te">తెలుగు</button>
@@ -1265,6 +1284,19 @@ if(mergedTrack){
   mergedTrack.innerHTML = full.map(w => `<span>${w} ✦</span>`).join("");
 }
 
+/* Official notices ticker — edit this list to publish current announcements */
+const officialNotices = [
+  "Mandala Kalam Vratham begins soon — devotees may register for the 41-day observance.",
+  "Ayyappa Prasadam registration is open. Submit your details in the Prasadam section below.",
+  "Makaravilakku travel and darshan notices will be published here as they are confirmed.",
+  "Website content, timings and updates are managed by the Sarvam Sabarigireesha team."
+];
+const noticeTrack = document.getElementById("noticeTrack");
+if(noticeTrack){
+  const doubled = [...officialNotices, ...officialNotices];
+  noticeTrack.innerHTML = doubled.map(n => `<span>📢 ${n}</span>`).join("");
+}
+
 /* Mobile navigation */
 const menuToggle = document.getElementById("menuToggle");
 const mobileNav = document.getElementById("mobileNav");
@@ -1383,7 +1415,7 @@ if(prasadamForm){
 /* Lightweight language layer for the merged operational UI */
 const i18n = {
   en:{
-  nav_home:"Home",nav_about:"About",nav_community:"Community",nav_reels:"Reels",nav_videos:"Videos",nav_gallery:"Gallery",nav_journey:"Journey",nav_calendar:"Calendar",nav_join:"Join the Community",brand_subtitle:"The Digital Home of Sarvam Sabarigireesha",menu_open:"Open menu",
+  nav_home:"Home",nav_about:"About",nav_community:"Community",nav_reels:"Reels",nav_videos:"Videos",nav_gallery:"Gallery",nav_journey:"Journey",nav_calendar:"Calendar",nav_join:"Join the Community",brand_subtitle:"The Digital Home of Sarvam Sabarigireesha",menu_open:"Open menu",notice_label:"Notices",
     nav_timings:"Darshan",nav_updates:"Updates",nav_prasadam:"Prasadam",nav_contact:"Contact",
     hero_kicker:"Sarvam Sabarigireesha · Est. Anantam",
     hero_line1:"Pathinettampadi · The Eighteen Steps",
