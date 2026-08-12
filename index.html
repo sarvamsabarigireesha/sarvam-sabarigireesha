@@ -927,10 +927,10 @@ const words = [
   "Sarvam Sabarigireesha",
   "Karpoora Aarti"
 ];
-const track = document.getElementById("marquee-track");
-if(track){
+const mergedTrack = document.getElementById("marquee-track");
+if(mergedTrack){
   const full = [...words,...words,...words,...words];
-  track.innerHTML = full.map(w => `<span>${w} ✦</span>`).join("");
+  mergedTrack.innerHTML = full.map(w => `<span>${w} ✦</span>`).join("");
 }
 
 /* Mobile navigation */
