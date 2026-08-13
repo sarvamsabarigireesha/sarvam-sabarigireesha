@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devotee Dashboard — THATHWAMASI</title>
+<meta name="description" content="Book darshan and seva, track your vratham, and offer to the temple — the devotee dashboard of Sarvam Sabarigireesha.">
+<meta name="theme-color" content="#0F2E23">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#0F2E23; --bg-black:#081A14; --bg-panel:#153328;
+  --gold:#C9A15C; --gold-bright:#E6C583;
+  --ink:#F3EFE6; --stone:#A9B8AE;
+  --line: rgba(230,197,131,0.18);
+  --ok:#5DAE7E; --warn:#D9A24C;
+  --serif: 'Fraunces', serif; --sans: 'Inter', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg-black); color:var(--ink); font-family:var(--sans); font-weight:300; line-height:1.6;}
+h1,h2,h3{font-family:var(--serif); font-weight:450; letter-spacing:-0.01em;}
+.sc{font-family:var(--sans); letter-spacing:0.14em; text-transform:uppercase; font-size:.72rem; color:var(--gold);}
+a{color:inherit; text-decoration:none;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 4vw;}
+
+/* Top strip */
+.topstrip{background:var(--bg-black); border-bottom:1px solid var(--line); padding:8px 4vw; display:flex; justify-content:space-between; font-size:.72rem; letter-spacing:.04em; color:var(--stone);}
+.topstrip a{opacity:.85;} .topstrip a:hover{color:var(--gold-bright);}
+.topstrip .right{display:flex; gap:20px;}
+
+/* Header */
+header{background:var(--bg-deep); padding:20px 4vw; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); flex-wrap:wrap; gap:16px;}
+.brand{display:flex; align-items:center; gap:14px;}
+.brand-mark{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--gold) 60%, #8a6b32 100%);flex-shrink:0;}
+.brand .name{font-size:.72rem; color:var(--stone);}
+.brand .name strong{display:block; font-family:var(--serif); font-size:1.05rem; color:var(--gold-bright); font-weight:600; margin-bottom:2px;}
+.navlinks{display:flex; gap:28px; font-size:.85rem;}
+.navlinks a{color:var(--stone); padding:6px 0; border-bottom:2px solid transparent; transition:color .2s;}
+.navlinks a:hover, .navlinks a.active{color:var(--gold-bright); border-color:var(--gold);}
+.login-btn{background:var(--gold); color:var(--bg-black); padding:10px 22px; font-size:.78rem; letter-spacing:.03em; border-radius:999px; font-weight:600; transition:background .2s;}
+.login-btn:hover{background:var(--gold-bright);}
+@media(max-width:900px){.navlinks{display:none;}}
+
+/* Ticker */
+.ticker{background:#0a1f18; border-bottom:1px solid var(--line); padding:10px 4vw; display:flex; align-items:center; gap:16px; overflow:hidden;}
+.ticker .tag{background:var(--gold); color:var(--bg-black); font-size:.68rem; letter-spacing:.1em; padding:4px 10px; border-radius:999px; white-space:nowrap; font-weight:600; text-transform:uppercase;}
+.ticker-track{white-space:nowrap; animation:scroll-left 28s linear infinite; font-size:.85rem; color:var(--stone);}
+.ticker-track span{margin-right:60px;}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@media(prefers-reduced-motion: reduce){.ticker-track{animation:none;}}
+
+/* Hero band */
+.heroband{padding:46px 0 10px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;}
+.heroband h1{font-size:clamp(1.8rem,3.4vw,2.4rem); color:var(--ink);}
+.heroband p{color:var(--stone); margin-top:8px; font-size:.95rem; max-width:50ch;}
+.quick-stats{display:flex; gap:14px; flex-wrap:wrap;}
+.qs{background:var(--bg-panel); border:1px solid var(--line); padding:12px 18px; border-radius:6px; min-width:120px;}
+.qs .n{font-family:var(--serif); font-size:1.4rem; color:var(--gold-bright);}
+.qs .l{font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--stone);}
+
+/* Section label */
+.section-label{display:flex; align-items:center; gap:14px; margin:54px 0 24px;}
+.section-label h2{font-size:1.6rem;}
+.section-label .rule{flex:1; height:1px; background:var(--line);}
+
+/* Service grid */
+.service-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+@media(max-width:980px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.service-grid{grid-template-columns:1fr;}}
+.card{background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:12px; transition:border-color .3s, transform .3s;}
+.card:hover{border-color:var(--gold); transform:translateY(-3px);}
+.card .icon{width:44px; height:44px; border-radius:50%; background:rgba(201,161,92,.12); display:flex; align-items:center; justify-content:center; color:var(--gold-bright); font-size:1.3rem;}
+.card h3{font-size:1.15rem; color:var(--ink);}
+.card p{font-size:.84rem; color:var(--stone); line-height:1.55; flex:1;}
+.card .status{font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; display:flex; align-items:center; gap:6px; color:var(--stone);}
+.dot{width:7px; height:7px; border-radius:50%;}
+.dot.ok{background:var(--ok);} .dot.warn{background:var(--warn);}
+.card .cta{margin-top:6px; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--gold); text-align:center; padding:10px; border-radius:999px; transition:background .3s;}
+.card .cta:hover{background:var(--gold); color:var(--bg-black);}
+
+/* Booking panel */
+.booking-panel{margin-top:20px; background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+.tabs{display:flex; border-bottom:1px solid var(--line); overflow-x:auto;}
+.tab{padding:16px 26px; font-size:.82rem; letter-spacing:.04em; white-space:nowrap; cursor:pointer; opacity:.7; border-bottom:2px solid transparent; color:var(--stone);}
+.tab.active{opacity:1; color:var(--gold-bright); border-color:var(--gold); background:rgba(201,161,92,.06);}
+.tab-body{padding:30px;}
+.form-row{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:20px;}
+@media(max-width:700px){.form-row{grid-template-columns:1fr;}}
+.field label{display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px;}
+.field select, .field input{width:100%; background:var(--bg-black); border:1px solid var(--line); color:var(--ink); padding:12px 14px; border-radius:5px; font-family:var(--sans); font-size:.9rem;}
+.field select:focus, .field input:focus{outline:none; border-color:var(--gold);}
+.avail-strip{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0;}
+.slot{padding:9px 16px; border:1px solid var(--line); border-radius:999px; font-size:.78rem; cursor:pointer; color:var(--stone);}
+.slot.full{opacity:.35; text-decoration:line-through; cursor:not-allowed;}
+.slot.open:hover, .slot.selected{border-color:var(--gold); color:var(--gold-bright); background:rgba(201,161,92,.08);}
+.book-btn{margin-top:10px; background:var(--gold); color:var(--bg-black); padding:14px 34px; border-radius:999px; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600; border:none; cursor:pointer; transition:background .2s;}
+.book-btn:hover{background:var(--gold-bright);}
+
+/* Donation panel */
+.donate-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:30px; margin-top:20px;}
+@media(max-width:900px){.donate-grid{grid-template-columns:1fr;}}
+.donate-panel{background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:30px;}
+.amt-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:16px 0 20px;}
+@media(max-width:560px){.amt-grid{grid-template-columns:repeat(2,1fr);}}
+.amt{padding:14px 6px; text-align:center; border:1px solid var(--line); border-radius:6px; font-size:.9rem; cursor:pointer; color:var(--ink);}
+.amt:hover, .amt.selected{border-color:var(--gold); color:var(--gold-bright); background:rgba(201,161,92,.08);}
+.scheme-list{display:flex; flex-direction:column; gap:14px;}
+.scheme{display:flex; justify-content:space-between; align-items:center; background:var(--bg-black); border:1px solid var(--line); border-radius:6px; padding:16px 18px;}
+.scheme .t{font-size:.9rem; color:var(--ink);}
+.scheme .d{font-size:.72rem; color:var(--stone); margin-top:3px;}
+.scheme a{font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--gold); padding:8px 16px; border-radius:999px; white-space:nowrap;}
+
+/* Live darshan */
+.live-box{position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,#0c241c,#173a2b); border:1px solid var(--line); border-radius:8px; display:flex; align-items:center; justify-content:center; overflow:hidden;}
+.live-box .badge{position:absolute; top:14px; left:14px; background:#B3261E; color:#fff; font-size:.68rem; letter-spacing:.08em; padding:5px 10px; border-radius:999px; display:flex; align-items:center; gap:6px; text-transform:uppercase;}
+.badge .pulse{width:7px; height:7px; border-radius:50%; background:#fff; animation:blink 1.4s infinite;}
+@keyframes blink{50%{opacity:.2;}}
+.live-box .playbtn{width:64px; height:64px; border-radius:50%; border:2px solid var(--gold-bright); display:flex; align-items:center; justify-content:center; color:var(--gold-bright); font-size:1.4rem;}
+
+footer{margin-top:70px; border-top:1px solid var(--line); padding:36px 4vw; text-align:center; color:var(--stone); font-size:.8rem;}
+footer .mantra{font-family:var(--serif); font-style:italic; color:var(--gold-bright); margin-bottom:10px; font-size:1.05rem;}
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div>Swamiye Sharanam Ayyappa</div>
+  <div class="right">
+    <a href="/">← Back to THATHWAMASI</a><a href="mailto:contact@sarvamsabarigireesha.com">Help</a><a href="#" id="langBtn">Telugu / English</a>
+  </div>
+</div>
+
+<header>
+  <a href="/" class="brand">
+    <div class="brand-mark"></div>
+    <div class="name"><strong>THATHWAMASI</strong>Devotee Services Dashboard</div>
+  </a>
+  <div class="navlinks">
+    <a href="/" >Home</a>
+    <a href="#" class="active">Dashboard</a>
+    <a href="#booking">Darshan &amp; Seva</a>
+    <a href="#donate">Donations</a>
+    <a href="#live">Live Darshan</a>
+  </div>
+  <a href="#" class="login-btn">Devotee Login</a>
+</header>
+
+<div class="ticker">
+  <div class="tag">Notice</div>
+  <div class="ticker-track" id="dashTicker"></div>
+</div>
+
+<div class="wrap">
+
+  <div class="heroband">
+    <div>
+      <h1>Namaskaram, Devotee.</h1>
+      <p>Book your darshan and seva, track your vratham, and offer to the temple — all from one quiet place.</p>
+    </div>
+    <div class="quick-stats">
+      <div class="qs"><div class="n">3</div><div class="l">Open Slots Today</div></div>
+      <div class="qs"><div class="n">41</div><div class="l">Vratham Day</div></div>
+      <div class="qs"><div class="n">2</div><div class="l">Active Bookings</div></div>
+    </div>
+  </div>
+
+  <div class="section-label"><h2>Devotee Services</h2><div class="rule"></div></div>
+  <div class="service-grid">
+    <div class="card">
+      <div class="icon">◈</div>
+      <h3>Darshan Booking</h3>
+      <p>Reserve your slot for Sannidhanam darshan on your chosen date.</p>
+      <div class="status"><span class="dot ok"></span>Slots open</div>
+      <a href="#booking" class="cta">Book Darshan</a>
+    </div>
+    <div class="card">
+      <div class="icon">🔥</div>
+      <h3>Seva Booking</h3>
+      <p>Karpoora Aarti, Neyyabhishekam and other sevas, by appointment.</p>
+      <div class="status"><span class="dot ok"></span>Slots open</div>
+      <a href="#booking" class="cta">Book Seva</a>
+    </div>
+    <div class="card">
+      <div class="icon">🏠</div>
+      <h3>Accommodation</h3>
+      <p>Rest houses near Pampa and Sannidhanam for the vratham period.</p>
+      <div class="status"><span class="dot warn"></span>Limited</div>
+      <a href="#" class="cta">Check Availability</a>
+    </div>
+    <div class="card">
+      <div class="icon">📍</div>
+      <h3>Annadanam Seva</h3>
+      <p>Sponsor a meal offering for pilgrims on the day of your choosing.</p>
+      <div class="status"><span class="dot ok"></span>Slots open</div>
+      <a href="#" class="cta">Sponsor a Day</a>
+    </div>
+  </div>
+
+  <div class="section-label" id="booking"><h2>Book Darshan &amp; Seva</h2><div class="rule"></div></div>
+  <div class="booking-panel">
+    <div class="tabs">
+      <div class="tab active">Darshan</div>
+      <div class="tab">Karpoora Aarti</div>
+      <div class="tab">Neyyabhishekam</div>
+      <div class="tab">Annadanam</div>
+    </div>
+    <div class="tab-body">
+      <div class="form-row">
+        <div class="field"><label>Devotee Name</label><input type="text" placeholder="Full name as per ID"></div>
+        <div class="field"><label>Mobile Number</label><input type="tel" placeholder="+91"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label>Preferred Date</label><input type="date"></div>
+        <div class="field"><label>Number of Devotees</label><input type="number" min="1" value="1"></div>
+      </div>
+      <label style="display:block; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Available Slots</label>
+      <div class="avail-strip">
+        <div class="slot open selected">6:00 – 7:00 AM</div>
+        <div class="slot open">7:00 – 8:00 AM</div>
+        <div class="slot full">8:00 – 9:00 AM</div>
+        <div class="slot open">9:00 – 10:00 AM</div>
+        <div class="slot full">4:00 – 5:00 PM</div>
+        <div class="slot open">5:00 – 6:00 PM</div>
+      </div>
+      <button class="book-btn">Confirm Booking</button>
+    </div>
+  </div>
+
+  <div class="section-label" id="donate"><h2>Donations &amp; Seva Schemes</h2><div class="rule"></div></div>
+  <div class="donate-grid">
+    <div class="donate-panel">
+      <h3 style="font-size:1.1rem; margin-bottom:6px;">Offer to the Temple</h3>
+      <p style="color:var(--stone); font-size:.85rem;">Every offering supports the lamp, the sanctum, and the seva of fellow pilgrims.</p>
+      <div class="amt-grid">
+        <div class="amt">₹101</div><div class="amt selected">₹501</div><div class="amt">₹1,001</div><div class="amt">Other</div>
+      </div>
+      <div class="field" style="margin-bottom:16px;"><label>Devotee Name</label><input type="text" placeholder="For the receipt"></div>
+      <button class="book-btn">Proceed to Offer</button>
+    </div>
+    <div class="scheme-list">
+      <div class="scheme"><div><div class="t">Nithya Deepam</div><div class="d">Sponsor the sanctum lamp for a day</div></div><a href="#">Offer</a></div>
+      <div class="scheme"><div><div class="t">Anna Prasadam Trust</div><div class="d">Fund meals for pilgrims on vratham</div></div><a href="#">Offer</a></div>
+      <div class="scheme"><div><div class="t">Path Renovation Fund</div><div class="d">Support the upkeep of Pathinettampadi</div></div><a href="#">Offer</a></div>
+      <div class="scheme"><div><div class="t">General Hundi</div><div class="d">Open offering to Lord Ayyappa</div></div><a href="#">Offer</a></div>
+    </div>
+  </div>
+
+  <div class="section-label" id="live"><h2>Live Darshan</h2><div class="rule"></div></div>
+  <div class="live-box">
+    <div class="badge"><span class="pulse"></span>LIVE</div>
+    <div class="playbtn">▶</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="mantra">Swamiye Sharanam Ayyappa</div>
+  Sarvam Sabarigireesha · Devotee Services Dashboard · For seva and support, reach us on WhatsApp <a href="https://wa.me/918919462503" style="color:var(--gold-bright);">+91 89194 62503</a>
+</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+}));
+document.querySelectorAll('.slot.open').forEach(s=>s.addEventListener('click',()=>{
+  document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));
+  s.classList.add('selected');
+}));
+document.querySelectorAll('.amt').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelectorAll('.amt').forEach(x=>x.classList.remove('selected'));
+  a.classList.add('selected');
+}));
+
+const dashNotices = [
+  "Vratham registrations for this Mandalam are now open — enrol before the 10th.",
+  "Karpoora Aarti seva slots for this weekend are filling fast.",
+  "Annadanam seva bookings open for the upcoming Pooja week."
+];
+const dt = document.getElementById('dashTicker');
+if(dt){
+  const doubled = [...dashNotices, ...dashNotices];
+  dt.innerHTML = doubled.map(n => `<span>${n}</span>`).join('');
+}
+</script>
+
+</body>
+</html>
