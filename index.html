@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Noto+Serif+Telugu:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Serif+Tamil:wght@600;700&family=Noto+Serif+Kannada:wght@600;700&family=Noto+Serif+Malayalam:wght@600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#0F2E23; --green-deep:#0A1F17; --green-panel:#153328;
-  --saffron:#D9791E; --gold:#C9A227; --gold-bright:#E6C583;
-  --maroon:#6B1E23; --cream:#F7F2E7; --ink:#1E1A12;
-  --stone:#5A5346; --line:#E4D9BF;
+  --green:#009B4D; --green-deep:#00753A; --green-panel:#00B85C;
+  --saffron:#FFCC00; --gold:#E6B800; --gold-bright:#FFE066;
+  --maroon:#C1272D; --cream:#FAF5E9; --ink:#22301F;
+  --stone:#5C6B57; --line:#E4DEC8;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -25,18 +25,18 @@ img{max-width:100%;display:block;}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
 
 /* Utility bar */
-.utility-bar{background:var(--green-deep);color:#cfd9d2;font-size:.75rem;padding:6px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.utility-bar{background:var(--green-deep);color:#F6E3D6;font-size:.75rem;padding:6px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
 .utility-bar a{opacity:.85;}
 .utility-left{display:flex;gap:16px;flex-wrap:wrap;}
 .lang-switch{display:flex;gap:4px;}
-.lang-switch button{background:transparent;border:1px solid rgba(207,217,210,.3);color:#cfd9d2;padding:2px 9px;border-radius:12px;font-size:.7rem;cursor:pointer;}
+.lang-switch button{background:transparent;border:1px solid rgba(246,227,214,.35);color:#F6E3D6;padding:2px 9px;border-radius:12px;font-size:.7rem;cursor:pointer;}
 .lang-switch button.active,.lang-switch button:hover{background:var(--saffron);border-color:var(--saffron);color:#fff;}
 
 /* Ticker */
 .ticker-bar{background:var(--maroon);color:#fff;display:flex;align-items:center;overflow:hidden;}
-.ticker-label{background:var(--saffron);color:#1E1A12;font-weight:700;font-size:.72rem;letter-spacing:.05em;padding:8px 16px;flex-shrink:0;text-transform:uppercase;}
-.ticker-track{white-space:nowrap;padding:8px 0;animation:tick 28s linear infinite;font-size:.82rem;}
-.ticker-track span{margin-right:60px;}
+.ticker-label{background:var(--saffron);color:#1E1A12;font-weight:700;font-size:.72rem;letter-spacing:.05em;padding:8px 16px;flex-shrink:0;text-transform:uppercase;position:relative;z-index:2;box-shadow:4px 0 8px rgba(0,0,0,.15);}
+.ticker-track{white-space:nowrap;padding:8px 0;animation:tick 28s linear infinite;font-size:.82rem;position:relative;z-index:1;}
+.ticker-gap{display:inline-block;width:70px;}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* Header */
@@ -45,8 +45,8 @@ header{background:var(--green);position:sticky;top:0;z-index:100;box-shadow:0 2p
 .brand{display:flex;align-items:center;gap:12px;}
 .brand-mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--saffron) 70%);border:2px solid var(--gold);flex-shrink:0;}
 .brand-text strong{display:block;color:var(--gold-bright);font-size:1.05rem;}
-.brand-text span{display:block;color:#cfd9d2;font-size:.7rem;}
-nav.links{display:none;gap:20px;font-size:.85rem;color:#e3e8e4;}
+.brand-text span{display:block;color:#F6E3D6;font-size:.7rem;}
+nav.links{display:none;gap:20px;font-size:.85rem;color:#FBEFE2;}
 @media(min-width:960px){nav.links{display:flex;}}
 nav.links a{padding:6px 0;transition:.2s;}
 nav.links a:hover{color:var(--gold-bright);}
@@ -54,24 +54,24 @@ nav.links a:hover{color:var(--gold-bright);}
 @media(min-width:960px){.menu-toggle{display:none;}}
 .mobile-menu{display:none;flex-direction:column;background:var(--green-deep);padding:14px 24px;gap:10px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu a{color:#e3e8e4;font-size:.9rem;padding:6px 0;}
+.mobile-menu a{color:#FBEFE2;font-size:.9rem;padding:6px 0;}
 
 /* Hero — banner style, not full poetic bleed */
-.hero{position:relative;background:linear-gradient(180deg, rgba(10,31,23,.75), rgba(10,31,23,.88)), url('https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/839jot75_WhatsApp%20Image%202026-07-23%20at%2011.08.35%20AM.jpeg') center/cover;padding:56px 24px 0;color:#fff;}
+.hero{position:relative;background:linear-gradient(180deg, rgba(0,58,29,.72), rgba(0,58,29,.85)), url('https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/839jot75_WhatsApp%20Image%202026-07-23%20at%2011.08.35%20AM.jpeg') center/cover;padding:56px 24px 0;color:#fff;}
 .hero-inner{max-width:1180px;margin:0 auto;text-align:center;padding-bottom:50px;}
 .hero-kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:14px;}
 .hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);margin-bottom:14px;color:#fff;}
-.hero p{max-width:640px;margin:0 auto 26px;color:#dfe6e1;font-size:1rem;}
+.hero p{max-width:640px;margin:0 auto 26px;color:#FCE9D8;font-size:1rem;}
 .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .btn{padding:12px 24px;border-radius:6px;font-weight:600;font-size:.88rem;cursor:pointer;border:1px solid transparent;transition:.2s;display:inline-block;}
-.btn-primary{background:var(--saffron);color:#fff;}
-.btn-primary:hover{background:#c46c14;}
+.btn-primary{background:var(--saffron);color:var(--ink);}
+.btn-primary:hover{background:var(--gold);}
 .btn-outline{border-color:var(--gold-bright);color:var(--gold-bright);}
 .btn-outline:hover{background:rgba(230,197,131,.12);}
 
 /* Quick links dashboard tiles */
 .quicklinks{max-width:1180px;margin:0 auto;padding:0 24px;transform:translateY(40px);margin-bottom:40px;}
-.ql-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(15,46,35,.18);padding:18px;}
+.ql-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(166,40,30,.16);padding:18px;}
 @media(min-width:700px){.ql-grid{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:1000px){.ql-grid{grid-template-columns:repeat(6,1fr);}}
 .ql-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:14px 8px;border-radius:8px;transition:.2s;}
@@ -97,14 +97,14 @@ section{padding:60px 24px;max-width:1180px;margin:0 auto;}
 .fact span{font-size:.75rem;color:var(--stone);}
 
 /* Timings table */
-.timings-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(15,46,35,.07);}
+.timings-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(166,40,30,.08);}
 .timings-table th,.timings-table td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:.9rem;}
 .timings-table th{background:var(--green);color:#fff;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;}
 .timings-table tr:last-child td{border-bottom:none;}
 .notice-box{background:#FBF1DD;border:1px solid var(--gold);border-radius:8px;padding:16px 20px;margin-top:20px;font-size:.85rem;color:var(--ink);}
 
 /* Announcements list */
-.announce-list{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:8px;box-shadow:0 3px 14px rgba(15,46,35,.07);overflow:hidden;}
+.announce-list{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:8px;box-shadow:0 3px 14px rgba(166,40,30,.08);overflow:hidden;}
 .announce-item{display:flex;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line);align-items:flex-start;}
 .announce-item:last-child{border-bottom:none;}
 .announce-date{min-width:96px;font-size:.72rem;font-weight:700;color:var(--maroon);text-transform:uppercase;letter-spacing:.04em;padding-top:2px;}
@@ -116,30 +116,47 @@ section{padding:60px 24px;max-width:1180px;margin:0 auto;}
 @media(min-width:850px){.lottery-wrap{grid-template-columns:1fr 1fr;padding:44px;}}
 .lottery-info .eyebrow{color:var(--gold-bright);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;}
 .lottery-info h3{color:#fff;font-size:1.4rem;margin:10px 0 14px;}
-.lottery-info p{color:#dfe6e1;margin-bottom:10px;font-size:.92rem;}
+.lottery-info p{color:#FCE9D8;margin-bottom:10px;font-size:.92rem;}
 .status-chip{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:16px;background:rgba(230,197,131,.15);border:1px solid var(--gold-bright);color:var(--gold-bright);font-size:.78rem;font-weight:700;}
 .lottery-form{background:rgba(255,255,255,.06);border:1px solid rgba(230,197,131,.3);border-radius:8px;padding:22px;}
 .lottery-form label{display:block;font-size:.75rem;margin:12px 0 5px;color:var(--gold-bright);font-weight:600;}
 .lottery-form input,.lottery-form textarea{width:100%;padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.25);background:#fff;color:var(--ink);font-family:inherit;font-size:.88rem;}
-.lottery-form button{margin-top:16px;width:100%;background:var(--saffron);color:#fff;border:none;padding:12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:.88rem;}
-.lottery-form button:hover{background:#c46c14;}
-.form-note{font-size:.7rem;color:#c3ccc6;margin-top:8px;}
+.lottery-form button{margin-top:16px;width:100%;background:var(--saffron);color:var(--ink);border:none;padding:12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:.88rem;}
+.lottery-form button:hover{background:var(--gold);}
+.form-note{font-size:.7rem;color:#F0D6C2;margin-top:8px;}
 .form-msg{font-size:.8rem;margin-top:8px;color:var(--gold-bright);}
 
+/* News cards (screenshot-style) */
+.news-grid{display:grid;gap:24px;grid-template-columns:1fr;}
+@media(min-width:700px){.news-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1000px){.news-grid{grid-template-columns:repeat(3,1fr);}}
+.news-card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 20px rgba(166,40,30,.08);transition:.2s;}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(166,40,30,.14);}
+.news-img{position:relative;height:170px;}
+.news-img img{width:100%;height:100%;object-fit:cover;}
+.news-badge{position:absolute;top:14px;left:14px;background:var(--saffron);color:#fff;font-size:.68rem;font-weight:700;padding:5px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.03em;}
+.news-body{padding:18px 20px 20px;}
+.news-body h4{font-size:1.05rem;color:var(--ink);margin-bottom:8px;line-height:1.35;}
+.news-body p{font-size:.86rem;color:var(--stone);margin-bottom:14px;}
+.news-foot{display:flex;justify-content:space-between;align-items:center;}
+.news-date{font-size:.75rem;color:var(--stone);display:flex;align-items:center;gap:5px;}
+.news-more{font-size:.82rem;font-weight:700;color:var(--saffron);}
+
 /* Floating sticky social rail */
-.float-social{position:fixed;left:0;top:45%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(0,0,0,.25);}
-.float-social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;transition:.2s;}
-.float-social a:hover{width:50px;}
+.float-social{position:fixed;left:14px;top:45%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;}
+.float-social a{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.22);border:2px solid rgba(255,255,255,.85);}
+.float-social a:hover{transform:scale(1.12) translateX(2px);box-shadow:0 6px 18px rgba(0,0,0,.3);}
 .fs-fb{background:#1877F2;}
 .fs-ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
 .fs-yt{background:#FF0000;}
 .fs-wa{background:#25D366;}
-@media(max-width:600px){.float-social{top:auto;bottom:16px;transform:none;flex-direction:row;left:50%;transform:translateX(-50%);border-radius:30px;overflow:hidden;}}
+@media(max-width:600px){.float-social{left:50%;top:auto;bottom:16px;transform:translateX(-50%);flex-direction:row;}
+.float-social a:hover{transform:scale(1.12) translateY(-2px);}}
 
 /* Journey — factual stage list, not poetic cinema */
 .journey-list{display:grid;gap:18px;grid-template-columns:1fr;}
 @media(min-width:800px){.journey-list{grid-template-columns:repeat(3,1fr);}}
-.journey-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(15,46,35,.07);}
+.journey-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(166,40,30,.08);}
 .journey-card img{height:150px;object-fit:cover;width:100%;}
 .journey-body{padding:16px;}
 .journey-step{font-size:.7rem;font-weight:700;color:var(--saffron);text-transform:uppercase;letter-spacing:.04em;}
@@ -154,18 +171,18 @@ section{padding:60px 24px;max-width:1180px;margin:0 auto;}
 
 /* Social */
 .social-row{display:flex;gap:14px;flex-wrap:wrap;}
-.social-pill{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:6px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:.85rem;color:var(--green);box-shadow:0 2px 8px rgba(15,46,35,.06);}
+.social-pill{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:6px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:.85rem;color:var(--green);box-shadow:0 2px 8px rgba(166,40,30,.07);}
 .social-pill:hover{border-color:var(--saffron);color:var(--maroon);}
 
 /* Footer */
-footer{background:var(--green-deep);color:#cfd9d2;padding:44px 24px 22px;}
+footer{background:var(--green-deep);color:#F6E3D6;padding:44px 24px 22px;}
 .footer-grid{max-width:1180px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr;}
 @media(min-width:800px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;}}
 footer h5{color:var(--gold-bright);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;text-transform:uppercase;}
-footer p,footer a{font-size:.82rem;color:#b8c2bb;}
+footer p,footer a{font-size:.82rem;color:#F0D6C2;}
 footer ul{list-style:none;}
 footer li{margin-bottom:7px;}
-.footer-bottom{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(207,217,210,.12);font-size:.72rem;color:#8b9791;}
+.footer-bottom{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(246,227,214,.15);font-size:.72rem;color:#D9B79C;}
 </style>
 </head>
 <body>
@@ -178,10 +195,7 @@ footer li{margin-bottom:7px;}
 </div>
 
 <div class="utility-bar">
-  <div class="utility-left">
-    <a href="mailto:contact@sarvamsabarigireesha.com" data-i18n="util_email">✉ contact@sarvamsabarigireesha.com</a>
-    <a href="https://wa.me/918919462503" target="_blank" rel="noopener" data-i18n="util_phone">☎ +91 89194 62503</a>
-  </div>
+  <div class="utility-left"></div>
   <div class="lang-switch" id="langSwitch">
     <button data-lang="en" class="active">EN</button>
     <button data-lang="te">తె</button>
@@ -196,8 +210,11 @@ footer li{margin-bottom:7px;}
   <span class="ticker-label" data-i18n="ticker_label">Notice</span>
   <div class="ticker-track">
     <span data-i18n="ticker_1">Prasadam lottery registration is open — see the Prasadam section below.</span>
+    <span class="ticker-gap"></span>
     <span data-i18n="ticker_2">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+    <span class="ticker-gap"></span>
     <span data-i18n="ticker_1">Prasadam lottery registration is open — see the Prasadam section below.</span>
+    <span class="ticker-gap"></span>
     <span data-i18n="ticker_2">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
   </div>
 </div>
@@ -302,29 +319,64 @@ footer li{margin-bottom:7px;}
 <section id="updates">
   <div class="section-head">
     <p class="eyebrow" data-i18n="updates_eyebrow">Latest</p>
-    <h2 data-i18n="updates_title">Temple Announcements</h2>
+    <h2 data-i18n="updates_title">News</h2>
   </div>
-  <div class="announce-list" id="announceList">
+  <div class="news-grid" id="newsGrid">
     <div id="liveAnnouncements"></div>
-    <div class="announce-item">
-      <div class="announce-date" data-i18n="u1_date">Mandala Kalam</div>
-      <div class="announce-body">
+    <div class="news-card">
+      <div class="news-img">
+        <span class="news-badge" data-i18n="news_badge">News</span>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt="Welcome">
+      </div>
+      <div class="news-body">
+        <h4 data-i18n="u0_title">Welcome to Sarvam Sabarigireesha</h4>
+        <p data-i18n="u0_text">This portal is now live for the devotee community of Lord Ayyappa Swamy — with Darshan timings, announcements, the Sabarimala calendar and monthly Prasadam registration.</p>
+        <div class="news-foot">
+          <span class="news-date" data-i18n="u0_date">Today</span>
+          <a href="#about" class="news-more" data-i18n="news_more">Read more →</a>
+        </div>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-img">
+        <span class="news-badge" data-i18n="news_badge">News</span>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/nlafnr7q_journey.vratham.jpeg" alt="Mandala Kalam">
+      </div>
+      <div class="news-body">
         <h4 data-i18n="u1_title">41-Day Vratham Period Begins</h4>
         <p data-i18n="u1_text">Special Puja and daily Archana schedule is in effect during Mandala Kalam. Devotees may register for group Sevas through the Contact section.</p>
+        <div class="news-foot">
+          <span class="news-date" data-i18n="u1_date">Mandala Kalam</span>
+          <a href="#contact" class="news-more" data-i18n="news_more">Read more →</a>
+        </div>
       </div>
     </div>
-    <div class="announce-item">
-      <div class="announce-date" data-i18n="u2_date">Monthly</div>
-      <div class="announce-body">
+    <div class="news-card">
+      <div class="news-img">
+        <span class="news-badge" data-i18n="news_badge">News</span>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/0uohf6s7_irumudi.jpeg" alt="Prasadam">
+      </div>
+      <div class="news-body">
         <h4 data-i18n="u2_title">Prasadam Registration Open</h4>
         <p data-i18n="u2_text">This month's Prasadam registration is open, subject to availability. See the Prasadam section for details and to register.</p>
+        <div class="news-foot">
+          <span class="news-date" data-i18n="u2_date">Monthly</span>
+          <a href="#prasadam" class="news-more" data-i18n="news_more">Read more →</a>
+        </div>
       </div>
     </div>
-    <div class="announce-item">
-      <div class="announce-date" data-i18n="u3_date">Seasonal</div>
-      <div class="announce-body">
+    <div class="news-card">
+      <div class="news-img">
+        <span class="news-badge" data-i18n="news_badge">News</span>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/ggrumedx_journey.pampa.jpeg" alt="Makaravilakku">
+      </div>
+      <div class="news-body">
         <h4 data-i18n="u3_title">Makaravilakku Season — Preparations Underway</h4>
         <p data-i18n="u3_text">Preparations for the Makaravilakku season are in progress. Updates will be posted here and on official social media channels.</p>
+        <div class="news-foot">
+          <span class="news-date" data-i18n="u3_date">Seasonal</span>
+          <a href="#gallery" class="news-more" data-i18n="news_more">Read more →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -477,12 +529,16 @@ const ANNOUNCEMENTS_URL = "REPLACE_WITH_YOUR_WORKER_URL/announcements";
     container.innerHTML = data.announcements.map(a => {
       const d = new Date(a.created_at);
       const dateLabel = d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
-      return `<div class="announce-item">
-        <div class="announce-date">${dateLabel}</div>
-        <div class="announce-body"><h4>${a.title}</h4><p>${a.body}</p></div>
+      return `<div class="news-card">
+        <div class="news-img"><span class="news-badge">${translations[currentLang].news_badge}</span>
+        <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt=""></div>
+        <div class="news-body">
+          <h4>${a.title}</h4><p>${a.body}</p>
+          <div class="news-foot"><span class="news-date">${dateLabel}</span></div>
+        </div>
       </div>`;
     }).join('');
-  }catch(err){ /* silent fallback to static announcements */ }
+  }catch(err){ /* silent fallback to static news cards */ }
 })();
 document.getElementById('lotteryForm').addEventListener('submit', async (e)=>{
   e.preventDefault();
@@ -512,7 +568,7 @@ document.getElementById('lotteryForm').addEventListener('submit', async (e)=>{
 
 const translations = {
 en:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"News",news_more:"Read more →",u0_date:"Today",u0_title:"Welcome to Sarvam Sabarigireesha",u0_text:"This portal is now live for the devotee community of Lord Ayyappa Swamy — with Darshan timings, announcements, the Sabarimala calendar and monthly Prasadam registration.",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"Notice",ticker_1:"Prasadam lottery registration is open — see the Prasadam section below.",ticker_2:"Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.",
 brand_subtitle:"The Digital Home of Sarvam Sabarigireesha",
 nav_home:"Home",nav_about:"About",nav_timings:"Darshan Timings",nav_updates:"Announcements",nav_prasadam:"Prasadam",nav_journey:"Pilgrimage",nav_gallery:"Gallery",nav_calendar:"Calendar",nav_contact:"Contact",
@@ -528,7 +584,7 @@ fact1_val:"Kerala",fact1_lbl:"Tradition",fact2_val:"Ayyappa",fact2_lbl:"Devata",
 timings_eyebrow:"Daily Schedule",timings_title:"Darshan & Puja Timings",th_event:"Seva / Darshan",th_time:"Timing",
 t1:"Nirmalya Darshanam",t2:"Morning Darshan",t3:"Neyyabhishekam",t4:"Evening Darshan",t5:"Deeparadhana",
 timings_notice:"Note: Timings shown are for planning reference and may change during festivals or special occasions. Please confirm before travel using the Contact section.",
-updates_eyebrow:"Latest",updates_title:"Temple Announcements",
+updates_eyebrow:"Latest",updates_title:"News",
 u1_date:"Mandala Kalam",u1_title:"41-Day Vratham Period Begins",u1_text:"Special Puja and daily Archana schedule is in effect during Mandala Kalam. Devotees may register for group Sevas through the Contact section.",
 u2_date:"Monthly",u2_title:"Prasadam Registration Open",u2_text:"This month's Prasadam registration is open, subject to availability. See the Prasadam section for details and to register.",
 u3_date:"Seasonal",u3_title:"Makaravilakku Season — Preparations Underway",u3_text:"Preparations for the Makaravilakku season are in progress. Updates will be posted here and on official social media channels.",
@@ -553,7 +609,7 @@ f_about_h:"Sarvam Sabarigireesha",f_about_p:"A community devotee portal for Lord
 f_links_h:"Quick Links",f_connect_h:"Connect",f_contact_h:"Contact",footer_note:"All rights reserved."
 },
 te:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"వార్త",news_more:"మరింత చదవండి →",u0_date:"ఈరోజు",u0_title:"సర్వం సబరిగిరీశకు స్వాగతం",u0_text:"ఈ పోర్టల్ ఇప్పుడు శ్రీ అయ్యప్ప స్వామి భక్తుల సమాజం కోసం live అయ్యింది — దర్శన సమయాలు, ప్రకటనలు, శబరిమల క్యాలెండర్ మరియు నెలవారీ ప్రసాదం నమోదుతో సహా.",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"ప్రకటన",ticker_1:"ప్రసాదం లాటరీ నమోదు తెరిచి ఉంది — కింద ప్రసాదం విభాగం చూడండి.",ticker_2:"మండల కాలం వ్రతం సమయం — ప్రత్యేక దర్శన మరియు పూజా షెడ్యూల్ అమల్లో ఉంది.",
 brand_subtitle:"సర్వం సబరిగిరీశ యొక్క డిజిటల్ నెలవు",
 nav_home:"హోమ్",nav_about:"గురించి",nav_timings:"దర్శన సమయాలు",nav_updates:"ప్రకటనలు",nav_prasadam:"ప్రసాదం",nav_journey:"యాత్ర",nav_gallery:"గ్యాలరీ",nav_calendar:"క్యాలెండర్",nav_contact:"సంప్రదించండి",
@@ -569,7 +625,7 @@ fact1_val:"కేరళ",fact1_lbl:"సంప్రదాయం",fact2_val:"అ�
 timings_eyebrow:"దినచర్య",timings_title:"దర్శన & పూజా సమయాలు",th_event:"సేవ / దర్శనం",th_time:"సమయం",
 t1:"నిర్మాల్య దర్శనం",t2:"ఉదయం దర్శనం",t3:"నెయ్యాభిషేకం",t4:"సాయంత్రం దర్శనం",t5:"దీపారాధన",
 timings_notice:"గమనిక: చూపిన సమయాలు ప్రణాళిక సూచన కోసం మాత్రమే, పండుగలు లేదా ప్రత్యేక సందర్భాల్లో మారవచ్చు. ప్రయాణానికి ముందు సంప్రదించండి విభాగం ద్వారా నిర్ధారించుకోండి.",
-updates_eyebrow:"తాజా",updates_title:"దేవాలయ ప్రకటనలు",
+updates_eyebrow:"తాజా",updates_title:"వార్తలు",
 u1_date:"మండల కాలం",u1_title:"41 రోజుల వ్రతం కాలం ప్రారంభం",u1_text:"మండల కాలంలో ప్రత్యేక పూజ మరియు రోజువారీ అర్చనా షెడ్యూల్ అమల్లో ఉంది. భక్తులు సంప్రదించండి విభాగం ద్వారా గ్రూప్ సేవలకు నమోదు చేసుకోవచ్చు.",
 u2_date:"నెలవారీ",u2_title:"ప్రసాదం నమోదు తెరిచి ఉంది",u2_text:"ఈ నెల ప్రసాదం నమోదు లభ్యత ఆధారంగా తెరిచి ఉంది. వివరాల కోసం మరియు నమోదు చేసుకోవడానికి ప్రసాదం విభాగం చూడండి.",
 u3_date:"సీజనల్",u3_title:"మకరవిళక్కు సీజన్ — ఏర్పాట్లు జరుగుతున్నాయి",u3_text:"మకరవిళక్కు సీజన్ కోసం ఏర్పాట్లు జరుగుతున్నాయి. అప్‌డేట్స్ ఇక్కడ మరియు అధికారిక సోషల్ మీడియా ఛానెల్‌లలో పోస్ట్ చేయబడతాయి.",
@@ -594,7 +650,7 @@ f_about_h:"సర్వం సబరిగిరీశ",f_about_p:"శ్రీ 
 f_links_h:"త్వరిత లింకులు",f_connect_h:"కనెక్ట్",f_contact_h:"సంప్రదించండి",footer_note:"సర్వహక్కులు రక్షించబడ్డాయి."
 },
 hi:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"समाचार",news_more:"और पढ़ें →",u0_date:"आज",u0_title:"सर्वं सबरिगिरीश में आपका स्वागत है",u0_text:"यह पोर्टल अब श्री अयप्पा स्वामी भक्त समुदाय के लिए लाइव है — दर्शन समय, घोषणाएं, सबरीमाला कैलेंडर और मासिक प्रसादम पंजीकरण के साथ।",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"सूचना",ticker_1:"प्रसादम लॉटरी पंजीकरण खुला है — नीचे प्रसादम अनुभाग देखें।",ticker_2:"मंडल काल व्रतम अवधि — विशेष दर्शन व पूजा समय सारणी लागू है।",
 brand_subtitle:"सर्वं सबरिगिरीश का डिजिटल घर",
 nav_home:"होम",nav_about:"परिचय",nav_timings:"दर्शन समय",nav_updates:"घोषणाएं",nav_prasadam:"प्रसादम",nav_journey:"यात्रा",nav_gallery:"गैलरी",nav_calendar:"कैलेंडर",nav_contact:"संपर्क करें",
@@ -610,7 +666,7 @@ fact1_val:"केरल",fact1_lbl:"परंपरा",fact2_val:"अयप्�
 timings_eyebrow:"दैनिक समय सारणी",timings_title:"दर्शन व पूजा समय",th_event:"सेवा / दर्शन",th_time:"समय",
 t1:"निर्माल्य दर्शनम",t2:"प्रातः दर्शन",t3:"नेय्याभिषेकम",t4:"सायं दर्शन",t5:"दीपाराधना",
 timings_notice:"नोट: दिखाए गए समय केवल योजना संदर्भ हेतु हैं और त्योहारों या विशेष अवसरों पर बदल सकते हैं। यात्रा से पहले संपर्क अनुभाग के माध्यम से पुष्टि करें।",
-updates_eyebrow:"नवीनतम",updates_title:"मंदिर घोषणाएं",
+updates_eyebrow:"नवीनतम",updates_title:"समाचार",
 u1_date:"मंडल काल",u1_title:"41-दिवसीय व्रतम अवधि प्रारंभ",u1_text:"मंडल काल के दौरान विशेष पूजा और दैनिक अर्चना कार्यक्रम लागू है। भक्त संपर्क अनुभाग के माध्यम से सामूहिक सेवा हेतु पंजीकरण कर सकते हैं।",
 u2_date:"मासिक",u2_title:"प्रसादम पंजीकरण खुला",u2_text:"इस माह का प्रसादम पंजीकरण उपलब्धता के अधीन खुला है। विवरण और पंजीकरण हेतु प्रसादम अनुभाग देखें।",
 u3_date:"मौसमी",u3_title:"मकरविलक्कु सीजन — तैयारियां जारी",u3_text:"मकरविलक्कु सीजन की तैयारियां प्रगति पर हैं। अपडेट यहां और आधिकारिक सोशल मीडिया चैनलों पर पोस्ट किए जाएंगे।",
@@ -635,7 +691,7 @@ f_about_h:"सर्वं सबरिगिरीश",f_about_p:"श्री 
 f_links_h:"त्वरित लिंक",f_connect_h:"जुड़ें",f_contact_h:"संपर्क करें",footer_note:"सर्वाधिकार सुरक्षित।"
 },
 ml:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"വാർത്ത",news_more:"കൂടുതൽ വായിക്കുക →",u0_date:"ഇന്ന്",u0_title:"സർവം ശബരിഗിരീശയിലേക്ക് സ്വാഗതം",u0_text:"ഈ പോർട്ടൽ ഇപ്പോൾ ശ്രീ അയ്യപ്പസ്വാമി ഭക്ത സമൂഹത്തിനായി ലൈവ് ആണ് — ദർശന സമയം, അറിയിപ്പുകൾ, ശബരിമല കലണ്ടർ, പ്രതിമാസ പ്രസാദം രജിസ്ട്രേഷൻ എന്നിവയോടെ.",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"അറിയിപ്പ്",ticker_1:"പ്രസാദം രജിസ്ട്രേഷൻ തുറന്നിരിക്കുന്നു — താഴെ പ്രസാദം വിഭാഗം കാണുക.",ticker_2:"മണ്ഡല കാല വ്രതം കാലയളവ് — പ്രത്യേക ദർശന & പൂജാ സമയക്രമം പ്രാബല്യത്തിൽ.",
 brand_subtitle:"സർവം ശബരിഗിരീശയുടെ ഡിജിറ്റൽ ഭവനം",
 nav_home:"ഹോം",nav_about:"വിവരണം",nav_timings:"ദർശന സമയം",nav_updates:"അറിയിപ്പുകൾ",nav_prasadam:"പ്രസാദം",nav_journey:"തീർത്ഥാടനം",nav_gallery:"ഗാലറി",nav_calendar:"കലണ്ടർ",nav_contact:"ബന്ധപ്പെടുക",
@@ -651,7 +707,7 @@ fact1_val:"കേരളം",fact1_lbl:"പാരമ്പര്യം",fact2_val
 timings_eyebrow:"ദിനചര്യ",timings_title:"ദർശന & പൂജാ സമയങ്ങൾ",th_event:"സേവ / ദർശനം",th_time:"സമയം",
 t1:"നിർമ്മാല്യ ദർശനം",t2:"രാവിലെ ദർശനം",t3:"നെയ്യഭിഷേകം",t4:"വൈകുന്നേരം ദർശനം",t5:"ദീപാരാധന",
 timings_notice:"ശ്രദ്ധിക്കുക: കാണിച്ചിരിക്കുന്ന സമയങ്ങൾ ആസൂത്രണ റഫറൻസിന് മാത്രമാണ്, ഉത്സവങ്ങളിലോ പ്രത്യേക അവസരങ്ങളിലോ മാറാം. യാത്രയ്ക്ക് മുമ്പ് ബന്ധപ്പെടുക വിഭാഗം വഴി സ്ഥിരീകരിക്കുക.",
-updates_eyebrow:"പുതിയത്",updates_title:"ക്ഷേത്ര അറിയിപ്പുകൾ",
+updates_eyebrow:"പുതിയത്",updates_title:"വാർത്തകൾ",
 u1_date:"മണ്ഡല കാലം",u1_title:"41 ദിവസത്തെ വ്രത കാലയളവ് ആരംഭിക്കുന്നു",u1_text:"മണ്ഡല കാലത്ത് പ്രത്യേക പൂജയും ദിവസേനയുള്ള അർച്ചനാ ഷെഡ്യൂളും പ്രാബല്യത്തിലുണ്ട്. ബന്ധപ്പെടുക വിഭാഗം വഴി ഭക്തർക്ക് ഗ്രൂപ്പ് സേവകൾക്ക് രജിസ്റ്റർ ചെയ്യാം.",
 u2_date:"പ്രതിമാസം",u2_title:"പ്രസാദം രജിസ്ട്രേഷൻ തുറന്നു",u2_text:"ഈ മാസത്തെ പ്രസാദം രജിസ്ട്രേഷൻ ലഭ്യതയ്ക്ക് വിധേയമായി തുറന്നിരിക്കുന്നു. വിശദാംശങ്ങൾക്കും രജിസ്റ്റർ ചെയ്യാനും പ്രസാദം വിഭാഗം കാണുക.",
 u3_date:"സീസണൽ",u3_title:"മകരവിളക്ക് സീസൺ — ഒരുക്കങ്ങൾ പുരോഗമിക്കുന്നു",u3_text:"മകരവിളക്ക് സീസണിനുള്ള ഒരുക്കങ്ങൾ പുരോഗമിക്കുന്നു. അപ്ഡേറ്റുകൾ ഇവിടെയും ഔദ്യോഗിക സോഷ്യൽ മീഡിയ ചാനലുകളിലും പോസ്റ്റ് ചെയ്യും.",
@@ -676,7 +732,7 @@ f_about_h:"സർവം ശബരിഗിരീശ",f_about_p:"ശ്രീ അ
 f_links_h:"ദ്രുത ലിങ്കുകൾ",f_connect_h:"ബന്ധപ്പെടുക",f_contact_h:"ബന്ധപ്പെടുക",footer_note:"എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം."
 },
 kn:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"ಸುದ್ದಿ",news_more:"ಇನ್ನಷ್ಟು ಓದಿ →",u0_date:"ಇಂದು",u0_title:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶಕ್ಕೆ ಸ್ವಾಗತ",u0_text:"ಈ ಪೋರ್ಟಲ್ ಈಗ ಶ್ರೀ ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿ ಭಕ್ತರ ಸಮುದಾಯಕ್ಕಾಗಿ ಲೈವ್ ಆಗಿದೆ — ದರ್ಶನ ಸಮಯ, ಪ್ರಕಟಣೆಗಳು, ಶಬರಿಮಲ ಕ್ಯಾಲೆಂಡರ್ ಮತ್ತು ಮಾಸಿಕ ಪ್ರಸಾದಂ ನೋಂದಣಿಯೊಂದಿಗೆ.",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"ಸೂಚನೆ",ticker_1:"ಪ್ರಸಾದಂ ಲಾಟರಿ ನೋಂದಣಿ ತೆರೆದಿದೆ — ಕೆಳಗಿನ ಪ್ರಸಾದಂ ವಿಭಾಗ ನೋಡಿ.",ticker_2:"ಮಂಡಲ ಕಾಲ ವ್ರತ ಅವಧಿ — ವಿಶೇಷ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ.",
 brand_subtitle:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶದ ಡಿಜಿಟಲ್ ನೆಲೆ",
 nav_home:"ಹೋಂ",nav_about:"ಪರಿಚಯ",nav_timings:"ದರ್ಶನ ಸಮಯ",nav_updates:"ಪ್ರಕಟಣೆಗಳು",nav_prasadam:"ಪ್ರಸಾದಂ",nav_journey:"ಯಾತ್ರೆ",nav_gallery:"ಗ್ಯಾಲರಿ",nav_calendar:"ಕ್ಯಾಲೆಂಡರ್",nav_contact:"ಸಂಪರ್ಕಿಸಿ",
@@ -692,7 +748,7 @@ fact1_val:"ಕೇರಳ",fact1_lbl:"ಸಂಪ್ರದಾಯ",fact2_val:"ಅಯ�
 timings_eyebrow:"ದಿನಚರಿ",timings_title:"ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ಸಮಯ",th_event:"ಸೇವೆ / ದರ್ಶನ",th_time:"ಸಮಯ",
 t1:"ನಿರ್ಮಾಲ್ಯ ದರ್ಶನಂ",t2:"ಬೆಳಗಿನ ದರ್ಶನ",t3:"ನೆಯ್ಯಾಭಿಷೇಕಂ",t4:"ಸಂಜೆ ದರ್ಶನ",t5:"ದೀಪಾರಾಧನೆ",
 timings_notice:"ಗಮನಿಸಿ: ತೋರಿಸಿರುವ ಸಮಯಗಳು ಯೋಜನಾ ಉಲ್ಲೇಖಕ್ಕಾಗಿ ಮಾತ್ರ, ಹಬ್ಬಗಳು ಅಥವಾ ವಿಶೇಷ ಸಂದರ್ಭಗಳಲ್ಲಿ ಬದಲಾಗಬಹುದು. ಪ್ರಯಾಣಕ್ಕೂ ಮೊದಲು ಸಂಪರ್ಕಿಸಿ ವಿಭಾಗದ ಮೂಲಕ ದೃಢೀಕರಿಸಿ.",
-updates_eyebrow:"ಇತ್ತೀಚಿನ",updates_title:"ದೇವಸ್ಥಾನ ಪ್ರಕಟಣೆಗಳು",
+updates_eyebrow:"ಇತ್ತೀಚಿನ",updates_title:"ಸುದ್ದಿಗಳು",
 u1_date:"ಮಂಡಲ ಕಾಲ",u1_title:"41 ದಿನಗಳ ವ್ರತ ಅವಧಿ ಆರಂಭ",u1_text:"ಮಂಡಲ ಕಾಲದಲ್ಲಿ ವಿಶೇಷ ಪೂಜೆ ಮತ್ತು ದೈನಂದಿನ ಅರ್ಚನಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ. ಭಕ್ತರು ಸಂಪರ್ಕಿಸಿ ವಿಭಾಗದ ಮೂಲಕ ಗುಂಪು ಸೇವೆಗಳಿಗೆ ನೋಂದಾಯಿಸಬಹುದು.",
 u2_date:"ಮಾಸಿಕ",u2_title:"ಪ್ರಸಾದಂ ನೋಂದಣಿ ತೆರೆದಿದೆ",u2_text:"ಈ ತಿಂಗಳ ಪ್ರಸಾದಂ ನೋಂದಣಿ ಲಭ್ಯತೆಗೆ ಒಳಪಟ್ಟು ತೆರೆದಿದೆ. ವಿವರಗಳಿಗಾಗಿ ಮತ್ತು ನೋಂದಾಯಿಸಲು ಪ್ರಸಾದಂ ವಿಭಾಗ ನೋಡಿ.",
 u3_date:"ಋತುಮಾನ",u3_title:"ಮಕರವಿಳಕ್ಕು ಋತು — ಸಿದ್ಧತೆಗಳು ಪ್ರಗತಿಯಲ್ಲಿ",u3_text:"ಮಕರವಿಳಕ್ಕು ಋತುವಿನ ಸಿದ್ಧತೆಗಳು ಪ್ರಗತಿಯಲ್ಲಿವೆ. ನವೀಕರಣಗಳನ್ನು ಇಲ್ಲಿ ಮತ್ತು ಅಧಿಕೃತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಚಾನೆಲ್‌ಗಳಲ್ಲಿ ಪೋಸ್ಟ್ ಮಾಡಲಾಗುತ್ತದೆ.",
@@ -717,7 +773,7 @@ f_about_h:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶ",f_about_p:"ಶ್ರೀ 
 f_links_h:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",f_connect_h:"ಸಂಪರ್ಕಿಸಿ",f_contact_h:"ಸಂಪರ್ಕಿಸಿ",footer_note:"ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
 },
 ta:{
-util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+news_badge:"செய்தி",news_more:"மேலும் படிக்க →",u0_date:"இன்று",u0_title:"சர்வம் சபரிகிரீஶவிற்கு வரவேற்கிறோம்",u0_text:"இந்த போர்டல் இப்போது ஸ்ரீ ஐயப்பன் சுவாமி பக்தர் சமூகத்திற்காக நேரலையில் உள்ளது — தரிசன நேரங்கள், அறிவிப்புகள், சபரிமலை காலண்டர் மற்றும் மாதாந்திர பிரசாதம் பதிவுடன்.",util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
 ticker_label:"அறிவிப்பு",ticker_1:"பிரசாதம் லாட்டரி பதிவு திறந்துள்ளது — கீழே பிரசாதம் பிரிவைப் பார்க்கவும்.",ticker_2:"மண்டல கால விரத காலம் — சிறப்பு தரிசன & பூஜை அட்டவணை நடைமுறையில் உள்ளது.",
 brand_subtitle:"சர்வம் சபரிகிரீஶவின் டிஜிட்டல் இல்லம்",
 nav_home:"முகப்பு",nav_about:"பற்றி",nav_timings:"தரிசன நேரம்",nav_updates:"அறிவிப்புகள்",nav_prasadam:"பிரசாதம்",nav_journey:"யாத்திரை",nav_gallery:"படத்தொகுப்பு",nav_calendar:"காலண்டர்",nav_contact:"தொடர்பு",
@@ -733,7 +789,7 @@ fact1_val:"கேரளா",fact1_lbl:"பாரம்பரியம்",fact2_
 timings_eyebrow:"நாள்தோறும்",timings_title:"தரிசன & பூஜை நேரங்கள்",th_event:"சேவை / தரிசனம்",th_time:"நேரம்",
 t1:"நிர்மால்ய தரிசனம்",t2:"காலை தரிசனம்",t3:"நெய்யபிஷேகம்",t4:"மாலை தரிசனம்",t5:"தீபாராதனை",
 timings_notice:"குறிப்பு: காட்டப்பட்டுள்ள நேரங்கள் திட்டமிடல் குறிப்புக்காக மட்டுமே, திருவிழாக்கள் அல்லது சிறப்பு நிகழ்வுகளின்போது மாறலாம். பயணத்திற்கு முன் தொடர்பு பிரிவு மூலம் உறுதிப்படுத்தவும்.",
-updates_eyebrow:"சமீபத்தியது",updates_title:"கோயில் அறிவிப்புகள்",
+updates_eyebrow:"சமீபத்தியது",updates_title:"செய்திகள்",
 u1_date:"மண்டல காலம்",u1_title:"41 நாள் விரத காலம் தொடக்கம்",u1_text:"மண்டல காலத்தில் சிறப்பு பூஜை மற்றும் தினசரி அர்ச்சனை அட்டவணை நடைமுறையில் உள்ளது. பக்தர்கள் தொடர்பு பிரிவு மூலம் குழு சேவைகளுக்கு பதிவு செய்யலாம்.",
 u2_date:"மாதாந்திரம்",u2_title:"பிரசாதம் பதிவு திறந்துள்ளது",u2_text:"இந்த மாத பிரசாதம் பதிவு கிடைக்கும் தன்மைக்கு உட்பட்டு திறந்துள்ளது. விவரங்களுக்கும் பதிவு செய்யவும் பிரசாதம் பிரிவைப் பார்க்கவும்.",
 u3_date:"பருவகால",u3_title:"மகரவிளக்கு பருவம் — ஏற்பாடுகள் நடைபெறுகின்றன",u3_text:"மகரவிளக்கு பருவத்திற்கான ஏற்பாடுகள் நடைபெற்று வருகின்றன. புதுப்பிப்புகள் இங்கும் அதிகாரப்பூர்வ சமூக ஊடக சேனல்களிலும் வெளியிடப்படும்.",
