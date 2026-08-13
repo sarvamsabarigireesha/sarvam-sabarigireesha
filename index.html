@@ -126,6 +126,16 @@ section{padding:60px 24px;max-width:1180px;margin:0 auto;}
 .form-note{font-size:.7rem;color:#c3ccc6;margin-top:8px;}
 .form-msg{font-size:.8rem;margin-top:8px;color:var(--gold-bright);}
 
+/* Floating sticky social rail */
+.float-social{position:fixed;left:0;top:45%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(0,0,0,.25);}
+.float-social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;transition:.2s;}
+.float-social a:hover{width:50px;}
+.fs-fb{background:#1877F2;}
+.fs-ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
+.fs-yt{background:#FF0000;}
+.fs-wa{background:#25D366;}
+@media(max-width:600px){.float-social{top:auto;bottom:16px;transform:none;flex-direction:row;left:50%;transform:translateX(-50%);border-radius:30px;overflow:hidden;}}
+
 /* Journey — factual stage list, not poetic cinema */
 .journey-list{display:grid;gap:18px;grid-template-columns:1fr;}
 @media(min-width:800px){.journey-list{grid-template-columns:repeat(3,1fr);}}
@@ -159,6 +169,13 @@ footer li{margin-bottom:7px;}
 </style>
 </head>
 <body>
+
+<div class="float-social">
+  <a class="fs-fb" href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+  <a class="fs-ig" href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76c-.55.55-1.1.9-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44.54C6.08.29 6.81.12 7.87.07 8.94.02 9.3.01 12 .01v1.99Zm0 3.35a6.65 6.65 0 1 0 0 13.3 6.65 6.65 0 0 0 0-13.3Zm0 10.97a4.32 4.32 0 1 1 0-8.64 4.32 4.32 0 0 1 0 8.64Zm6.9-11.22a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0Z"/></svg></a>
+  <a class="fs-yt" href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5l6.3 3.5-6.3 3.5Z"/></svg></a>
+  <a class="fs-wa" href="https://wa.me/918919462503" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.1.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2Z"/></svg></a>
+</div>
 
 <div class="utility-bar">
   <div class="utility-left">
@@ -287,7 +304,8 @@ footer li{margin-bottom:7px;}
     <p class="eyebrow" data-i18n="updates_eyebrow">Latest</p>
     <h2 data-i18n="updates_title">Temple Announcements</h2>
   </div>
-  <div class="announce-list">
+  <div class="announce-list" id="announceList">
+    <div id="liveAnnouncements"></div>
     <div class="announce-item">
       <div class="announce-date" data-i18n="u1_date">Mandala Kalam</div>
       <div class="announce-body">
@@ -443,6 +461,29 @@ document.getElementById('menuBtn').addEventListener('click',()=>{
 });
 
 const WORKER_URL = "REPLACE_WITH_YOUR_WORKER_URL/register";
+const ANNOUNCEMENTS_URL = "REPLACE_WITH_YOUR_WORKER_URL/announcements";
+
+// Auto-load live announcements (e.g. Prasadam winner posts) from the Worker.
+// Falls back silently to the static announcements already in the page if
+// the worker isn't connected yet.
+(async function loadLiveAnnouncements(){
+  if(ANNOUNCEMENTS_URL.includes("REPLACE_WITH_YOUR_WORKER_URL")) return;
+  try{
+    const res = await fetch(ANNOUNCEMENTS_URL);
+    if(!res.ok) return;
+    const data = await res.json();
+    const container = document.getElementById('liveAnnouncements');
+    if(!container || !data.announcements) return;
+    container.innerHTML = data.announcements.map(a => {
+      const d = new Date(a.created_at);
+      const dateLabel = d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
+      return `<div class="announce-item">
+        <div class="announce-date">${dateLabel}</div>
+        <div class="announce-body"><h4>${a.title}</h4><p>${a.body}</p></div>
+      </div>`;
+    }).join('');
+  }catch(err){ /* silent fallback to static announcements */ }
+})();
 document.getElementById('lotteryForm').addEventListener('submit', async (e)=>{
   e.preventDefault();
   const btn = document.getElementById('f_submit_btn');
