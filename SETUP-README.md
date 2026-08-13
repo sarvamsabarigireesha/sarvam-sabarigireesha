@@ -32,6 +32,11 @@
 3. Worker deploy అయ్యాక వచ్చిన URL ని `index.html` చివర్లో ఉన్న `WORKER_URL` variable లో పేస్ట్ చేయండి, repo లో update చేయండి.
 4. Cloudflare Pages already connected కాబట్టి, push చేయగానే auto-deploy అవుతుంది.
 
+## కొత్తగా జోడించినవి (ఈ round)
+1. **Winner Auto-Announcement**: మీరు `/draw` call చేసినప్పుడు, worker ఇప్పుడు automatic గా ఒక public announcement కూడా create చేస్తుంది (only first names + count, full address/phone మీకు మాత్రమే privately). ఇది website లో Announcements section లో వెంటనే కనిపిస్తుంది — మీరు మళ్ళీ site లో ఏమీ edit చేయాల్సిన అవసరం లేదు.
+2. **Floating Social Icons**: Facebook, Instagram, YouTube, WhatsApp icons ఇప్పుడు screen scroll చేసినా ఎడమవైపు స్థిరంగా (sticky) కనిపిస్తాయి — మీరు పంపిన reference screenshot లాగానే.
+3. `index.html` చివర్లో `ANNOUNCEMENTS_URL` అనే రెండో variable కూడా ఉంది — worker deploy చేసాక దాన్ని కూడా (మీ `WORKER_URL` లాగే) మీ real worker URL తో replace చేయండి, అప్పుడు announcements auto-load అవుతాయి.
+
 ## Prasadam draw చేయడం ఎలా (prasadam ready అయినప్పుడు)
 ```
 curl -X POST https://<your-worker-url>/draw \
