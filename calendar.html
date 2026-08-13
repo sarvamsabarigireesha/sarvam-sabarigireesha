@@ -3,314 +3,721 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabarimala 2026 Calendar | Sarvam Sabarigireesha</title>
+<title>Sabarimala Calendar 2026 | Thathwamasi</title>
+<meta name="description" content="Sabarimala Calendar 2026 — Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important Ayyappa events.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Noto+Serif+Telugu:wght@600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
 :root{
-  --green:#CC3A63; --green-deep:#8F2A46; --green-panel:#E0567F;
-  --saffron:#A2AB73; --gold:#7C8557; --gold-bright:#C3CBA0;
-  --maroon:#8F2A46; --cream:#FFF7EB; --ink:#2B2018;
-  --stone:#6B6355; --line:#F9F0E0;
+  --bg:#fbf7ef;
+  --paper:#fffdf8;
+  --paper2:#f8f1e4;
+  --gold:#c58a18;
+  --gold2:#e2b34d;
+  --gold-soft:#ead7aa;
+  --brown:#35281d;
+  --muted:#6f6559;
+  --line:#eadcc2;
+  --green:#294f3d;
+  --green-dark:#1d3c2e;
+  --shadow:0 8px 28px rgba(96,65,18,.09);
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--ink);font-family:"Noto Sans","Noto Sans Telugu",sans-serif;line-height:1.6;}
-h1,h2{font-family:"Noto Serif","Noto Serif Telugu",serif;}
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 8% 8%,rgba(218,174,74,.08),transparent 25%),
+    linear-gradient(180deg,#fffdf9,#faf6ed 55%,#fffdf8);
+  color:var(--brown);
+  font-family:"Noto Sans","Noto Sans Telugu",sans-serif;
+  line-height:1.55;
+}
+h1,h2,h3,.brand-name,.month-name{
+  font-family:"Cormorant Garamond","Noto Serif Telugu",serif;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 48px));margin:auto}
 
-/* Utility bar */
-.utility-bar{background:var(--green-deep);color:#F6E3D6;font-size:.75rem;padding:6px 24px;display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:8px;}
+/* NOTICE */
+.notice-bar{
+  height:38px;
+  background:var(--green-dark);
+  color:#fffaf0;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  border-bottom:1px solid rgba(197,138,24,.25);
+}
+.notice-label{
+  height:100%;
+  display:flex;
+  align-items:center;
+  padding:0 20px;
+  background:var(--gold);
+  color:#2d241a;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  flex-shrink:0;
+  position:relative;
+  z-index:3;
+}
+.notice-window{overflow:hidden;flex:1}
+.notice-track{
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap;
+  animation:noticeScroll 24s linear infinite;
+  font-size:13px;
+  font-weight:600;
+}
+.notice-track span{padding-right:90px}
+@keyframes noticeScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 
-/* Ticker */
-.ticker-bar{background:var(--maroon);color:#fff;display:flex;align-items:center;overflow:hidden;}
-.ticker-label{background:var(--saffron);color:#1E1A12;font-weight:700;font-size:.72rem;letter-spacing:.05em;padding:8px 16px;flex-shrink:0;text-transform:uppercase;position:relative;z-index:2;box-shadow:4px 0 8px rgba(0,0,0,.15);}
-.ticker-track{white-space:nowrap;padding:8px 0;animation:tick 28s linear infinite;font-size:.82rem;position:relative;z-index:1;}
-.ticker-gap{display:inline-block;width:70px;}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* HEADER — SAME LIGHT DESIGN LANGUAGE AS HOME */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,253,248,.97);
+  border-bottom:1px solid rgba(197,138,24,.14);
+  backdrop-filter:blur(12px);
+}
+.header-row{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:235px}
+.brand-logo{
+  width:64px;height:64px;border-radius:50%;
+  object-fit:cover;border:1px solid var(--gold-soft);
+}
+.brand-name{font-size:22px;letter-spacing:.03em;color:#a66d08;font-weight:700}
+.brand-sub{font-size:13px;line-height:1.3;color:var(--brown)}
+.nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:21px;flex:1;
+}
+.nav a{
+  font-size:12px;font-weight:600;text-transform:uppercase;
+  position:relative;padding:32px 0 27px;
+}
+.nav a.active,.nav a:hover{color:#b87809}
+.nav a.active:after{
+  content:"";position:absolute;left:0;right:0;bottom:20px;
+  height:2px;background:var(--gold);
+}
+.lang{
+  border:1px solid var(--gold-soft);border-radius:22px;
+  background:#fffaf0;padding:8px 12px;display:flex;
+  align-items:center;gap:6px;
+}
+.lang select{
+  border:0;background:transparent;color:var(--brown);
+  font:600 12px inherit;outline:none;
+}
+.menu{
+  display:none;border:1px solid var(--gold-soft);
+  background:#fffaf0;border-radius:8px;padding:8px 11px;
+}
 
-/* Header — identical to homepage */
-header{background:var(--green);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15);}
-.nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand-mark{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex-shrink:0;}
-.brand-text strong{display:block;color:var(--gold-bright);font-size:1.05rem;}
-.brand-text span{display:block;color:#F6E3D6;font-size:.7rem;}
-.brand-text .brand-mantra{color:var(--gold-bright);font-size:.68rem;font-weight:600;margin-top:1px;}
-nav.links{display:none;gap:20px;font-size:.85rem;color:#FBEFE2;}
-@media(min-width:960px){nav.links{display:flex;}}
-nav.links a{padding:6px 0;transition:.2s;}
-nav.links a:hover,nav.links a.active{color:var(--gold-bright);border-bottom:2px solid var(--gold-bright);}
-.menu-toggle{display:block;background:none;border:1px solid rgba(230,197,131,.4);color:var(--gold-bright);width:40px;height:38px;border-radius:6px;font-size:1.1rem;cursor:pointer;}
-@media(min-width:960px){.menu-toggle{display:none;}}
-.mobile-menu{display:none;flex-direction:column;background:var(--green-deep);padding:14px 24px;gap:10px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{color:#FBEFE2;font-size:.9rem;padding:6px 0;}
+/* SOCIAL */
+.float-social{
+  position:fixed;right:15px;top:42%;z-index:900;
+  display:flex;flex-direction:column;gap:6px;
+}
+.float-social a{
+  width:38px;height:38px;border-radius:9px;
+  background:#fffaf1;border:1px solid var(--gold-soft);
+  display:flex;align-items:center;justify-content:center;
+  color:#b9780b;box-shadow:0 4px 12px rgba(96,65,18,.10);
+  font-weight:700;
+}
 
-/* Floating sticky social rail — identical to homepage */
-.float-social{position:fixed;left:14px;top:45%;transform:translateY(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;}
-.float-social a{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.22);border:2px solid rgba(255,255,255,.85);}
-.float-social a:hover{transform:scale(1.12) translateX(2px);box-shadow:0 6px 18px rgba(0,0,0,.3);}
-.fs-fb{background:#1877F2;} .fs-ig{background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);} .fs-yt{background:#FF0000;} .fs-wa{background:#25D366;}
-@media(max-width:600px){.float-social{left:50%;top:auto;bottom:16px;transform:translateX(-50%);flex-direction:row;} .float-social a:hover{transform:scale(1.12) translateY(-2px);}}
+/* HERO — LIGHT HOME PAGE STYLE */
+.hero{
+  min-height:390px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+.hero:before{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,#fffdf8 0%,rgba(255,253,248,.96) 25%,rgba(255,253,248,.68) 50%,rgba(255,253,248,.20) 76%,rgba(255,253,248,.02) 100%),
+    url("https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg") center/cover;
+  filter:saturate(.88);
+}
+.hero-content{position:relative;z-index:2;padding:58px 0}
+.kicker{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:#ad740d;margin-bottom:10px;font-weight:700;
+}
+.hero h1{
+  font-size:clamp(54px,7vw,78px);
+  line-height:.9;
+  max-width:760px;
+  letter-spacing:.01em;
+}
+.hero h1 span{color:#c78a18}
+.ornament{color:#c78a18;font-size:20px;margin:15px 0}
+.hero-copy{
+  font-family:"Cormorant Garamond",serif;
+  font-size:19px;line-height:1.45;
+  max-width:650px;color:#4e4336;
+}
 
-/* Hero — recolored to match homepage's warm cream/maroon palette */
-.hero{text-align:center;padding:64px 24px 40px;background:linear-gradient(180deg,var(--green-deep),var(--maroon));color:#fff;}
-.kicker{color:var(--gold-bright);font:12px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;}
-.hero h1{margin:16px 0 10px;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;}
-.hero h1 em{color:var(--gold-bright);font-style:italic;}
-.hero p{max-width:640px;margin:18px auto 0;color:#FCE9D8;font-size:1rem;}
+/* CALENDAR */
+.calendar-section{padding:46px 0 70px}
+.section-head{
+  display:flex;justify-content:space-between;
+  align-items:end;gap:20px;margin-bottom:22px;
+}
+.section-kicker{
+  font-size:11px;color:#b47408;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.section-title{font-size:34px;line-height:1.05}
+.section-title span{color:var(--gold)}
+.controls{display:flex;gap:9px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:7px;border:1px solid var(--gold-soft);
+  border-radius:7px;padding:10px 15px;
+  font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.04em;
+  transition:.2s;cursor:pointer;background:#fffaf0;color:var(--brown);
+}
+.btn:hover{transform:translateY(-1px);border-color:#d9ae52}
+.btn-gold{
+  background:linear-gradient(#e6bb5b,#d8a63b);
+  border-color:#d2a03a;color:#2d241a;
+}
+.calendar-intro{
+  background:#fffaf1;border:1px solid var(--line);
+  border-radius:15px;padding:18px 22px;
+  margin-bottom:20px;box-shadow:var(--shadow);
+  color:var(--muted);font-size:13px;
+}
+.month-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.month-card{
+  background:rgba(255,253,248,.98);
+  border:1px solid var(--line);
+  border-radius:13px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.2s;
+}
+.month-card:hover{transform:translateY(-3px);border-color:#d9ae52}
+.month-top{
+  padding:17px 18px;
+  display:flex;align-items:end;justify-content:space-between;
+  background:linear-gradient(135deg,#fffaf0,#f6ead4);
+  border-bottom:1px solid var(--line);
+}
+.month-name{font-size:25px;color:#8f620c}
+.month-number{
+  color:#a8791b;font:700 10px Arial,sans-serif;
+  letter-spacing:1px;
+}
+.calendar{padding:15px 16px 12px}
+.weekdays,.days{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  text-align:center;
+}
+.weekdays{margin-bottom:7px}
+.weekdays div{
+  color:#8c7c66;font:700 9px Arial,sans-serif;
+  letter-spacing:.05em;
+}
+.days div{
+  min-height:30px;display:flex;align-items:center;
+  justify-content:center;color:var(--brown);
+  font:13px Arial,sans-serif;position:relative;
+}
+.days .sun{color:#b87809}
+.days .event{color:#9a6b0e;font-weight:800}
+.days .event::after{
+  content:"";position:absolute;bottom:2px;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--gold);
+}
+.days .today{
+  border:1px solid var(--gold);border-radius:50%;
+}
+.events{padding:0 16px 16px}
+.event{
+  display:flex;gap:11px;padding:8px 0;
+  border-top:1px solid var(--line);
+}
+.event-date{
+  min-width:35px;color:#b47408;
+  font:800 11px Arial,sans-serif;
+}
+.event-text{
+  color:#655b4e;font:12px/1.45 Arial,sans-serif;
+}
 
-/* Year controls */
-.calendar-wrap{max-width:1180px;margin:0 auto;padding:44px 24px 80px;}
-.year-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:32px;flex-wrap:wrap;}
-.year-bar h2{margin:0;font-size:1.7rem;color:var(--green);}
-.year-bar h2 span{color:var(--maroon);}
-.controls{display:flex;gap:10px;flex-wrap:wrap;}
-.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 16px;border-radius:6px;cursor:pointer;font:600 .72rem Arial,sans-serif;letter-spacing:.06em;transition:.2s;box-shadow:0 2px 8px rgba(166,40,30,.06);}
-.btn:hover{border-color:var(--saffron);}
-.btn.gold{background:var(--saffron);color:#1E1A12;border-color:var(--saffron);}
-.btn.gold:hover{background:var(--gold);}
+/* FOOTER */
+footer{padding:30px 0 18px;border-top:1px solid var(--line)}
+.footer-grid{
+  display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:30px;
+}
+.footer-brand .brand{margin-bottom:10px}
+.footer-title{
+  font-size:12px;color:#b47408;font-weight:700;
+  text-transform:uppercase;margin-bottom:9px;
+}
+footer p,footer li,footer a{font-size:11px;color:#665d51}
+footer ul{list-style:none;display:grid;gap:5px}
+.socials{display:flex;gap:7px;margin-top:12px}
+.socials a{
+  width:29px;height:29px;border-radius:50%;
+  border:1px solid var(--gold-soft);
+  display:flex;align-items:center;justify-content:center;
+  background:#fffaf1;
+}
+.footer-bottom{
+  text-align:center;margin-top:22px;padding-top:13px;
+  border-top:1px solid var(--line);
+  font-size:10px;color:#81766a;
+}
 
-/* Month grid */
-.month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media(max-width:980px){.month-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.month-grid{grid-template-columns:1fr;}}
-.month-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(166,40,30,.08);transition:.25s;}
-.month-card:hover{transform:translateY(-4px);border-color:var(--saffron);}
-.month-top{padding:18px 20px;display:flex;align-items:flex-end;justify-content:space-between;background:linear-gradient(135deg,var(--green-panel),var(--green));color:#fff;}
-.month-name{font-size:1.4rem;font-family:"Noto Serif",serif;}
-.month-number{color:var(--gold-bright);font:11px Arial,sans-serif;letter-spacing:1px;}
-.calendar{padding:16px 18px;}
-.weekdays,.days{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;}
-.weekdays{margin-bottom:8px;}
-.weekdays div{color:var(--stone);font:10px Arial,sans-serif;letter-spacing:.05em;}
-.days div{min-height:32px;display:flex;align-items:center;justify-content:center;color:var(--ink);font:13px Arial,sans-serif;position:relative;}
-.days .sun{color:var(--maroon);}
-.days .event{color:var(--green);font-weight:bold;}
-.days .event::after{content:"";position:absolute;bottom:3px;width:5px;height:5px;border-radius:50%;background:var(--saffron);}
-.days .today{border:1px solid var(--saffron);border-radius:50%;}
+/* PDF / share status */
+.pdf-status{
+  margin-top:12px;min-height:18px;
+  font-size:11px;color:#2f6b55;text-align:right;
+}
 
-.events{padding:0 18px 18px;}
-.event{display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--line);}
-.event-date{min-width:38px;color:var(--maroon);font:600 12px Arial,sans-serif;}
-.event-text{color:var(--stone);font:12px/1.5 Arial,sans-serif;}
+/* PRINT */
+@media print{
+  .notice-bar,.site-header,.float-social,.controls,.pdf-status,footer{display:none!important}
+  body{background:#fff}
+  .hero{min-height:230px}
+  .calendar-section{padding:20px 0}
+  .month-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .month-card{box-shadow:none;break-inside:avoid}
+}
 
-/* Footer — identical to homepage */
-footer{background:var(--green-deep);color:#F6E3D6;padding:36px 24px 22px;text-align:center;}
-footer strong{display:block;color:var(--gold-bright);margin-bottom:8px;letter-spacing:.1em;font-size:.9rem;}
-footer p{font-size:.78rem;color:#D9B79C;}
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .nav{gap:12px}.nav a{font-size:10px}
+  .month-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:800px){
+  .container{width:min(100% - 28px,700px)}
+  .header-row{min-height:74px}
+  .brand-logo{width:52px;height:52px}
+  .brand-name{font-size:18px}
+  .nav{display:none}
+  .lang{margin-left:auto}
+  .menu{display:block}
+  .hero:before{
+    background:
+      linear-gradient(180deg,rgba(255,253,248,.93),rgba(255,253,248,.70)),
+      url("https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg") center/cover;
+  }
+  .hero-content{padding:45px 0}
+  .hero h1{font-size:55px}
+  .section-head{align-items:flex-start;flex-direction:column}
+  .controls{width:100%}
+  .month-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:500px){
+  .notice-label{padding:0 12px;font-size:10px}
+  .notice-track{font-size:11px}
+  .brand{min-width:0}
+  .brand-sub{font-size:11px}
+  .lang{padding:7px 8px}
+  .hero h1{font-size:46px}
+  .hero-copy{font-size:16px}
+  .controls .btn{flex:1}
+  .footer-grid{grid-template-columns:1fr}
+  .float-social{right:8px}
+}
 </style>
 </head>
+
 <body>
 
-<div class="float-social">
-  <a class="fs-fb" href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-  <a class="fs-ig" href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76c-.55.55-1.1.9-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44.54C6.08.29 6.81.12 7.87.07 8.94.02 9.3.01 12 .01v1.99Zm0 3.35a6.65 6.65 0 1 0 0 13.3 6.65 6.65 0 0 0 0-13.3Zm0 10.97a4.32 4.32 0 1 1 0-8.64 4.32 4.32 0 0 1 0 8.64Zm6.9-11.22a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0Z"/></svg></a>
-  <a class="fs-yt" href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5l6.3 3.5-6.3 3.5Z"/></svg></a>
-  <a class="fs-wa" href="https://wa.me/918919462503" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.2-.1.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5s-.6-1.5-.9-2.1c-.2-.5-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 20.2 12 8.2 8.2 0 0 1 12 20.2Z"/></svg></a>
-</div>
-
-<div class="utility-bar">
-  <div>✉ contact@sarvamsabarigireesha.com &nbsp; ☎ +91 89194 62503</div>
-</div>
-
-<div class="ticker-bar">
-  <span class="ticker-label">Notice</span>
-  <div class="ticker-track">
-    <span>Prasadam lottery registration is open — see the Prasadam section below.</span>
-    <span class="ticker-gap"></span>
-    <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
-    <span class="ticker-gap"></span>
-    <span>Prasadam lottery registration is open — see the Prasadam section below.</span>
-    <span class="ticker-gap"></span>
-    <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+<!-- NOTICE: only the requested Mandala Kalam notice -->
+<div class="notice-bar">
+  <div class="notice-label">NOTICE</div>
+  <div class="notice-window">
+    <div class="notice-track">
+      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+    </div>
   </div>
 </div>
 
-<header>
-  <div class="nav-row">
-    <a href="/" class="brand">
-      <img src="/assets/logo.jpg" class="brand-mark" alt="Sarvam Sabarigireesha" onerror="this.style.display='none'">
-      <div class="brand-text">
-        <strong>THATHWAMASI</strong>
-        <span>The Digital Home of Sarvam Sabarigireesha</span>
-        <span class="brand-mantra">Swamiye Sharanam Ayyappa</span>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="/">
+      <img class="brand-logo" src="/assets/logo.jpg" alt="Thathwamasi" onerror="this.style.display='none'">
+      <div>
+        <div class="brand-name">THATHWAMASI</div>
+        <div class="brand-sub">The Digital Home of<br>Sarvam Sabarigireesha</div>
       </div>
     </a>
-    <nav class="links">
+
+    <nav class="nav" id="nav">
       <a href="/">Home</a>
       <a href="/#about">About</a>
-      <a href="/#timings">Darshan Timings</a>
-      <a href="/#updates">Announcements</a>
-      <a href="/#prasadam">Prasadam</a>
-      <a href="/#journey">Pilgrimage</a>
-      <a href="/#gallery">Gallery</a>
+      <a href="/#journey">Journey</a>
       <a href="/calendar" class="active">Calendar</a>
+      <a href="/#prasadam">Prasadam</a>
+      <a href="/#gallery">Gallery</a>
+      <a href="/#community">Community</a>
       <a href="/#contact">Contact</a>
     </nav>
-    <button class="menu-toggle" id="menuBtn">☰</button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="/">Home</a>
-    <a href="/#about">About</a>
-    <a href="/#timings">Darshan Timings</a>
-    <a href="/#updates">Announcements</a>
-    <a href="/#prasadam">Prasadam</a>
-    <a href="/#journey">Pilgrimage</a>
-    <a href="/#gallery">Gallery</a>
-    <a href="/calendar">Calendar</a>
-    <a href="/#contact">Contact</a>
+
+    <div class="lang">
+      <span>◎</span>
+      <select aria-label="Language">
+        <option>English</option>
+        <option>తెలుగు</option>
+        <option>हिन्दी</option>
+      </select>
+    </div>
+    <button class="menu" id="menuBtn">☰</button>
   </div>
 </header>
 
+<div class="float-social">
+  <a href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" aria-label="Instagram">◎</a>
+  <a href="https://youtube.com/@sarvamsabarigireesha" target="_blank" aria-label="YouTube">▶</a>
+  <a href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" aria-label="Facebook">f</a>
+  <a href="https://wa.me/918919462503" target="_blank" aria-label="WhatsApp">◔</a>
+</div>
+
 <section class="hero">
-  <div class="kicker">Swamiye Sharanam Ayyappa</div>
-  <h1>Sabarimala <em>Calendar</em></h1>
-  <p>Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important Sabarimala events for the year 2026.</p>
+  <div class="container hero-content">
+    <div class="kicker">Sarvam Sabarigireesha</div>
+    <h1>Sabarimala <span>Calendar</span></h1>
+    <div class="ornament">— ◇ ◇ ◇ —</div>
+    <p class="hero-copy">
+      Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important
+      Sabarimala events for the year 2026.
+    </p>
+  </div>
 </section>
 
-<main class="calendar-wrap">
-  <div class="year-bar">
-    <h2>Sacred Calendar &middot; <span>2026</span></h2>
-    <div class="controls">
-      <button class="btn" onclick="scrollToMonth(-1)">PREVIOUS</button>
-      <button class="btn gold" onclick="scrollToMonth(1)">NEXT</button>
-      <button class="btn" onclick="downloadCalendarICS()" id="downloadBtn">⬇ DOWNLOAD</button>
-      <button class="btn" onclick="shareCalendar()" id="shareBtn">⤴ SHARE</button>
+<main class="calendar-section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Sabarimala Calendar</div>
+        <h2 class="section-title">Sacred Calendar · <span>2026</span></h2>
+      </div>
+
+      <div class="controls">
+        <button class="btn" onclick="scrollToMonth(-1)">← Previous</button>
+        <button class="btn btn-gold" onclick="scrollToMonth(1)">Next →</button>
+        <button class="btn" id="downloadBtn" onclick="downloadPDF()">↓ Download PDF</button>
+        <button class="btn" id="shareBtn" onclick="sharePDF()">↗ Share PDF</button>
+      </div>
     </div>
+
+    <div class="calendar-intro">
+      <strong>Swamiye Sharanam Ayyappa.</strong>
+      &nbsp; View the important Sabarimala dates and sacred events for 2026.
+      Event dates are marked with a gold dot.
+    </div>
+
+    <div class="month-grid" id="calendarGrid"></div>
+    <div class="pdf-status" id="pdfStatus"></div>
+
   </div>
-  <div class="month-grid" id="calendarGrid"></div>
 </main>
 
-<footer>
-  <strong>SWAMIYE SHARANAM AYYAPPA</strong>
-  <p>&copy; 2026 Sarvam Sabarigireesha &middot; The Digital Home of Sarvam Sabarigireesha</p>
+<footer id="contact">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/assets/logo.jpg" alt="Thathwamasi" onerror="this.style.display='none'">
+        <div>
+          <div class="brand-name">THATHWAMASI</div>
+          <div class="brand-sub">The Digital Home of<br>Sarvam Sabarigireesha</div>
+        </div>
+      </a>
+      <p>A community devotee portal for Lord Ayyappa Swamy.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank">◎</a>
+        <a href="https://youtube.com/@sarvamsabarigireesha" target="_blank">▶</a>
+        <a href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank">f</a>
+        <a href="https://wa.me/918919462503" target="_blank">◔</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <ul>
+        <li><a href="/#about">About Us</a></li>
+        <li><a href="/#journey">Our Journey</a></li>
+        <li><a href="/calendar">Sabarimala Calendar</a></li>
+        <li><a href="/#prasadam">Ayyappa Prasadam</a></li>
+        <li><a href="/#gallery">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Community</div>
+      <ul>
+        <li><a href="/#community">Stay Connected</a></li>
+        <li><a href="/#journey">Pilgrimage</a></li>
+        <li><a href="/#prasadam">Prasadam</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Contact</div>
+      <ul>
+        <li>+91 89194 62503</li>
+        <li>contact@sarvamsabarigireesha.com</li>
+        <li>Hyderabad, Telangana, India</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    © <span id="year"></span> Thathwamasi • Sarvam Sabarigireesha • All Rights Reserved
+  </div>
 </footer>
 
 <script>
-document.getElementById('menuBtn').addEventListener('click',()=>{
-  document.getElementById('mobileMenu').classList.toggle('open');
-});
-
-/* =====================================================
-   SABARIMALA 2026 CALENDAR DATA
-   ===================================================== */
 const calendarData = [
-{month:0,name:"January",events:[["09","Uthiram"],["14","Makara Vilakku / Makara Jyothi"],["30","Sreekovil opens"],["31","Sreekovil opening period"]]},
-{month:1,name:"February",events:[["05","Uthiram"],["12","Sreekovil opens"],["18","Sreekovil closes"]]},
-{month:2,name:"March",events:[["05","Uthiram"],["14","Sreekovil opens"],["19","Sreekovil closes"],["22","Sabarimala Uthsavam begins"],["23","Kodiyettam"]]},
-{month:3,name:"April",events:[["01","Painguni Uthram & Aratt Festival"],["01","Medam Vishu / Sastha Birthday"],["10","Sreekovil opens"],["18","Sreekovil closes"],["28","Uthiram"]]},
-{month:4,name:"May",events:[["14","Sreekovil opens"],["25","Uthiram"],["26","Prathishta Day / One-day opening"]]},
-{month:5,name:"June",events:[["14","Sreekovil opens"],["19","Sreekovil closes"],["22","Uthiram"]]},
-{month:6,name:"July",events:[["16","Sreekovil opens"],["19","Uthiram"],["21","Sreekovil closes"]]},
-{month:7,name:"August",events:[["15","Uthiram"],["16","Sreekovil opens"],["21","Sreekovil closes"],["24","Sreekovil opens"],["28","Sreekovil closes"]]},
-{month:8,name:"September",events:[["12","Uthiram"],["16","Sreekovil opens"],["21","Sreekovil closes"]]},
-{month:9,name:"October",events:[["09","Uthiram"],["17","Sreekovil opens"],["22","Sreekovil closes"]]},
-{month:10,name:"November",events:[["05","Uthiram"],["16","Mandala Pooja period begins"],["16","Sreekovil opens"],["27","Mandala Pooja period"]]},
-{month:11,name:"December",events:[["03","Uthiram"],["27","Sreekovil closes"],["30","Margazhi Uthiram"],["30","Sreekovil opens for next Makara Vilakku season"]]}
+ {month:0,name:"January",events:[["09","Uthiram"],["14","Makara Vilakku / Makara Jyothi"],["30","Sreekovil opens"],["31","Sreekovil opening period"]]},
+ {month:1,name:"February",events:[["05","Uthiram"],["12","Sreekovil opens"],["18","Sreekovil closes"]]},
+ {month:2,name:"March",events:[["05","Uthiram"],["14","Sreekovil opens"],["19","Sreekovil closes"],["22","Sabarimala Uthsavam begins"],["23","Kodiyettam"]]},
+ {month:3,name:"April",events:[["01","Painguni Uthram & Aratt Festival"],["01","Medam Vishu / Sastha Birthday"],["10","Sreekovil opens"],["18","Sreekovil closes"],["28","Uthiram"]]},
+ {month:4,name:"May",events:[["14","Sreekovil opens"],["25","Uthiram"],["26","Prathishta Day / One-day opening"]]},
+ {month:5,name:"June",events:[["14","Sreekovil opens"],["19","Sreekovil closes"],["22","Uthiram"]]},
+ {month:6,name:"July",events:[["16","Sreekovil opens"],["19","Uthiram"],["21","Sreekovil closes"]]},
+ {month:7,name:"August",events:[["15","Uthiram"],["16","Sreekovil opens"],["21","Sreekovil closes"],["24","Sreekovil opens"],["28","Sreekovil closes"]]},
+ {month:8,name:"September",events:[["12","Uthiram"],["16","Sreekovil opens"],["21","Sreekovil closes"]]},
+ {month:9,name:"October",events:[["09","Uthiram"],["17","Sreekovil opens"],["22","Sreekovil closes"]]},
+ {month:10,name:"November",events:[["05","Uthiram"],["16","Mandala Pooja period begins"],["16","Sreekovil opens"],["27","Mandala Pooja period"]]},
+ {month:11,name:"December",events:[["03","Uthiram"],["27","Sreekovil closes"],["30","Margazhi Uthiram"],["30","Sreekovil opens for next Makara Vilakku season"]]}
 ];
 
-const grid = document.getElementById("calendarGrid");
-const weekdays = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+const grid=document.getElementById("calendarGrid");
+const weekdays=["SUN","MON","TUE","WED","THU","FRI","SAT"];
 
 function createMonth(data){
-  const card = document.createElement("article");
-  card.className = "month-card";
-  card.id = "month-" + data.month;
+  const card=document.createElement("article");
+  card.className="month-card";
+  card.id="month-"+data.month;
 
-  const firstDay = new Date(2026,data.month,1).getDay();
-  const daysInMonth = new Date(2026,data.month + 1,0).getDate();
-  const eventDays = data.events.map(event => Number(event[0]));
+  const firstDay=new Date(2026,data.month,1).getDay();
+  const daysInMonth=new Date(2026,data.month+1,0).getDate();
+  const eventDays=data.events.map(e=>Number(e[0]));
 
-  let daysHTML = "";
-  for(let i=0;i<firstDay;i++){ daysHTML += `<div></div>`; }
+  let daysHTML="";
+  for(let i=0;i<firstDay;i++) daysHTML+="<div></div>";
   for(let day=1;day<=daysInMonth;day++){
-    const dayOfWeek = new Date(2026,data.month,day).getDay();
-    const isEvent = eventDays.includes(day);
-    const isToday = new Date().getFullYear() === 2026 && new Date().getMonth() === data.month && new Date().getDate() === day;
-    daysHTML += `<div class="${dayOfWeek === 0 ? "sun" : ""} ${isEvent ? "event" : ""} ${isToday ? "today" : ""}">${day}</div>`;
+    const dow=new Date(2026,data.month,day).getDay();
+    const isEvent=eventDays.includes(day);
+    const today=new Date();
+    const isToday=today.getFullYear()===2026 &&
+      today.getMonth()===data.month && today.getDate()===day;
+    daysHTML+=`<div class="${dow===0?"sun ":""}${isEvent?"event ":""}${isToday?"today":""}">${day}</div>`;
   }
 
-  let eventsHTML = "";
-  data.events.forEach(event => {
-    eventsHTML += `<div class="event"><div class="event-date">${event[0]}</div><div class="event-text">${event[1]}</div></div>`;
+  let eventsHTML="";
+  data.events.forEach(e=>{
+    eventsHTML+=`<div class="event"><div class="event-date">${e[0]}</div><div class="event-text">${e[1]}</div></div>`;
   });
 
-  card.innerHTML = `
+  card.innerHTML=`
     <div class="month-top">
       <div class="month-name">${data.name}</div>
       <div class="month-number">2026 / ${String(data.month+1).padStart(2,"0")}</div>
     </div>
     <div class="calendar">
-      <div class="weekdays">${weekdays.map(day => `<div>${day}</div>`).join("")}</div>
+      <div class="weekdays">${weekdays.map(d=>`<div>${d}</div>`).join("")}</div>
       <div class="days">${daysHTML}</div>
     </div>
-    <div class="events">${eventsHTML}</div>
-  `;
+    <div class="events">${eventsHTML}</div>`;
   return card;
 }
+calendarData.forEach(d=>grid.appendChild(createMonth(d)));
 
-calendarData.forEach(data => { grid.appendChild(createMonth(data)); });
-
-let currentMonth = 0;
+let currentMonth=0;
 function scrollToMonth(direction){
-  currentMonth += direction;
-  if(currentMonth < 0){ currentMonth = 11; }
-  if(currentMonth > 11){ currentMonth = 0; }
-  const target = document.getElementById("month-" + currentMonth);
-  if(target){ target.scrollIntoView({behavior:"smooth", block:"center"}); }
-}
-
-function pad2(n){ return String(n).padStart(2,"0"); }
-
-function buildICS(){
-  const lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Sarvam Sabarigireesha//Sabarimala Calendar 2026//EN","CALSCALE:GREGORIAN","X-WR-CALNAME:Sabarimala 2026 Calendar - Sarvam Sabarigireesha","X-WR-TIMEZONE:Asia/Kolkata"];
-  calendarData.forEach(monthData=>{
-    monthData.events.forEach(([day,title])=>{
-      const dateStr = `2026${pad2(monthData.month+1)}${pad2(Number(day))}`;
-      const uid = `${dateStr}-${monthData.month}-${day}-sarvamsabarigireesha@sarvamsabarigireesha.com`;
-      lines.push("BEGIN:VEVENT",`UID:${uid}`,`DTSTAMP:${dateStr}T000000Z`,`DTSTART;VALUE=DATE:${dateStr}`,`SUMMARY:${title.replace(/,/g,"\\,")}`,"DESCRIPTION:Sabarimala 2026 sacred date — Sarvam Sabarigireesha","END:VEVENT");
-    });
+  currentMonth+=direction;
+  if(currentMonth<0)currentMonth=11;
+  if(currentMonth>11)currentMonth=0;
+  document.getElementById("month-"+currentMonth)?.scrollIntoView({
+    behavior:"smooth",block:"center"
   });
-  lines.push("END:VCALENDAR");
-  return lines.join("\r\n");
 }
 
-function downloadCalendarICS(){
-  const icsContent = buildICS();
-  const blob = new Blob([icsContent], {type:"text/calendar;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "Sabarimala-2026-Calendar.ics";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+/* PDF generation */
+function makePDF(){
+  if(!window.jspdf || !window.jspdf.jsPDF){
+    throw new Error("PDF library not loaded");
+  }
+
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF({orientation:"portrait",unit:"mm",format:"a4"});
+  const pageW=210, pageH=297;
+
+  function header(){
+    pdf.setFillColor(41,79,61);
+    pdf.rect(0,0,pageW,18,"F");
+    pdf.setTextColor(255,255,255);
+    pdf.setFont("helvetica","bold");
+    pdf.setFontSize(12);
+    pdf.text("THATHWAMASI",14,11);
+    pdf.setTextColor(197,138,24);
+    pdf.setFontSize(8);
+    pdf.text("The Digital Home of Sarvam Sabarigireesha",14,15.5);
+    pdf.setTextColor(53,40,29);
+  }
+
+  function footer(pageNo){
+    pdf.setDrawColor(234,220,194);
+    pdf.line(14,pageH-15,pageW-14,pageH-15);
+    pdf.setFont("helvetica","normal");
+    pdf.setFontSize(7);
+    pdf.setTextColor(111,101,89);
+    pdf.text("Swamiye Sharanam Ayyappa • Sarvam Sabarigireesha",14,pageH-9);
+    pdf.text(String(pageNo),pageW-18,pageH-9);
+  }
+
+  let page=1;
+  header();
+  pdf.setTextColor(53,40,29);
+  pdf.setFont("helvetica","bold");
+  pdf.setFontSize(22);
+  pdf.text("Sabarimala Calendar 2026",14,31);
+  pdf.setTextColor(197,138,24);
+  pdf.setFontSize(10);
+  pdf.text("Sacred dates and important Ayyappa events",14,38);
+
+  let y=49;
+
+  calendarData.forEach((m,index)=>{
+    const needed=20+(m.events.length*6);
+    if(y+needed>pageH-24){
+      footer(page);
+      pdf.addPage();
+      page++;
+      header();
+      y=30;
+    }
+
+    pdf.setFillColor(248,241,228);
+    pdf.roundedRect(14,y,pageW-28,10,2,2,"F");
+    pdf.setTextColor(166,109,8);
+    pdf.setFont("helvetica","bold");
+    pdf.setFontSize(11);
+    pdf.text(m.name,18,y+7);
+    pdf.setFontSize(7);
+    pdf.setTextColor(120,95,55);
+    pdf.text("2026",pageW-30,y+7);
+    y+=15;
+
+    pdf.setTextColor(111,101,89);
+    pdf.setFont("helvetica","normal");
+    pdf.setFontSize(8);
+
+    m.events.forEach(([day,title])=>{
+      pdf.setTextColor(180,116,8);
+      pdf.setFont("helvetica","bold");
+      pdf.text(day,18,y);
+      pdf.setTextColor(95,87,77);
+      pdf.setFont("helvetica","normal");
+      pdf.text(title,32,y);
+      y+=6;
+    });
+    y+=5;
+  });
+
+  footer(page);
+  return pdf;
 }
 
-async function shareCalendar(){
-  const shareData = {
-    title:"Sabarimala 2026 Calendar",
-    text:"Sacred dates, Uthiram, Sreekovil openings and Mandala Pooja — Sabarimala 2026 Calendar from Sarvam Sabarigireesha.",
-    url: window.location.href
-  };
-  if(navigator.share){
-    try{ await navigator.share(shareData); }catch(err){}
-  } else {
-    try{
-      await navigator.clipboard.writeText(shareData.url);
-      const btn = document.getElementById("shareBtn");
-      const original = btn.textContent;
-      btn.textContent = "✓ LINK COPIED";
-      setTimeout(()=>{ btn.textContent = original; }, 2000);
-    }catch(err){ alert(shareData.url); }
+function downloadPDF(){
+  const status=document.getElementById("pdfStatus");
+  try{
+    status.textContent="Creating PDF…";
+    const pdf=makePDF();
+    pdf.save("Sabarimala-Calendar-2026-Sarvam-Sabarigireesha.pdf");
+    status.textContent="PDF downloaded successfully.";
+  }catch(err){
+    console.error(err);
+    status.textContent="PDF library loading. Please try again.";
   }
 }
+
+async function sharePDF(){
+  const status=document.getElementById("pdfStatus");
+  try{
+    status.textContent="Creating PDF…";
+    const pdf=makePDF();
+    const blob=pdf.output("blob");
+    const file=new File(
+      [blob],
+      "Sabarimala-Calendar-2026-Sarvam-Sabarigireesha.pdf",
+      {type:"application/pdf"}
+    );
+
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({
+        title:"Sabarimala Calendar 2026",
+        text:"Sabarimala Calendar 2026 — Sarvam Sabarigireesha",
+        files:[file]
+      });
+      status.textContent="PDF shared successfully.";
+    }else{
+      pdf.save("Sabarimala-Calendar-2026-Sarvam-Sabarigireesha.pdf");
+      status.textContent="PDF sharing is not supported here, so the PDF was downloaded.";
+    }
+  }catch(err){
+    if(err && err.name==="AbortError"){
+      status.textContent="";
+      return;
+    }
+    console.error(err);
+    status.textContent="Could not share PDF. Please use Download PDF.";
+  }
+}
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.getElementById("menuBtn").addEventListener("click",()=>{
+  const nav=document.getElementById("nav");
+  nav.style.display=nav.style.display==="flex"?"none":"flex";
+  if(nav.style.display==="flex"){
+    nav.style.position="absolute";
+    nav.style.top="74px";
+    nav.style.left="0";
+    nav.style.right="0";
+    nav.style.background="#fffdf8";
+    nav.style.flexDirection="column";
+    nav.style.padding="15px 25px";
+    nav.style.gap="0";
+    nav.querySelectorAll("a").forEach(a=>a.style.padding="9px 0");
+  }
+});
 </script>
 
 </body>
