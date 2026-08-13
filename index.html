@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarvam Sabarigireesha | Official Devotee Portal for Lord Ayyappa Swamy</title>
+<meta name="description" content="Official devotee portal of Sarvam Sabarigireesha — Darshan timings, temple updates, Sabarimala calendar, monthly Prasadam registration and community for Lord Ayyappa devotees.">
+<meta name="theme-color" content="#0F2E23">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@600;700&family=Noto+Serif+Telugu:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Serif+Tamil:wght@600;700&family=Noto+Serif+Kannada:wght@600;700&family=Noto+Serif+Malayalam:wght@600;700&family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0F2E23; --green-deep:#0A1F17; --green-panel:#153328;
+  --saffron:#D9791E; --gold:#C9A227; --gold-bright:#E6C583;
+  --maroon:#6B1E23; --cream:#F7F2E7; --ink:#1E1A12;
+  --stone:#5A5346; --line:#E4D9BF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:"Noto Sans","Noto Sans Telugu","Noto Sans Devanagari","Noto Sans Tamil","Noto Sans Kannada","Noto Sans Malayalam",sans-serif;line-height:1.6;}
+h1,h2,h3{font-family:"Noto Serif","Noto Serif Telugu","Noto Serif Devanagari","Noto Serif Tamil","Noto Serif Kannada","Noto Serif Malayalam",serif;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+/* Utility bar */
+.utility-bar{background:var(--green-deep);color:#cfd9d2;font-size:.75rem;padding:6px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.utility-bar a{opacity:.85;}
+.utility-left{display:flex;gap:16px;flex-wrap:wrap;}
+.lang-switch{display:flex;gap:4px;}
+.lang-switch button{background:transparent;border:1px solid rgba(207,217,210,.3);color:#cfd9d2;padding:2px 9px;border-radius:12px;font-size:.7rem;cursor:pointer;}
+.lang-switch button.active,.lang-switch button:hover{background:var(--saffron);border-color:var(--saffron);color:#fff;}
+
+/* Ticker */
+.ticker-bar{background:var(--maroon);color:#fff;display:flex;align-items:center;overflow:hidden;}
+.ticker-label{background:var(--saffron);color:#1E1A12;font-weight:700;font-size:.72rem;letter-spacing:.05em;padding:8px 16px;flex-shrink:0;text-transform:uppercase;}
+.ticker-track{white-space:nowrap;padding:8px 0;animation:tick 28s linear infinite;font-size:.82rem;}
+.ticker-track span{margin-right:60px;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Header */
+header{background:var(--green);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.15);}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--gold-bright), var(--saffron) 70%);border:2px solid var(--gold);flex-shrink:0;}
+.brand-text strong{display:block;color:var(--gold-bright);font-size:1.05rem;}
+.brand-text span{display:block;color:#cfd9d2;font-size:.7rem;}
+nav.links{display:none;gap:20px;font-size:.85rem;color:#e3e8e4;}
+@media(min-width:960px){nav.links{display:flex;}}
+nav.links a{padding:6px 0;transition:.2s;}
+nav.links a:hover{color:var(--gold-bright);}
+.menu-toggle{display:block;background:none;border:1px solid rgba(230,197,131,.4);color:var(--gold-bright);width:40px;height:38px;border-radius:6px;font-size:1.1rem;cursor:pointer;}
+@media(min-width:960px){.menu-toggle{display:none;}}
+.mobile-menu{display:none;flex-direction:column;background:var(--green-deep);padding:14px 24px;gap:10px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#e3e8e4;font-size:.9rem;padding:6px 0;}
+
+/* Hero — banner style, not full poetic bleed */
+.hero{position:relative;background:linear-gradient(180deg, rgba(10,31,23,.75), rgba(10,31,23,.88)), url('https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/839jot75_WhatsApp%20Image%202026-07-23%20at%2011.08.35%20AM.jpeg') center/cover;padding:56px 24px 0;color:#fff;}
+.hero-inner{max-width:1180px;margin:0 auto;text-align:center;padding-bottom:50px;}
+.hero-kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:14px;}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3.1rem);margin-bottom:14px;color:#fff;}
+.hero p{max-width:640px;margin:0 auto 26px;color:#dfe6e1;font-size:1rem;}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn{padding:12px 24px;border-radius:6px;font-weight:600;font-size:.88rem;cursor:pointer;border:1px solid transparent;transition:.2s;display:inline-block;}
+.btn-primary{background:var(--saffron);color:#fff;}
+.btn-primary:hover{background:#c46c14;}
+.btn-outline{border-color:var(--gold-bright);color:var(--gold-bright);}
+.btn-outline:hover{background:rgba(230,197,131,.12);}
+
+/* Quick links dashboard tiles */
+.quicklinks{max-width:1180px;margin:0 auto;padding:0 24px;transform:translateY(40px);margin-bottom:40px;}
+.ql-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(15,46,35,.18);padding:18px;}
+@media(min-width:700px){.ql-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1000px){.ql-grid{grid-template-columns:repeat(6,1fr);}}
+.ql-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:14px 8px;border-radius:8px;transition:.2s;}
+.ql-item:hover{background:#F7F2E7;}
+.ql-icon{font-size:1.5rem;}
+.ql-item span{font-size:.75rem;font-weight:600;color:var(--green);}
+
+/* Sections */
+section{padding:60px 24px;max-width:1180px;margin:0 auto;}
+.section-head{margin-bottom:34px;border-left:4px solid var(--saffron);padding-left:16px;}
+.section-head .eyebrow{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--maroon);font-weight:700;}
+.section-head h2{font-size:clamp(1.4rem,3vw,1.9rem);color:var(--green);margin-top:4px;}
+.section-alt{background:#fff;}
+
+/* About */
+.about-grid{display:grid;gap:34px;grid-template-columns:1fr;}
+@media(min-width:800px){.about-grid{grid-template-columns:1fr 1fr;align-items:center;}}
+.about-grid img{border-radius:8px;}
+.about-text p{color:var(--stone);margin-bottom:14px;font-size:.95rem;}
+.fact-row{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;}
+.fact{border-top:2px solid var(--gold);padding-top:8px;min-width:110px;}
+.fact strong{display:block;color:var(--green);font-size:.95rem;}
+.fact span{font-size:.75rem;color:var(--stone);}
+
+/* Timings table */
+.timings-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(15,46,35,.07);}
+.timings-table th,.timings-table td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:.9rem;}
+.timings-table th{background:var(--green);color:#fff;font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;}
+.timings-table tr:last-child td{border-bottom:none;}
+.notice-box{background:#FBF1DD;border:1px solid var(--gold);border-radius:8px;padding:16px 20px;margin-top:20px;font-size:.85rem;color:var(--ink);}
+
+/* Announcements list */
+.announce-list{display:flex;flex-direction:column;gap:0;background:#fff;border-radius:8px;box-shadow:0 3px 14px rgba(15,46,35,.07);overflow:hidden;}
+.announce-item{display:flex;gap:18px;padding:18px 22px;border-bottom:1px solid var(--line);align-items:flex-start;}
+.announce-item:last-child{border-bottom:none;}
+.announce-date{min-width:96px;font-size:.72rem;font-weight:700;color:var(--maroon);text-transform:uppercase;letter-spacing:.04em;padding-top:2px;}
+.announce-body h4{font-size:.98rem;color:var(--green);margin-bottom:4px;}
+.announce-body p{font-size:.85rem;color:var(--stone);}
+
+/* Prasadam */
+.lottery-wrap{background:var(--green);border-radius:12px;padding:36px 26px;color:#fff;display:grid;gap:30px;grid-template-columns:1fr;}
+@media(min-width:850px){.lottery-wrap{grid-template-columns:1fr 1fr;padding:44px;}}
+.lottery-info .eyebrow{color:var(--gold-bright);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;}
+.lottery-info h3{color:#fff;font-size:1.4rem;margin:10px 0 14px;}
+.lottery-info p{color:#dfe6e1;margin-bottom:10px;font-size:.92rem;}
+.status-chip{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:16px;background:rgba(230,197,131,.15);border:1px solid var(--gold-bright);color:var(--gold-bright);font-size:.78rem;font-weight:700;}
+.lottery-form{background:rgba(255,255,255,.06);border:1px solid rgba(230,197,131,.3);border-radius:8px;padding:22px;}
+.lottery-form label{display:block;font-size:.75rem;margin:12px 0 5px;color:var(--gold-bright);font-weight:600;}
+.lottery-form input,.lottery-form textarea{width:100%;padding:10px 12px;border-radius:6px;border:1px solid rgba(255,255,255,.25);background:#fff;color:var(--ink);font-family:inherit;font-size:.88rem;}
+.lottery-form button{margin-top:16px;width:100%;background:var(--saffron);color:#fff;border:none;padding:12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:.88rem;}
+.lottery-form button:hover{background:#c46c14;}
+.form-note{font-size:.7rem;color:#c3ccc6;margin-top:8px;}
+.form-msg{font-size:.8rem;margin-top:8px;color:var(--gold-bright);}
+
+/* Journey — factual stage list, not poetic cinema */
+.journey-list{display:grid;gap:18px;grid-template-columns:1fr;}
+@media(min-width:800px){.journey-list{grid-template-columns:repeat(3,1fr);}}
+.journey-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(15,46,35,.07);}
+.journey-card img{height:150px;object-fit:cover;width:100%;}
+.journey-body{padding:16px;}
+.journey-step{font-size:.7rem;font-weight:700;color:var(--saffron);text-transform:uppercase;letter-spacing:.04em;}
+.journey-body h4{font-size:1.02rem;color:var(--green);margin:6px 0;}
+.journey-body p{font-size:.84rem;color:var(--stone);}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+@media(min-width:700px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+.gallery-item{aspect-ratio:1/1;border-radius:8px;overflow:hidden;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;}
+
+/* Social */
+.social-row{display:flex;gap:14px;flex-wrap:wrap;}
+.social-pill{display:flex;align-items:center;gap:8px;padding:11px 20px;border-radius:6px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:.85rem;color:var(--green);box-shadow:0 2px 8px rgba(15,46,35,.06);}
+.social-pill:hover{border-color:var(--saffron);color:var(--maroon);}
+
+/* Footer */
+footer{background:var(--green-deep);color:#cfd9d2;padding:44px 24px 22px;}
+.footer-grid{max-width:1180px;margin:0 auto;display:grid;gap:28px;grid-template-columns:1fr;}
+@media(min-width:800px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;}}
+footer h5{color:var(--gold-bright);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;text-transform:uppercase;}
+footer p,footer a{font-size:.82rem;color:#b8c2bb;}
+footer ul{list-style:none;}
+footer li{margin-bottom:7px;}
+.footer-bottom{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(207,217,210,.12);font-size:.72rem;color:#8b9791;}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="utility-left">
+    <a href="mailto:contact@sarvamsabarigireesha.com" data-i18n="util_email">✉ contact@sarvamsabarigireesha.com</a>
+    <a href="https://wa.me/918919462503" target="_blank" rel="noopener" data-i18n="util_phone">☎ +91 89194 62503</a>
+  </div>
+  <div class="lang-switch" id="langSwitch">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="te">తె</button>
+    <button data-lang="hi">हि</button>
+    <button data-lang="ml">മല</button>
+    <button data-lang="kn">ಕನ</button>
+    <button data-lang="ta">தமி</button>
+  </div>
+</div>
+
+<div class="ticker-bar">
+  <span class="ticker-label" data-i18n="ticker_label">Notice</span>
+  <div class="ticker-track">
+    <span data-i18n="ticker_1">Prasadam lottery registration is open — see the Prasadam section below.</span>
+    <span data-i18n="ticker_2">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+    <span data-i18n="ticker_1">Prasadam lottery registration is open — see the Prasadam section below.</span>
+    <span data-i18n="ticker_2">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+  </div>
+</div>
+
+<header>
+  <div class="nav-row">
+    <div class="brand">
+      <img src="assets/logo.jpg" class="brand-mark" alt="Thathwamasi" style="object-fit:cover;" onerror="this.style.display='none'">
+      <div class="brand-text">
+        <strong>THATHWAMASI</strong>
+        <span data-i18n="brand_subtitle">The Digital Home of Sarvam Sabarigireesha</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="/" data-i18n="nav_home">Home</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#timings" data-i18n="nav_timings">Darshan Timings</a>
+      <a href="#updates" data-i18n="nav_updates">Announcements</a>
+      <a href="#prasadam" data-i18n="nav_prasadam">Prasadam</a>
+      <a href="#journey" data-i18n="nav_journey">Pilgrimage</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="/calendar.html" data-i18n="nav_calendar">Calendar</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menuBtn">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/" data-i18n="nav_home">Home</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#timings" data-i18n="nav_timings">Darshan Timings</a>
+    <a href="#updates" data-i18n="nav_updates">Announcements</a>
+    <a href="#prasadam" data-i18n="nav_prasadam">Prasadam</a>
+    <a href="#journey" data-i18n="nav_journey">Pilgrimage</a>
+    <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+    <a href="/calendar.html" data-i18n="nav_calendar">Calendar</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-top:56px;">
+  <div class="hero-inner">
+    <p class="hero-kicker" data-i18n="hero_kicker">Swamiye Saranam Ayyappa</p>
+    <h1 data-i18n="hero_title">Official Devotee Portal of Sarvam Sabarigireesha</h1>
+    <p data-i18n="hero_p">Darshan timings, temple announcements, the Sabarimala pilgrimage calendar and the monthly Prasadam registration — maintained for the devotee community of Lord Ayyappa Swamy.</p>
+    <div class="hero-ctas">
+      <a href="#prasadam" class="btn btn-primary" data-i18n="hero_cta1">Register for Prasadam</a>
+      <a href="/calendar.html" class="btn btn-outline" data-i18n="hero_cta2">View 2026 Calendar</a>
+    </div>
+  </div>
+</section>
+
+<div class="quicklinks">
+  <div class="ql-grid">
+    <a class="ql-item" href="#timings"><span class="ql-icon">🕉️</span><span data-i18n="ql_timings">Darshan Timings</span></a>
+    <a class="ql-item" href="#prasadam"><span class="ql-icon">🪔</span><span data-i18n="ql_prasadam">Prasadam Registration</span></a>
+    <a class="ql-item" href="/calendar.html"><span class="ql-icon">📅</span><span data-i18n="ql_calendar">Sabarimala Calendar</span></a>
+    <a class="ql-item" href="#updates"><span class="ql-icon">📰</span><span data-i18n="ql_updates">Announcements</span></a>
+    <a class="ql-item" href="#gallery"><span class="ql-icon">🖼️</span><span data-i18n="ql_gallery">Gallery</span></a>
+    <a class="ql-item" href="#contact"><span class="ql-icon">☎️</span><span data-i18n="ql_contact">Contact Us</span></a>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="about_eyebrow">About</p>
+    <h2 data-i18n="about_title">Sarvam Sabarigireesha — Devotee Community Portal</h2>
+  </div>
+  <div class="about-grid">
+    <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/noh4iepb_02-aboutfeature.jpeg" alt="Sabarimala temple architecture">
+    <div class="about-text">
+      <p data-i18n="about_p1">Sarvam Sabarigireesha is a community portal serving devotees of Lord Ayyappa Swamy, the son of Shiva and Mohini (an avatar of Vishnu), worshipped as Dharma Shasta — protector of righteousness.</p>
+      <p data-i18n="about_p2">This portal provides Darshan and Puja timings, temple announcements, the Sabarimala pilgrimage calendar, and the monthly Prasadam registration process for devotees observing the sacred Vratham.</p>
+      <p data-i18n="about_p3">The portal is community-run and updated regularly. For any correction or query, please use the Contact section below.</p>
+      <div class="fact-row">
+        <div class="fact"><strong data-i18n="fact1_val">Kerala</strong><span data-i18n="fact1_lbl">Tradition</span></div>
+        <div class="fact"><strong data-i18n="fact2_val">Ayyappa</strong><span data-i18n="fact2_lbl">Devata</span></div>
+        <div class="fact"><strong data-i18n="fact3_val">41 Days</strong><span data-i18n="fact3_lbl">Vratham</span></div>
+        <div class="fact"><strong data-i18n="fact4_val">18</strong><span data-i18n="fact4_lbl">Pathinettampadi (Steps)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timings" class="section-alt">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="timings_eyebrow">Daily Schedule</p>
+    <h2 data-i18n="timings_title">Darshan &amp; Puja Timings</h2>
+  </div>
+  <table class="timings-table">
+    <thead><tr><th data-i18n="th_event">Seva / Darshan</th><th data-i18n="th_time">Timing</th></tr></thead>
+    <tbody>
+      <tr><td data-i18n="t1">Nirmalya Darshanam</td><td>5:00 AM – 5:30 AM</td></tr>
+      <tr><td data-i18n="t2">Morning Darshan</td><td>6:00 AM – 12:00 PM</td></tr>
+      <tr><td data-i18n="t3">Neyyabhishekam</td><td>10:00 AM – 11:00 AM</td></tr>
+      <tr><td data-i18n="t4">Evening Darshan</td><td>4:00 PM – 8:30 PM</td></tr>
+      <tr><td data-i18n="t5">Deeparadhana</td><td>7:00 PM</td></tr>
+    </tbody>
+  </table>
+  <div class="notice-box" data-i18n="timings_notice">Note: Timings shown are for planning reference and may change during festivals or special occasions. Please confirm before travel using the Contact section.</div>
+</section>
+
+<section id="updates">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="updates_eyebrow">Latest</p>
+    <h2 data-i18n="updates_title">Temple Announcements</h2>
+  </div>
+  <div class="announce-list">
+    <div class="announce-item">
+      <div class="announce-date" data-i18n="u1_date">Mandala Kalam</div>
+      <div class="announce-body">
+        <h4 data-i18n="u1_title">41-Day Vratham Period Begins</h4>
+        <p data-i18n="u1_text">Special Puja and daily Archana schedule is in effect during Mandala Kalam. Devotees may register for group Sevas through the Contact section.</p>
+      </div>
+    </div>
+    <div class="announce-item">
+      <div class="announce-date" data-i18n="u2_date">Monthly</div>
+      <div class="announce-body">
+        <h4 data-i18n="u2_title">Prasadam Registration Open</h4>
+        <p data-i18n="u2_text">This month's Prasadam registration is open, subject to availability. See the Prasadam section for details and to register.</p>
+      </div>
+    </div>
+    <div class="announce-item">
+      <div class="announce-date" data-i18n="u3_date">Seasonal</div>
+      <div class="announce-body">
+        <h4 data-i18n="u3_title">Makaravilakku Season — Preparations Underway</h4>
+        <p data-i18n="u3_text">Preparations for the Makaravilakku season are in progress. Updates will be posted here and on official social media channels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prasadam" class="section-alt">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="prasadam_eyebrow">Devotee Seva</p>
+    <h2 data-i18n="prasadam_title">Monthly Prasadam Registration</h2>
+  </div>
+  <div class="lottery-wrap">
+    <div class="lottery-info">
+      <p class="eyebrow" data-i18n="li_eyebrow">How It Works</p>
+      <h3 data-i18n="li_title">Monthly Ayyappa Prasadam</h3>
+      <p data-i18n="li_p1">Registration is free of cost. When Prasadam becomes available, registration opens and recipients are selected at random from registered devotees.</p>
+      <p data-i18n="li_p2">Selected devotees are notified immediately and Prasadam is shipped to their registered address at no charge. Any donation is entirely optional and at the devotee's discretion.</p>
+      <span class="status-chip" data-i18n="li_status">● Status: Opens when Prasadam is available</span>
+    </div>
+    <div class="lottery-form">
+      <form id="lotteryForm">
+        <label data-i18n="f_name">Full Name</label>
+        <input type="text" id="f_name_input" required>
+        <label data-i18n="f_phone">Phone Number</label>
+        <input type="tel" id="f_phone_input" required>
+        <label data-i18n="f_address">Delivery Address</label>
+        <textarea rows="3" id="f_address_input" required></textarea>
+        <label data-i18n="f_donation">Donation (optional)</label>
+        <input type="text" id="f_donation_input" placeholder="₹ 0">
+        <button type="submit" id="f_submit_btn" data-i18n="f_submit">Submit Registration</button>
+        <p class="form-note" data-i18n="f_note">Free registration. No purchase necessary. One entry per devotee per month.</p>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="journey_eyebrow">Reference</p>
+    <h2 data-i18n="journey_title">Stages of the Sabarimala Pilgrimage</h2>
+  </div>
+  <div class="journey-list">
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/nlafnr7q_journey.vratham.jpeg" alt="Vratham">
+      <div class="journey-body"><p class="journey-step" data-i18n="j1_step">Stage 1</p><h4 data-i18n="j1_title">Vratham</h4><p data-i18n="j1_text">A 41-day period of discipline and abstinence observed before the pilgrimage begins.</p></div>
+    </div>
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/0uohf6s7_irumudi.jpeg" alt="Irumudi">
+      <div class="journey-body"><p class="journey-step" data-i18n="j2_step">Stage 2</p><h4 data-i18n="j2_title">Irumudi Kettu</h4><p data-i18n="j2_text">The sacred double-pouch offering carried on the head during the ascent.</p></div>
+    </div>
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/6nkytx07_journey.erumeli.jpeg" alt="Erumeli">
+      <div class="journey-body"><p class="journey-step" data-i18n="j3_step">Stage 3</p><h4 data-i18n="j3_title">Erumeli</h4><p data-i18n="j3_text">The traditional starting point of the forest route to Sabarimala.</p></div>
+    </div>
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/ggrumedx_journey.pampa.jpeg" alt="Pampa">
+      <div class="journey-body"><p class="journey-step" data-i18n="j4_step">Stage 4</p><h4 data-i18n="j4_title">Pampa</h4><p data-i18n="j4_text">The river where pilgrims bathe before the final ascent to the temple.</p></div>
+    </div>
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/4kppnmz2_journey.pathinettampadi.jpeg" alt="Pathinettampadi">
+      <div class="journey-body"><p class="journey-step" data-i18n="j5_step">Stage 5</p><h4 data-i18n="j5_title">Pathinettampadi</h4><p data-i18n="j5_text">The eighteen sacred steps leading to the sanctum, each representing an inner virtue.</p></div>
+    </div>
+    <div class="journey-card">
+      <img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt="Sannidhanam">
+      <div class="journey-body"><p class="journey-step" data-i18n="j6_step">Stage 6</p><h4 data-i18n="j6_title">Sannidhanam</h4><p data-i18n="j6_text">The sanctum sanctorum — the destination of the pilgrimage.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section-alt">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="gallery_eyebrow">Photographs</p>
+    <h2 data-i18n="gallery_title">Temple Gallery</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/szaeipzk_journey.sannidhanam.jpeg" alt="Sannidhanam"></div>
+    <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/4kppnmz2_journey.pathinettampadi.jpeg" alt="Pathinettampadi"></div>
+    <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/ggrumedx_journey.pampa.jpeg" alt="Pampa"></div>
+    <div class="gallery-item"><img src="https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/6nkytx07_journey.erumeli.jpeg" alt="Erumeli"></div>
+  </div>
+</section>
+
+<section id="social">
+  <div class="section-head">
+    <p class="eyebrow" data-i18n="social_eyebrow">Connect</p>
+    <h2 data-i18n="social_title">Official Social Media</h2>
+  </div>
+  <div class="social-row">
+    <a class="social-pill" href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener">📷 Instagram</a>
+    <a class="social-pill" href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" rel="noopener">📘 Facebook</a>
+    <a class="social-pill" href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener">▶️ YouTube</a>
+    <a class="social-pill" href="https://wa.me/918919462503" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <h5 data-i18n="f_about_h">Sarvam Sabarigireesha</h5>
+      <p data-i18n="f_about_p">A community devotee portal for Lord Ayyappa Swamy — Darshan information, temple announcements and the monthly Prasadam registration.</p>
+    </div>
+    <div>
+      <h5 data-i18n="f_links_h">Quick Links</h5>
+      <ul>
+        <li><a href="#timings" data-i18n="nav_timings">Darshan Timings</a></li>
+        <li><a href="#prasadam" data-i18n="nav_prasadam">Prasadam</a></li>
+        <li><a href="/calendar.html" data-i18n="nav_calendar">Calendar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="f_connect_h">Connect</h5>
+      <ul>
+        <li><a href="https://www.instagram.com/sarvam_sabarigireesha/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://youtube.com/@sarvamsabarigireesha" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100073610209206" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="f_contact_h">Contact</h5>
+      <ul>
+        <li>sarvamsabarigireesha.com</li>
+        <li><a href="mailto:contact@sarvamsabarigireesha.com">contact@sarvamsabarigireesha.com</a></li>
+        <li><a href="https://wa.me/918919462503" target="_blank" rel="noopener">+91 89194 62503</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Sarvam Sabarigireesha. <span data-i18n="footer_note">All rights reserved.</span></div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('menuBtn').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+const WORKER_URL = "REPLACE_WITH_YOUR_WORKER_URL/register";
+document.getElementById('lotteryForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const btn = document.getElementById('f_submit_btn');
+  const msg = document.getElementById('formMsg');
+  const payload = {
+    name: document.getElementById('f_name_input').value,
+    phone: document.getElementById('f_phone_input').value,
+    address: document.getElementById('f_address_input').value,
+    donation: document.getElementById('f_donation_input').value
+  };
+  btn.disabled = true;
+  try{
+    if(WORKER_URL.includes("REPLACE_WITH_YOUR_WORKER_URL")){
+      msg.textContent = translations[currentLang].form_success + " (demo mode)";
+    } else {
+      const res = await fetch(WORKER_URL, {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      if(!res.ok) throw new Error("failed");
+      msg.textContent = translations[currentLang].form_success;
+      e.target.reset();
+    }
+  }catch(err){
+    msg.textContent = "⚠️ " + translations[currentLang].form_error;
+  }
+  btn.disabled = false;
+});
+
+const translations = {
+en:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"Notice",ticker_1:"Prasadam lottery registration is open — see the Prasadam section below.",ticker_2:"Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.",
+brand_subtitle:"The Digital Home of Sarvam Sabarigireesha",
+nav_home:"Home",nav_about:"About",nav_timings:"Darshan Timings",nav_updates:"Announcements",nav_prasadam:"Prasadam",nav_journey:"Pilgrimage",nav_gallery:"Gallery",nav_calendar:"Calendar",nav_contact:"Contact",
+hero_kicker:"Swamiye Saranam Ayyappa",hero_title:"Official Devotee Portal of Sarvam Sabarigireesha",
+hero_p:"Darshan timings, temple announcements, the Sabarimala pilgrimage calendar and the monthly Prasadam registration — maintained for the devotee community of Lord Ayyappa Swamy.",
+hero_cta1:"Register for Prasadam",hero_cta2:"View 2026 Calendar",
+ql_timings:"Darshan Timings",ql_prasadam:"Prasadam Registration",ql_calendar:"Sabarimala Calendar",ql_updates:"Announcements",ql_gallery:"Gallery",ql_contact:"Contact Us",
+about_eyebrow:"About",about_title:"Sarvam Sabarigireesha — Devotee Community Portal",
+about_p1:"Sarvam Sabarigireesha is a community portal serving devotees of Lord Ayyappa Swamy, the son of Shiva and Mohini (an avatar of Vishnu), worshipped as Dharma Shasta — protector of righteousness.",
+about_p2:"This portal provides Darshan and Puja timings, temple announcements, the Sabarimala pilgrimage calendar, and the monthly Prasadam registration process for devotees observing the sacred Vratham.",
+about_p3:"The portal is community-run and updated regularly. For any correction or query, please use the Contact section below.",
+fact1_val:"Kerala",fact1_lbl:"Tradition",fact2_val:"Ayyappa",fact2_lbl:"Devata",fact3_val:"41 Days",fact3_lbl:"Vratham",fact4_val:"18",fact4_lbl:"Pathinettampadi (Steps)",
+timings_eyebrow:"Daily Schedule",timings_title:"Darshan & Puja Timings",th_event:"Seva / Darshan",th_time:"Timing",
+t1:"Nirmalya Darshanam",t2:"Morning Darshan",t3:"Neyyabhishekam",t4:"Evening Darshan",t5:"Deeparadhana",
+timings_notice:"Note: Timings shown are for planning reference and may change during festivals or special occasions. Please confirm before travel using the Contact section.",
+updates_eyebrow:"Latest",updates_title:"Temple Announcements",
+u1_date:"Mandala Kalam",u1_title:"41-Day Vratham Period Begins",u1_text:"Special Puja and daily Archana schedule is in effect during Mandala Kalam. Devotees may register for group Sevas through the Contact section.",
+u2_date:"Monthly",u2_title:"Prasadam Registration Open",u2_text:"This month's Prasadam registration is open, subject to availability. See the Prasadam section for details and to register.",
+u3_date:"Seasonal",u3_title:"Makaravilakku Season — Preparations Underway",u3_text:"Preparations for the Makaravilakku season are in progress. Updates will be posted here and on official social media channels.",
+prasadam_eyebrow:"Devotee Seva",prasadam_title:"Monthly Prasadam Registration",
+li_eyebrow:"How It Works",li_title:"Monthly Ayyappa Prasadam",
+li_p1:"Registration is free of cost. When Prasadam becomes available, registration opens and recipients are selected at random from registered devotees.",
+li_p2:"Selected devotees are notified immediately and Prasadam is shipped to their registered address at no charge. Any donation is entirely optional and at the devotee's discretion.",
+li_status:"● Status: Opens when Prasadam is available",
+f_name:"Full Name",f_phone:"Phone Number",f_address:"Delivery Address",f_donation:"Donation (optional)",f_submit:"Submit Registration",
+f_note:"Free registration. No purchase necessary. One entry per devotee per month.",
+form_success:"Thank you. Your registration has been received.",form_error:"Something went wrong. Please try again.",
+journey_eyebrow:"Reference",journey_title:"Stages of the Sabarimala Pilgrimage",
+j1_step:"Stage 1",j1_title:"Vratham",j1_text:"A 41-day period of discipline and abstinence observed before the pilgrimage begins.",
+j2_step:"Stage 2",j2_title:"Irumudi Kettu",j2_text:"The sacred double-pouch offering carried on the head during the ascent.",
+j3_step:"Stage 3",j3_title:"Erumeli",j3_text:"The traditional starting point of the forest route to Sabarimala.",
+j4_step:"Stage 4",j4_title:"Pampa",j4_text:"The river where pilgrims bathe before the final ascent to the temple.",
+j5_step:"Stage 5",j5_title:"Pathinettampadi",j5_text:"The eighteen sacred steps leading to the sanctum, each representing an inner virtue.",
+j6_step:"Stage 6",j6_title:"Sannidhanam",j6_text:"The sanctum sanctorum — the destination of the pilgrimage.",
+gallery_eyebrow:"Photographs",gallery_title:"Temple Gallery",
+social_eyebrow:"Connect",social_title:"Official Social Media",
+f_about_h:"Sarvam Sabarigireesha",f_about_p:"A community devotee portal for Lord Ayyappa Swamy — Darshan information, temple announcements and the monthly Prasadam registration.",
+f_links_h:"Quick Links",f_connect_h:"Connect",f_contact_h:"Contact",footer_note:"All rights reserved."
+},
+te:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"ప్రకటన",ticker_1:"ప్రసాదం లాటరీ నమోదు తెరిచి ఉంది — కింద ప్రసాదం విభాగం చూడండి.",ticker_2:"మండల కాలం వ్రతం సమయం — ప్రత్యేక దర్శన మరియు పూజా షెడ్యూల్ అమల్లో ఉంది.",
+brand_subtitle:"సర్వం సబరిగిరీశ యొక్క డిజిటల్ నెలవు",
+nav_home:"హోమ్",nav_about:"గురించి",nav_timings:"దర్శన సమయాలు",nav_updates:"ప్రకటనలు",nav_prasadam:"ప్రసాదం",nav_journey:"యాత్ర",nav_gallery:"గ్యాలరీ",nav_calendar:"క్యాలెండర్",nav_contact:"సంప్రదించండి",
+hero_kicker:"స్వామియే శరణం అయ్యప్ప",hero_title:"సర్వం సబరిగిరీశ అధికారిక భక్తుల పోర్టల్",
+hero_p:"దర్శన సమయాలు, దేవాలయ ప్రకటనలు, శబరిమల యాత్రా క్యాలెండర్ మరియు నెలవారీ ప్రసాదం నమోదు — శ్రీ అయ్యప్ప స్వామి భక్తుల సమాజం కోసం నిర్వహించబడుతోంది.",
+hero_cta1:"ప్రసాదం కోసం నమోదు చేసుకోండి",hero_cta2:"2026 క్యాలెండర్ చూడండి",
+ql_timings:"దర్శన సమయాలు",ql_prasadam:"ప్రసాదం నమోదు",ql_calendar:"శబరిమల క్యాలెండర్",ql_updates:"ప్రకటనలు",ql_gallery:"గ్యాలరీ",ql_contact:"సంప్రదించండి",
+about_eyebrow:"గురించి",about_title:"సర్వం సబరిగిరీశ — భక్తుల సమాజ పోర్టల్",
+about_p1:"సర్వం సబరిగిరీశ అనేది శివుడు మరియు మోహిని (విష్ణువు అవతారం) కుమారుడైన, ధర్మశాస్తగా పూజించబడే శ్రీ అయ్యప్ప స్వామి భక్తులకు సేవలందించే ఒక సమాజ పోర్టల్.",
+about_p2:"ఈ పోర్టల్ దర్శన మరియు పూజా సమయాలు, దేవాలయ ప్రకటనలు, శబరిమల యాత్రా క్యాలెండర్ మరియు పవిత్ర వ్రతం ఆచరించే భక్తుల కోసం నెలవారీ ప్రసాదం నమోదు ప్రక్రియను అందిస్తుంది.",
+about_p3:"ఈ పోర్టల్ సమాజం ద్వారా నిర్వహించబడుతుంది, క్రమం తప్పకుండా అప్‌డేట్ చేయబడుతుంది. ఏదైనా సవరణ లేదా ప్రశ్న కోసం, దయచేసి కింద ఉన్న సంప్రదించండి విభాగం వాడండి.",
+fact1_val:"కేరళ",fact1_lbl:"సంప్రదాయం",fact2_val:"అయ్యప్ప",fact2_lbl:"దేవత",fact3_val:"41 రోజులు",fact3_lbl:"వ్రతం",fact4_val:"18",fact4_lbl:"పదునెట్టాంపడి (మెట్లు)",
+timings_eyebrow:"దినచర్య",timings_title:"దర్శన & పూజా సమయాలు",th_event:"సేవ / దర్శనం",th_time:"సమయం",
+t1:"నిర్మాల్య దర్శనం",t2:"ఉదయం దర్శనం",t3:"నెయ్యాభిషేకం",t4:"సాయంత్రం దర్శనం",t5:"దీపారాధన",
+timings_notice:"గమనిక: చూపిన సమయాలు ప్రణాళిక సూచన కోసం మాత్రమే, పండుగలు లేదా ప్రత్యేక సందర్భాల్లో మారవచ్చు. ప్రయాణానికి ముందు సంప్రదించండి విభాగం ద్వారా నిర్ధారించుకోండి.",
+updates_eyebrow:"తాజా",updates_title:"దేవాలయ ప్రకటనలు",
+u1_date:"మండల కాలం",u1_title:"41 రోజుల వ్రతం కాలం ప్రారంభం",u1_text:"మండల కాలంలో ప్రత్యేక పూజ మరియు రోజువారీ అర్చనా షెడ్యూల్ అమల్లో ఉంది. భక్తులు సంప్రదించండి విభాగం ద్వారా గ్రూప్ సేవలకు నమోదు చేసుకోవచ్చు.",
+u2_date:"నెలవారీ",u2_title:"ప్రసాదం నమోదు తెరిచి ఉంది",u2_text:"ఈ నెల ప్రసాదం నమోదు లభ్యత ఆధారంగా తెరిచి ఉంది. వివరాల కోసం మరియు నమోదు చేసుకోవడానికి ప్రసాదం విభాగం చూడండి.",
+u3_date:"సీజనల్",u3_title:"మకరవిళక్కు సీజన్ — ఏర్పాట్లు జరుగుతున్నాయి",u3_text:"మకరవిళక్కు సీజన్ కోసం ఏర్పాట్లు జరుగుతున్నాయి. అప్‌డేట్స్ ఇక్కడ మరియు అధికారిక సోషల్ మీడియా ఛానెల్‌లలో పోస్ట్ చేయబడతాయి.",
+prasadam_eyebrow:"భక్తుల సేవ",prasadam_title:"నెలవారీ ప్రసాదం నమోదు",
+li_eyebrow:"ఇది ఎలా పనిచేస్తుంది",li_title:"నెలవారీ అయ్యప్ప ప్రసాదం",
+li_p1:"నమోదు ఉచితం. ప్రసాదం అందుబాటులో ఉన్నప్పుడు, నమోదు తెరవబడుతుంది మరియు నమోదు చేసుకున్న భక్తుల నుండి యాదృచ్ఛికంగా గ్రహీతలు ఎంపిక చేయబడతారు.",
+li_p2:"ఎంపిక చేయబడిన భక్తులకు వెంటనే తెలియజేయబడుతుంది మరియు ప్రసాదం వారి నమోదిత చిరునామాకు ఉచితంగా పంపబడుతుంది. ఏదైనా విరాళం పూర్తిగా ఐచ్ఛికం మరియు భక్తుని అభీష్టం మేరకు ఉంటుంది.",
+li_status:"● స్థితి: ప్రసాదం అందుబాటులో ఉన్నప్పుడు తెరవబడుతుంది",
+f_name:"పూర్తి పేరు",f_phone:"ఫోన్ నంబర్",f_address:"డెలివరీ చిరునామా",f_donation:"విరాళం (ఐచ్ఛికం)",f_submit:"నమోదు సమర్పించండి",
+f_note:"ఉచిత నమోదు. కొనుగోలు అవసరం లేదు. నెలకు ఒక్కో భక్తునికి ఒక ఎంట్రీ.",
+form_success:"ధన్యవాదాలు. మీ నమోదు అందుకోబడింది.",form_error:"ఏదో తప్పు జరిగింది. దయచేసి మళ్ళీ ప్రయత్నించండి.",
+journey_eyebrow:"సూచన",journey_title:"శబరిమల యాత్రా దశలు",
+j1_step:"దశ 1",j1_title:"వ్రతం",j1_text:"యాత్ర ప్రారంభానికి ముందు ఆచరించే 41 రోజుల క్రమశిక్షణ మరియు నియమావళి కాలం.",
+j2_step:"దశ 2",j2_title:"ఇరుముడి కట్టు",j2_text:"ఆరోహణ సమయంలో తలపై మోసుకెళ్లే పవిత్రమైన రెండు-సంచుల సమర్పణ.",
+j3_step:"దశ 3",j3_title:"ఎరుమేలి",j3_text:"శబరిమలకు అటవీ మార్గం యొక్క సాంప్రదాయ ప్రారంభ స్థానం.",
+j4_step:"దశ 4",j4_title:"పంప",j4_text:"దేవాలయానికి తుది ఆరోహణకు ముందు యాత్రికులు స్నానం చేసే నది.",
+j5_step:"దశ 5",j5_title:"పదునెట్టాంపడి",j5_text:"గర్భగుడికి దారితీసే పద్దెనిమిది పవిత్ర మెట్లు, ప్రతి ఒక్కటి ఒక అంతర్గత సద్గుణాన్ని సూచిస్తుంది.",
+j6_step:"దశ 6",j6_title:"సన్నిధానం",j6_text:"గర్భగుడి — యాత్ర యొక్క గమ్యస్థానం.",
+gallery_eyebrow:"ఛాయాచిత్రాలు",gallery_title:"దేవాలయ గ్యాలరీ",
+social_eyebrow:"కనెక్ట్",social_title:"అధికారిక సోషల్ మీడియా",
+f_about_h:"సర్వం సబరిగిరీశ",f_about_p:"శ్రీ అయ్యప్ప స్వామి కోసం ఒక సమాజ భక్తుల పోర్టల్ — దర్శన సమాచారం, దేవాలయ ప్రకటనలు మరియు నెలవారీ ప్రసాదం నమోదు.",
+f_links_h:"త్వరిత లింకులు",f_connect_h:"కనెక్ట్",f_contact_h:"సంప్రదించండి",footer_note:"సర్వహక్కులు రక్షించబడ్డాయి."
+},
+hi:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"सूचना",ticker_1:"प्रसादम लॉटरी पंजीकरण खुला है — नीचे प्रसादम अनुभाग देखें।",ticker_2:"मंडल काल व्रतम अवधि — विशेष दर्शन व पूजा समय सारणी लागू है।",
+brand_subtitle:"सर्वं सबरिगिरीश का डिजिटल घर",
+nav_home:"होम",nav_about:"परिचय",nav_timings:"दर्शन समय",nav_updates:"घोषणाएं",nav_prasadam:"प्रसादम",nav_journey:"यात्रा",nav_gallery:"गैलरी",nav_calendar:"कैलेंडर",nav_contact:"संपर्क करें",
+hero_kicker:"स्वामिये शरणम् अय्यप्पा",hero_title:"सर्वं सबरिगिरीश आधिकारिक भक्त पोर्टल",
+hero_p:"दर्शन समय, मंदिर घोषणाएं, सबरीमाला यात्रा कैलेंडर और मासिक प्रसादम पंजीकरण — श्री अयप्पा स्वामी भक्त समुदाय के लिए बनाए रखा गया।",
+hero_cta1:"प्रसादम हेतु पंजीकरण करें",hero_cta2:"2026 कैलेंडर देखें",
+ql_timings:"दर्शन समय",ql_prasadam:"प्रसादम पंजीकरण",ql_calendar:"सबरीमाला कैलेंडर",ql_updates:"घोषणाएं",ql_gallery:"गैलरी",ql_contact:"संपर्क करें",
+about_eyebrow:"परिचय",about_title:"सर्वं सबरिगिरीश — भक्त समुदाय पोर्टल",
+about_p1:"सर्वं सबरिगिरीश एक सामुदायिक पोर्टल है जो शिव और मोहिनी (विष्णु के अवतार) के पुत्र, धर्मशास्ता के रूप में पूजे जाने वाले भगवान अयप्पा स्वामी के भक्तों की सेवा करता है।",
+about_p2:"यह पोर्टल दर्शन व पूजा समय, मंदिर घोषणाएं, सबरीमाला यात्रा कैलेंडर, और पवित्र व्रतम का पालन करने वाले भक्तों के लिए मासिक प्रसादम पंजीकरण प्रक्रिया प्रदान करता है।",
+about_p3:"यह पोर्टल समुदाय द्वारा संचालित है और नियमित रूप से अद्यतन किया जाता है। किसी भी सुधार या प्रश्न हेतु कृपया नीचे संपर्क अनुभाग का उपयोग करें।",
+fact1_val:"केरल",fact1_lbl:"परंपरा",fact2_val:"अयप्पा",fact2_lbl:"देवता",fact3_val:"41 दिन",fact3_lbl:"व्रतम",fact4_val:"18",fact4_lbl:"पथिनेट्टमपडी (सीढ़ियां)",
+timings_eyebrow:"दैनिक समय सारणी",timings_title:"दर्शन व पूजा समय",th_event:"सेवा / दर्शन",th_time:"समय",
+t1:"निर्माल्य दर्शनम",t2:"प्रातः दर्शन",t3:"नेय्याभिषेकम",t4:"सायं दर्शन",t5:"दीपाराधना",
+timings_notice:"नोट: दिखाए गए समय केवल योजना संदर्भ हेतु हैं और त्योहारों या विशेष अवसरों पर बदल सकते हैं। यात्रा से पहले संपर्क अनुभाग के माध्यम से पुष्टि करें।",
+updates_eyebrow:"नवीनतम",updates_title:"मंदिर घोषणाएं",
+u1_date:"मंडल काल",u1_title:"41-दिवसीय व्रतम अवधि प्रारंभ",u1_text:"मंडल काल के दौरान विशेष पूजा और दैनिक अर्चना कार्यक्रम लागू है। भक्त संपर्क अनुभाग के माध्यम से सामूहिक सेवा हेतु पंजीकरण कर सकते हैं।",
+u2_date:"मासिक",u2_title:"प्रसादम पंजीकरण खुला",u2_text:"इस माह का प्रसादम पंजीकरण उपलब्धता के अधीन खुला है। विवरण और पंजीकरण हेतु प्रसादम अनुभाग देखें।",
+u3_date:"मौसमी",u3_title:"मकरविलक्कु सीजन — तैयारियां जारी",u3_text:"मकरविलक्कु सीजन की तैयारियां प्रगति पर हैं। अपडेट यहां और आधिकारिक सोशल मीडिया चैनलों पर पोस्ट किए जाएंगे।",
+prasadam_eyebrow:"भक्त सेवा",prasadam_title:"मासिक प्रसादम पंजीकरण",
+li_eyebrow:"यह कैसे काम करता है",li_title:"मासिक अयप्पा प्रसादम",
+li_p1:"पंजीकरण निःशुल्क है। जब प्रसादम उपलब्ध होता है, पंजीकरण खुलता है और पंजीकृत भक्तों में से यादृच्छिक रूप से प्राप्तकर्ताओं का चयन किया जाता है।",
+li_p2:"चयनित भक्तों को तुरंत सूचित किया जाता है और प्रसादम उनके पंजीकृत पते पर निःशुल्क भेजा जाता है। कोई भी दान पूर्णतः वैकल्पिक है और भक्त की इच्छा पर निर्भर है।",
+li_status:"● स्थिति: प्रसादम उपलब्ध होने पर खुलता है",
+f_name:"पूरा नाम",f_phone:"फ़ोन नंबर",f_address:"डिलीवरी पता",f_donation:"दान (वैकल्पिक)",f_submit:"पंजीकरण सबमिट करें",
+f_note:"निःशुल्क पंजीकरण। कोई खरीद आवश्यक नहीं। प्रति भक्त प्रति माह एक प्रविष्टि।",
+form_success:"धन्यवाद। आपका पंजीकरण प्राप्त हो गया है।",form_error:"कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+journey_eyebrow:"संदर्भ",journey_title:"सबरीमाला यात्रा के चरण",
+j1_step:"चरण 1",j1_title:"व्रतम",j1_text:"यात्रा शुरू होने से पहले पालन किया जाने वाला 41-दिवसीय अनुशासन और संयम काल।",
+j2_step:"चरण 2",j2_title:"इरुमुडी केट्टु",j2_text:"आरोहण के दौरान सिर पर ले जाया जाने वाला पवित्र दोहरा-थैला अर्पण।",
+j3_step:"चरण 3",j3_title:"एरुमेली",j3_text:"सबरीमाला के वन मार्ग का पारंपरिक प्रारंभिक बिंदु।",
+j4_step:"चरण 4",j4_title:"पंपा",j4_text:"मंदिर की अंतिम चढ़ाई से पहले तीर्थयात्री जिस नदी में स्नान करते हैं।",
+j5_step:"चरण 5",j5_title:"पथिनेट्टमपडी",j5_text:"गर्भगृह तक जाने वाली अठारह पवित्र सीढ़ियां, प्रत्येक एक आंतरिक गुण का प्रतिनिधित्व करती है।",
+j6_step:"चरण 6",j6_title:"सन्निधानम",j6_text:"गर्भगृह — यात्रा का गंतव्य।",
+gallery_eyebrow:"तस्वीरें",gallery_title:"मंदिर गैलरी",
+social_eyebrow:"जुड़ें",social_title:"आधिकारिक सोशल मीडिया",
+f_about_h:"सर्वं सबरिगिरीश",f_about_p:"श्री अयप्पा स्वामी के लिए एक सामुदायिक भक्त पोर्टल — दर्शन जानकारी, मंदिर घोषणाएं और मासिक प्रसादम पंजीकरण।",
+f_links_h:"त्वरित लिंक",f_connect_h:"जुड़ें",f_contact_h:"संपर्क करें",footer_note:"सर्वाधिकार सुरक्षित।"
+},
+ml:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"അറിയിപ്പ്",ticker_1:"പ്രസാദം രജിസ്ട്രേഷൻ തുറന്നിരിക്കുന്നു — താഴെ പ്രസാദം വിഭാഗം കാണുക.",ticker_2:"മണ്ഡല കാല വ്രതം കാലയളവ് — പ്രത്യേക ദർശന & പൂജാ സമയക്രമം പ്രാബല്യത്തിൽ.",
+brand_subtitle:"സർവം ശബരിഗിരീശയുടെ ഡിജിറ്റൽ ഭവനം",
+nav_home:"ഹോം",nav_about:"വിവരണം",nav_timings:"ദർശന സമയം",nav_updates:"അറിയിപ്പുകൾ",nav_prasadam:"പ്രസാദം",nav_journey:"തീർത്ഥാടനം",nav_gallery:"ഗാലറി",nav_calendar:"കലണ്ടർ",nav_contact:"ബന്ധപ്പെടുക",
+hero_kicker:"സ്വാമിയേ ശരണം അയ്യപ്പാ",hero_title:"സർവം ശബരിഗിരീശ ഔദ്യോഗിക ഭക്ത പോർട്ടൽ",
+hero_p:"ദർശന സമയം, ക്ഷേത്ര അറിയിപ്പുകൾ, ശബരിമല തീർത്ഥാടന കലണ്ടർ, പ്രതിമാസ പ്രസാദം രജിസ്ട്രേഷൻ — ശ്രീ അയ്യപ്പസ്വാമി ഭക്ത സമൂഹത്തിനായി പരിപാലിക്കുന്നത്.",
+hero_cta1:"പ്രസാദത്തിന് രജിസ്റ്റർ ചെയ്യുക",hero_cta2:"2026 കലണ്ടർ കാണുക",
+ql_timings:"ദർശന സമയം",ql_prasadam:"പ്രസാദം രജിസ്ട്രേഷൻ",ql_calendar:"ശബരിമല കലണ്ടർ",ql_updates:"അറിയിപ്പുകൾ",ql_gallery:"ഗാലറി",ql_contact:"ബന്ധപ്പെടുക",
+about_eyebrow:"വിവരണം",about_title:"സർവം ശബരിഗിരീശ — ഭക്ത സമൂഹ പോർട്ടൽ",
+about_p1:"ശിവന്റെയും മോഹിനിയുടെയും (വിഷ്ണുവിന്റെ അവതാരം) പുത്രനും ധർമ്മശാസ്താവായി ആരാധിക്കപ്പെടുന്നവനുമായ ശ്രീ അയ്യപ്പസ്വാമിയുടെ ഭക്തർക്ക് സേവനം നൽകുന്ന ഒരു സമൂഹ പോർട്ടലാണ് സർവം ശബരിഗിരീശ.",
+about_p2:"ദർശന & പൂജാ സമയം, ക്ഷേത്ര അറിയിപ്പുകൾ, ശബരിമല തീർത്ഥാടന കലണ്ടർ, വിശുദ്ധ വ്രതം അനുഷ്ഠിക്കുന്ന ഭക്തർക്കുള്ള പ്രതിമാസ പ്രസാദം രജിസ്ട്രേഷൻ പ്രക്രിയ ഈ പോർട്ടൽ നൽകുന്നു.",
+about_p3:"ഈ പോർട്ടൽ സമൂഹം നടത്തുന്നതും പതിവായി അപ്ഡേറ്റ് ചെയ്യുന്നതുമാണ്. എന്തെങ്കിലും തിരുത്തലിനോ ചോദ്യത്തിനോ ദയവായി താഴെയുള്ള ബന്ധപ്പെടുക വിഭാഗം ഉപയോഗിക്കുക.",
+fact1_val:"കേരളം",fact1_lbl:"പാരമ്പര്യം",fact2_val:"അയ്യപ്പൻ",fact2_lbl:"ദേവത",fact3_val:"41 ദിവസം",fact3_lbl:"വ്രതം",fact4_val:"18",fact4_lbl:"പതിനെട്ടാംപടി",
+timings_eyebrow:"ദിനചര്യ",timings_title:"ദർശന & പൂജാ സമയങ്ങൾ",th_event:"സേവ / ദർശനം",th_time:"സമയം",
+t1:"നിർമ്മാല്യ ദർശനം",t2:"രാവിലെ ദർശനം",t3:"നെയ്യഭിഷേകം",t4:"വൈകുന്നേരം ദർശനം",t5:"ദീപാരാധന",
+timings_notice:"ശ്രദ്ധിക്കുക: കാണിച്ചിരിക്കുന്ന സമയങ്ങൾ ആസൂത്രണ റഫറൻസിന് മാത്രമാണ്, ഉത്സവങ്ങളിലോ പ്രത്യേക അവസരങ്ങളിലോ മാറാം. യാത്രയ്ക്ക് മുമ്പ് ബന്ധപ്പെടുക വിഭാഗം വഴി സ്ഥിരീകരിക്കുക.",
+updates_eyebrow:"പുതിയത്",updates_title:"ക്ഷേത്ര അറിയിപ്പുകൾ",
+u1_date:"മണ്ഡല കാലം",u1_title:"41 ദിവസത്തെ വ്രത കാലയളവ് ആരംഭിക്കുന്നു",u1_text:"മണ്ഡല കാലത്ത് പ്രത്യേക പൂജയും ദിവസേനയുള്ള അർച്ചനാ ഷെഡ്യൂളും പ്രാബല്യത്തിലുണ്ട്. ബന്ധപ്പെടുക വിഭാഗം വഴി ഭക്തർക്ക് ഗ്രൂപ്പ് സേവകൾക്ക് രജിസ്റ്റർ ചെയ്യാം.",
+u2_date:"പ്രതിമാസം",u2_title:"പ്രസാദം രജിസ്ട്രേഷൻ തുറന്നു",u2_text:"ഈ മാസത്തെ പ്രസാദം രജിസ്ട്രേഷൻ ലഭ്യതയ്ക്ക് വിധേയമായി തുറന്നിരിക്കുന്നു. വിശദാംശങ്ങൾക്കും രജിസ്റ്റർ ചെയ്യാനും പ്രസാദം വിഭാഗം കാണുക.",
+u3_date:"സീസണൽ",u3_title:"മകരവിളക്ക് സീസൺ — ഒരുക്കങ്ങൾ പുരോഗമിക്കുന്നു",u3_text:"മകരവിളക്ക് സീസണിനുള്ള ഒരുക്കങ്ങൾ പുരോഗമിക്കുന്നു. അപ്ഡേറ്റുകൾ ഇവിടെയും ഔദ്യോഗിക സോഷ്യൽ മീഡിയ ചാനലുകളിലും പോസ്റ്റ് ചെയ്യും.",
+prasadam_eyebrow:"ഭക്ത സേവ",prasadam_title:"പ്രതിമാസ പ്രസാദം രജിസ്ട്രേഷൻ",
+li_eyebrow:"ഇത് എങ്ങനെ പ്രവർത്തിക്കുന്നു",li_title:"പ്രതിമാസ അയ്യപ്പ പ്രസാദം",
+li_p1:"രജിസ്ട്രേഷൻ സൗജന്യമാണ്. പ്രസാദം ലഭ്യമാകുമ്പോൾ, രജിസ്ട്രേഷൻ തുറക്കുകയും രജിസ്റ്റർ ചെയ്ത ഭക്തരിൽ നിന്ന് ക്രമരഹിതമായി സ്വീകർത്താക്കളെ തിരഞ്ഞെടുക്കുകയും ചെയ്യുന്നു.",
+li_p2:"തിരഞ്ഞെടുക്കപ്പെട്ട ഭക്തരെ ഉടൻ അറിയിക്കുകയും പ്രസാദം അവരുടെ രജിസ്റ്റർ ചെയ്ത വിലാസത്തിലേക്ക് സൗജന്യമായി അയക്കുകയും ചെയ്യുന്നു. ഏതെങ്കിലും സംഭാവന പൂർണ്ണമായും ഐച്ഛികവും ഭക്തന്റെ ഇഷ്ടപ്രകാരവുമാണ്.",
+li_status:"● സ്ഥിതി: പ്രസാദം ലഭ്യമാകുമ്പോൾ തുറക്കും",
+f_name:"മുഴുവൻ പേര്",f_phone:"ഫോൺ നമ്പർ",f_address:"ഡെലിവറി വിലാസം",f_donation:"സംഭാവന (ഐച്ഛികം)",f_submit:"രജിസ്ട്രേഷൻ സമർപ്പിക്കുക",
+f_note:"സൗജന്യ രജിസ്ട്രേഷൻ. വാങ്ങൽ ആവശ്യമില്ല. ഭക്തന് മാസത്തിൽ ഒരു എൻട്രി.",
+form_success:"നന്ദി. നിങ്ങളുടെ രജിസ്ട്രേഷൻ ലഭിച്ചു.",form_error:"എന്തോ പിശക് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.",
+journey_eyebrow:"റഫറൻസ്",journey_title:"ശബരിമല തീർത്ഥാടനത്തിന്റെ ഘട്ടങ്ങൾ",
+j1_step:"ഘട്ടം 1",j1_title:"വ്രതം",j1_text:"തീർത്ഥാടനം ആരംഭിക്കുന്നതിന് മുമ്പ് ആചരിക്കുന്ന 41 ദിവസത്തെ അച്ചടക്കവും നിയന്ത്രണവും.",
+j2_step:"ഘട്ടം 2",j2_title:"ഇരുമുടിക്കെട്ട്",j2_text:"ആരോഹണ സമയത്ത് തലയിൽ ചുമക്കുന്ന വിശുദ്ധ ഇരട്ട-സഞ്ചി അർപ്പണം.",
+j3_step:"ഘട്ടം 3",j3_title:"എരുമേലി",j3_text:"ശബരിമലയിലേക്കുള്ള വനപാതയുടെ പരമ്പരാഗത ആരംഭ സ്ഥാനം.",
+j4_step:"ഘട്ടം 4",j4_title:"പമ്പ",j4_text:"ക്ഷേത്രത്തിലേക്കുള്ള അന്തിമ ആരോഹണത്തിന് മുമ്പ് തീർത്ഥാടകർ കുളിക്കുന്ന നദി.",
+j5_step:"ഘട്ടം 5",j5_title:"പതിനെട്ടാംപടി",j5_text:"ശ്രീകോവിലിലേക്ക് നയിക്കുന്ന പതിനെട്ട് പവിത്ര പടികൾ, ഓരോന്നും ഒരു ആന്തരിക സദ്ഗുണത്തെ പ്രതിനിധീകരിക്കുന്നു.",
+j6_step:"ഘട്ടം 6",j6_title:"സന്നിധാനം",j6_text:"ശ്രീകോവിൽ — തീർത്ഥാടനത്തിന്റെ ലക്ഷ്യസ്ഥാനം.",
+gallery_eyebrow:"ഫോട്ടോകൾ",gallery_title:"ക്ഷേത്ര ഗാലറി",
+social_eyebrow:"ബന്ധപ്പെടുക",social_title:"ഔദ്യോഗിക സോഷ്യൽ മീഡിയ",
+f_about_h:"സർവം ശബരിഗിരീശ",f_about_p:"ശ്രീ അയ്യപ്പസ്വാമിക്കായുള്ള ഒരു സമൂഹ ഭക്ത പോർട്ടൽ — ദർശന വിവരങ്ങൾ, ക്ഷേത്ര അറിയിപ്പുകൾ, പ്രതിമാസ പ്രസാദം രജിസ്ട്രേഷൻ.",
+f_links_h:"ദ്രുത ലിങ്കുകൾ",f_connect_h:"ബന്ധപ്പെടുക",f_contact_h:"ബന്ധപ്പെടുക",footer_note:"എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം."
+},
+kn:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"ಸೂಚನೆ",ticker_1:"ಪ್ರಸಾದಂ ಲಾಟರಿ ನೋಂದಣಿ ತೆರೆದಿದೆ — ಕೆಳಗಿನ ಪ್ರಸಾದಂ ವಿಭಾಗ ನೋಡಿ.",ticker_2:"ಮಂಡಲ ಕಾಲ ವ್ರತ ಅವಧಿ — ವಿಶೇಷ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ.",
+brand_subtitle:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶದ ಡಿಜಿಟಲ್ ನೆಲೆ",
+nav_home:"ಹೋಂ",nav_about:"ಪರಿಚಯ",nav_timings:"ದರ್ಶನ ಸಮಯ",nav_updates:"ಪ್ರಕಟಣೆಗಳು",nav_prasadam:"ಪ್ರಸಾದಂ",nav_journey:"ಯಾತ್ರೆ",nav_gallery:"ಗ್ಯಾಲರಿ",nav_calendar:"ಕ್ಯಾಲೆಂಡರ್",nav_contact:"ಸಂಪರ್ಕಿಸಿ",
+hero_kicker:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪಾ",hero_title:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶ ಅಧಿಕೃತ ಭಕ್ತರ ಪೋರ್ಟಲ್",
+hero_p:"ದರ್ಶನ ಸಮಯ, ದೇವಸ್ಥಾನ ಪ್ರಕಟಣೆಗಳು, ಶಬರಿಮಲ ಯಾತ್ರಾ ಕ್ಯಾಲೆಂಡರ್ ಮತ್ತು ಮಾಸಿಕ ಪ್ರಸಾದಂ ನೋಂದಣಿ — ಶ್ರೀ ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿ ಭಕ್ತರ ಸಮುದಾಯಕ್ಕಾಗಿ ನಿರ್ವಹಿಸಲಾಗುತ್ತಿದೆ.",
+hero_cta1:"ಪ್ರಸಾದಂಗಾಗಿ ನೋಂದಾಯಿಸಿ",hero_cta2:"2026 ಕ್ಯಾಲೆಂಡರ್ ನೋಡಿ",
+ql_timings:"ದರ್ಶನ ಸಮಯ",ql_prasadam:"ಪ್ರಸಾದಂ ನೋಂದಣಿ",ql_calendar:"ಶಬರಿಮಲ ಕ್ಯಾಲೆಂಡರ್",ql_updates:"ಪ್ರಕಟಣೆಗಳು",ql_gallery:"ಗ್ಯಾಲರಿ",ql_contact:"ಸಂಪರ್ಕಿಸಿ",
+about_eyebrow:"ಪರಿಚಯ",about_title:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶ — ಭಕ್ತರ ಸಮುದಾಯ ಪೋರ್ಟಲ್",
+about_p1:"ಶಿವ ಮತ್ತು ಮೋಹಿನಿಯ (ವಿಷ್ಣುವಿನ ಅವತಾರ) ಪುತ್ರ, ಧರ್ಮಶಾಸ್ತಾ ಎಂದು ಪೂಜಿಸಲ್ಪಡುವ ಶ್ರೀ ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿಯ ಭಕ್ತರಿಗೆ ಸೇವೆ ಸಲ್ಲಿಸುವ ಸಮುದಾಯ ಪೋರ್ಟಲ್ ಸರ್ವಂ ಶಬರಿಗಿರೀಶ.",
+about_p2:"ಈ ಪೋರ್ಟಲ್ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ಸಮಯ, ದೇವಸ್ಥಾನ ಪ್ರಕಟಣೆಗಳು, ಶಬರಿಮಲ ಯಾತ್ರಾ ಕ್ಯಾಲೆಂಡರ್, ಮತ್ತು ಪವಿತ್ರ ವ್ರತ ಆಚರಿಸುವ ಭಕ್ತರಿಗೆ ಮಾಸಿಕ ಪ್ರಸಾದಂ ನೋಂದಣಿ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಒದಗಿಸುತ್ತದೆ.",
+about_p3:"ಈ ಪೋರ್ಟಲ್ ಸಮುದಾಯದಿಂದ ನಡೆಸಲ್ಪಡುತ್ತದೆ ಮತ್ತು ನಿಯಮಿತವಾಗಿ ನವೀಕರಿಸಲಾಗುತ್ತದೆ. ಯಾವುದೇ ತಿದ್ದುಪಡಿ ಅಥವಾ ಪ್ರಶ್ನೆಗಾಗಿ, ದಯವಿಟ್ಟು ಕೆಳಗಿನ ಸಂಪರ್ಕಿಸಿ ವಿಭಾಗವನ್ನು ಬಳಸಿ.",
+fact1_val:"ಕೇರಳ",fact1_lbl:"ಸಂಪ್ರದಾಯ",fact2_val:"ಅಯ್ಯಪ್ಪ",fact2_lbl:"ದೇವತೆ",fact3_val:"41 ದಿನಗಳು",fact3_lbl:"ವ್ರತ",fact4_val:"18",fact4_lbl:"ಪದಿನೆಟ್ಟಾಂಪಡಿ (ಮೆಟ್ಟಿಲುಗಳು)",
+timings_eyebrow:"ದಿನಚರಿ",timings_title:"ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ಸಮಯ",th_event:"ಸೇವೆ / ದರ್ಶನ",th_time:"ಸಮಯ",
+t1:"ನಿರ್ಮಾಲ್ಯ ದರ್ಶನಂ",t2:"ಬೆಳಗಿನ ದರ್ಶನ",t3:"ನೆಯ್ಯಾಭಿಷೇಕಂ",t4:"ಸಂಜೆ ದರ್ಶನ",t5:"ದೀಪಾರಾಧನೆ",
+timings_notice:"ಗಮನಿಸಿ: ತೋರಿಸಿರುವ ಸಮಯಗಳು ಯೋಜನಾ ಉಲ್ಲೇಖಕ್ಕಾಗಿ ಮಾತ್ರ, ಹಬ್ಬಗಳು ಅಥವಾ ವಿಶೇಷ ಸಂದರ್ಭಗಳಲ್ಲಿ ಬದಲಾಗಬಹುದು. ಪ್ರಯಾಣಕ್ಕೂ ಮೊದಲು ಸಂಪರ್ಕಿಸಿ ವಿಭಾಗದ ಮೂಲಕ ದೃಢೀಕರಿಸಿ.",
+updates_eyebrow:"ಇತ್ತೀಚಿನ",updates_title:"ದೇವಸ್ಥಾನ ಪ್ರಕಟಣೆಗಳು",
+u1_date:"ಮಂಡಲ ಕಾಲ",u1_title:"41 ದಿನಗಳ ವ್ರತ ಅವಧಿ ಆರಂಭ",u1_text:"ಮಂಡಲ ಕಾಲದಲ್ಲಿ ವಿಶೇಷ ಪೂಜೆ ಮತ್ತು ದೈನಂದಿನ ಅರ್ಚನಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ. ಭಕ್ತರು ಸಂಪರ್ಕಿಸಿ ವಿಭಾಗದ ಮೂಲಕ ಗುಂಪು ಸೇವೆಗಳಿಗೆ ನೋಂದಾಯಿಸಬಹುದು.",
+u2_date:"ಮಾಸಿಕ",u2_title:"ಪ್ರಸಾದಂ ನೋಂದಣಿ ತೆರೆದಿದೆ",u2_text:"ಈ ತಿಂಗಳ ಪ್ರಸಾದಂ ನೋಂದಣಿ ಲಭ್ಯತೆಗೆ ಒಳಪಟ್ಟು ತೆರೆದಿದೆ. ವಿವರಗಳಿಗಾಗಿ ಮತ್ತು ನೋಂದಾಯಿಸಲು ಪ್ರಸಾದಂ ವಿಭಾಗ ನೋಡಿ.",
+u3_date:"ಋತುಮಾನ",u3_title:"ಮಕರವಿಳಕ್ಕು ಋತು — ಸಿದ್ಧತೆಗಳು ಪ್ರಗತಿಯಲ್ಲಿ",u3_text:"ಮಕರವಿಳಕ್ಕು ಋತುವಿನ ಸಿದ್ಧತೆಗಳು ಪ್ರಗತಿಯಲ್ಲಿವೆ. ನವೀಕರಣಗಳನ್ನು ಇಲ್ಲಿ ಮತ್ತು ಅಧಿಕೃತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ ಚಾನೆಲ್‌ಗಳಲ್ಲಿ ಪೋಸ್ಟ್ ಮಾಡಲಾಗುತ್ತದೆ.",
+prasadam_eyebrow:"ಭಕ್ತರ ಸೇವೆ",prasadam_title:"ಮಾಸಿಕ ಪ್ರಸಾದಂ ನೋಂದಣಿ",
+li_eyebrow:"ಇದು ಹೇಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ",li_title:"ಮಾಸಿಕ ಅಯ್ಯಪ್ಪ ಪ್ರಸಾದಂ",
+li_p1:"ನೋಂದಣಿ ಉಚಿತ. ಪ್ರಸಾದಂ ಲಭ್ಯವಾದಾಗ, ನೋಂದಣಿ ತೆರೆಯುತ್ತದೆ ಮತ್ತು ನೋಂದಾಯಿತ ಭಕ್ತರಿಂದ ಯಾದೃಚ್ಛಿಕವಾಗಿ ಸ್ವೀಕರಿಸುವವರನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗುತ್ತದೆ.",
+li_p2:"ಆಯ್ಕೆಯಾದ ಭಕ್ತರಿಗೆ ತಕ್ಷಣ ತಿಳಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಪ್ರಸಾದಂ ಅವರ ನೋಂದಾಯಿತ ವಿಳಾಸಕ್ಕೆ ಉಚಿತವಾಗಿ ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಯಾವುದೇ ದೇಣಿಗೆ ಸಂಪೂರ್ಣವಾಗಿ ಐಚ್ಛಿಕ ಮತ್ತು ಭಕ್ತರ ವಿವೇಚನೆಗೆ ಬಿಟ್ಟದ್ದು.",
+li_status:"● ಸ್ಥಿತಿ: ಪ್ರಸಾದಂ ಲಭ್ಯವಾದಾಗ ತೆರೆಯುತ್ತದೆ",
+f_name:"ಪೂರ್ಣ ಹೆಸರು",f_phone:"ಫೋನ್ ಸಂಖ್ಯೆ",f_address:"ವಿತರಣಾ ವಿಳಾಸ",f_donation:"ದೇಣಿಗೆ (ಐಚ್ಛಿಕ)",f_submit:"ನೋಂದಣಿ ಸಲ್ಲಿಸಿ",
+f_note:"ಉಚಿತ ನೋಂದಣಿ. ಖರೀದಿ ಅಗತ್ಯವಿಲ್ಲ. ಪ್ರತಿ ಭಕ್ತರಿಗೆ ತಿಂಗಳಿಗೆ ಒಂದು ಎಂಟ್ರಿ.",
+form_success:"ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ನೋಂದಣಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ.",form_error:"ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+journey_eyebrow:"ಉಲ್ಲೇಖ",journey_title:"ಶಬರಿಮಲ ಯಾತ್ರೆಯ ಹಂತಗಳು",
+j1_step:"ಹಂತ 1",j1_title:"ವ್ರತ",j1_text:"ಯಾತ್ರೆ ಪ್ರಾರಂಭವಾಗುವ ಮೊದಲು ಆಚರಿಸುವ 41 ದಿನಗಳ ಶಿಸ್ತು ಮತ್ತು ಸಂಯಮದ ಅವಧಿ.",
+j2_step:"ಹಂತ 2",j2_title:"ಇರುಮುಡಿ ಕಟ್ಟು",j2_text:"ಆರೋಹಣದ ಸಮಯದಲ್ಲಿ ತಲೆಯ ಮೇಲೆ ಹೊತ್ತೊಯ್ಯುವ ಪವಿತ್ರ ಜೋಡಿ-ಚೀಲದ ಅರ್ಪಣೆ.",
+j3_step:"ಹಂತ 3",j3_title:"ಎರುಮೇಲಿ",j3_text:"ಶಬರಿಮಲಗೆ ಅರಣ್ಯ ಮಾರ್ಗದ ಸಾಂಪ್ರದಾಯಿಕ ಆರಂಭಿಕ ಸ್ಥಳ.",
+j4_step:"ಹಂತ 4",j4_title:"ಪಂಪಾ",j4_text:"ದೇವಸ್ಥಾನಕ್ಕೆ ಅಂತಿಮ ಆರೋಹಣದ ಮೊದಲು ಯಾತ್ರಿಕರು ಸ್ನಾನ ಮಾಡುವ ನದಿ.",
+j5_step:"ಹಂತ 5",j5_title:"ಪದಿನೆಟ್ಟಾಂಪಡಿ",j5_text:"ಗರ್ಭಗುಡಿಗೆ ಕರೆದೊಯ್ಯುವ ಹದಿನೆಂಟು ಪವಿತ್ರ ಮೆಟ್ಟಿಲುಗಳು, ಪ್ರತಿಯೊಂದೂ ಆಂತರಿಕ ಸದ್ಗುಣವನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ.",
+j6_step:"ಹಂತ 6",j6_title:"ಸನ್ನಿಧಾನಂ",j6_text:"ಗರ್ಭಗುಡಿ — ಯಾತ್ರೆಯ ಗಮ್ಯಸ್ಥಾನ.",
+gallery_eyebrow:"ಛಾಯಾಚಿತ್ರಗಳು",gallery_title:"ದೇವಸ್ಥಾನ ಗ್ಯಾಲರಿ",
+social_eyebrow:"ಸಂಪರ್ಕಿಸಿ",social_title:"ಅಧಿಕೃತ ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ",
+f_about_h:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶ",f_about_p:"ಶ್ರೀ ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿಗಾಗಿ ಸಮುದಾಯ ಭಕ್ತರ ಪೋರ್ಟಲ್ — ದರ್ಶನ ಮಾಹಿತಿ, ದೇವಸ್ಥಾನ ಪ್ರಕಟಣೆಗಳು ಮತ್ತು ಮಾಸಿಕ ಪ್ರಸಾದಂ ನೋಂದಣಿ.",
+f_links_h:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",f_connect_h:"ಸಂಪರ್ಕಿಸಿ",f_contact_h:"ಸಂಪರ್ಕಿಸಿ",footer_note:"ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
+},
+ta:{
+util_email:"✉ contact@sarvamsabarigireesha.com",util_phone:"☎ +91 89194 62503",
+ticker_label:"அறிவிப்பு",ticker_1:"பிரசாதம் லாட்டரி பதிவு திறந்துள்ளது — கீழே பிரசாதம் பிரிவைப் பார்க்கவும்.",ticker_2:"மண்டல கால விரத காலம் — சிறப்பு தரிசன & பூஜை அட்டவணை நடைமுறையில் உள்ளது.",
+brand_subtitle:"சர்வம் சபரிகிரீஶவின் டிஜிட்டல் இல்லம்",
+nav_home:"முகப்பு",nav_about:"பற்றி",nav_timings:"தரிசன நேரம்",nav_updates:"அறிவிப்புகள்",nav_prasadam:"பிரசாதம்",nav_journey:"யாத்திரை",nav_gallery:"படத்தொகுப்பு",nav_calendar:"காலண்டர்",nav_contact:"தொடர்பு",
+hero_kicker:"சுவாமியே சரணம் ஐயப்பா",hero_title:"சர்வம் சபரிகிரீஶ அதிகாரப்பூர்வ பக்தர் போர்டல்",
+hero_p:"தரிசன நேரங்கள், கோயில் அறிவிப்புகள், சபரிமலை யாத்திரை காலண்டர் மற்றும் மாதாந்திர பிரசாதம் பதிவு — ஸ்ரீ ஐயப்பன் சுவாமி பக்தர் சமூகத்திற்காக பராமரிக்கப்படுகிறது.",
+hero_cta1:"பிரசாதத்திற்கு பதிவு செய்யவும்",hero_cta2:"2026 காலண்டரைப் பார்க்கவும்",
+ql_timings:"தரிசன நேரம்",ql_prasadam:"பிரசாதம் பதிவு",ql_calendar:"சபரிமலை காலண்டர்",ql_updates:"அறிவிப்புகள்",ql_gallery:"படத்தொகுப்பு",ql_contact:"தொடர்பு",
+about_eyebrow:"பற்றி",about_title:"சர்வம் சபரிகிரீஶ — பக்தர் சமூக போர்டல்",
+about_p1:"சிவனும் மோகினியும் (விஷ்ணுவின் அவதாரம்) பெற்ற மகனும், தர்மசாஸ்தாவாக வழிபடப்படுபவருமான ஸ்ரீ ஐயப்பன் சுவாமியின் பக்தர்களுக்கு சேவை செய்யும் சமூக போர்டல் சர்வம் சபரிகிரீஶ.",
+about_p2:"இந்த போர்டல் தரிசன & பூஜை நேரங்கள், கோயில் அறிவிப்புகள், சபரிமலை யாத்திரை காலண்டர் மற்றும் புனித விரதம் மேற்கொள்ளும் பக்தர்களுக்கான மாதாந்திர பிரசாதம் பதிவு செயல்முறையை வழங்குகிறது.",
+about_p3:"இந்த போர்டல் சமூகத்தால் நடத்தப்படுகிறது, தொடர்ந்து புதுப்பிக்கப்படுகிறது. ஏதேனும் திருத்தம் அல்லது கேள்விக்கு, கீழே உள்ள தொடர்பு பிரிவைப் பயன்படுத்தவும்.",
+fact1_val:"கேரளா",fact1_lbl:"பாரம்பரியம்",fact2_val:"ஐயப்பன்",fact2_lbl:"தெய்வம்",fact3_val:"41 நாட்கள்",fact3_lbl:"விரதம்",fact4_val:"18",fact4_lbl:"பதினெட்டாம்படி (படிகள்)",
+timings_eyebrow:"நாள்தோறும்",timings_title:"தரிசன & பூஜை நேரங்கள்",th_event:"சேவை / தரிசனம்",th_time:"நேரம்",
+t1:"நிர்மால்ய தரிசனம்",t2:"காலை தரிசனம்",t3:"நெய்யபிஷேகம்",t4:"மாலை தரிசனம்",t5:"தீபாராதனை",
+timings_notice:"குறிப்பு: காட்டப்பட்டுள்ள நேரங்கள் திட்டமிடல் குறிப்புக்காக மட்டுமே, திருவிழாக்கள் அல்லது சிறப்பு நிகழ்வுகளின்போது மாறலாம். பயணத்திற்கு முன் தொடர்பு பிரிவு மூலம் உறுதிப்படுத்தவும்.",
+updates_eyebrow:"சமீபத்தியது",updates_title:"கோயில் அறிவிப்புகள்",
+u1_date:"மண்டல காலம்",u1_title:"41 நாள் விரத காலம் தொடக்கம்",u1_text:"மண்டல காலத்தில் சிறப்பு பூஜை மற்றும் தினசரி அர்ச்சனை அட்டவணை நடைமுறையில் உள்ளது. பக்தர்கள் தொடர்பு பிரிவு மூலம் குழு சேவைகளுக்கு பதிவு செய்யலாம்.",
+u2_date:"மாதாந்திரம்",u2_title:"பிரசாதம் பதிவு திறந்துள்ளது",u2_text:"இந்த மாத பிரசாதம் பதிவு கிடைக்கும் தன்மைக்கு உட்பட்டு திறந்துள்ளது. விவரங்களுக்கும் பதிவு செய்யவும் பிரசாதம் பிரிவைப் பார்க்கவும்.",
+u3_date:"பருவகால",u3_title:"மகரவிளக்கு பருவம் — ஏற்பாடுகள் நடைபெறுகின்றன",u3_text:"மகரவிளக்கு பருவத்திற்கான ஏற்பாடுகள் நடைபெற்று வருகின்றன. புதுப்பிப்புகள் இங்கும் அதிகாரப்பூர்வ சமூக ஊடக சேனல்களிலும் வெளியிடப்படும்.",
+prasadam_eyebrow:"பக்தர் சேவை",prasadam_title:"மாதாந்திர பிரசாதம் பதிவு",
+li_eyebrow:"இது எவ்வாறு செயல்படுகிறது",li_title:"மாதாந்திர ஐயப்ப பிரசாதம்",
+li_p1:"பதிவு இலவசம். பிரசாதம் கிடைக்கும்போது, பதிவு திறக்கப்பட்டு, பதிவு செய்த பக்தர்களிடமிருந்து சீரற்ற முறையில் பெறுநர்கள் தேர்ந்தெடுக்கப்படுவார்கள்.",
+li_p2:"தேர்ந்தெடுக்கப்பட்ட பக்தர்களுக்கு உடனடியாக தெரிவிக்கப்பட்டு, பிரசாதம் அவர்களின் பதிவு செய்யப்பட்ட முகவரிக்கு இலவசமாக அனுப்பப்படும். ஏதேனும் நன்கொடை முற்றிலும் விருப்பத்தேர்வு மற்றும் பக்தரின் விருப்பப்படி இருக்கும்.",
+li_status:"● நிலை: பிரசாதம் கிடைக்கும்போது திறக்கும்",
+f_name:"முழு பெயர்",f_phone:"தொலைபேசி எண்",f_address:"டெலிவரி முகவரி",f_donation:"நன்கொடை (விருப்பத்தேர்வு)",f_submit:"பதிவை சமர்ப்பிக்கவும்",
+f_note:"இலவச பதிவு. வாங்க வேண்டியதில்லை. ஒரு பக்தருக்கு மாதத்திற்கு ஒரு பதிவு.",
+form_success:"நன்றி. உங்கள் பதிவு பெறப்பட்டது.",form_error:"ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.",
+journey_eyebrow:"குறிப்பு",journey_title:"சபரிமலை யாத்திரையின் நிலைகள்",
+j1_step:"நிலை 1",j1_title:"விரதம்",j1_text:"யாத்திரை தொடங்குவதற்கு முன் கடைப்பிடிக்கப்படும் 41 நாள் ஒழுக்கம் மற்றும் கட்டுப்பாட்டு காலம்.",
+j2_step:"நிலை 2",j2_title:"இருமுடிக்கட்டு",j2_text:"ஏற்றத்தின் போது தலையில் சுமக்கப்படும் புனித இரட்டை-பை காணிக்கை.",
+j3_step:"நிலை 3",j3_title:"எருமேலி",j3_text:"சபரிமலைக்கான வனப் பாதையின் பாரம்பரிய தொடக்க இடம்.",
+j4_step:"நிலை 4",j4_title:"பம்பை",j4_text:"கோவிலுக்கான இறுதி ஏற்றத்திற்கு முன் யாத்திரிகர்கள் நீராடும் நதி.",
+j5_step:"நிலை 5",j5_title:"பதினெட்டாம்படி",j5_text:"கருவறைக்கு இட்டுச்செல்லும் பதினெட்டு புனித படிகள், ஒவ்வொன்றும் ஒரு உள் நல்லொழுக்கத்தை குறிக்கிறது.",
+j6_step:"நிலை 6",j6_title:"சன்னிதானம்",j6_text:"கருவறை — யாத்திரையின் இலக்கு.",
+gallery_eyebrow:"புகைப்படங்கள்",gallery_title:"கோயில் படத்தொகுப்பு",
+social_eyebrow:"இணையுங்கள்",social_title:"அதிகாரப்பூர்வ சமூக ஊடகம்",
+f_about_h:"சர்வம் சபரிகிரீஶ",f_about_p:"ஸ்ரீ ஐயப்பன் சுவாமிக்கான சமூக பக்தர் போர்டல் — தரிசன தகவல், கோயில் அறிவிப்புகள் மற்றும் மாதாந்திர பிரசாதம் பதிவு.",
+f_links_h:"விரைவு இணைப்புகள்",f_connect_h:"இணையுங்கள்",f_contact_h:"தொடர்பு",footer_note:"அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+}
+};
+
+let currentLang = 'en';
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang] && translations[lang][key]) el.textContent = translations[lang][key];
+  });
+  document.querySelectorAll('#langSwitch button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+  });
+  try{ localStorage.setItem('ss_language', lang); }catch(e){}
+}
+document.getElementById('langSwitch').addEventListener('click',(e)=>{
+  if(e.target.tagName==='BUTTON') applyLang(e.target.getAttribute('data-lang'));
+});
+let savedLang='en';
+try{ const s=localStorage.getItem('ss_language'); if(['en','te','hi','ml','kn','ta'].includes(s)) savedLang=s; }catch(e){}
+applyLang(savedLang);
+</script>
+</body>
+</html>
