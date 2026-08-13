@@ -63,7 +63,24 @@ export default {
       // Everyone else who wasn't picked this round goes back into the pool
       // for the next cycle automatically (they stay 'pending').
 
+      // Auto-post a public announcement (first names only — full details go
+      // privately to you via this same response, never posted publicly).
+      const firstNames = winners.map(w => (w.name || "").trim().split(" ")[0]).join(", ");
+      const title = `Prasadam Lottery Result — ${winners.length} devotee${winners.length > 1 ? "s" : ""} selected`;
+      const body = `This round's Prasadam has been allotted to: ${firstNames}. Selected devotees have been notified directly and Prasadam will be shipped to them shortly. Swamiye Saranam Ayyappa.`;
+      await env.LOTTERY_DB.prepare(
+        `INSERT INTO announcements (title, body, created_at) VALUES (?, ?, ?)`
+      ).bind(title, body, new Date().toISOString()).run();
+
       return json({ ok: true, winners }, 200, cors);
+    }
+
+    // Public: latest announcements (used by the website's Announcements section)
+    if (url.pathname === "/announcements" && request.method === "GET") {
+      const { results } = await env.LOTTERY_DB.prepare(
+        `SELECT title, body, created_at FROM announcements ORDER BY created_at DESC LIMIT 10`
+      ).all();
+      return json({ announcements: results || [] }, 200, cors);
     }
 
     // Admin: list current pending entries (for review before drawing)
