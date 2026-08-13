@@ -202,6 +202,54 @@ footer ul{list-style:none;display:grid;gap:5px}
 .float-social{position:fixed;right:15px;top:38%;z-index:900;display:flex;flex-direction:column;gap:5px}
 .float-social a{width:38px;height:38px;border-radius:9px;background:#fffaf1;border:1px solid var(--gold-soft);display:flex;align-items:center;justify-content:center;color:#b9780b;box-shadow:0 4px 12px rgba(96,65,18,.10);font-weight:700}
 
+/* Six-step sacred journey */
+.journey-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.journey-step{
+  position:relative;
+  min-height:235px;
+  padding:25px 20px 20px;
+  background:linear-gradient(145deg,#fffdf8,#f8f0df);
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:.25s;
+}
+.journey-step:hover{
+  transform:translateY(-5px);
+  border-color:#d9ae52;
+  box-shadow:0 14px 30px rgba(96,65,18,.12);
+}
+.journey-number{
+  position:absolute;
+  right:14px;
+  top:10px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  line-height:1;
+  color:rgba(197,138,24,.16);
+  font-weight:700;
+}
+.journey-icon{font-size:28px;margin-bottom:12px}
+.journey-step h3{
+  font-family:"Cormorant Garamond","Noto Serif Telugu",serif;
+  font-size:25px;
+  color:var(--brown);
+  margin:4px 0 8px;
+}
+.journey-step p{font-size:12px;color:var(--muted);line-height:1.7}
+
+@media(max-width:900px){
+  .journey-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:500px){
+  .journey-grid{grid-template-columns:1fr}
+}
+
 /* Responsive */
 @media(max-width:1100px){
   .nav{gap:13px}.nav a{font-size:10px}
@@ -262,8 +310,6 @@ footer ul{list-style:none;display:grid;gap:5px}
       <a href="#journey" data-i18n="journey">Journey</a>
       <a href="/calendar" data-i18n="calendar">Calendar</a>
       <a href="#prasadam" data-i18n="prasadam">Prasadam</a>
-      <a href="#reels" data-i18n="reels">Reels</a>
-      <a href="#videos" data-i18n="videos">Videos</a>
       <a href="#gallery" data-i18n="gallery">Gallery</a>
       <a href="#community" data-i18n="community">Community</a>
       <a href="#contact" data-i18n="contact">Contact</a>
@@ -288,7 +334,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 
 <section class="hero">
   <div class="container hero-content">
-    <div class="kicker" data-i18n="hero_kicker">Swamiye Sharanam Ayyappa</div>
+    <div class="kicker" data-i18n="hero_kicker">Sarvam Sabarigireesha</div>
     <h1><span data-i18n="hero_line1">SWAMIYE</span><br><span data-i18n="hero_line2">SHARANAM</span><br><span data-i18n="hero_line3">AYYAPPA</span></h1>
     <div class="ornament">— ◇ ◇ ◇ —</div>
     <p class="hero-copy" data-i18n="hero_copy">A Sacred Path. A Divine Presence.<br>A Community United in Devotion.</p>
@@ -394,16 +440,60 @@ footer ul{list-style:none;display:grid;gap:5px}
 <section class="section" id="journey">
   <div class="container">
     <div class="section-head">
-      <div><div class="section-kicker" data-i18n="journey_kicker">The Sacred Journey</div><h2 class="section-title" data-i18n="journey_title">Walk With Ayyappa</h2></div>
-    </div>
-    <div class="about">
-      <div class="about-copy">
-        <div class="section-kicker">01 — Vratham</div>
-        <h2 class="section-title">Irumudi • Pampa • Pathinettampadi • Sannidhanam</h2>
-        <p data-i18n="journey_text">A visual guide to the sacred pilgrimage — from Vratham and Irumudi Kettu through Pampa and the eighteen sacred steps to Sannidhanam.</p>
-        <a href="#gallery" class="btn btn-light" data-i18n="explore">Explore Journey</a>
+      <div>
+        <div class="section-kicker" data-i18n="journey_kicker">The Sacred Journey</div>
+        <h2 class="section-title" data-i18n="journey_title">Walk With Ayyappa</h2>
       </div>
-      <div class="about-photo" style="background-image:url('https://customer-assets-39nsmqrw.emergentagent.net/job_temple-essence/artifacts/0uohf6s7_irumudi.jpeg')"></div>
+    </div>
+
+    <div class="journey-grid">
+      <article class="journey-step">
+        <div class="journey-number">01</div>
+        <div class="journey-icon">🕉️</div>
+        <div class="section-kicker">Vratham</div>
+        <h3 data-i18n="j1_title">Vratham</h3>
+        <p data-i18n="j1_text">Begin the sacred discipline with devotion, purity and surrender to Lord Ayyappa.</p>
+      </article>
+
+      <article class="journey-step">
+        <div class="journey-number">02</div>
+        <div class="journey-icon">🎒</div>
+        <div class="section-kicker">Irumudi</div>
+        <h3 data-i18n="j2_title">Irumudi Kettu</h3>
+        <p data-i18n="j2_text">Prepare and carry the sacred Irumudi with faith, humility and devotion.</p>
+      </article>
+
+      <article class="journey-step">
+        <div class="journey-number">03</div>
+        <div class="journey-icon">🌿</div>
+        <div class="section-kicker">Erumeli</div>
+        <h3 data-i18n="j3_title">Erumeli</h3>
+        <p data-i18n="j3_text">Continue the pilgrimage through the sacred traditions and devotional path of Erumeli.</p>
+      </article>
+
+      <article class="journey-step">
+        <div class="journey-number">04</div>
+        <div class="journey-icon">💧</div>
+        <div class="section-kicker">Pampa</div>
+        <h3 data-i18n="j4_title">Pampa</h3>
+        <p data-i18n="j4_text">Reach the holy Pampa river and begin the final sacred ascent towards Sannidhanam.</p>
+      </article>
+
+      <article class="journey-step">
+        <div class="journey-number">05</div>
+        <div class="journey-icon">🪔</div>
+        <div class="section-kicker">Pathinettampadi</div>
+        <h3 data-i18n="j5_title">Pathinettampadi</h3>
+        <p data-i18n="j5_text">Climb the eighteen sacred steps with the Irumudi and a heart full of surrender.</p>
+      </article>
+
+      <article class="journey-step">
+        <div class="journey-number">06</div>
+        <div class="journey-icon">🙏</div>
+        <div class="section-kicker">Sannidhanam</div>
+        <h3 data-i18n="j6_title">Sannidhanam</h3>
+        <p data-i18n="j6_text">Complete the pilgrimage with the divine darshan of Lord Ayyappa at Sannidhanam.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -536,23 +626,23 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxGRL8iwvCfVQO
 const T = {
 en:{
 brand_sub:"The Digital Home of<br>Sarvam Sabarigireesha",home:"Home",about:"About",journey:"Journey",calendar:"Calendar",prasadam:"Prasadam",reels:"Reels",videos:"Videos",gallery:"Gallery",community:"Community",contact:"Contact",
-hero_kicker:"Swamiye Sharanam Ayyappa",hero_line1:"SWAMIYE",hero_line2:"SHARANAM",hero_line3:"AYYAPPA",hero_copy:"A Sacred Path. A Divine Presence.<br>A Community United in Devotion.",join:"Join Our Community",devotees:"Devotees",journeys:"Journeys",videos_stat:"Videos",years:"Years of Seva",
+hero_kicker:"Sarvam Sabarigireesha",hero_line1:"SWAMIYE",hero_line2:"SHARANAM",hero_line3:"AYYAPPA",hero_copy:"A Sacred Path. A Divine Presence.<br>A Community United in Devotion.",join:"Join Our Community",devotees:"Devotees",journeys:"Journeys",videos_stat:"Videos",years:"Years of Seva",
 q_calendar:"Sabarimala<br>Calendar",q_calendar_p:"Sacred dates, Uthiram, Sreekovil openings and important events.",q_prasadam:"Ayyappa<br>Prasadam",q_prasadam_p:"Register for prasadam. Selected devotees are notified and prasadam is shipped.",q_journey:"The<br>Journey",q_journey_p:"Walk of devotion, faith and surrender to Lord Ayyappa.",q_reels_p:"Short divine moments shared with love and devotion.",q_videos_p:"Watch spiritual videos, discourses and temple experiences.",q_gallery:"Gallery",q_gallery_p:"Divine photos from Sabarimala and our journeys.",
 about_kicker:"About Thathwamasi",about_title:"More Than a Website,<br>It’s a Spiritual Movement",about_text:"Thathwamasi is the digital home of Sarvam Sabarigireesha, created to inspire devotees, share divine content, document sacred journeys and build a global community of Ayyappa bhaktas.",know_more:"Know More About Us",
 events_kicker:"Upcoming Sacred Events",event1:"A Sacred Day",full_calendar:"View Full<br>Sabarimala Calendar",moments_kicker:"Divine Moments",view_gallery:"View All<br>Gallery<br>→",
-journey_kicker:"The Sacred Journey",journey_title:"Walk With Ayyappa",journey_text:"A visual guide to the sacred pilgrimage — from Vratham and Irumudi Kettu through Pampa and the eighteen sacred steps to Sannidhanam.",explore:"Explore Journey",
+journey_kicker:"The Sacred Journey",journey_title:"Walk With Ayyappa",journey_text:"A visual guide to the sacred pilgrimage — from Vratham and Irumudi Kettu through Pampa and the eighteen sacred steps to Sannidhanam.",j1_title:"Vratham",j1_text:"Begin the sacred discipline with devotion, purity and surrender to Lord Ayyappa.",j2_title:"Irumudi Kettu",j2_text:"Prepare and carry the sacred Irumudi with faith, humility and devotion.",j3_title:"Erumeli",j3_text:"Continue the pilgrimage through the sacred traditions and devotional path of Erumeli.",j4_title:"Pampa",j4_text:"Reach the holy Pampa river and begin the final sacred ascent towards Sannidhanam.",j5_title:"Pathinettampadi",j5_text:"Climb the eighteen sacred steps with the Irumudi and a heart full of surrender.",j6_title:"Sannidhanam",j6_text:"Complete the pilgrimage with the divine darshan of Lord Ayyappa at Sannidhanam.",explore:"Explore Journey",
 prasadam_kicker:"Devotee Seva",prasadam_title:"Ayyappa Prasadam",prasadam_text:"Free monthly registration. When prasadam is available, selected devotees are contacted and the prasadam is sent to the registered delivery address.",address_note:"Full delivery address is required because the prasadam has to be shipped.",free_note:"No purchase is required. One registration per devotee per month.",f_name:"Full Name",f_phone:"Mobile Number",f_pincode:"PIN Code",f_address:"Full Delivery Address",f_message:"Message (Optional)",consent:"I agree to use my details only for Prasadam registration and delivery.",submit:"Submit Registration",form_note:"Free registration. No purchase necessary.",
-reels_title:"Short Divine Moments",videos_title:"Watch & Experience",videos_text:"Watch devotional videos, Ayyappa stories, Harathi, Padi Pooja and pilgrimage visuals on our YouTube channel.",stay:"Stay Connected with Thathwamasi",stay_p:"Subscribe for updates, new videos, events and spiritual content.",subscribe:"SUBSCRIBE",footer_about:"A community devotee portal for Lord Ayyappa Swamy.",quick_links:"Quick Links",contact_title:"Contact",rights:"All Rights Reserved"
+reels_title:"Short Divine Moments",videos_title:"Watch & Experience",videos_text:"Watch devotional videos, Ayyappa stories, Harathi, Padi Pooja and pilgrimage visuals on our YouTube channel.",stay:"Stay Connected with Sarvam Sabarigireesha",stay_p:"Subscribe for updates, new videos, events and spiritual content.",subscribe:"SUBSCRIBE",footer_about:"A community devotee portal for Lord Ayyappa Swamy.",quick_links:"Quick Links",contact_title:"Contact",rights:"All Rights Reserved"
 },
 te:{
 brand_sub:"సర్వం సబరిగిరీశ యొక్క డిజిటల్ హోమ్",home:"హోమ్",about:"గురించి",journey:"యాత్ర",calendar:"క్యాలెండర్",prasadam:"ప్రసాదం",reels:"రీల్స్",videos:"వీడియోలు",gallery:"గ్యాలరీ",community:"కమ్యూనిటీ",contact:"సంప్రదించండి",
-hero_kicker:"స్వామియే శరణం అయ్యప్ప",hero_line1:"స్వామియే",hero_line2:"శరణం",hero_line3:"అయ్యప్ప",hero_copy:"ఒక పవిత్ర మార్గం. ఒక దైవిక సాన్నిధ్యం.<br>భక్తితో ఏకమైన సమాజం.",join:"మన కమ్యూనిటీలో చేరండి",devotees:"భక్తులు",journeys:"యాత్రలు",videos_stat:"వీడియోలు",years:"సేవా సంవత్సరాలు",
+hero_kicker:"సర్వం సబరిగిరీశ",hero_line1:"స్వామియే",hero_line2:"శరణం",hero_line3:"అయ్యప్ప",hero_copy:"ఒక పవిత్ర మార్గం. ఒక దైవిక సాన్నిధ్యం.<br>భక్తితో ఏకమైన సమాజం.",join:"మన కమ్యూనిటీలో చేరండి",devotees:"భక్తులు",journeys:"యాత్రలు",videos_stat:"వీడియోలు",years:"సేవా సంవత్సరాలు",
 q_calendar:"శబరిమల<br>క్యాలెండర్",q_calendar_p:"పవిత్ర తేదీలు, ఉత్రం, శ్రీకోవిల్ ప్రారంభాలు మరియు ముఖ్యమైన కార్యక్రమాలు.",q_prasadam:"అయ్యప్ప<br>ప్రసాదం",q_prasadam_p:"ప్రసాదం కోసం నమోదు చేసుకోండి. ఎంపికైన భక్తులకు సమాచారం పంపబడుతుంది.",q_journey:"పవిత్ర<br>యాత్ర",q_journey_p:"అయ్యప్ప స్వామిపై భక్తి, విశ్వాసం మరియు శరణాగతి మార్గం.",q_reels_p:"భక్తితో పంచుకునే చిన్న దైవిక క్షణాలు.",q_videos_p:"ఆధ్యాత్మిక వీడియోలు, ప్రసంగాలు మరియు ఆలయ అనుభవాలు చూడండి.",q_gallery:"గ్యాలరీ",q_gallery_p:"శబరిమల మరియు మా యాత్రల దైవిక చిత్రాలు.",
 about_kicker:"తత్వమసి గురించి",about_title:"ఇది కేవలం వెబ్‌సైట్ కాదు,<br>ఇది ఒక ఆధ్యాత్మిక ఉద్యమం",about_text:"తత్వమసి సర్వం సబరిగిరీశ యొక్క డిజిటల్ హోమ్. భక్తులను ప్రేరేపించడం, దైవిక కంటెంట్ పంచుకోవడం, పవిత్ర యాత్రలను నమోదు చేయడం మరియు అయ్యప్ప భక్తుల గ్లోబల్ కమ్యూనిటీని నిర్మించడం దీని లక్ష్యం.",know_more:"మా గురించి మరింత తెలుసుకోండి",
 events_kicker:"రాబోయే పవిత్ర కార్యక్రమాలు",event1:"పవిత్రమైన రోజు",full_calendar:"పూర్తి<br>శబరిమల క్యాలెండర్",moments_kicker:"దైవిక క్షణాలు",view_gallery:"మొత్తం<br>గ్యాలరీ<br>→",
-journey_kicker:"పవిత్ర యాత్ర",journey_title:"అయ్యప్పతో కలిసి నడుద్దాం",journey_text:"వ్రతం మరియు ఇరుముడి కట్టు నుంచి పంపా, పద్దెనిమిది పవిత్ర మెట్లు, సన్నిధానం వరకు పవిత్ర యాత్రకు దృశ్య మార్గదర్శకం.",explore:"యాత్రను చూడండి",
+journey_kicker:"పవిత్ర యాత్ర",journey_title:"అయ్యప్పతో కలిసి నడుద్దాం",journey_text:"వ్రతం మరియు ఇరుముడి కట్టు నుంచి పంపా, పద్దెనిమిది పవిత్ర మెట్లు, సన్నిధానం వరకు పవిత్ర యాత్రకు దృశ్య మార్గదర్శకం.",j1_title:"వ్రతం",j1_text:"భక్తి, పవిత్రత మరియు అయ్యప్ప స్వామిపై శరణాగతితో పవిత్ర వ్రతాన్ని ప్రారంభించండి.",j2_title:"ఇరుముడి కట్టు",j2_text:"విశ్వాసం, వినయం మరియు భక్తితో పవిత్ర ఇరుముడిని సిద్ధం చేసుకుని మోసుకెళ్లండి.",j3_title:"ఎరుమేలి",j3_text:"ఎరుమేలి పవిత్ర సంప్రదాయాలు మరియు భక్తి మార్గం ద్వారా యాత్రను కొనసాగించండి.",j4_title:"పంపా",j4_text:"పవిత్ర పంపా నదిని చేరుకుని సన్నిధానం వైపు చివరి పవిత్ర ఆరోహణను ప్రారంభించండి.",j5_title:"పదునెట్టాంపడి",j5_text:"ఇరుముడితో పద్దెనిమిది పవిత్ర మెట్లను శరణాగతి భావంతో అధిరోహించండి.",j6_title:"సన్నిధానం",j6_text:"సన్నిధానంలో అయ్యప్ప స్వామి దివ్య దర్శనంతో పవిత్ర యాత్రను పూర్తి చేయండి.",explore:"యాత్రను చూడండి",
 prasadam_kicker:"భక్త సేవ",prasadam_title:"అయ్యప్ప ప్రసాదం",prasadam_text:"నెలవారీ ఉచిత నమోదు. ప్రసాదం అందుబాటులో ఉన్నప్పుడు ఎంపికైన భక్తులను సంప్రదించి, నమోదు చేసిన డెలివరీ చిరునామాకు ప్రసాదం పంపబడుతుంది.",address_note:"ప్రసాదం పంపాల్సి ఉంటుంది కాబట్టి పూర్తి డెలివరీ చిరునామా తప్పనిసరి.",free_note:"కొనుగోలు అవసరం లేదు. ఒక్క భక్తికి నెలకు ఒక నమోదు.",f_name:"పూర్తి పేరు",f_phone:"మొబైల్ నంబర్",f_pincode:"పిన్ కోడ్",f_address:"పూర్తి డెలివరీ చిరునామా",f_message:"సందేశం (ఐచ్ఛికం)",consent:"నా వివరాలను ప్రసాదం నమోదు మరియు డెలివరీ కోసం మాత్రమే ఉపయోగించడానికి నేను అంగీకరిస్తున్నాను.",submit:"నమోదు సమర్పించండి",form_note:"ఉచిత నమోదు. కొనుగోలు అవసరం లేదు.",
-reels_title:"చిన్న దైవిక క్షణాలు",videos_title:"చూడండి & అనుభవించండి",videos_text:"అయ్యప్ప కథలు, హారతి, పడిపూజ మరియు యాత్ర దృశ్యాలను మా YouTube ఛానెల్‌లో చూడండి.",stay:"తత్వమసితో కనెక్ట్ అవ్వండి",stay_p:"అప్‌డేట్లు, కొత్త వీడియోలు, కార్యక్రమాలు మరియు ఆధ్యాత్మిక కంటెంట్ కోసం సబ్‌స్క్రైబ్ చేయండి.",subscribe:"సబ్‌స్క్రైబ్",footer_about:"శ్రీ అయ్యప్ప స్వామి భక్తుల కమ్యూనిటీ పోర్టల్.",quick_links:"త్వరిత లింకులు",contact_title:"సంప్రదింపు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి"
+reels_title:"చిన్న దైవిక క్షణాలు",videos_title:"చూడండి & అనుభవించండి",videos_text:"అయ్యప్ప కథలు, హారతి, పడిపూజ మరియు యాత్ర దృశ్యాలను మా YouTube ఛానెల్‌లో చూడండి.",stay:"సర్వం సబరిగిరీశతో కనెక్ట్ అవ్వండి",stay_p:"అప్‌డేట్లు, కొత్త వీడియోలు, కార్యక్రమాలు మరియు ఆధ్యాత్మిక కంటెంట్ కోసం సబ్‌స్క్రైబ్ చేయండి.",subscribe:"సబ్‌స్క్రైబ్",footer_about:"శ్రీ అయ్యప్ప స్వామి భక్తుల కమ్యూనిటీ పోర్టల్.",quick_links:"త్వరిత లింకులు",contact_title:"సంప్రదింపు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి"
 }
 };
 T.hi=T.en; T.ml=T.en; T.kn=T.en; T.ta=T.en;
