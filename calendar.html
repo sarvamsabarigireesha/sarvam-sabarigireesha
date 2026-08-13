@@ -80,6 +80,8 @@ a{color:inherit;text-decoration:none}
   from{transform:translateX(0)}
   to{transform:translateX(-50%)}
 }
+.notice-window{width:100%}
+.notice-track{will-change:transform}
 
 /* HEADER — SAME LIGHT DESIGN LANGUAGE AS HOME */
 .site-header{
@@ -357,10 +359,10 @@ footer ul{list-style:none;display:grid;gap:5px}
   <div class="notice-label">NOTICE</div>
   <div class="notice-window">
     <div class="notice-track">
-      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
-      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
-      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
-      <span>Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span data-cal-i18n="notice">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span data-cal-i18n="notice">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span data-cal-i18n="notice">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
+      <span data-cal-i18n="notice">Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.</span>
     </div>
   </div>
 </div>
@@ -376,22 +378,25 @@ footer ul{list-style:none;display:grid;gap:5px}
     </a>
 
     <nav class="nav" id="nav">
-      <a href="/">Home</a>
-      <a href="/#about">About</a>
-      <a href="/#journey">Journey</a>
-      <a href="/calendar" class="active">Calendar</a>
-      <a href="/#prasadam">Prasadam</a>
-      <a href="/#gallery">Gallery</a>
-      <a href="/#community">Community</a>
-      <a href="/#contact">Contact</a>
+      <a href="/" data-cal-i18n="home">Home</a>
+      <a href="/#about" data-cal-i18n="about">About</a>
+      <a href="/#journey" data-cal-i18n="journey">Journey</a>
+      <a href="/calendar" class="active" data-cal-i18n="calendar">Calendar</a>
+      <a href="/#prasadam" data-cal-i18n="prasadam">Prasadam</a>
+      <a href="/#gallery" data-cal-i18n="gallery">Gallery</a>
+      <a href="/#community" data-cal-i18n="community">Community</a>
+      <a href="/#contact" data-cal-i18n="contact">Contact</a>
     </nav>
 
     <div class="lang">
       <span>◎</span>
-      <select aria-label="Language">
-        <option>English</option>
-        <option>తెలుగు</option>
-        <option>हिन्दी</option>
+      <select id="language" aria-label="Language">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ml">മലയാളം</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="ta">தமிழ்</option>
       </select>
     </div>
     <button class="menu" id="menuBtn">☰</button>
@@ -407,13 +412,10 @@ footer ul{list-style:none;display:grid;gap:5px}
 
 <section class="hero">
   <div class="container hero-content">
-    <div class="kicker">Sarvam Sabarigireesha</div>
-    <h1>Sabarimala <span>Calendar</span></h1>
+    <div class="kicker" data-cal-i18n="kicker">Sarvam Sabarigireesha</div>
+    <h1><span data-cal-i18n="title">Sabarimala</span> <span data-cal-i18n="title2">Calendar</span></h1>
     <div class="ornament">— ◇ ◇ ◇ —</div>
-    <p class="hero-copy">
-      Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important
-      Sabarimala events for the year 2026.
-    </p>
+    <p class="hero-copy" data-cal-i18n="copy">Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important Sabarimala events for the year 2026.</p>
   </div>
 </section>
 
@@ -422,15 +424,15 @@ footer ul{list-style:none;display:grid;gap:5px}
 
     <div class="section-head">
       <div>
-        <div class="section-kicker">Sabarimala Calendar</div>
-        <h2 class="section-title">Sacred Calendar · <span>2026</span></h2>
+        <div class="section-kicker" data-cal-i18n="sectionKicker">Sabarimala Calendar</div>
+        <h2 class="section-title"><span data-cal-i18n="sectionTitle">Sacred Calendar ·</span> <span>2026</span></h2>
       </div>
 
       <div class="controls">
-        <button class="btn" onclick="scrollToMonth(-1)">← Previous</button>
-        <button class="btn btn-gold" onclick="scrollToMonth(1)">Next →</button>
-        <button class="btn" id="downloadBtn" onclick="downloadPDF()">↓ Download PDF</button>
-        <button class="btn" id="shareBtn" onclick="sharePDF()">↗ Share PDF</button>
+        <button class="btn" onclick="scrollToMonth(-1)" data-cal-i18n="previous">← Previous</button>
+        <button class="btn btn-gold" onclick="scrollToMonth(1)" data-cal-i18n="next">Next →</button>
+        <button class="btn" id="downloadBtn" onclick="downloadPDF()" data-cal-i18n="download">↓ Download PDF</button>
+        <button class="btn" id="shareBtn" onclick="sharePDF()" data-cal-i18n="share">↗ Share PDF</button>
       </div>
     </div>
 
@@ -472,7 +474,7 @@ footer ul{list-style:none;display:grid;gap:5px}
         <li><a href="/#journey">Our Journey</a></li>
         <li><a href="/calendar">Sabarimala Calendar</a></li>
         <li><a href="/#prasadam">Ayyappa Prasadam</a></li>
-        <li><a href="/#gallery">Gallery</a></li>
+        <li><a href="/#gallery" data-cal-i18n="gallery">Gallery</a></li>
       </ul>
     </div>
 
@@ -481,8 +483,8 @@ footer ul{list-style:none;display:grid;gap:5px}
       <ul>
         <li><a href="/#community">Stay Connected</a></li>
         <li><a href="/#journey">Pilgrimage</a></li>
-        <li><a href="/#prasadam">Prasadam</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/#prasadam" data-cal-i18n="prasadam">Prasadam</a></li>
+        <li><a href="/#contact" data-cal-i18n="contact">Contact</a></li>
       </ul>
     </div>
 
@@ -502,6 +504,92 @@ footer ul{list-style:none;display:grid;gap:5px}
 </footer>
 
 <script>
+const CAL_T = {
+  en:{
+    notice:"Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.",
+    home:"Home",about:"About",journey:"Journey",calendar:"Calendar",prasadam:"Prasadam",
+    gallery:"Gallery",community:"Community",contact:"Contact",
+    kicker:"Sarvam Sabarigireesha",title:"Sabarimala",title2:"Calendar",
+    copy:"Sacred dates, Uthiram, Sreekovil openings, Mandala Pooja and important Sabarimala events for the year 2026.",
+    sectionKicker:"Sabarimala Calendar",sectionTitle:"Sacred Calendar ·",intro:"Swamiye Sharanam Ayyappa.",
+    intro2:"View the important Sabarimala dates and sacred events for 2026. Event dates are marked with a gold dot.",
+    previous:"← Previous",next:"Next →",download:"↓ Download PDF",share:"↗ Share PDF",
+    communityTitle:"Community",stay:"Stay Connected",pilgrimage:"Pilgrimage"
+  },
+  te:{
+    notice:"మండల కాల వ్రత కాలం — ప్రత్యేక దర్శనం మరియు పూజా కార్యక్రమాల షెడ్యూల్ అమలులో ఉంది.",
+    home:"హోమ్",about:"గురించి",journey:"యాత్ర",calendar:"క్యాలెండర్",prasadam:"ప్రసాదం",
+    gallery:"గ్యాలరీ",community:"కమ్యూనిటీ",contact:"సంప్రదించండి",
+    kicker:"సర్వం సబరిగిరీశ",title:"శబరిమల",title2:"క్యాలెండర్",
+    copy:"2026 సంవత్సరానికి పవిత్ర తేదీలు, ఉత్రం, శ్రీకోవిల్ ప్రారంభాలు, మండల పూజ మరియు ముఖ్యమైన శబరిమల కార్యక్రమాలు.",
+    sectionKicker:"శబరిమల క్యాలెండర్",sectionTitle:"పవిత్ర క్యాలెండర్ ·",intro:"స్వామియే శరణం అయ్యప్ప.",
+    intro2:"2026లోని ముఖ్యమైన శబరిమల తేదీలు మరియు పవిత్ర కార్యక్రమాలను చూడండి. కార్యక్రమ తేదీలను బంగారు చుక్కతో గుర్తించాం.",
+    previous:"← ముందు",next:"తర్వాత →",download:"↓ PDF డౌన్‌లోడ్",share:"↗ PDF షేర్",
+    communityTitle:"కమ్యూనిటీ",stay:"కనెక్ట్ అవ్వండి",pilgrimage:"యాత్ర"
+  },
+  hi:{
+    notice:"मंडल काल व्रत अवधि — विशेष दर्शन और पूजा कार्यक्रम प्रभावी है।",
+    home:"होम",about:"परिचय",journey:"यात्रा",calendar:"कैलेंडर",prasadam:"प्रसाद",
+    gallery:"गैलरी",community:"कम्युनिटी",contact:"संपर्क",
+    kicker:"सर्वं सबरीगिरीश",title:"सबरीमाला",title2:"कैलेंडर",
+    copy:"2026 के लिए पवित्र तिथियां, उथिराम, श्रीकोविल उद्घाटन, मंडल पूजा और महत्वपूर्ण सबरीमाला कार्यक्रम।",
+    sectionKicker:"सबरीमाला कैलेंडर",sectionTitle:"पवित्र कैलेंडर ·",intro:"स्वामिये शरणम अयप्पा।",
+    intro2:"2026 की महत्वपूर्ण सबरीमाला तिथियां और पवित्र कार्यक्रम देखें। कार्यक्रम की तिथियां सुनहरे बिंदु से चिन्हित हैं।",
+    previous:"← पिछला",next:"अगला →",download:"↓ PDF डाउनलोड",share:"↗ PDF शेयर",
+    communityTitle:"कम्युनिटी",stay:"जुड़े रहें",pilgrimage:"तीर्थयात्रा"
+  },
+  ml:{
+    notice:"മണ്ഡലകാല വ്രതകാലം — പ്രത്യേക ദർശനവും പൂജാ ക്രമീകരണങ്ങളും നിലവിൽ.",
+    home:"ഹോം",about:"ഞങ്ങളെക്കുറിച്ച്",journey:"യാത്ര",calendar:"കലണ്ടർ",prasadam:"പ്രസാദം",
+    gallery:"ഗാലറി",community:"കമ്മ്യൂണിറ്റി",contact:"ബന്ധപ്പെടുക",
+    kicker:"സർവം ശബരിഗിരീശ",title:"ശബരിമല",title2:"കലണ്ടർ",
+    copy:"2026-ലെ വിശുദ്ധ തീയതികൾ, ഉത്രം, ശ്രീകോവിൽ തുറക്കൽ, മണ്ഡല പൂജ, പ്രധാന ശബരിമല ചടങ്ങുകൾ.",
+    sectionKicker:"ശബരിമല കലണ്ടർ",sectionTitle:"വിശുദ്ധ കലണ്ടർ ·",intro:"സ്വാമിയേ ശരണം അയ്യപ്പാ.",
+    intro2:"2026-ലെ പ്രധാന ശബരിമല തീയതികളും വിശുദ്ധ ചടങ്ങുകളും കാണുക. ചടങ്ങുകളുടെ തീയതികൾ സ്വർണ്ണ ബിന്ദുവാൽ അടയാളപ്പെടുത്തിയിരിക്കുന്നു.",
+    previous:"← മുമ്പ്",next:"അടുത്തത് →",download:"↓ PDF ഡൗൺലോഡ്",share:"↗ PDF ഷെയർ",
+    communityTitle:"കമ്മ്യൂണിറ്റി",stay:"ബന്ധപ്പെട്ടു തുടരുക",pilgrimage:"തീർത്ഥയാത്ര"
+  },
+  kn:{
+    notice:"ಮಂಡಲ ಕಾಲ ವ್ರತ ಅವಧಿ — ವಿಶೇಷ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ.",
+    home:"ಮುಖಪುಟ",about:"ನಮ್ಮ ಬಗ್ಗೆ",journey:"ಯಾತ್ರೆ",calendar:"ಕ್ಯಾಲೆಂಡರ್",prasadam:"ಪ್ರಸಾದ",
+    gallery:"ಗ್ಯಾಲರಿ",community:"ಸಮುದಾಯ",contact:"ಸಂಪರ್ಕ",
+    kicker:"ಸರ್ವಂ ಸಬರಿಗಿರೀಶ",title:"ಶಬರಿಮಲೆ",title2:"ಕ್ಯಾಲೆಂಡರ್",
+    copy:"2026ರ ಪವಿತ್ರ ದಿನಾಂಕಗಳು, ಉತ್ರಂ, ಶ್ರೀಕೋವಿಲ್ ತೆರೆಯುವಿಕೆ, ಮಂಡಲ ಪೂಜೆ ಮತ್ತು ಪ್ರಮುಖ ಶಬರಿಮಲೆ ಕಾರ್ಯಕ್ರಮಗಳು.",
+    sectionKicker:"ಶಬರಿಮಲೆ ಕ್ಯಾಲೆಂಡರ್",sectionTitle:"ಪವಿತ್ರ ಕ್ಯಾಲೆಂಡರ್ ·",intro:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪ.",
+    intro2:"2026ರ ಪ್ರಮುಖ ಶಬರಿಮಲೆ ದಿನಾಂಕಗಳು ಮತ್ತು ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ. ಕಾರ್ಯಕ್ರಮದ ದಿನಾಂಕಗಳನ್ನು ಚಿನ್ನದ ಚುಕ್ಕೆಯಿಂದ ಗುರುತಿಸಲಾಗಿದೆ.",
+    previous:"← ಹಿಂದಿನ",next:"ಮುಂದೆ →",download:"↓ PDF ಡೌನ್‌ಲೋಡ್",share:"↗ PDF ಹಂಚಿಕೆ",
+    communityTitle:"ಸಮುದಾಯ",stay:"ಸಂಪರ್ಕದಲ್ಲಿರಿ",pilgrimage:"ಯಾತ್ರೆ"
+  },
+  ta:{
+    notice:"மண்டல கால விரத காலம் — சிறப்பு தரிசனம் மற்றும் பூஜை அட்டவணை நடைமுறையில் உள்ளது.",
+    home:"முகப்பு",about:"எங்களைப் பற்றி",journey:"யாத்திரை",calendar:"காலண்டர்",prasadam:"பிரசாதம்",
+    gallery:"கேலரி",community:"சமூகம்",contact:"தொடர்பு",
+    kicker:"சர்வம் சபரிகிரீஷா",title:"சபரிமலை",title2:"காலண்டர்",
+    copy:"2026 ஆம் ஆண்டிற்கான புனித தேதிகள், உத்திரம், ஸ்ரீகோவில் திறப்பு, மண்டல பூஜை மற்றும் முக்கிய சபரிமலை நிகழ்வுகள்.",
+    sectionKicker:"சபரிமலை காலண்டர்",sectionTitle:"புனித காலண்டர் ·",intro:"ஸ்வாமியே சரணம் ஐயப்பா.",
+    intro2:"2026 ஆம் ஆண்டின் முக்கிய சபரிமலை தேதிகள் மற்றும் புனித நிகழ்வுகளைப் பார்க்கவும். நிகழ்வு தேதிகள் தங்க நிற புள்ளியால் குறிக்கப்பட்டுள்ளன.",
+    previous:"← முந்தைய",next:"அடுத்து →",download:"↓ PDF பதிவிறக்கம்",share:"↗ PDF பகிர்",
+    communityTitle:"சமூகம்",stay:"தொடர்பில் இருங்கள்",pilgrimage:"யாத்திரை"
+  }
+};
+
+function applyCalendarLanguage(lang){
+  const t=CAL_T[lang]||CAL_T.en;
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-cal-i18n]").forEach(el=>{
+    const key=el.dataset.calI18n;
+    if(t[key]!=null) el.innerHTML=t[key];
+  });
+  localStorage.setItem("ss_language",lang);
+}
+
+const savedLang=localStorage.getItem("ss_language");
+const initialLang=["en","te","hi","ml","kn","ta"].includes(savedLang)?savedLang:"en";
+const langSelect=document.getElementById("language");
+langSelect.value=initialLang;
+langSelect.addEventListener("change",e=>applyCalendarLanguage(e.target.value));
+applyCalendarLanguage(initialLang);
+
 const calendarData = [
  {month:0,name:"January",events:[["09","Uthiram"],["14","Makara Vilakku / Makara Jyothi"],["30","Sreekovil opens"],["31","Sreekovil opening period"]]},
  {month:1,name:"February",events:[["05","Uthiram"],["12","Sreekovil opens"],["18","Sreekovil closes"]]},
