@@ -10,7 +10,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="THATHWAMASI">
+<meta name="apple-mobile-web-app-title" content="Sarvam Sabarigireesha">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
 <meta name="description" content="Thathwamasi — The Digital Home of Sarvam Sabarigireesha. Sabarimala calendar, Ayyappa Prasadam, pilgrimage, reels, videos, gallery and devotee community.">
@@ -325,7 +325,7 @@ footer ul{list-style:none;display:grid;gap:5px}
   .nav{display:none}.menu{display:block;margin-left:auto}
   .hero:before{width:100%;opacity:.22;background:url("/assets/ayyappa-hero.jpg") center top/cover;-webkit-mask-image:none;mask-image:none}
   .hero:after{width:52%}
-  .hero-content{padding:48px 0 30px}.hero h1{font-size:54px}
+  .hero-content{padding:44px 0 28px}.hero h1{font-size:clamp(27px,10vw,46px);max-width:100%}.hero-copy{max-width:100%}
   .hero-stats{gap:13px}.stat{padding-right:12px}
   .quick-grid{grid-template-columns:repeat(2,1fr)}
   .about,.prasadam{grid-template-columns:1fr}.about-photo{min-height:230px;order:-1}
@@ -336,7 +336,7 @@ footer ul{list-style:none;display:grid;gap:5px}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:500px){
-  .hero h1{font-size:47px}.hero-copy{font-size:16px}
+  .hero h1{font-size:clamp(25px,9.2vw,34px);max-width:100%}.hero-copy{font-size:15px;max-width:100%}
   .quick-grid{grid-template-columns:1fr 1fr}
   .quick-card{min-height:165px}
   .event-strip{grid-template-columns:1fr}
@@ -417,7 +417,14 @@ footer ul{list-style:none;display:grid;gap:5px}
 .fo-t{font:600 9.5px Arial,sans-serif;color:#6f6559;line-height:1.3}
 .month-card.flash{animation:flashRing 1.6s ease}
 @keyframes flashRing{0%,40%{box-shadow:0 0 0 3px #C62828}100%{box-shadow:0 0 0 3px rgba(198,40,40,0)}}
-@media(max-width:700px){.float-opens{display:none}}
+@media(max-width:700px){
+  .float-opens{display:block;left:8px;top:auto;bottom:66px;width:130px;padding:8px 9px;opacity:.95}
+  .float-opens h4{font-size:8px;margin:0 0 3px}
+  .float-opens a{gap:6px;padding:4px 0}
+  .float-opens a:nth-of-type(3){display:none} /* mobile lo 2 dates matrame — compact */
+  .fo-d{font-size:10.5px;min-width:42px}
+  .fo-t{font-size:8px}
+}
 
 /* PILGRIM SERVICES */
 .sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -436,16 +443,22 @@ footer ul{list-style:none;display:grid;gap:5px}
 @media(max-width:800px){.sv-grid{grid-template-columns:1fr}}
 
 @media(max-width:800px){
-  .band-mantra{font-size:14px;white-space:normal}
-  .top-band{min-height:80px}
-  .top-band:before{width:55%}
-  .top-band:after{width:46%}
+  .top-band{min-height:auto;padding:10px 14px 10px;flex-direction:column;align-items:stretch;justify-content:center;gap:3px}
+  .top-band:before{width:34%;opacity:.45}
+  .top-band:after{width:27%;opacity:.5}
+  .top-band .brand{align-self:flex-start}
+  .top-band .brand-logo{width:34px;height:34px;border-width:2px}
+  .top-band .brand-name{font-size:13.5px}
+  .top-band .brand-sub{font-size:8.5px}
+  .band-center{position:static;transform:none;margin:1px auto 0}
+  .band-mantra{font-size:clamp(12px,3.7vw,16px);white-space:nowrap}
+  .band-om{font-size:17px}
+  .band-motifs svg{width:12px;height:12px}
 }
 @media(max-width:500px){
-  .band-motifs svg{width:13px;height:13px}
-  .band-om{font-size:19px}
-  .top-band .brand-sub{font-size:10px}
-  .top-band .brand-name{font-size:17px}
+  .band-mantra{font-size:clamp(11.5px,3.9vw,14px)}
+  .top-band .brand-sub{display:none}
+  .top-band .brand-name{font-size:12.5px}
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -1193,5 +1206,5 @@ async function sharePDF(){
   };
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c63d3d7e067fc1',t:'MTc4Njk0NDEyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c63d3d7e067fc1',t:'MTc4Njk0NDEyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c8484c0d8e3d0c',t:'MTc4Njk2NTU1Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
