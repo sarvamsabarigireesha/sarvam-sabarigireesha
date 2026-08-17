@@ -346,6 +346,25 @@ footer ul{list-style:none;display:grid;gap:5px}
 @media(max-width:1100px){.month-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.month-grid{grid-template-columns:1fr}.controls{width:100%}}
 @media(max-width:500px){.controls .btn{flex:1}}
+
+/* Floating upcoming temple openings */
+.float-opens{
+  position:fixed;right:15px;top:60%;z-index:900;
+  background:#fffdf8;border:1px solid var(--gold-soft);
+  border-radius:12px;box-shadow:0 6px 20px rgba(96,65,18,.16);
+  padding:11px 12px;width:158px;
+}
+.float-opens h4{
+  margin:0 0 5px;font-size:10px;font-family:"Noto Sans",sans-serif;
+  letter-spacing:.07em;text-transform:uppercase;color:#b47408;
+}
+.float-opens a{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #f3ead9}
+.float-opens a:hover .fo-d{color:#C62828}
+.fo-d{font:800 12px Arial,sans-serif;color:#8f620c;min-width:52px}
+.fo-t{font:600 9.5px Arial,sans-serif;color:#6f6559;line-height:1.3}
+.month-card.flash{animation:flashRing 1.6s ease}
+@keyframes flashRing{0%,40%{box-shadow:0 0 0 3px #C62828}100%{box-shadow:0 0 0 3px rgba(198,40,40,0)}}
+@media(max-width:700px){.float-opens{display:none}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -373,6 +392,11 @@ footer ul{list-style:none;display:grid;gap:5px}
   <a class="fs-wa" href="https://wa.me/918919462503" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 </div>
 
+<div class="float-opens">
+  <h4 data-i18n="fo_title">Sreekovil Opens</h4>
+  <div id="opensList"></div>
+</div>
+
 <header class="site-header">
   <div class="container header-row">
     <a class="brand" href="/">
@@ -386,9 +410,9 @@ footer ul{list-style:none;display:grid;gap:5px}
     <nav class="nav" id="nav">
       <a class="active" href="/" data-i18n="home">Home</a>
       <a href="#about" data-i18n="about">About</a>
-      <a href="#journey" data-i18n="journey">Journey</a>
       <a href="#calendar" data-i18n="calendar">Calendar</a>
       <a href="#prasadam" data-i18n="prasadam">Prasadam</a>
+      <a href="#journey" data-i18n="journey">Journey</a>
       <a href="#gallery" data-i18n="gallery">Gallery</a>
       <a href="#community" data-i18n="community">Community</a>
       <a href="#contact" data-i18n="contact">Contact</a>
@@ -413,7 +437,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 
 <section class="hero">
   <div class="container hero-content">
-    <div class="kicker" data-i18n="hero_kicker">Swamiye Sharanam Ayyappa</div>
+    <div class="kicker">Sarvam Sabarigireesha</div>
     <h1><span data-i18n="hero_line1">SWAMIYE</span><br><span data-i18n="hero_line2">SHARANAM</span><br><span data-i18n="hero_line3">AYYAPPA</span></h1>
     <div class="ornament">— ◇ ◇ ◇ —</div>
     <p class="hero-copy" data-i18n="hero_copy">A Sacred Path. A Divine Presence.<br>A Community United in Devotion.</p>
@@ -475,7 +499,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 <section class="section" id="events">
   <div class="container">
     <div class="section-head">
-      <div><div class="section-kicker" data-i18n="events_kicker">Upcoming Sacred Events</div></div>
+      <div><div class="section-kicker" data-i18n="events_kicker">Sacred Events</div></div>
       <div>← &nbsp; →</div>
     </div>
     <div class="event-strip">
@@ -624,7 +648,7 @@ footer ul{list-style:none;display:grid;gap:5px}
     <div class="subscribe">
       <div class="subscribe-icon">♟</div>
       <div class="subscribe-copy">
-        <strong data-i18n="stay">Stay Connected with Thathwamasi</strong>
+        <strong data-i18n="stay">Stay Connected with Sarvam Sabarigireesha</strong>
         <p data-i18n="stay_p">Subscribe for updates, new videos, events and spiritual content.</p>
       </div>
       <form onsubmit="event.preventDefault();alert('Thank you for subscribing.');">
@@ -688,11 +712,11 @@ brand_sub:"The Digital Home of<br>Sarvam Sabarigireesha",home:"Home",about:"Abou
 hero_kicker:"Sarvam Sabarigireesha",hero_line1:"SWAMIYE",hero_line2:"SHARANAM",hero_line3:"AYYAPPA",hero_copy:"A Sacred Path. A Divine Presence.<br>A Community United in Devotion.",join:"Join Our Community",devotees:"Devotees",journeys:"Journeys",videos_stat:"Videos",years:"Years of Seva",
 q_calendar:"Sabarimala<br>Calendar",q_calendar_p:"Sacred dates, Uthiram, Sreekovil openings and important events.",q_prasadam:"Ayyappa<br>Prasadam",q_prasadam_p:"Register for prasadam. Selected devotees are notified and prasadam is shipped.",q_journey:"The<br>Journey",q_journey_p:"Walk of devotion, faith and surrender to Lord Ayyappa.",q_reels_p:"Short divine moments shared with love and devotion.",q_videos_p:"Watch spiritual videos, discourses and temple experiences.",q_gallery:"Gallery",q_gallery_p:"Divine photos from Sabarimala and our journeys.",
 about_kicker:"About Thathwamasi",about_title:"More Than a Website,<br>It’s a Spiritual Movement",about_text:"Thathwamasi is the digital home of Sarvam Sabarigireesha, created to inspire devotees, share divine content, document sacred journeys and build a global community of Ayyappa bhaktas.",know_more:"Know More About Us",
-events_kicker:"Upcoming Sacred Events",event1:"A Sacred Day",full_calendar:"View Full<br>Sabarimala Calendar",moments_kicker:"Divine Moments",view_gallery:"View All<br>Gallery<br>→",
+events_kicker:"Sacred Events",event1:"A Sacred Day",full_calendar:"View Full<br>Sabarimala Calendar",moments_kicker:"Divine Moments",view_gallery:"View All<br>Gallery<br>→",
 journey_kicker:"The Sacred Journey",journey_title:"Walk With Ayyappa",journey_text:"A visual guide to the sacred pilgrimage — from Vratham and Irumudi Kettu through Pampa and the eighteen sacred steps to Sannidhanam.",explore:"Explore Journey",
 prasadam_kicker:"Devotee Seva",prasadam_title:"Ayyappa Prasadam",prasadam_text:"Free monthly registration. When prasadam is available, selected devotees are contacted and the prasadam is sent to the registered delivery address.",address_note:"Full delivery address is required because the prasadam has to be shipped.",free_note:"No purchase is required. One registration per devotee per month.",f_name:"Full Name",f_phone:"Mobile Number",f_pincode:"PIN Code",f_address:"Full Delivery Address",f_message:"Message (Optional)",consent:"I agree to use my details only for Prasadam registration and delivery.",submit:"Submit Registration",form_note:"Free registration. No purchase necessary.",
-reels_title:"Short Divine Moments",videos_title:"Watch & Experience",videos_text:"Watch devotional videos, Ayyappa stories, Harathi, Padi Pooja and pilgrimage visuals on our YouTube channel.",stay:"Stay Connected with Thathwamasi",stay_p:"Subscribe for updates, new videos, events and spiritual content.",subscribe:"SUBSCRIBE",footer_about:"A community devotee portal for Lord Ayyappa Swamy.",quick_links:"Quick Links",contact_title:"Contact",rights:"All Rights Reserved",
-cal_sectionKicker:"Sabarimala Calendar",cal_sectionTitle:"Sacred Calendar ·",cal_intro:"Swamiye Sharanam Ayyappa.",cal_intro2:"View the important Sabarimala dates and sacred events for 2026. Event dates are marked with a red dot.",cal_previous:"← Previous",cal_next:"Next →",cal_download:"↓ Download PDF",cal_share:"↗ Share PDF"
+reels_title:"Short Divine Moments",videos_title:"Watch & Experience",videos_text:"Watch devotional videos, Ayyappa stories, Harathi, Padi Pooja and pilgrimage visuals on our YouTube channel.",stay:"Stay Connected with Sarvam Sabarigireesha",stay_p:"Subscribe for updates, new videos, events and spiritual content.",subscribe:"SUBSCRIBE",footer_about:"A community devotee portal for Lord Ayyappa Swamy.",quick_links:"Quick Links",contact_title:"Contact",rights:"All Rights Reserved",
+fo_title:"Sreekovil Opens",cal_sectionKicker:"Sabarimala Calendar",cal_sectionTitle:"Sacred Calendar ·",cal_intro:"Swamiye Sharanam Ayyappa.",cal_intro2:"View the important Sabarimala dates and sacred events for 2026. Event dates are marked with a red dot.",cal_previous:"← Previous",cal_next:"Next →",cal_download:"↓ Download PDF",cal_share:"↗ Share PDF"
 },
 te:{
 notice:"మండల కాల వ్రత కాలం — ప్రత్యేక దర్శనం మరియు పూజా కార్యక్రమాల షెడ్యూల్ అమలులో ఉంది.",
@@ -700,11 +724,11 @@ brand_sub:"సర్వం సబరిగిరీశ యొక్క డిజ
 hero_kicker:"స్వామియే శరణం అయ్యప్ప",hero_line1:"స్వామియే",hero_line2:"శరణం",hero_line3:"అయ్యప్ప",hero_copy:"ఒక పవిత్ర మార్గం. ఒక దైవిక సాన్నిధ్యం.<br>భక్తితో ఏకమైన సమాజం.",join:"మన కమ్యూనిటీలో చేరండి",devotees:"భక్తులు",journeys:"యాత్రలు",videos_stat:"వీడియోలు",years:"సేవా సంవత్సరాలు",
 q_calendar:"శబరిమల<br>క్యాలెండర్",q_calendar_p:"పవిత్ర తేదీలు, ఉత్రం, శ్రీకోవిల్ ప్రారంభాలు మరియు ముఖ్యమైన కార్యక్రమాలు.",q_prasadam:"అయ్యప్ప<br>ప్రసాదం",q_prasadam_p:"ప్రసాదం కోసం నమోదు చేసుకోండి. ఎంపికైన భక్తులకు సమాచారం పంపబడుతుంది.",q_journey:"పవిత్ర<br>యాత్ర",q_journey_p:"అయ్యప్ప స్వామిపై భక్తి, విశ్వాసం మరియు శరణాగతి మార్గం.",q_reels_p:"భక్తితో పంచుకునే చిన్న దైవిక క్షణాలు.",q_videos_p:"ఆధ్యాత్మిక వీడియోలు, ప్రసంగాలు మరియు ఆలయ అనుభవాలు చూడండి.",q_gallery:"గ్యాలరీ",q_gallery_p:"శబరిమల మరియు మా యాత్రల దైవిక చిత్రాలు.",
 about_kicker:"తత్వమసి గురించి",about_title:"ఇది కేవలం వెబ్‌సైట్ కాదు,<br>ఇది ఒక ఆధ్యాత్మిక ఉద్యమం",about_text:"తత్వమసి సర్వం సబరిగిరీశ యొక్క డిజిటల్ హోమ్. భక్తులను ప్రేరేపించడం, దైవిక కంటెంట్ పంచుకోవడం, పవిత్ర యాత్రలను నమోదు చేయడం మరియు అయ్యప్ప భక్తుల గ్లోబల్ కమ్యూనిటీని నిర్మించడం దీని లక్ష్యం.",know_more:"మా గురించి మరింత తెలుసుకోండి",
-events_kicker:"రాబోయే పవిత్ర కార్యక్రమాలు",event1:"పవిత్రమైన రోజు",full_calendar:"పూర్తి<br>శబరిమల క్యాలెండర్",moments_kicker:"దైవిక క్షణాలు",view_gallery:"మొత్తం<br>గ్యాలరీ<br>→",
+events_kicker:"పవిత్ర కార్యక్రమాలు",event1:"పవిత్రమైన రోజు",full_calendar:"పూర్తి<br>శబరిమల క్యాలెండర్",moments_kicker:"దైవిక క్షణాలు",view_gallery:"మొత్తం<br>గ్యాలరీ<br>→",
 journey_kicker:"పవిత్ర యాత్ర",journey_title:"అయ్యప్పతో కలిసి నడుద్దాం",journey_text:"వ్రతం మరియు ఇరుముడి కట్టు నుంచి పంపా, పద్దెనిమిది పవిత్ర మెట్లు, సన్నిధానం వరకు పవిత్ర యాత్రకు దృశ్య మార్గదర్శకం.",explore:"యాత్రను చూడండి",
 prasadam_kicker:"భక్త సేవ",prasadam_title:"అయ్యప్ప ప్రసాదం",prasadam_text:"నెలవారీ ఉచిత నమోదు. ప్రసాదం అందుబాటులో ఉన్నప్పుడు ఎంపికైన భక్తులను సంప్రదించి, నమోదు చేసిన డెలివరీ చిరునామాకు ప్రసాదం పంపబడుతుంది.",address_note:"ప్రసాదం పంపాల్సి ఉంటుంది కాబట్టి పూర్తి డెలివరీ చిరునామా తప్పనిసరి.",free_note:"కొనుగోలు అవసరం లేదు. ఒక్క భక్తికి నెలకు ఒక నమోదు.",f_name:"పూర్తి పేరు",f_phone:"మొబైల్ నంబర్",f_pincode:"పిన్ కోడ్",f_address:"పూర్తి డెలివరీ చిరునామా",f_message:"సందేశం (ఐచ్ఛికం)",consent:"నా వివరాలను ప్రసాదం నమోదు మరియు డెలివరీ కోసం మాత్రమే ఉపయోగించడానికి నేను అంగీకరిస్తున్నాను.",submit:"నమోదు సమర్పించండి",form_note:"ఉచిత నమోదు. కొనుగోలు అవసరం లేదు.",
-reels_title:"చిన్న దైవిక క్షణాలు",videos_title:"చూడండి & అనుభవించండి",videos_text:"అయ్యప్ప కథలు, హారతి, పడిపూజ మరియు యాత్ర దృశ్యాలను మా YouTube ఛానెల్‌లో చూడండి.",stay:"తత్వమసితో కనెక్ట్ అవ్వండి",stay_p:"అప్‌డేట్లు, కొత్త వీడియోలు, కార్యక్రమాలు మరియు ఆధ్యాత్మిక కంటెంట్ కోసం సబ్‌స్క్రైబ్ చేయండి.",subscribe:"సబ్‌స్క్రైబ్",footer_about:"శ్రీ అయ్యప్ప స్వామి భక్తుల కమ్యూనిటీ పోర్టల్.",quick_links:"త్వరిత లింకులు",contact_title:"సంప్రదింపు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి",
-cal_sectionKicker:"శబరిమల క్యాలెండర్",cal_sectionTitle:"పవిత్ర క్యాలెండర్ ·",cal_intro:"స్వామియే శరణం అయ్యప్ప.",cal_intro2:"2026లోని ముఖ్యమైన శబరిమల తేదీలు మరియు పవిత్ర కార్యక్రమాలను చూడండి. కార్యక్రమ తేదీలను ఎరుపు చుక్కతో గుర్తించాం.",cal_previous:"← ముందు",cal_next:"తర్వాత →",cal_download:"↓ PDF డౌన్‌లోడ్",cal_share:"↗ PDF షేర్"
+reels_title:"చిన్న దైవిక క్షణాలు",videos_title:"చూడండి & అనుభవించండి",videos_text:"అయ్యప్ప కథలు, హారతి, పడిపూజ మరియు యాత్ర దృశ్యాలను మా YouTube ఛానెల్‌లో చూడండి.",stay:"సర్వం సబరిగిరీశతో కనెక్ట్ అవ్వండి",stay_p:"అప్‌డేట్లు, కొత్త వీడియోలు, కార్యక్రమాలు మరియు ఆధ్యాత్మిక కంటెంట్ కోసం సబ్‌స్క్రైబ్ చేయండి.",subscribe:"సబ్‌స్క్రైబ్",footer_about:"శ్రీ అయ్యప్ప స్వామి భక్తుల కమ్యూనిటీ పోర్టల్.",quick_links:"త్వరిత లింకులు",contact_title:"సంప్రదింపు",rights:"అన్ని హక్కులు ప్రత్యేకించబడ్డాయి",
+fo_title:"శ్రీకోవిల్ ఓపెనింగ్స్",cal_sectionKicker:"శబరిమల క్యాలెండర్",cal_sectionTitle:"పవిత్ర క్యాలెండర్ ·",cal_intro:"స్వామియే శరణం అయ్యప్ప.",cal_intro2:"2026లోని ముఖ్యమైన శబరిమల తేదీలు మరియు పవిత్ర కార్యక్రమాలను చూడండి. కార్యక్రమ తేదీలను ఎరుపు చుక్కతో గుర్తించాం.",cal_previous:"← ముందు",cal_next:"తర్వాత →",cal_download:"↓ PDF డౌన్‌లోడ్",cal_share:"↗ PDF షేర్"
 }
 };
 T.hi={
@@ -713,11 +737,11 @@ brand_sub:"सर्वम सबरीगिरीश का<br>डिजिट
 hero_kicker:"स्वामिये शरणम अय्यप्पा",hero_line1:"स्वामिये",hero_line2:"शरणम",hero_line3:"अय्यप्पा",hero_copy:"एक पवित्र मार्ग. एक दिव्य उपस्थिति.<br>भक्ति में एकजुट समुदाय.",join:"हमारे समुदाय से जुड़ें",devotees:"भक्त",journeys:"यात्राएँ",videos_stat:"वीडियो",years:"सेवा वर्ष",
 q_calendar:"सबरीमाला<br>कैलेंडर",q_calendar_p:"पवित्र तिथियाँ, उत्तिरम, श्रीकोविल उद्घाटन और महत्वपूर्ण कार्यक्रम.",q_prasadam:"अय्यप्पा<br>प्रसाद",q_prasadam_p:"प्रसाद के लिए पंजीकरण करें. चयनित भक्तों को सूचित किया जाता है और प्रसाद भेजा जाता है.",q_journey:"पवित्र<br>यात्रा",q_journey_p:"भगवान अय्यप्पा के प्रति भक्ति, विश्वास और समर्पण की यात्रा.",q_reels_p:"प्रेम और भक्ति के साथ साझा किए गए छोटे दिव्य क्षण.",q_videos_p:"आध्यात्मिक वीडियो, प्रवचन और मंदिर अनुभव देखें.",q_gallery:"गैलरी",q_gallery_p:"सबरीमाला और हमारी यात्राओं की दिव्य तस्वीरें.",
 about_kicker:"तत्त्वमसि के बारे में",about_title:"यह सिर्फ वेबसाइट नहीं,<br>एक आध्यात्मिक आंदोलन है",about_text:"तत्त्वमसि सर्वम सबरीगिरीश का डिजिटल घर है — भक्तों को प्रेरित करने, दिव्य सामग्री साझा करने, पवित्र यात्राओं को दर्ज करने और अय्यप्पा भक्तों के वैश्विक समुदाय के निर्माण के लिए बनाया गया है.",know_more:"हमारे बारे में और जानें",
-events_kicker:"आगामी पवित्र कार्यक्रम",event1:"एक पवित्र दिन",full_calendar:"पूरा<br>सबरीमाला कैलेंडर",moments_kicker:"दिव्य क्षण",view_gallery:"पूरी<br>गैलरी<br>→",
+events_kicker:"पवित्र कार्यक्रम",event1:"एक पवित्र दिन",full_calendar:"पूरा<br>सबरीमाला कैलेंडर",moments_kicker:"दिव्य क्षण",view_gallery:"पूरी<br>गैलरी<br>→",
 journey_kicker:"पवित्र यात्रा",journey_title:"अय्यप्पा के साथ चलें",journey_text:"व्रत और इरुमुडी कट्टु से पंपा, अठारह पवित्र सीढ़ियों से सन्निधानम तक पवित्र तीर्थयात्रा का दृश्य मार्गदर्शक.",explore:"यात्रा देखें",
 prasadam_kicker:"भक्त सेवा",prasadam_title:"अय्यप्पा प्रसाद",prasadam_text:"मुफ्त मासिक पंजीकरण. प्रसाद उपलब्ध होने पर चयनित भक्तों से संपर्क किया जाता है और प्रसाद पंजीकृत पते पर भेजा जाता है.",address_note:"प्रसाद भेजा जाना है, इसलिए पूरा डिलीवरी पता आवश्यक है.",free_note:"कोई खरीद आवश्यक नहीं. प्रति भक्त प्रति माह एक पंजीकरण.",f_name:"पूरा नाम",f_phone:"मोबाइल नंबर",f_pincode:"पिन कोड",f_address:"पूरा डिलीवरी पता",f_message:"संदेश (वैकल्पिक)",consent:"मैं अपनी जानकारी का उपयोग केवल प्रसाद पंजीकरण और डिलीवरी के लिए करने की सहमति देता/देती हूँ.",submit:"पंजीकरण जमा करें",form_note:"मुफ्त पंजीकरण. कोई खरीद आवश्यक नहीं.",
-reels_title:"छोटे दिव्य क्षण",videos_title:"देखें और अनुभव करें",videos_text:"हमारे YouTube चैनल पर भक्तिमय वीडियो, अय्यप्पा कथाएँ, हारती, पड़ी पूजा और तीर्थयात्रा दृश्य देखें.",stay:"तत्त्वमसि से जुड़े रहें",stay_p:"अपडेट, नए वीडियो, कार्यक्रम और आध्यात्मिक सामग्री के लिए सब्सक्राइब करें.",subscribe:"सब्सक्राइब करें",footer_about:"भगवान अय्यप्पा स्वामी के भक्तों का सामुदायिक पोर्टल.",quick_links:"त्वरित लिंक",contact_title:"संपर्क",rights:"सर्वाधिकार सुरक्षित",
-cal_sectionKicker:"सबरीमाला कैलेंडर",cal_sectionTitle:"पवित्र कैलेंडर ·",cal_intro:"स्वामिये शरणम अयप्पा।",cal_intro2:"2026 की महत्वपूर्ण सबरीमाला तिथियां और पवित्र कार्यक्रम देखें। कार्यक्रम की तिथियां लाल बिंदु से चिन्हित हैं।",cal_previous:"← पिछला",cal_next:"अगला →",cal_download:"↓ PDF डाउनलोड",cal_share:"↗ PDF शेयर"
+reels_title:"छोटे दिव्य क्षण",videos_title:"देखें और अनुभव करें",videos_text:"हमारे YouTube चैनल पर भक्तिमय वीडियो, अय्यप्पा कथाएँ, हारती, पड़ी पूजा और तीर्थयात्रा दृश्य देखें.",stay:"सर्वम सबरीगिरीश से जुड़े रहें",stay_p:"अपडेट, नए वीडियो, कार्यक्रम और आध्यात्मिक सामग्री के लिए सब्सक्राइब करें.",subscribe:"सब्सक्राइब करें",footer_about:"भगवान अय्यप्पा स्वामी के भक्तों का सामुदायिक पोर्टल.",quick_links:"त्वरित लिंक",contact_title:"संपर्क",rights:"सर्वाधिकार सुरक्षित",
+fo_title:"श्रीकोविल खुलेगा",cal_sectionKicker:"सबरीमाला कैलेंडर",cal_sectionTitle:"पवित्र कैलेंडर ·",cal_intro:"स्वामिये शरणम अयप्पा।",cal_intro2:"2026 की महत्वपूर्ण सबरीमाला तिथियां और पवित्र कार्यक्रम देखें। कार्यक्रम की तिथियां लाल बिंदु से चिन्हित हैं।",cal_previous:"← पिछला",cal_next:"अगला →",cal_download:"↓ PDF डाउनलोड",cal_share:"↗ PDF शेयर"
 };
 T.ml={
 notice:"മണ്ഡല കാല വ്രത സമയം — പ്രത്യേക ദർശന, പൂജാ ഷെഡ്യൂൾ പ്രാബല്യത്തിലാണ്.",
@@ -725,11 +749,11 @@ brand_sub:"സർവ്വം ശബരിഗിരീശിന്റെ<br>ഡ�
 hero_kicker:"സ്വാമിയേ ശരണം അയ്യപ്പാ",hero_line1:"സ്വാമിയേ",hero_line2:"ശരണം",hero_line3:"അയ്യപ്പാ",hero_copy:"ഒരു പവിത്രമായ പാത. ഒരു ദിവ്യ സാന്നിധ്യം.<br>ഭക്തിയിൽ ഒന്നിച്ച ഒരു സമൂഹം.",join:"ഞങ്ങളുടെ കമ്മ്യൂണിറ്റിയിൽ ചേരുക",devotees:"ഭക്തർ",journeys:"യാത്രകൾ",videos_stat:"വീഡിയോകൾ",years:"സേവന വർഷങ്ങൾ",
 q_calendar:"ശബരിമല<br>കലണ്ടർ",q_calendar_p:"പവിത്ര തീയതികൾ, ഉത്തിരം, ശ്രീകോവിൽ തുറപ്പുകൾ, പ്രധാന പരിപാടികൾ.",q_prasadam:"അയ്യപ്പ<br>പ്രസാദം",q_prasadam_p:"പ്രസാദത്തിനായി രജിസ്റ്റർ ചെയ്യുക. തിരഞ്ഞെടുക്കപ്പെട്ട ഭക്തരെ അറിയിച്ച് പ്രസാദം അയയ്ക്കും.",q_journey:"പവിത്ര<br>യാത്ര",q_journey_p:"അയ്യപ്പന്മേലുള്ള ഭക്തിയുടെയും വിശ്വാസത്തിന്റെയും ശരണാഗതിയുടെയും യാത്ര.",q_reels_p:"സ്നേഹത്തോടെയും ഭക്തിയോടെയും പങ്കിടുന്ന ചെറു ദിവ്യ നിമിഷങ്ങൾ.",q_videos_p:"ആധ്യാത്മിക വീഡിയോകൾ, പ്രഭാഷണങ്ങൾ, ക്ഷേത്ര അനുഭവങ്ങൾ കാണുക.",q_gallery:"ഗാലറി",q_gallery_p:"ശബരിമലയിലെയും ഞങ്ങളുടെ യാത്രകളിലെയും ദിവ്യ ചിത്രങ്ങൾ.",
 about_kicker:"തത്ത്വമസിയെ കുറിച്ച്",about_title:"ഇതൊരു വെബ്സൈറ്റ് മാത്രമല്ല,<br>ഒരു ആധ്യാത്മിക പ്രസ്ഥാനമാണ്",about_text:"തത്ത്വമസി സർവ്വം ശബരിഗിരീശിന്റെ ഡിജിറ്റൽ ഹോം ആണ് — ഭക്തരെ പ്രചോദിപ്പിക്കാനും ദിവ്യ ഉള്ളടക്കം പങ്കിടാനും പവിത്ര യാത്രകൾ രേഖപ്പെടുത്താനും അയ്യപ്പ ഭക്തരുടെ ആഗോള കമ്മ്യൂണിറ്റി കെട്ടിപ്പടുക്കാനും ഉദ്ദേശിച്ചുള്ളതാണ്.",know_more:"ഞങ്ങളെ കുറിച്ച് കൂടുതൽ അറിയുക",
-events_kicker:"വരാനിരിക്കുന്ന പവിത്ര പരിപാടികൾ",event1:"ഒരു പവിത്ര ദിനം",full_calendar:"മുഴുവൻ<br>ശബരിമല കലണ്ടർ",moments_kicker:"ദിവ്യ നിമിഷങ്ങൾ",view_gallery:"മുഴുവൻ<br>ഗാലറി<br>→",
+events_kicker:"പവിത്ര പരിപാടികൾ",event1:"ഒരു പവിത്ര ദിനം",full_calendar:"മുഴുവൻ<br>ശബരിമല കലണ്ടർ",moments_kicker:"ദിവ്യ നിമിഷങ്ങൾ",view_gallery:"മുഴുവൻ<br>ഗാലറി<br>→",
 journey_kicker:"പവിത്ര യാത്ര",journey_title:"അയ്യപ്പനോടൊപ്പം നടക്കാം",journey_text:"വ്രതവും ഇരുമുടിക്കെട്ടും മുതൽ പമ്പ, പതിനെട്ട് പവിത്ര പടികൾ വഴി സന്നിധാനം വരെ — പവിത്ര തീർത്ഥയാത്രയുടെ ദൃശ്യ ഗൈഡ്.",explore:"യാത്ര കാണുക",
 prasadam_kicker:"ഭക്ത സേവ",prasadam_title:"അയ്യപ്പ പ്രസാദം",prasadam_text:"സൗജന്യ മാസിക രജിസ്ട്രേഷൻ. പ്രസാദം ലഭ്യമാകുമ്പോൾ തിരഞ്ഞെടുക്കപ്പെട്ട ഭക്തരെ ബന്ധപ്പെട്ട് രജിസ്റ്റർ ചെയ്ത വിലാസത്തിലേക്ക് പ്രസാദം അയയ്ക്കുന്നു.",address_note:"പ്രസാദം അയയ്ക്കേണ്ടതിനാൽ മുഴുവൻ ഡെലിവറി വിലാസം ആവശ്യമാണ്.",free_note:"വാങ്ങൽ ആവശ്യമില്ല. ഒരു ഭക്തന് ഒരു മാസം ഒരു രജിസ്ട്രേഷൻ.",f_name:"മുഴുവൻ പേര്",f_phone:"മൊബൈൽ നമ്പർ",f_pincode:"പിൻ കോഡ്",f_address:"മുഴുവൻ ഡെലിവറി വിലാസം",f_message:"സന്ദേശം (ഓപ്ഷണൽ)",consent:"പ്രസാദ രജിസ്ട്രേഷനും ഡെലിവറിക്കും മാത്രം എന്റെ വിവരങ്ങൾ ഉപയോഗിക്കാൻ ഞാൻ സമ്മതിക്കുന്നു.",submit:"രജിസ്ട്രേഷൻ സമർപ്പിക്കുക",form_note:"സൗജന്യ രജിസ്ട്രേഷൻ. വാങ്ങൽ ആവശ്യമില്ല.",
-reels_title:"ചെറു ദിവ്യ നിമിഷങ്ങൾ",videos_title:"കാണുക, അനുഭവിക്കുക",videos_text:"ഞങ്ങളുടെ YouTube ചാനലിൽ ഭക്തിഗാനങ്ങൾ, അയ്യപ്പ കഥകൾ, ഹാരതി, പടിപ്പൂജ, തീർത്ഥയാത്രാ ദൃശ്യങ്ങൾ കാണുക.",stay:"തത്ത്വമസിയുമായി ബന്ധത്തിലിരിക്കുക",stay_p:"അപ്‌ഡേറ്റുകൾ, പുതിയ വീഡിയോകൾ, പരിപാടികൾ, ആധ്യാത്മിക ഉള്ളടക്കത്തിനായി സബ്‌സ്‌ക്രൈബ് ചെയ്യുക.",subscribe:"സബ്‌സ്‌ക്രൈബ്",footer_about:"അയ്യപ്പ സ്വാമിയുടെ ഭക്തരുടെ കമ്മ്യൂണിറ്റി പോർട്ടൽ.",quick_links:"ദ്രുത ലിങ്കുകൾ",contact_title:"ബന്ധപ്പെടുക",rights:"എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം",
-cal_sectionKicker:"ശബരിമല കലണ്ടർ",cal_sectionTitle:"വിശുദ്ധ കലണ്ടർ ·",cal_intro:"സ്വാമിയേ ശരണം അയ്യപ്പാ.",cal_intro2:"2026-ലെ പ്രധാന ശബരിമല തീയതികളും വിശുദ്ധ ചടങ്ങുകളും കാണുക. ചടങ്ങുകളുടെ തീയതികൾ ചുവപ്പ് ബിന്ദുവാൽ അടയാളപ്പെടുത്തിയിരിക്കുന്നു.",cal_previous:"← മുമ്പ്",cal_next:"അടുത്തത് →",cal_download:"↓ PDF ഡൗൺലോഡ്",cal_share:"↗ PDF ഷെയർ"
+reels_title:"ചെറു ദിവ്യ നിമിഷങ്ങൾ",videos_title:"കാണുക, അനുഭവിക്കുക",videos_text:"ഞങ്ങളുടെ YouTube ചാനലിൽ ഭക്തിഗാനങ്ങൾ, അയ്യപ്പ കഥകൾ, ഹാരതി, പടിപ്പൂജ, തീർത്ഥയാത്രാ ദൃശ്യങ്ങൾ കാണുക.",stay:"സർവ്വം ശബരിഗിരീശിനോടൊപ്പം ബന്ധത്തിലിരിക്കുക",stay_p:"അപ്‌ഡേറ്റുകൾ, പുതിയ വീഡിയോകൾ, പരിപാടികൾ, ആധ്യാത്മിക ഉള്ളടക്കത്തിനായി സബ്‌സ്‌ക്രൈബ് ചെയ്യുക.",subscribe:"സബ്‌സ്‌ക്രൈബ്",footer_about:"അയ്യപ്പ സ്വാമിയുടെ ഭക്തരുടെ കമ്മ്യൂണിറ്റി പോർട്ടൽ.",quick_links:"ദ്രുത ലിങ്കുകൾ",contact_title:"ബന്ധപ്പെടുക",rights:"എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം",
+fo_title:"ശ്രീകോവിൽ തുറപ്പ്",cal_sectionKicker:"ശബരിമല കലണ്ടർ",cal_sectionTitle:"വിശുദ്ധ കലണ്ടർ ·",cal_intro:"സ്വാമിയേ ശരണം അയ്യപ്പാ.",cal_intro2:"2026-ലെ പ്രധാന ശബരിമല തീയതികളും വിശുദ്ധ ചടങ്ങുകളും കാണുക. ചടങ്ങുകളുടെ തീയതികൾ ചുവപ്പ് ബിന്ദുവാൽ അടയാളപ്പെടുത്തിയിരിക്കുന്നു.",cal_previous:"← മുമ്പ്",cal_next:"അടുത്തത് →",cal_download:"↓ PDF ഡൗൺലോഡ്",cal_share:"↗ PDF ഷെയർ"
 };
 T.kn={
 notice:"ಮಂಡಲ ಕಾಲ ವ್ರತ ಅವಧಿ — ವಿಶೇಷ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ.",
@@ -737,11 +761,11 @@ brand_sub:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶರ<br>ಡಿಜಿಟಲ�
 hero_kicker:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪ",hero_line1:"ಸ್ವಾಮಿಯೇ",hero_line2:"ಶರಣಂ",hero_line3:"ಅಯ್ಯಪ್ಪ",hero_copy:"ಒಂದು ಪವಿತ್ರ ಹಾದಿ. ಒಂದು ದೈವಿಕ ಸಾನ್ನಿಧ್ಯ.<br>ಭಕ್ತಿಯಲ್ಲಿ ಒಂದಾಗಿರುವ ಸಮುದಾಯ.",join:"ನಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ",devotees:"ಭಕ್ತರು",journeys:"ಯಾತ್ರೆಗಳು",videos_stat:"ವೀಡಿಯೊಗಳು",years:"ಸೇವಾ ವರ್ಷಗಳು",
 q_calendar:"ಶಬರಿಮಲೆ<br>ಕ್ಯಾಲೆಂಡರ್",q_calendar_p:"ಪವಿತ್ರ ದಿನಾಂಕಗಳು, ಉತ್ತಿರಂ, ಶ್ರೀಕೋವಿಲ್ ತೆರೆಪುಗಳು ಮತ್ತು ಮುಖ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು.",q_prasadam:"ಅಯ್ಯಪ್ಪ<br>ಪ್ರಸಾದ",q_prasadam_p:"ಪ್ರಸಾದಕ್ಕಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಿ. ಆಯ್ದ ಭಕ್ತರಿಗೆ ತಿಳಿಸಿ ಪ್ರಸಾದ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.",q_journey:"ಪವಿತ್ರ<br>ಯಾತ್ರೆ",q_journey_p:"ಅಯ್ಯಪ್ಪನ ಮೇಲಿನ ಭಕ್ತಿ, ನಂಬಿಕೆ ಮತ್ತು ಶರಣಾಗತಿಯ ನಡಿಗೆ.",q_reels_p:"ಪ್ರೀತಿ ಮತ್ತು ಭಕ್ತಿಯಿಂದ ಹಂಚಿಕೊಂಡ ಚಿಕ್ಕ ದೈವಿಕ ಕ್ಷಣಗಳು.",q_videos_p:"ಆಧ್ಯಾತ್ಮಿಕ ವೀಡಿಯೊಗಳು, ಪ್ರವಚನಗಳು ಮತ್ತು ದೇವಾಲಯದ ಅನುಭವಗಳನ್ನು ನೋಡಿ.",q_gallery:"ಗ್ಯಾಲರಿ",q_gallery_p:"ಶಬರಿಮಲೆ ಮತ್ತು ನಮ್ಮ ಯಾತ್ರೆಗಳ ದೈವಿಕ ಫೋಟೋಗಳು.",
 about_kicker:"ತತ್ತ್ವಮಸಿ ಬಗ್ಗೆ",about_title:"ಇದು ಕೇವಲ ವೆಬ್‌ಸೈಟ್ ಅಲ್ಲ,<br>ಇದು ಒಂದು ಆಧ್ಯಾತ್ಮಿಕ ಚಳವಳಿ",about_text:"ತತ್ತ್ವಮಸಿ ಸರ್ವಂ ಶಬರಿಗಿರೀಶರ ಡಿಜಿಟಲ್ ಮನೆ — ಭಕ್ತರನ್ನು ಪ್ರೇರೇಪಿಸಲು, ದೈವಿಕ ವಿಷಯವನ್ನು ಹಂಚಿಕೊಳ್ಳಲು, ಪವಿತ್ರ ಯಾತ್ರೆಗಳನ್ನು ದಾಖಲಿಸಲು ಮತ್ತು ಅಯ್ಯಪ್ಪ ಭಕ್ತರ ಜಾಗತಿಕ ಸಮುದಾಯವನ್ನು ಕಟ್ಟಲು ರಚಿಸಲಾಗಿದೆ.",know_more:"ನಮ್ಮ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
-events_kicker:"ಮುಂಬರುವ ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಗಳು",event1:"ಪವಿತ್ರ ದಿನ",full_calendar:"ಪೂರ್ಣ<br>ಶಬರಿಮಲೆ ಕ್ಯಾಲೆಂಡರ್",moments_kicker:"ದೈವಿಕ ಕ್ಷಣಗಳು",view_gallery:"ಪೂರ್ಣ<br>ಗ್ಯಾಲರಿ<br>→",
+events_kicker:"ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಗಳು",event1:"ಪವಿತ್ರ ದಿನ",full_calendar:"ಪೂರ್ಣ<br>ಶಬರಿಮಲೆ ಕ್ಯಾಲೆಂಡರ್",moments_kicker:"ದೈವಿಕ ಕ್ಷಣಗಳು",view_gallery:"ಪೂರ್ಣ<br>ಗ್ಯಾಲರಿ<br>→",
 journey_kicker:"ಪವಿತ್ರ ಯಾತ್ರೆ",journey_title:"ಅಯ್ಯಪ್ಪನೊಂದಿಗೆ ನಡೆಯೋಣ",journey_text:"ವ್ರತ ಮತ್ತು ಇರುಮುಡಿ ಕಟ್ಟಿನಿಂದ ಪಂಪಾ, ಹದಿನೆಂಟು ಪವಿತ್ರ ಮೆಟ್ಟಿಲುಗಳ ಮೂಲಕ ಸನ್ನಿಧಾನದವರೆಗೆ ಪವಿತ್ರ ಯಾತ್ರೆಯ ದೃಶ್ಯ ಮಾರ್ಗದರ್ಶಿ.",explore:"ಯಾತ್ರೆಯನ್ನು ನೋಡಿ",
 prasadam_kicker:"ಭಕ್ತ ಸೇವೆ",prasadam_title:"ಅಯ್ಯಪ್ಪ ಪ್ರಸಾದ",prasadam_text:"ಉಚಿತ ಮಾಸಿಕ ನೋಂದಣಿ. ಪ್ರಸಾದ ಲಭ್ಯವಾದಾಗ ಆಯ್ದ ಭಕ್ತರನ್ನು ಸಂಪರ್ಕಿಸಿ ನೋಂದಾಯಿತ ವಿಳಾಸಕ್ಕೆ ಪ್ರಸಾದ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.",address_note:"ಪ್ರಸಾದ ಕಳುಹಿಸಬೇಕಾದ್ದರಿಂದ ಪೂರ್ಣ ವಿಳಾಸ ಕಡ್ಡಾಯ.",free_note:"ಖರೀದಿ ಅಗತ್ಯವಿಲ್ಲ. ಪ್ರತಿ ಭಕ್ತರಿಗೆ ತಿಂಗಳಿಗೆ ಒಂದು ನೋಂದಣಿ.",f_name:"ಪೂರ್ಣ ಹೆಸರು",f_phone:"ಮೊಬೈಲ್ ನಂಬರ್",f_pincode:"ಪಿನ್ ಕೋಡ್",f_address:"ಪೂರ್ಣ ವಿಳಾಸ",f_message:"ಸಂದೇಶ (ಐಚ್ಛిక)",consent:"ನನ್ನ ವಿವರಗಳನ್ನು ಪ್ರಸಾದ ನೋಂದಣಿ ಮತ್ತು ವಿತರಣೆಗೆ ಮಾತ್ರ ಬಳಸಲು ನಾನು ಒಪ್ಪುತ್ತೇನೆ.",submit:"ನೋಂದಣಿ ಸಲ್ಲಿಸಿ",form_note:"ಉಚಿತ ನೋಂದಣಿ. ಖರೀದಿ ಅಗತ್ಯವಿಲ್ಲ.",
-reels_title:"ಚಿಕ್ಕ ದೈವಿಕ ಕ್ಷಣಗಳು",videos_title:"ನೋಡಿ ಮತ್ತು ಅನುಭವಿಸಿ",videos_text:"ನಮ್ಮ YouTube ಚಾನೆಲ್‌ನಲ್ಲಿ ಭಕ್ತಿ ವೀಡಿಯೊಗಳು, ಅಯ್ಯಪ್ಪ ಕಥೆಗಳು, ಹಾರತಿ, ಪಡಿಪೂಜೆ ಮತ್ತು ಯಾತ್ರಾ ದೃಶ್ಯಗಳನ್ನು ನೋಡಿ.",stay:"ತತ್ತ್ವಮಸಿಯೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರಿ",stay_p:"ಅಪ్‌ಡೇಟ್‌ಗಳು, ಹೊಸ ವೀಡಿಯೊಗಳು, ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ವಿಷಯಕ್ಕಾಗಿ ಸಬ್‌ಸ್ಕ್ರೈಬ್ ಮಾಡಿ.",subscribe:"ಸಬ್‌ಸ್ಕ್ರೈಬ್",footer_about:"ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿಯವರ ಭಕ್ತರ ಸಮುದಾಯ ಪೋರ್ಟಲ್.",quick_links:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",contact_title:"ಸಂಪರ್ಕ",rights:"ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ",
-cal_sectionKicker:"ಶಬರಿಮಲೆ ಕ್ಯಾಲೆಂಡರ್",cal_sectionTitle:"ಪವಿತ್ರ ಕ್ಯಾಲೆಂಡರ್ ·",cal_intro:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪ.",cal_intro2:"2026ರ ಪ್ರಮುಖ ಶಬರಿಮಲೆ ದಿನಾಂಕಗಳು ಮತ್ತು ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ. ಕಾರ್ಯಕ್ರಮದ ದಿನಾಂಕಗಳನ್ನು ಕೆಂಪು ಚುಕ್ಕೆಯಿಂದ ಗುರುತಿಸಲಾಗಿದೆ.",cal_previous:"← ಹಿಂದಿನ",cal_next:"ಮುಂದೆ →",cal_download:"↓ PDF ಡೌನ್‌ಲೋಡ್",cal_share:"↗ PDF ಹಂಚಿಕೆ"
+reels_title:"ಚಿಕ್ಕ ದೈವಿಕ ಕ್ಷಣಗಳು",videos_title:"ನೋಡಿ ಮತ್ತು ಅನುಭವಿಸಿ",videos_text:"ನಮ್ಮ YouTube ಚಾನೆಲ್‌ನಲ್ಲಿ ಭಕ್ತಿ ವೀಡಿಯೊಗಳು, ಅಯ್ಯಪ್ಪ ಕಥೆಗಳು, ಹಾರತಿ, ಪಡಿಪೂಜೆ ಮತ್ತು ಯಾತ್ರಾ ದೃಶ್ಯಗಳನ್ನು ನೋಡಿ.",stay:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶರೊಂದಿಗೆ ಸಂಪರ್ಕದಲ್ಲಿರಿ",stay_p:"ಅಪ్‌ಡೇಟ್‌ಗಳು, ಹೊಸ ವೀಡಿಯೊಗಳು, ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಆಧ್ಯಾತ್ಮಿಕ ವಿಷಯಕ್ಕಾಗಿ ಸಬ್‌ಸ್ಕ್ರೈಬ್ ಮಾಡಿ.",subscribe:"ಸಬ್‌ಸ್ಕ್ರೈಬ್",footer_about:"ಅಯ್ಯಪ್ಪ ಸ್ವಾಮಿಯವರ ಭಕ್ತರ ಸಮುದಾಯ ಪೋರ್ಟಲ್.",quick_links:"ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು",contact_title:"ಸಂಪರ್ಕ",rights:"ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ",
+fo_title:"ಶ್ರೀಕೋವಿಲ್ ತೆರೆಪು",cal_sectionKicker:"ಶಬರಿಮಲೆ ಕ್ಯಾಲೆಂಡರ್",cal_sectionTitle:"ಪವಿತ್ರ ಕ್ಯಾಲೆಂಡರ್ ·",cal_intro:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪ.",cal_intro2:"2026ರ ಪ್ರಮುಖ ಶಬರಿಮಲೆ ದಿನಾಂಕಗಳು ಮತ್ತು ಪವಿತ್ರ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ. ಕಾರ್ಯಕ್ರಮದ ದಿನಾಂಕಗಳನ್ನು ಕೆಂಪು ಚುಕ್ಕೆಯಿಂದ ಗುರುತಿಸಲಾಗಿದೆ.",cal_previous:"← ಹಿಂದಿನ",cal_next:"ಮುಂದೆ →",cal_download:"↓ PDF ಡೌನ್‌ಲೋಡ್",cal_share:"↗ PDF ಹಂಚಿಕೆ"
 };
 T.ta={
 notice:"மண்டல கால விரதக் காலம் — சிறப்பு தரிசனம் மற்றும் பூஜை அட்டவணை நடைமுறையில் உள்ளது.",
@@ -749,11 +773,11 @@ brand_sub:"சர்வம் சபரிகிரீசத்தின்<br>�
 hero_kicker:"சுவாமியே சரணம் ஐயப்பா",hero_line1:"சுவாமியே",hero_line2:"சரணம்",hero_line3:"ஐயப்பா",hero_copy:"ஒரு புனித பாதை. ஒரு தெய்வீக பிரசன்னம்.<br>பக்தியில் ஒன்றுபட்ட சமூகம்.",join:"எங்கள் சமூகத்தில் சேருங்கள்",devotees:"பக்தர்கள்",journeys:"யாத்திரைகள்",videos_stat:"வீடியோக்கள்",years:"சேவை ஆண்டுகள்",
 q_calendar:"சபரிமலை<br>காலண்டர்",q_calendar_p:"புனித தேதிகள், உத்திரம், ஸ்ரீகோவில் திறப்புகள் மற்றும் முக்கிய நிகழ்வுகள்.",q_prasadam:"ஐயப்ப<br>பிரசாதம்",q_prasadam_p:"பிரசாதத்திற்கு பதிவு செய்யுங்கள். தேர்ந்தெடுக்கப்பட்ட பக்தர்களுக்கு அறிவித்து பிரசாதம் அனுப்பப்படும்.",q_journey:"புனித<br>யாத்திரை",q_journey_p:"ஐயப்பன் மீதான பக்தி, நம்பிக்கை மற்றும் சரணாகதியின் நடைபாதை.",q_reels_p:"அன்புடனும் பக்தியுடனும் பகிரப்படும் சிறிய தெய்வீக தருணங்கள்.",q_videos_p:"ஆன்மீக வீடியோக்கள், பிரவசனங்கள் மற்றும் கோயில் அனுபவங்களைப் பாருங்கள்.",q_gallery:"கேலரி",q_gallery_p:"சபரிமலை மற்றும் எங்கள் யாத்திரைகளின் தெய்வீக புகைப்படங்கள்.",
 about_kicker:"தத்த்வமசி பற்றி",about_title:"இது வெறும் இணையதளம் அல்ல,<br>ஒரு ஆன்மீக இயக்கம்",about_text:"தத்த்வமசி சர்வம் சபரிகிரீசத்தின் டிஜிட்டல் இல்லம் — பக்தர்களை ஊக்குவிக்கவும், தெய்வீக உள்ளடக்கத்தைப் பகிரவும், புனித யாத்திரைகளைப் பதிவு செய்யவும், ஐயப்ப பக்தர்களின் உலகளாவிய சமூகத்தை உருவாக்கவும் உருவாக்கப்பட்டது.",know_more:"எங்களைப் பற்றி மேலும் அறிய",
-events_kicker:"வரவிருக்கும் புனித நிகழ்வுகள்",event1:"ஒரு புனித நாள்",full_calendar:"முழு<br>சபரிமலை காலண்டர்",moments_kicker:"தெய்வீக தருணங்கள்",view_gallery:"முழு<br>கேலரி<br>→",
+events_kicker:"புனித நிகழ்வுகள்",event1:"ஒரு புனித நாள்",full_calendar:"முழு<br>சபரிமலை காலண்டர்",moments_kicker:"தெய்வீக தருணங்கள்",view_gallery:"முழு<br>கேலரி<br>→",
 journey_kicker:"புனித யாத்திரை",journey_title:"ஐயப்பனுடன் நடப்போம்",journey_text:"விரதம் மற்றும் இருமுடி கட்டு முதல் பம்பா, பதினெட்டு புனித படிகள் வழியாக சந்நிதானம் வரை — புனித யாத்திரையின் காட்சி வழிகாட்டி.",explore:"யாத்திரையைப் பார்க்க",
 prasadam_kicker:"பக்தர் சேவை",prasadam_title:"ஐயப்ப பிரசாதம்",prasadam_text:"இலவச மாதாந்திர பதிவு. பிரசாதம் கிடைக்கும்போது தேர்ந்தெடுக்கப்பட்ட பக்தர்கள் தொடர்பு கொள்ளப்பட்டு பதிவு செய்த முகவரிக்கு பிரசாதம் அனுப்பப்படும்.",address_note:"பிரசாதம் அனுப்ப வேண்டியதால் முழு முகவரி அவசியம்.",free_note:"வாங்கல் தேவையில்லை. ஒரு பக்தருக்கு மாதம் ஒரு பதிவு.",f_name:"முழு பெயர்",f_phone:"மொபைல் எண்",f_pincode:"பின் கோடு",f_address:"முழு டெலிவரி முகவரி",f_message:"செய்தி (விருப்பம்)",consent:"பிரசாத பதிவு மற்றும் டெலிவரிக்கு மட்டுமே எனது விவரங்களைப் பயன்படுத்த ஒப்புக்கொள்கிறேன்.",submit:"பதிவைச் சமர்ப்பிக்கவும்",form_note:"இலவச பதிவு. வாங்கல் தேவையில்லை.",
-reels_title:"சிறிய தெய்வீக தருணங்கள்",videos_title:"பாருங்கள், அனுபவியுங்கள்",videos_text:"எங்கள் YouTube சேனலில் பக்தி வீடியோக்கள், ஐயப்ப கதைகள், ஹாரத்தி, படிபூஜை மற்றும் யாத்திரை காட்சிகளைப் பாருங்கள்.",stay:"தத்த்வமசியுடன் இணைந்திருங்கள்",stay_p:"புதுப்பிப்புகள், புதிய வீடியோக்கள், நிகழ்வுகள் மற்றும் ஆன்மீக உள்ளடக்கத்திற்கு சப்ஸ்க்ரைப் செய்யுங்கள்.",subscribe:"சப்ஸ்க்ரைப்",footer_about:"ஐயப்ப சுவாமி பக்தர்களின் சமூக போர்ட்டல்.",quick_links:"விரைவு இணைப்புகள்",contact_title:"தொடர்பு",rights:"அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை",
-cal_sectionKicker:"சபரிமலை காலண்டர்",cal_sectionTitle:"புனித காலண்டர் ·",cal_intro:"ஸ்வாமியே சரணம் ஐயப்பா.",cal_intro2:"2026 ஆம் ஆண்டின் முக்கிய சபரிமலை தேதிகள் மற்றும் புனித நிகழ்வுகளைப் பார்க்கவும். நிகழ்வு தேதிகள் சிவப்பு நிற புள்ளியால் குறிக்கப்பட்டுள்ளன.",cal_previous:"← முந்தைய",cal_next:"அடுத்து →",cal_download:"↓ PDF பதிவிறக்கம்",cal_share:"↗ PDF பகிர்"
+reels_title:"சிறிய தெய்வீக தருணங்கள்",videos_title:"பாருங்கள், அனுபவியுங்கள்",videos_text:"எங்கள் YouTube சேனலில் பக்தி வீடியோக்கள், ஐயப்ப கதைகள், ஹாரத்தி, படிபூஜை மற்றும் யாத்திரை காட்சிகளைப் பாருங்கள்.",stay:"சர்வம் சபரிகிரீசத்துடன் இணைந்திருங்கள்",stay_p:"புதுப்பிப்புகள், புதிய வீடியோக்கள், நிகழ்வுகள் மற்றும் ஆன்மீக உள்ளடக்கத்திற்கு சப்ஸ்க்ரைப் செய்யுங்கள்.",subscribe:"சப்ஸ்க்ரைப்",footer_about:"ஐயப்ப சுவாமி பக்தர்களின் சமூக போர்ட்டல்.",quick_links:"விரைவு இணைப்புகள்",contact_title:"தொடர்பு",rights:"அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை",
+fo_title:"ஸ்ரீகோவில் திறப்பு",cal_sectionKicker:"சபரிமலை காலண்டர்",cal_sectionTitle:"புனித காலண்டர் ·",cal_intro:"ஸ்வாமியே சரணம் ஐயப்பா.",cal_intro2:"2026 ஆம் ஆண்டின் முக்கிய சபரிமலை தேதிகள் மற்றும் புனித நிகழ்வுகளைப் பார்க்கவும். நிகழ்வு தேதிகள் சிவப்பு நிற புள்ளியால் குறிக்கப்பட்டுள்ளன.",cal_previous:"← முந்தைய",cal_next:"அடுத்து →",cal_download:"↓ PDF பதிவிறக்கம்",cal_share:"↗ PDF பகிர்"
 };
 
 function applyLanguage(lang){
@@ -814,6 +838,41 @@ document.getElementById("prasadamForm").addEventListener("submit",async e=>{
   }
   btn.disabled=false;
 });
+
+/* Floating upcoming temple openings — auto from calendarData */
+(function openDatesWidget(){
+  const box=document.getElementById("opensList");
+  if(!box || typeof calendarData==="undefined") return;
+  const today=new Date(); today.setHours(0,0,0,0);
+  const opens=[];
+  calendarData.forEach(m=>{
+    m.events.forEach(ev=>{
+      if(/opens/i.test(ev[1])){
+        const dt=new Date(2026,m.month,Number(ev[0]));
+        if(dt>=today) opens.push({m:m.month,day:ev[0],dt});
+      }
+    });
+  });
+  opens.sort((a,b)=>a.dt-b.dt);
+  const mon=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  if(!opens.length){box.innerHTML='<div class="fo-t">—</div>';return;}
+  opens.slice(0,3).forEach(o=>{
+    const a=document.createElement("a");
+    a.href="#calendar";
+    a.innerHTML='<span class="fo-d">'+o.day+' '+mon[o.m]+'</span><span class="fo-t">Sreekovil<br>Opens</span>';
+    a.addEventListener("click",()=>{
+      setTimeout(()=>{
+        const card=document.getElementById("month-"+o.m);
+        if(card){
+          card.scrollIntoView({behavior:"smooth",block:"center"});
+          card.classList.add("flash");
+          setTimeout(()=>card.classList.remove("flash"),1700);
+        }
+      },120);
+    });
+    box.appendChild(a);
+  });
+})();
 
 /* ===== SABARIMALA CALENDAR 2026 — home section ===== */
 const calendarData = [
@@ -989,5 +1048,5 @@ async function sharePDF(){
   }
 }
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c63d3d7e067fc1',t:'MTc4Njk0NDEyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c687a4387a396c',t:'MTc4Njk0NzE3NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c63d3d7e067fc1',t:'MTc4Njk0NDEyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2c6af61bfa758e7',t:'MTc4Njk0ODgwMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
