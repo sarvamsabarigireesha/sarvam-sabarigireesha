@@ -48,35 +48,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-  <!-- Language versions (hreflang cluster) -->
-  <url>
-    <loc>https://www.sarvamsabarigireesha.com/?lang=te</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.sarvamsabarigireesha.com/?lang=hi</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.sarvamsabarigireesha.com/?lang=ml</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.sarvamsabarigireesha.com/?lang=kn</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.sarvamsabarigireesha.com/?lang=ta</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>
