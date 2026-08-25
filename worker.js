@@ -1,5 +1,7 @@
-// Cloudflare Worker — Prasadam Lottery backend
-// ----------------------------------------------------
+// ============================================================
+// Cloudflare Worker — Prasadam Lottery + Website + SEO
+// ============================================================
+//
 // API:
 //   POST /register
 //   POST /draw
@@ -10,67 +12,96 @@
 //   GET /sitemap.xml
 //   GET /robots.txt
 //
-// Website:
-//   All other GET/HEAD requests are served from
-//   GitHub Pages.
+// WEBSITE:
+//   All other GET/HEAD requests are served from GitHub Pages.
 //
-// Required:
+// REQUIRED:
 //   D1 binding: LOTTERY_DB
 //   Secret: ADMIN_KEY
-// ----------------------------------------------------
+// ============================================================
+
+
+// ============================================================
+// CONFIGURATION
+// ============================================================
 
 const GITHUB_RAW_BASE =
   "https://raw.githubusercontent.com/" +
   "sarvamsabarigireesha/sarvam-sabarigireesha/" +
   "refs/heads/main";
 
-const GITHUB_PAGES_BASE =
-  "https://sarvamsabarigireesha.github.io" +
+const GITHUB_PAGES_HOST =
+  "sarvamsabarigireesha.github.io";
+
+const GITHUB_PAGES_PATH =
   "/sarvam-sabarigireesha";
 
+
+// ============================================================
+// WORKER
+// ============================================================
+
 export default {
+
   async fetch(request, env) {
+
     const url = new URL(request.url);
+
+    // --------------------------------------------------------
+    // CORS
+    // --------------------------------------------------------
 
     const cors = {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+      "Access-Control-Allow-Methods":
+        "GET, POST, OPTIONS",
       "Access-Control-Allow-Headers":
         "Content-Type, X-Admin-Key",
     };
 
-    // ==================================================
-    // CORS preflight
-    // ==================================================
+
+    // ========================================================
+    // CORS PREFLIGHT
+    // ========================================================
 
     if (request.method === "OPTIONS") {
+
       return new Response(null, {
         status: 204,
         headers: cors,
       });
+
     }
 
-    // ==================================================
-    // SEO: SITEMAP
-    // ==================================================
+
+    // ========================================================
+    // SEO — SITEMAP.XML
+    // ========================================================
 
     if (
       url.pathname === "/sitemap.xml" &&
-      (request.method === "GET" ||
-        request.method === "HEAD")
+      (
+        request.method === "GET" ||
+        request.method === "HEAD"
+      )
     ) {
+
       const sitemapUrl =
         `${GITHUB_RAW_BASE}/sitemap.xml`;
 
       try {
-        const response = await fetch(sitemapUrl, {
-          cf: {
-            cacheTtl: 3600,
-            cacheEverything: true,
-          },
-        });
+
+        const response =
+          await fetch(sitemapUrl, {
+            cf: {
+              cacheTtl: 3600,
+              cacheEverything: true,
+            },
+          });
+
 
         if (!response.ok) {
+
           return new Response(
             "Sitemap temporarily unavailable",
             {
@@ -83,9 +114,17 @@ export default {
               },
             }
           );
+
         }
 
-        const body = await response.text();
+
+        const body =
+          await response.text();
+
+
+        // IMPORTANT:
+        // Do NOT send X-Robots-Tag: noindex
+        // on sitemap.xml.
 
         return new Response(
           request.method === "HEAD"
@@ -96,14 +135,19 @@ export default {
             headers: {
               "Content-Type":
                 "application/xml; charset=UTF-8",
+
               "Cache-Control":
                 "public, max-age=3600",
-              "X-Robots-Tag":
-                "noindex",
+
+              "Access-Control-Allow-Origin":
+                "*",
             },
           }
         );
+
+
       } catch (error) {
+
         return new Response(
           "Sitemap temporarily unavailable",
           {
@@ -114,45 +158,85 @@ export default {
             },
           }
         );
+
       }
+
     }
 
-    // ==================================================
-    // SEO: ROBOTS.TXT
-    // ==================================================
+
+    // ========================================================
+    // SEO — ROBOTS.TXT
+    // ========================================================
 
     if (
       url.pathname === "/robots.txt" &&
-      (request.method === "GET" ||
-        request.method === "HEAD")
+      (
+        request.method === "GET" ||
+        request.method === "HEAD"
+      )
     ) {
+
       const robotsUrl =
         `${GITHUB_RAW_BASE}/robots.txt`;
 
       try {
-        const response = await fetch(robotsUrl, {
-          cf: {
-            cacheTtl: 3600,
-            cacheEverything: true,
-          },
-        });
+
+        const response =
+          await fetch(robotsUrl, {
+            cf: {
+              cacheTtl: 3600,
+              cacheEverything: true,
+            },
+          });
+
 
         if (!response.ok) {
+
+          const fallbackRobots =
+            `User-agent: *
+Allow: /
+
+Sitemap: https://www.sarvamsabarigireesha.com/sitemap.xml
+`;
+
           return new Response(
-            "User-agent: *\nAllow: /\n",
+            request.method === "HEAD"
+              ? null
+              : fallbackRobots,
             {
               status: 200,
               headers: {
                 "Content-Type":
                   "text/plain; charset=UTF-8",
+
                 "Cache-Control":
                   "public, max-age=3600",
               },
             }
           );
+
         }
 
-        const body = await response.text();
+
+        let body =
+          await response.text();
+
+
+        // Make sure robots.txt contains
+        // the correct sitemap URL.
+
+        if (
+          !body.includes(
+            "https://www.sarvamsabarigireesha.com/sitemap.xml"
+          )
+        ) {
+
+          body =
+            body.trim() +
+            "\n\nSitemap: https://www.sarvamsabarigireesha.com/sitemap.xml\n";
+
+        }
+
 
         return new Response(
           request.method === "HEAD"
@@ -163,14 +247,27 @@ export default {
             headers: {
               "Content-Type":
                 "text/plain; charset=UTF-8",
+
               "Cache-Control":
                 "public, max-age=3600",
             },
           }
         );
+
+
       } catch (error) {
+
+        const fallbackRobots =
+          `User-agent: *
+Allow: /
+
+Sitemap: https://www.sarvamsabarigireesha.com/sitemap.xml
+`;
+
         return new Response(
-          "User-agent: *\nAllow: /\n",
+          request.method === "HEAD"
+            ? null
+            : fallbackRobots,
           {
             status: 200,
             headers: {
@@ -179,19 +276,26 @@ export default {
             },
           }
         );
+
       }
+
     }
 
-    // ==================================================
-    // API: DEVOTEE REGISTRATION
-    // ==================================================
+
+    // ========================================================
+    // API — DEVOTEE REGISTRATION
+    // ========================================================
 
     if (
       url.pathname === "/register" &&
       request.method === "POST"
     ) {
+
       try {
-        const body = await request.json();
+
+        const body =
+          await request.json();
+
 
         const {
           name,
@@ -200,7 +304,13 @@ export default {
           donation,
         } = body;
 
-        if (!name || !phone || !address) {
+
+        if (
+          !name ||
+          !phone ||
+          !address
+        ) {
+
           return json(
             {
               error:
@@ -209,20 +319,23 @@ export default {
             400,
             cors
           );
+
         }
 
-        await env.LOTTERY_DB.prepare(
-          `INSERT INTO entries
-           (
-             name,
-             phone,
-             address,
-             donation,
-             created_at,
-             cycle_status
-           )
-           VALUES (?, ?, ?, ?, ?, 'pending')`
-        )
+
+        await env.LOTTERY_DB
+          .prepare(
+            `INSERT INTO entries
+             (
+               name,
+               phone,
+               address,
+               donation,
+               created_at,
+               cycle_status
+             )
+             VALUES (?, ?, ?, ?, ?, 'pending')`
+          )
           .bind(
             name,
             phone,
@@ -232,6 +345,7 @@ export default {
           )
           .run();
 
+
         return json(
           {
             ok: true,
@@ -239,112 +353,171 @@ export default {
           200,
           cors
         );
+
+
       } catch (error) {
+
         return json(
           {
-            error: "Invalid request",
+            error:
+              "Invalid request",
           },
           400,
           cors
         );
+
       }
+
     }
 
-    // ==================================================
-    // API: ADMIN DRAW
-    // ==================================================
+
+    // ========================================================
+    // API — ADMIN DRAW
+    // ========================================================
 
     if (
       url.pathname === "/draw" &&
       request.method === "POST"
     ) {
+
       const adminKey =
-        request.headers.get("X-Admin-Key");
+        request.headers.get(
+          "X-Admin-Key"
+        );
+
 
       if (
         !env.ADMIN_KEY ||
         adminKey !== env.ADMIN_KEY
       ) {
+
         return json(
           {
-            error: "unauthorized",
+            error:
+              "unauthorized",
           },
           401,
           cors
         );
+
       }
 
+
       try {
+
         const body =
-          await request.json().catch(() => ({}));
+          await request
+            .json()
+            .catch(() => ({}));
 
-        const winnerCount = Number(
-          body.winnerCount || 1
-        );
 
-        const count = Math.max(
-          1,
-          Math.min(winnerCount, 50)
-        );
+        const winnerCount =
+          Number(
+            body.winnerCount || 1
+          );
 
-        const { results: pending } =
-          await env.LOTTERY_DB.prepare(
-            `SELECT
-               id,
-               name,
-               phone,
-               address
-             FROM entries
-             WHERE cycle_status = 'pending'`
-          ).all();
+
+        const count =
+          Math.max(
+            1,
+            Math.min(
+              winnerCount,
+              50
+            )
+          );
+
+
+        const {
+          results: pending,
+        } =
+          await env.LOTTERY_DB
+            .prepare(
+              `SELECT
+                 id,
+                 name,
+                 phone,
+                 address
+               FROM entries
+               WHERE cycle_status = 'pending'`
+            )
+            .all();
+
 
         if (
           !pending ||
           pending.length === 0
         ) {
+
           return json(
             {
-              error: "no pending entries",
+              error:
+                "no pending entries",
             },
             400,
             cors
           );
+
         }
 
+
+        // ----------------------------------------------------
         // Random winner selection
+        // ----------------------------------------------------
+
         const shuffled =
           pending.sort(
-            () => Math.random() - 0.5
+            () =>
+              Math.random() - 0.5
           );
 
-        const winners =
-          shuffled.slice(0, count);
 
+        const winners =
+          shuffled.slice(
+            0,
+            count
+          );
+
+
+        // ----------------------------------------------------
         // Mark winners
-        for (const winner of winners) {
-          await env.LOTTERY_DB.prepare(
-            `UPDATE entries
-             SET
-               cycle_status = 'won',
-               won_at = ?
-             WHERE id = ?`
-          )
+        // ----------------------------------------------------
+
+        for (
+          const winner
+          of winners
+        ) {
+
+          await env.LOTTERY_DB
+            .prepare(
+              `UPDATE entries
+               SET
+                 cycle_status = 'won',
+                 won_at = ?
+               WHERE id = ?`
+            )
             .bind(
               new Date().toISOString(),
               winner.id
             )
             .run();
+
         }
 
+
+        // ----------------------------------------------------
         // Public announcement
+        // ----------------------------------------------------
+
         const firstNames =
           winners
-            .map((winner) => {
-              return (winner.name || "")
-                .trim()
-                .split(/\s+/)[0];
-            })
+            .map(
+              (winner) =>
+                (winner.name || "")
+                  .trim()
+                  .split(/\s+/)[0]
+            )
             .join(", ");
+
 
         const title =
           `Prasadam Lottery Result — ` +
@@ -355,6 +528,7 @@ export default {
               : ""
           } selected`;
 
+
         const announcementBody =
           `This round's Prasadam has been ` +
           `allotted to: ${firstNames}. ` +
@@ -363,21 +537,24 @@ export default {
           `will be shipped to them shortly. ` +
           `Swamiye Saranam Ayyappa.`;
 
-        await env.LOTTERY_DB.prepare(
-          `INSERT INTO announcements
-           (
-             title,
-             body,
-             created_at
-           )
-           VALUES (?, ?, ?)`
-        )
+
+        await env.LOTTERY_DB
+          .prepare(
+            `INSERT INTO announcements
+             (
+               title,
+               body,
+               created_at
+             )
+             VALUES (?, ?, ?)`
+          )
           .bind(
             title,
             announcementBody,
             new Date().toISOString()
           )
           .run();
+
 
         return json(
           {
@@ -387,36 +564,50 @@ export default {
           200,
           cors
         );
+
+
       } catch (error) {
+
         return json(
           {
-            error: "Draw failed",
+            error:
+              "Draw failed",
           },
           500,
           cors
         );
+
       }
+
     }
 
-    // ==================================================
-    // API: PUBLIC ANNOUNCEMENTS
-    // ==================================================
+
+    // ========================================================
+    // API — PUBLIC ANNOUNCEMENTS
+    // ========================================================
 
     if (
       url.pathname === "/announcements" &&
       request.method === "GET"
     ) {
+
       try {
-        const { results } =
-          await env.LOTTERY_DB.prepare(
-            `SELECT
-               title,
-               body,
-               created_at
-             FROM announcements
-             ORDER BY created_at DESC
-             LIMIT 10`
-          ).all();
+
+        const {
+          results,
+        } =
+          await env.LOTTERY_DB
+            .prepare(
+              `SELECT
+                 title,
+                 body,
+                 created_at
+               FROM announcements
+               ORDER BY created_at DESC
+               LIMIT 10`
+            )
+            .all();
+
 
         return json(
           {
@@ -426,7 +617,10 @@ export default {
           200,
           cors
         );
+
+
       } catch (error) {
+
         return json(
           {
             error:
@@ -435,54 +629,75 @@ export default {
           500,
           cors
         );
+
       }
+
     }
 
-    // ==================================================
-    // API: ADMIN ENTRIES
-    // ==================================================
+
+    // ========================================================
+    // API — ADMIN ENTRIES
+    // ========================================================
 
     if (
       url.pathname === "/entries" &&
       request.method === "GET"
     ) {
+
       const adminKey =
-        request.headers.get("X-Admin-Key");
+        request.headers.get(
+          "X-Admin-Key"
+        );
+
 
       if (
         !env.ADMIN_KEY ||
         adminKey !== env.ADMIN_KEY
       ) {
+
         return json(
           {
-            error: "unauthorized",
+            error:
+              "unauthorized",
           },
           401,
           cors
         );
+
       }
 
+
       try {
-        const { results } =
-          await env.LOTTERY_DB.prepare(
-            `SELECT
-               id,
-               name,
-               phone,
-               cycle_status,
-               created_at
-             FROM entries
-             ORDER BY created_at DESC`
-          ).all();
+
+        const {
+          results,
+        } =
+          await env.LOTTERY_DB
+            .prepare(
+              `SELECT
+                 id,
+                 name,
+                 phone,
+                 cycle_status,
+                 created_at
+               FROM entries
+               ORDER BY created_at DESC`
+            )
+            .all();
+
 
         return json(
           {
-            entries: results || [],
+            entries:
+              results || [],
           },
           200,
           cors
         );
+
+
       } catch (error) {
+
         return json(
           {
             error:
@@ -491,120 +706,166 @@ export default {
           500,
           cors
         );
+
       }
+
     }
 
-    // ==================================================
-    // WEBSITE FALLBACK
-    // ==================================================
+
+    // ========================================================
+    // WEBSITE FALLBACK — GITHUB PAGES
+    // ========================================================
     //
-    // Everything else goes to GitHub Pages.
+    // Custom domain:
+    // https://www.sarvamsabarigireesha.com
+    //
+    // GitHub Pages:
+    // https://sarvamsabarigireesha.github.io/
+    //      sarvam-sabarigireesha/
     //
     // Example:
     //
     // /about
-    //    ↓
+    // ->
     // /sarvam-sabarigireesha/about
     //
     // /gallery
-    //    ↓
+    // ->
     // /sarvam-sabarigireesha/gallery
     //
-    // /assets/...
-    //    ↓
-    // /sarvam-sabarigireesha/assets/...
-    // ==================================================
+    // /assets/file.css
+    // ->
+    // /sarvam-sabarigireesha/assets/file.css
+    // ========================================================
 
     if (
       request.method === "GET" ||
       request.method === "HEAD"
     ) {
-      const githubUrl = new URL(
-        GITHUB_PAGES_BASE
-      );
+
+      const githubUrl =
+        new URL(
+          `https://${GITHUB_PAGES_HOST}`
+        );
+
+
+      // IMPORTANT:
+      // pathname must contain ONLY the path.
+      // Do NOT put the full https:// URL here.
 
       githubUrl.pathname =
-        `${GITHUB_PAGES_BASE}${url.pathname}`;
+        `${GITHUB_PAGES_PATH}${url.pathname}`;
+
 
       githubUrl.search =
         url.search;
+
 
       const githubRequest =
         new Request(
           githubUrl.toString(),
           {
-            method: request.method,
-            headers: request.headers,
+            method:
+              request.method,
+
+            headers:
+              request.headers,
           }
         );
 
+
       const response =
-        await fetch(githubRequest);
+        await fetch(
+          githubRequest
+        );
+
 
       const headers =
         new Headers(
           response.headers
         );
 
+
       headers.set(
         "X-Served-By",
         "Cloudflare-Worker-GitHub-Pages"
       );
+
+
+      // ----------------------------------------------------
+      // Cache static assets
+      // ----------------------------------------------------
 
       if (
         url.pathname.startsWith(
           "/assets/"
         )
       ) {
+
         headers.set(
           "Cache-Control",
           "public, max-age=86400"
         );
+
       }
+
 
       return new Response(
         response.body,
         {
-          status: response.status,
+          status:
+            response.status,
+
           statusText:
             response.statusText,
+
           headers,
         }
       );
+
     }
 
-    // ==================================================
+
+    // ========================================================
     // 404
-    // ==================================================
+    // ========================================================
 
     return json(
       {
-        error: "not found",
+        error:
+          "not found",
       },
       404,
       cors
     );
+
   },
+
 };
 
-// ======================================================
-// JSON helper
-// ======================================================
+
+// ============================================================
+// JSON RESPONSE HELPER
+// ============================================================
 
 function json(
   obj,
   status = 200,
   cors = {}
 ) {
+
   return new Response(
     JSON.stringify(obj),
     {
       status,
+
       headers: {
         "Content-Type":
           "application/json; charset=UTF-8",
+
         ...cors,
       },
     }
   );
+
 }
