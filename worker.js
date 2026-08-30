@@ -48,6 +48,19 @@ export default {
     const url = new URL(request.url);
 
     // --------------------------------------------------------
+    // SEO — single canonical host (non-www → www, 301 permanent)
+    // --------------------------------------------------------
+
+    if (url.hostname === "sarvamsabarigireesha.com") {
+
+      url.hostname = "www.sarvamsabarigireesha.com";
+      url.protocol = "https:";
+
+      return Response.redirect(url.toString(), 301);
+
+    }
+
+    // --------------------------------------------------------
     // CORS
     // --------------------------------------------------------
 
