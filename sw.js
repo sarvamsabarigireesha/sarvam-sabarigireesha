@@ -2,12 +2,12 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v2: pages cached under their own URL (no more overwriting
-       /index.html with the last visited page) + cache bump */
-var CACHE = 'thathwamasi-v2';
+   v3: pages cached under their own URL, home page stays the
+       offline fallback, /index.html dropped from precache (it
+       307-redirects which breaks cache.addAll) */
+var CACHE = 'thathwamasi-v3';
 var CORE = [
   '/',
-  '/index.html',
   '/manifest.json',
   '/assets/logo.jpg',
   '/assets/icon-192.png',

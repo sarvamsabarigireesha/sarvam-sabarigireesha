@@ -1,7 +1,8 @@
 # Dev / private files — must NOT be published with the site
 /.git/
+/.wrangler/
 /worker.js
 /wrangler.jsonc
-/.wranglerignore
+/.assetsignore
 /schema.sql
 /SETUP-README.md
