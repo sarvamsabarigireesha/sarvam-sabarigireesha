@@ -1,12 +1,22 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sarvam-sabarigireesha",
+  // Entry point — the Worker script (assets worker pattern).
+  // Without this key wrangler deploys an assets-ONLY worker and
+  // worker.js is silently ignored.
+  "main": "worker.js",
   "compatibility_date": "2026-08-17",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": ".",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    // Worker must run BEFORE static assets, otherwise the 301
+    // canonical redirects (non-www -> www, http -> https) and the
+    // inline /sitemap.xml handler are never executed.
+    "run_worker_first": true,
+    // Exposes the static assets to the Worker as env.ASSETS
+    "binding": "ASSETS"
   }
 }
