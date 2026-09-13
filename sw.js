@@ -1,8 +1,10 @@
 /* Sarvam Sabarigireesha — THATHWAMASI PWA Service Worker
    - Offline support
-   - Clean URLs (/about etc.) work offline via cached index.html
-   - Static assets cache-first; pages network-first */
-var CACHE = 'thathwamasi-v1';
+   - Clean URLs (/about etc.) work offline
+   - Static assets cache-first; pages network-first
+   v2: pages cached under their own URL (no more overwriting
+       /index.html with the last visited page) + cache bump */
+var CACHE = 'thathwamasi-v2';
 var CORE = [
   '/',
   '/index.html',
@@ -36,15 +38,22 @@ self.addEventListener('fetch', function (e) {
   var url = new URL(req.url);
   if (url.origin !== self.location.origin) return; /* CDN (jsPDF etc.) network direct ga vellali */
 
-  /* Page navigations — network first, offline lo cached index.html */
+  /* Page navigations — network first, offline lo cached page / index.html */
   if (req.mode === 'navigate') {
+    var pageKey = (url.pathname === '/index.html') ? '/' : url.pathname;
     e.respondWith(
       fetch(req).then(function (res) {
         var copy = res.clone();
-        caches.open(CACHE).then(function (c) { c.put('/index.html', copy); });
+        caches.open(CACHE).then(function (c) {
+          if (url.pathname === '/' || url.pathname === '/index.html') {
+            c.put('/', copy);
+          } else {
+            c.put(pageKey, copy);
+          }
+        });
         return res;
       }).catch(function () {
-        return caches.match(req).then(function (r) { return r || caches.match('/index.html'); });
+        return caches.match(pageKey).then(function (r) { return r || caches.match('/'); });
       })
     );
     return;

@@ -1,0 +1,7 @@
+# Dev / private files — must NOT be published with the site
+/.git/
+/worker.js
+/wrangler.jsonc
+/.wranglerignore
+/schema.sql
+/SETUP-README.md
