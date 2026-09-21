@@ -112,7 +112,7 @@
 </script>
 <!-- PWA — Thathwamasi mobile app -->
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#df7009">
+<meta name="theme-color" content="#7f0fff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -125,12 +125,12 @@
 
 <style>
 :root{
-  --bg:#fbf7ef;
+  --bg:#faf6ee;
   --paper:#fffdf8;
   --paper2:#f8f1e4;
-  --gold:#c58a18;
-  --gold2:#e2b34d;
-  --gold-soft:#ead7aa;
+  --gold:#e100ff;
+  --gold2:#c9a0ff;
+  --gold-soft:#d6ecdd;
   --brown:#35281d;
   --muted:#6f6559;
   --line:#eadcc2;
@@ -164,14 +164,14 @@ img{display:block;max-width:100%}
   display:flex;
   align-items:center;
   overflow:hidden;
-  border-bottom:1px solid rgba(197,138,24,.25);
+  border-bottom:1px solid rgba(127,15,255,.25);
 }
 .notice-label{
   height:100%;
   display:flex;
   align-items:center;
   padding:0 20px;
-  background:#c58a18;
+  background:#e100ff;
   color:#2d241a;
   font-size:12px;
   font-weight:800;
@@ -210,7 +210,7 @@ img{display:block;max-width:100%}
   position:relative;overflow:hidden;min-height:94px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:8px min(4vw,46px);
-  background:linear-gradient(115deg,#f9c65f 0%,#f29c14 45%,#df7009 100%);
+  background:linear-gradient(115deg,#a855f7 0%,#7f0fff 100%);
 }
 .top-band:before{ /* Sabarimala hills — LEFT */
   content:"";position:absolute;left:0;top:0;bottom:0;width:38%;
@@ -225,8 +225,8 @@ img{display:block;max-width:100%}
   mask-image:linear-gradient(270deg,#000 42%,transparent 100%);
 }
 .top-band .brand{position:relative;z-index:2;min-width:0}
-.top-band .brand-name{color:#6b1c0c;text-shadow:0 1px 0 rgba(255,255,255,.28)}
-.top-band .brand-sub{color:#7a2f10;font-weight:600}
+.top-band .brand-name{color:#ffffff;text-shadow:0 1px 0 rgba(255,255,255,.28)}
+.top-band .brand-sub{color:#ffffff;font-weight:600}
 .top-band .brand-logo{border:3px solid rgba(255,253,244,.88);box-shadow:0 4px 14px rgba(96,30,4,.28)}
 .band-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px}
@@ -240,7 +240,7 @@ img{display:block;max-width:100%}
 .nav-bar{
   position:sticky;top:0;z-index:1000;
   background:rgba(255,253,248,.97);backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(197,138,24,.16);
+  border-bottom:1px solid rgba(127,15,255,.16);
   box-shadow:0 4px 16px rgba(96,65,18,.07);
 }
 .header-row{height:64px;display:flex;align-items:center;gap:24px;justify-content:space-between}
@@ -249,11 +249,11 @@ img{display:block;max-width:100%}
   width:64px;height:64px;border-radius:50%;
   object-fit:cover;border:1px solid var(--gold-soft);
 }
-.brand-name{font-size:22px;letter-spacing:.03em;color:#a66d08;font-weight:700}
+.brand-name{font-size:22px;letter-spacing:.03em;color:#4a0e8c;font-weight:700}
 .brand-sub{font-size:13px;line-height:1.3;color:var(--brown)}
 .nav{display:flex;align-items:center;justify-content:center;gap:22px;flex:1}
 .nav a{font-size:12px;font-weight:600;text-transform:uppercase;position:relative;padding:22px 0 19px}
-.nav a.active,.nav a:hover{color:#b87809}
+.nav a.active,.nav a:hover{color:#7f0fff}
 .nav a.active:after{
   content:"";position:absolute;left:0;right:0;bottom:13px;height:2px;background:var(--gold);
 }
@@ -265,7 +265,7 @@ img{display:block;max-width:100%}
 .menu{display:none;border:1px solid var(--gold-soft);background:#fffaf0;border-radius:8px;padding:8px 11px}
 
 /* Hero */
-.hero{min-height:550px;position:relative;overflow:hidden;background:linear-gradient(115deg,#f9c65f 0%,#f29c14 42%,#df7009 100%)}
+.hero{min-height:550px;position:relative;overflow:hidden;background:linear-gradient(115deg,#a855f7 0%,#7f0fff 100%)}
 .hero:before{ /* LEFT — Sabarimala hills fading into gold */
   content:"";position:absolute;left:0;top:0;bottom:0;width:45%;
   background:url("/assets/journey-pampa.jpeg") center 38%/cover no-repeat;
@@ -278,17 +278,17 @@ img{display:block;max-width:100%}
   -webkit-mask-image:linear-gradient(270deg,#000 62%,transparent 100%);
   mask-image:linear-gradient(270deg,#000 62%,transparent 100%);
 }
-.hero .kicker{color:#7c2418}
-.hero .ornament{color:#ffe9b0}
-.hero .hero-copy{color:#61300a}
-.hero-stats .stat strong{color:#4a2403}
+.hero .kicker{color:#7c3aed}
+.hero .ornament{color:#c9a0ff}
+.hero .hero-copy{color:#4a0e8c}
+.hero-stats .stat strong{color:#4a0e8c}
 .hero-stats .stat small{color:#6b3a10}
-.hero-stats .stat-icon{color:#7c2418}
+.hero-stats .stat-icon{color:#7c3aed}
 .hero-content{position:relative;z-index:2;padding:70px 0 34px}
-.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ad740d;margin-bottom:10px}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#7c3aed;margin-bottom:10px}
 .hero h1{font-size:70px;line-height:.86;max-width:500px;letter-spacing:.02em}
-.hero h1 span{color:#fffdf4;text-shadow:0 2px 14px rgba(121,33,4,.35)}
-.ornament{color:#c78a18;font-size:22px;margin:17px 0}
+.hero h1 span{color:#fffdf4;text-shadow:0 2px 14px rgba(94,0,201,.35)}
+.ornament{color:#a855f7;font-size:22px;margin:17px 0}
 .hero-copy{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.45;max-width:370px;margin-bottom:20px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
@@ -296,8 +296,8 @@ img{display:block;max-width:100%}
   font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
   transition:.2s;cursor:pointer
 }
-.btn-gold{background:linear-gradient(#e6bb5b,#d8a63b);border-color:#d2a03a;color:#2d241a}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(184,126,15,.18)}
+.btn-gold{background:linear-gradient(#c9a0ff,#a855f7);border-color:#8b2fe8;color:#3b0764}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(168,85,247,.18)}
 .btn-light{background:#fffaf0}
 .hero-stats{display:flex;gap:22px;margin-top:32px;flex-wrap:wrap}
 .stat{display:flex;gap:9px;align-items:center;padding-right:20px;border-right:1px solid var(--gold-soft)}
@@ -314,7 +314,7 @@ img{display:block;max-width:100%}
   border-radius:13px;padding:23px 15px 17px;min-height:180px;
   text-align:center;box-shadow:var(--shadow);transition:.2s
 }
-.quick-card:hover{transform:translateY(-4px);border-color:#d9ae52}
+.quick-card:hover{transform:translateY(-4px);border-color:#a8d5ba}
 .quick-icon{font-size:30px;color:#c48816;height:45px}
 .card-title{font-size:18px;line-height:1.05;text-transform:uppercase}
 .quick-card p{font-size:11px;color:#5f574d;margin:11px 0 14px}
@@ -326,7 +326,7 @@ img{display:block;max-width:100%}
 /* Sections */
 .section{padding:42px 0}
 .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
-.section-kicker{font-size:11px;color:#b47408;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.section-kicker{font-size:11px;color:#7f0fff;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .section-title{font-size:30px;line-height:1.05}
 .about{
   display:grid;grid-template-columns:1fr 1.35fr;overflow:hidden;
@@ -370,12 +370,12 @@ img{display:block;max-width:100%}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field{display:flex;flex-direction:column;gap:5px}
 .field.full{grid-column:1/-1}
-.field label{font-size:11px;font-weight:700;color:#755c32}
+.field label{font-size:11px;font-weight:700;color:#6d28d9}
 .field input,.field textarea{
   width:100%;padding:10px 11px;border:1px solid #ddd0b8;border-radius:7px;
   background:#fff;color:var(--brown);font:13px inherit;outline:none
 }
-.field input:focus,.field textarea:focus{border-color:#d4a33e;box-shadow:0 0 0 3px rgba(212,163,62,.10)}
+.field input:focus,.field textarea:focus{border-color:#a855f7;box-shadow:0 0 0 3px rgba(168,85,247,.15)}
 .form-actions{margin-top:14px}
 .form-note{font-size:10px;color:var(--muted);margin-top:8px}
 .form-msg{font-size:12px;color:#2f6b55;margin-top:8px}
@@ -391,13 +391,13 @@ img{display:block;max-width:100%}
 .subscribe-copy p{font-size:11px;color:var(--muted)}
 .subscribe form{display:flex;width:44%;max-width:430px}
 .subscribe input{flex:1;border:1px solid #ded0b7;border-radius:6px 0 0 6px;padding:11px}
-.subscribe button{border:0;border-radius:0 6px 6px 0;background:#dfa83f;padding:0 22px;font-weight:700;font-size:11px}
+.subscribe button{border:0;border-radius:0 6px 6px 0;background:#7f0fff;color:#ffffff;padding:0 22px;font-weight:700;font-size:11px}
 
 /* Footer */
 footer{padding:30px 0 18px;border-top:1px solid var(--line)}
 .footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:30px}
 .footer-brand .brand{margin-bottom:10px}
-.footer-title{font-size:12px;color:#b47408;font-weight:700;text-transform:uppercase;margin-bottom:9px}
+.footer-title{font-size:12px;color:#7f0fff;font-weight:700;text-transform:uppercase;margin-bottom:9px}
 footer p,footer li,footer a{font-size:11px;color:#665d51}
 footer ul{list-style:none;display:grid;gap:5px}
 .socials{display:flex;gap:7px;margin-top:12px}
@@ -406,8 +406,8 @@ footer ul{list-style:none;display:grid;gap:5px}
 .soc-insta{color:#d6249f}.soc-yt{color:#FF0000}.soc-fb{color:#1877F2}.soc-wa{color:#25D366}
 .socials svg{fill:currentColor}
 .footer-bottom{text-align:center;margin-top:22px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;color:#81766a}
-.lang-bless{text-align:center;padding:18px 10px 4px;line-height:2.05;font-size:13px;color:#8a6d2f}
-.lang-bless .lb-deity{font-size:11.5px;color:#a08753}
+.lang-bless{text-align:center;padding:18px 10px 4px;line-height:2.05;font-size:13px;color:#6d28d9}
+.lang-bless .lb-deity{font-size:11.5px;color:#7c3aed}
 
 /* Floating social */
 .float-social{position:fixed;right:15px;top:38%;z-index:900;display:flex;flex-direction:column;gap:8px}
@@ -472,15 +472,15 @@ footer ul{list-style:none;display:grid;gap:5px}
   border-radius:13px;overflow:hidden;
   box-shadow:var(--shadow);transition:.2s;
 }
-.month-card:hover{transform:translateY(-3px);border-color:#d9ae52}
+.month-card:hover{transform:translateY(-3px);border-color:#a8d5ba}
 .month-top{
   padding:17px 18px;
   display:flex;align-items:end;justify-content:space-between;
   background:linear-gradient(135deg,#fffaf0,#f6ead4);
   border-bottom:1px solid var(--line);
 }
-.month-name{font-size:25px;color:#8f620c}
-.month-number{color:#a8791b;font:700 10px Arial,sans-serif;letter-spacing:1px}
+.month-name{font-size:25px;color:#7f0fff}
+.month-number{color:#a855f7;font:700 10px Arial,sans-serif;letter-spacing:1px}
 .cal-table{padding:15px 16px 12px}
 .weekdays,.days{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
 .weekdays{margin-bottom:7px}
@@ -490,7 +490,7 @@ footer ul{list-style:none;display:grid;gap:5px}
   justify-content:center;color:var(--brown);
   font:13px Arial,sans-serif;position:relative;
 }
-.days .sun{color:#b87809}
+.days .sun{color:#7f0fff}
 .days .cal-day-event{color:#C62828;font-weight:800}
 .days .cal-day-event::after{
   content:"";position:absolute;bottom:2px;
@@ -500,7 +500,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 .days .today{border:1px solid var(--gold);border-radius:50%}
 .cal-events{padding:0 16px 16px}
 .cal-event{display:flex;gap:11px;padding:8px 0;border-top:1px solid var(--line)}
-.cal-event-date{min-width:35px;color:#b47408;font:800 11px Arial,sans-serif}
+.cal-event-date{min-width:35px;color:#7f0fff;font:800 11px Arial,sans-serif}
 .cal-event-text{color:#655b4e;font:12px/1.45 Arial,sans-serif}
 .pdf-status{margin-top:12px;min-height:18px;font-size:11px;color:#2f6b55;text-align:right}
 @media(max-width:1100px){.month-grid{grid-template-columns:repeat(2,1fr)}}
@@ -516,11 +516,11 @@ footer ul{list-style:none;display:grid;gap:5px}
 }
 .float-opens h4{
   margin:0 0 5px;font-size:10px;font-family:"Noto Sans",sans-serif;
-  letter-spacing:.07em;text-transform:uppercase;color:#b47408;
+  letter-spacing:.07em;text-transform:uppercase;color:#7f0fff;
 }
 .float-opens a{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #f3ead9}
 .float-opens a:hover .fo-d{color:#C62828}
-.fo-d{font:800 12px Arial,sans-serif;color:#8f620c;min-width:52px}
+.fo-d{font:800 12px Arial,sans-serif;color:#7f0fff;min-width:52px}
 .fo-t{font:600 9.5px Arial,sans-serif;color:#6f6559;line-height:1.3}
 .month-card.flash{animation:flashRing 1.6s ease}
 @keyframes flashRing{0%,40%{box-shadow:0 0 0 3px #C62828}100%{box-shadow:0 0 0 3px rgba(198,40,40,0)}}
@@ -544,21 +544,21 @@ footer ul{list-style:none;display:grid;gap:5px}
 .sv-icon{font-size:26px}
 .sv-card strong{font-size:17px;line-height:1.25;font-family:"Cormorant Garamond","Noto Serif Telugu",serif}
 .sv-card p{font-size:12px;color:var(--muted);line-height:1.5}
-.sv-go{font-size:11px;font-weight:800;color:#b47408;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
-.sv-card:hover .sv-go{color:#8f5c08}
+.sv-go{font-size:11px;font-weight:800;color:#7f0fff;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.sv-card:hover .sv-go{color:#7c3aed}
 
 /* 🎉 PRASADAM MONTHLY LUCKY DRAW — WINNERS */
-.pras-win{margin-top:28px;background:linear-gradient(135deg,#fffdf8 0%,#fdf1d6 100%);border:1px solid var(--gold-soft);border-radius:16px;padding:22px 22px 20px;box-shadow:0 10px 30px rgba(150,95,10,.10);position:relative;overflow:hidden}
-.pras-win:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#f9c65f,#df7009,#C62828,#df7009,#f9c65f)}
-.pras-win h3{margin:2px 0 4px;font-size:22px;color:#6b1c0c}
-.pras-win .pw-sub{font-size:13px;color:#7a5a20;margin:0 0 12px;line-height:1.5}
+.pras-win{margin-top:28px;background:linear-gradient(135deg,#fffdf8 0%,#fdf1d6 100%);border:1px solid var(--gold-soft);border-radius:16px;padding:22px 22px 20px;box-shadow:0 10px 30px rgba(127,15,255,.10);position:relative;overflow:hidden}
+.pras-win:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#a8d5ba,#7f0fff,#e100ff,#7f0fff,#a8d5ba)}
+.pras-win h3{margin:2px 0 4px;font-size:22px;color:#4a0e8c}
+.pras-win .pw-sub{font-size:13px;color:#6d28d9;margin:0 0 12px;line-height:1.5}
 .pw-list{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 2px}
-.pw-chip{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #eed9a4;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px rgba(150,95,10,.08)}
-.pw-chip .pw-ava{width:30px;height:30px;border-radius:50%;background:linear-gradient(115deg,#f9c65f,#df7009);display:flex;align-items:center;justify-content:center;font-weight:800;color:#4a2000;font-size:14px;flex:none}
-.pw-chip .pw-n{font-weight:700;color:#4a2c08;font-size:14px}
-.pw-chip .pw-m{font-size:11px;color:#8a6a30;font-weight:600}
-.pw-month{font-size:12px;font-weight:700;color:#b47408;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.pw-pending{font-size:13.5px;color:#8a6a30;background:#fff8ea;border:1px dashed #e0bd72;border-radius:10px;padding:12px 14px}
+.pw-chip{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #c9a0ff;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px rgba(127,15,255,.08)}
+.pw-chip .pw-ava{width:30px;height:30px;border-radius:50%;background:linear-gradient(115deg,#a855f7,#e100ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#ffffff;font-size:14px;flex:none}
+.pw-chip .pw-n{font-weight:700;color:#4a0e8c;font-size:14px}
+.pw-chip .pw-m{font-size:11px;color:#6d28d9;font-weight:600}
+.pw-month{font-size:12px;font-weight:700;color:#7f0fff;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.pw-pending{font-size:13.5px;color:#6d28d9;background:#fff8ea;border:1px dashed #c9a0ff;border-radius:10px;padding:12px 14px}
 @media(max-width:700px){.pras-win{padding:16px 14px}.pw-chip{flex:1 1 46%}}
 .sv-note{margin-top:13px;font-size:11px;color:var(--muted)}
 @media(max-width:800px){.sv-grid{grid-template-columns:1fr}}
@@ -640,7 +640,7 @@ footer ul{list-style:none;display:grid;gap:5px}
         <a href="/contact/" data-i18n="contact">Contact</a>
       </nav>
       <div class="lang">
-        <span style="display:flex;align-items:center;color:#b47408"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <span style="display:flex;align-items:center;color:#7f0fff"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
         <select id="language" aria-label="Language">
           <option value="en">English</option>
           <option value="te">తెలుగు</option>
@@ -1352,7 +1352,7 @@ async function sharePDF(){
 })();
 </script>
 <!-- PWA app install button — Android/Chrome lo install prompt vachinappude kanipistundi -->
-<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:linear-gradient(115deg,#f9c65f 0%,#f29c14 45%,#df7009 100%);color:#4a2000;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 6px 20px rgba(223,112,9,.45);cursor:pointer;">📱 Install App</button>
+<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:linear-gradient(115deg,#a855f7 0%,#7f0fff 100%);color:#ffffff;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 6px 20px rgba(223,112,9,.45);cursor:pointer;">📱 Install App</button>
 <script>
 /* PWA — service worker + app install prompt */
 (function(){
