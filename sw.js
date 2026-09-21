@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v5: mint/cream boost; neon palette; pages cached under their own URL, home page stays the
+   v6: Wilmine display font; mint/cream; neon palette; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v5';
+var CACHE = 'thathwamasi-v6';
 var CORE = [
   '/',
   '/manifest.json',
