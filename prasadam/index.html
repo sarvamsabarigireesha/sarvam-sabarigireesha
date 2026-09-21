@@ -133,17 +133,17 @@
   --gold-soft:#d6ecdd;
   --brown:#35281d;
   --muted:#6f6559;
-  --line:#eadcc2;
+  --line:#e1e6da;
   --green:#294f3d;
-  --shadow:0 8px 28px rgba(96,65,18,.09);
+  --shadow:0 8px 28px rgba(127,15,255,.09);
   --radius:14px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   background:
-    radial-gradient(circle at 8% 8%,rgba(218,174,74,.08),transparent 25%),
-    linear-gradient(180deg,#fffdf9,#faf6ed 55%,#fffdf8);
+    radial-gradient(circle at 88% -10%,rgba(168,213,186,.45),transparent 42%),radial-gradient(circle at 5% 108%,rgba(127,15,255,.06),transparent 32%),,
+    #faf6ee;
   color:var(--brown);
   font-family:"Noto Sans","Noto Sans Telugu",sans-serif;
   line-height:1.55;
@@ -227,21 +227,21 @@ img{display:block;max-width:100%}
 .top-band .brand{position:relative;z-index:2;min-width:0}
 .top-band .brand-name{color:#ffffff;text-shadow:0 1px 0 rgba(255,255,255,.28)}
 .top-band .brand-sub{color:#ffffff;font-weight:600}
-.top-band .brand-logo{border:3px solid rgba(255,253,244,.88);box-shadow:0 4px 14px rgba(96,30,4,.28)}
+.top-band .brand-logo{border:3px solid rgba(255,253,244,.88);box-shadow:0 4px 14px rgba(74,14,140,.28)}
 .band-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px}
 .band-motifs{display:flex;align-items:center;gap:12px}
-.band-motifs svg{width:17px;height:17px;fill:#fff8e6;filter:drop-shadow(0 1px 3px rgba(122,26,6,.35))}
+.band-motifs svg{width:17px;height:17px;fill:#fff8e6;filter:drop-shadow(0 1px 3px rgba(94,0,201,.35))}
 .band-om{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:25px;line-height:1;
-  color:#fffdf4;text-shadow:0 2px 8px rgba(122,26,6,.42)}
+  color:#fffdf4;text-shadow:0 2px 8px rgba(94,0,201,.42)}
 .band-mantra{font-family:"Cormorant Garamond",serif;font-weight:700;
   font-size:clamp(15px,2vw,24px);color:#fffdf4;
-  text-shadow:0 2px 8px rgba(122,26,6,.42);white-space:nowrap}
+  text-shadow:0 2px 8px rgba(94,0,201,.42);white-space:nowrap}
 .nav-bar{
   position:sticky;top:0;z-index:1000;
   background:rgba(255,253,248,.97);backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(127,15,255,.16);
-  box-shadow:0 4px 16px rgba(96,65,18,.07);
+  box-shadow:0 4px 16px rgba(127,15,255,.07);
 }
 .header-row{height:64px;display:flex;align-items:center;gap:24px;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:12px;min-width:230px}
@@ -319,7 +319,7 @@ img{display:block;max-width:100%}
 .card-title{font-size:18px;line-height:1.05;text-transform:uppercase}
 .quick-card p{font-size:11px;color:#5f574d;margin:11px 0 14px}
 .circle-arrow{
-  width:22px;height:22px;border:1px solid var(--gold);border-radius:50%;
+  width:22px;height:22px;background:#e0f0e7;border:2px solid #a8d5ba;border-radius:50%;
   display:inline-flex;align-items:center;justify-content:center;color:#b8770a
 }
 
@@ -340,7 +340,7 @@ img{display:block;max-width:100%}
 .event-strip{display:grid;grid-template-columns:repeat(4,1fr) 150px;gap:10px}
 .event{
   background:#fffaf2;border:1px solid var(--line);border-radius:13px;
-  min-height:105px;padding:13px;display:flex;gap:12px;align-items:center;box-shadow:0 3px 12px rgba(96,65,18,.05)
+  min-height:105px;padding:13px;display:flex;gap:12px;align-items:center;box-shadow:0 3px 12px rgba(127,15,255,.05)
 }
 .event img{width:65px;height:65px;object-fit:cover;border-radius:50%;border:1px solid var(--gold-soft)}
 .event-date{font-size:10px;color:#6b5a3f}
@@ -383,18 +383,18 @@ img{display:block;max-width:100%}
 /* Social */
 .subscribe{
   display:flex;align-items:center;gap:18px;padding:18px 24px;
-  background:#fffaf1;border:1px solid var(--line);border-radius:14px
+  background:#eef7f1;border:1px solid #cfe3d6;border-radius:14px
 }
-.subscribe-icon{font-size:28px;color:#c48a19}
+.subscribe-icon{font-size:28px;color:#2f6b55}
 .subscribe-copy{flex:1}
 .subscribe-copy strong{font-family:"Cormorant Garamond",serif;font-size:22px}
 .subscribe-copy p{font-size:11px;color:var(--muted)}
 .subscribe form{display:flex;width:44%;max-width:430px}
-.subscribe input{flex:1;border:1px solid #ded0b7;border-radius:6px 0 0 6px;padding:11px}
+.subscribe input{flex:1;border:1px solid #cfe0d4;border-radius:6px 0 0 6px;padding:11px}
 .subscribe button{border:0;border-radius:0 6px 6px 0;background:#7f0fff;color:#ffffff;padding:0 22px;font-weight:700;font-size:11px}
 
 /* Footer */
-footer{padding:30px 0 18px;border-top:1px solid var(--line)}
+footer{padding:30px 0 18px;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(168,213,186,0),rgba(168,213,186,.38))}
 .footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:30px}
 .footer-brand .brand{margin-bottom:10px}
 .footer-title{font-size:12px;color:#7f0fff;font-weight:700;text-transform:uppercase;margin-bottom:9px}
@@ -476,7 +476,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 .month-top{
   padding:17px 18px;
   display:flex;align-items:end;justify-content:space-between;
-  background:linear-gradient(135deg,#fffaf0,#f6ead4);
+  background:linear-gradient(135deg,#f0f8f3,#dcefe4);
   border-bottom:1px solid var(--line);
 }
 .month-name{font-size:25px;color:#7f0fff}
@@ -497,7 +497,7 @@ footer ul{list-style:none;display:grid;gap:5px}
   width:5px;height:5px;border-radius:50%;
   background:#C62828;
 }
-.days .today{border:1px solid var(--gold);border-radius:50%}
+.days .today{background:#e0f0e7;border:2px solid #a8d5ba;border-radius:50%}
 .cal-events{padding:0 16px 16px}
 .cal-event{display:flex;gap:11px;padding:8px 0;border-top:1px solid var(--line)}
 .cal-event-date{min-width:35px;color:#7f0fff;font:800 11px Arial,sans-serif}
@@ -511,7 +511,7 @@ footer ul{list-style:none;display:grid;gap:5px}
 .float-opens{
   position:fixed;left:15px;top:60%;z-index:900;
   background:#fffdf8;border:1px solid var(--gold-soft);
-  border-radius:12px;box-shadow:0 6px 20px rgba(96,65,18,.16);
+  border-radius:12px;box-shadow:0 6px 20px rgba(127,15,255,.16);
   padding:11px 12px;width:158px;
 }
 .float-opens h4{
@@ -1352,7 +1352,7 @@ async function sharePDF(){
 })();
 </script>
 <!-- PWA app install button — Android/Chrome lo install prompt vachinappude kanipistundi -->
-<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:linear-gradient(115deg,#a855f7 0%,#7f0fff 100%);color:#ffffff;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 6px 20px rgba(223,112,9,.45);cursor:pointer;">📱 Install App</button>
+<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:linear-gradient(115deg,#a855f7 0%,#7f0fff 100%);color:#ffffff;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 6px 20px rgba(127,15,255,.45);cursor:pointer;">📱 Install App</button>
 <script>
 /* PWA — service worker + app install prompt */
 (function(){
