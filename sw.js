@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v8: Absans display font; mint/cream; neon palette; pages cached under their own URL, home page stays the
+   v9: Cyber Sunset palette (dark violet, cosmic purple, neon pink, solar gold); pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v8';
+var CACHE = 'thathwamasi-v9';
 var CORE = [
   '/',
   '/manifest.json',
