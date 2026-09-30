@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v17: sanctum background — sacred black, lamp light, temple lattice; pages cached under their own URL, home page stays the
+   v18: page ground is sandal and saffron, not black; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v17';
+var CACHE = 'thathwamasi-v18';
 var CORE = [
   '/',
   '/manifest.json',
