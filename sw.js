@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v10: Ayyappa palette — sacred black, temple gold, saffron; neon pink removed; pages cached under their own URL, home page stays the
+   v11: force sacred black #0F0A08 page background; photos fade into black; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v10';
+var CACHE = 'thathwamasi-v11';
 var CORE = [
   '/',
   '/manifest.json',
