@@ -639,26 +639,18 @@ input[type="checkbox"]{accent-color:#E65100}
 ::-webkit-scrollbar-thumb:hover{background:#E65100}
 
 
-/* Temple cursor — gold dot and ring; tab mark is ॐ, not a flight icon */
+/* Temple cursor — small gold dot only. No ring, so it does not sit in the nav as a circle. */
 @media (hover:hover) and (pointer:fine){
   html.has-cursor, html.has-cursor *{cursor:none}
   html.has-cursor input, html.has-cursor textarea, html.has-cursor select, html.has-cursor option{cursor:auto}
-  .cursor-dot,.cursor-ring{
-    position:fixed;top:0;left:0;z-index:100000;pointer-events:none;border-radius:50%;
-    transform:translate(-50%,-50%);
-  }
   .cursor-dot{
-    width:11px;height:11px;background:#E8B923;
-    box-shadow:0 0 0 2px rgba(15,10,8,.45),0 0 12px rgba(232,185,35,.55);
+    position:fixed;top:0;left:0;z-index:100000;pointer-events:none;border-radius:50%;
+    width:8px;height:8px;background:#E8B923;
+    transform:translate(-50%,-50%);
+    opacity:0;
   }
-  .cursor-ring{
-    width:30px;height:30px;border:1.5px solid rgba(232,185,35,.8);
-    transition:width .28s ease,height .28s ease,background .28s ease,border-color .28s ease,opacity .2s ease;
-  }
-  .cursor-ring.is-active{
-    width:48px;height:48px;background:rgba(230,81,0,.14);border-color:#E65100;
-  }
-  html.cursor-hide .cursor-dot, html.cursor-hide .cursor-ring{opacity:0}
+  html.cursor-on .cursor-dot{opacity:1}
+  html.cursor-hide .cursor-dot{opacity:0}
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -1460,7 +1452,6 @@ async function sharePDF(){
   };
 })();
 </script>
-<div class="cursor-ring" aria-hidden="true"></div>
 <div class="cursor-dot" aria-hidden="true"></div>
 <script>
 (function(){
@@ -1468,20 +1459,15 @@ async function sharePDF(){
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(!fine || reduce) return;
   document.documentElement.classList.add("has-cursor");
-  var ring = document.querySelector(".cursor-ring");
   var dot = document.querySelector(".cursor-dot");
-  if(!ring || !dot) return;
-  var mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
-  var hotSel = "a,button,.lang,.quick-card,.stat,.menu,.socials a";
+  if(!dot) return;
   var formSel = "input,textarea,select,[contenteditable='true']";
   document.addEventListener("mousemove", function(e){
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + "px";
-    dot.style.top = my + "px";
-    var t = e.target;
-    var form = t.closest && t.closest(formSel);
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+    document.documentElement.classList.add("cursor-on");
+    var form = e.target.closest && e.target.closest(formSel);
     document.documentElement.classList.toggle("cursor-hide", !!form);
-    ring.classList.toggle("is-active", !form && !!(t.closest && t.closest(hotSel)));
   });
   document.addEventListener("mouseleave", function(){
     document.documentElement.classList.add("cursor-hide");
@@ -1489,14 +1475,6 @@ async function sharePDF(){
   document.addEventListener("mouseenter", function(){
     document.documentElement.classList.remove("cursor-hide");
   });
-  function tick(){
-    rx += (mx - rx) / 7;
-    ry += (my - ry) / 7;
-    ring.style.left = rx + "px";
-    ring.style.top = ry + "px";
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
 })();
 </script>
 </body>
