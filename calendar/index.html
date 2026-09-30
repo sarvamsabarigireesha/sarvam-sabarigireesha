@@ -729,6 +729,93 @@ input[type="checkbox"]{accent-color:#E65100}
 @media(max-width:800px){
   .hero-watch{margin:14px 0 0;display:block}
 }
+
+/* Spiritual UI kit — pill controls from the reference, temple gold and saffron */
+.btn{
+  border-radius:999px;
+  padding:12px 20px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.01em;
+  text-transform:none;
+  border:1px solid rgba(232,185,35,.45);
+  background:transparent;
+  color:#FFF8F0;
+  box-shadow:none;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease;
+}
+.btn:hover:not(.btn-gold){
+  background:rgba(232,185,35,.10);
+  color:#E8B923;
+  border-color:#E8B923;
+  transform:translateY(-1px);
+}
+.btn-gold{
+  background:linear-gradient(180deg,#F5D76E 0%,#E8B923 100%);
+  border-color:#E8B923;
+  color:#0F0A08;
+  box-shadow:0 10px 22px rgba(232,185,35,.24);
+}
+.btn-gold:hover{
+  color:#0F0A08;
+  background:linear-gradient(180deg,#FBE7A0,#F0C94A);
+  border-color:#F5D76E;
+  box-shadow:0 14px 26px rgba(230,81,0,.28);
+  transform:translateY(-1px);
+}
+.btn-light{
+  background:#241810;
+  color:#E8B923;
+  border-color:rgba(232,185,35,.42);
+  box-shadow:0 8px 18px rgba(0,0,0,.22);
+}
+.btn-light:hover{background:#2C1C12;color:#F5D76E;border-color:#E8B923}
+.field label{
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#E8B923;
+}
+.field input,.field textarea,.field select,
+.subscribe input{
+  border:1px solid rgba(232,185,35,.32);
+  border-radius:999px;
+  background:#14100C;
+  color:#FFF8F0;
+  padding:12px 16px;
+  font:500 14px/1.4 "Noto Sans","Noto Sans Telugu",sans-serif;
+}
+.field textarea{border-radius:16px;min-height:108px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus,.subscribe input:focus{
+  border-color:#E8B923;
+  box-shadow:0 0 0 4px rgba(232,185,35,.16);
+}
+.prasadam-form{
+  border-radius:22px;
+  border-color:rgba(232,185,35,.22);
+  background:#1A120E;
+  padding:22px;
+}
+.subscribe{border-radius:22px;border-color:rgba(232,185,35,.22)}
+.subscribe form{gap:8px;align-items:center}
+.subscribe input{min-width:0}
+.subscribe button{
+  border:0;border-radius:999px;height:44px;padding:0 18px;flex:none;
+  background:linear-gradient(180deg,#F5D76E,#E8B923);
+  color:#0F0A08;font-weight:700;font-size:13px;letter-spacing:.01em;text-transform:none;
+  box-shadow:0 8px 18px rgba(232,185,35,.22);
+}
+.subscribe button:hover{background:linear-gradient(180deg,#FBE7A0,#F0C94A)}
+.lang{
+  border-radius:999px;min-height:40px;
+  border-color:rgba(232,185,35,.42);background:#1A120E;
+}
+.lang select{color:#FFF8F0;font-weight:700}
+.menu{
+  border-radius:999px;border-color:rgba(232,185,35,.42);
+  background:#1A120E;color:#E8B923;padding:8px 14px;
+}
+input[type="checkbox"]{accent-color:#E8B923;width:16px;height:16px}
+.month-card,.gallery-item,.pw-chip,.event{border-radius:20px}
+.float-social a{border-radius:50%}
+.quick-card,.sv-card,.about{border-radius:22px}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
