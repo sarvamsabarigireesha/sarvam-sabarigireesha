@@ -652,6 +652,83 @@ input[type="checkbox"]{accent-color:#E65100}
   html.cursor-on .cursor-dot{opacity:1}
   html.cursor-hide .cursor-dot{opacity:0}
 }
+
+/* Temple reading of the Fluent layout — pills, chips, soft cards. Sacred black stays. */
+.btn{border-radius:999px}
+.btn-gold{box-shadow:0 10px 22px rgba(232,185,35,.22)}
+.btn-gold:hover{transform:translateY(-1px)}
+.kicker,.section-kicker{
+  display:inline-flex;align-items:center;width:fit-content;
+  border:1px solid rgba(232,185,35,.34);background:rgba(232,185,35,.08);
+  border-radius:999px;padding:5px 11px;
+}
+.section-kicker{margin-bottom:8px}
+.quick-card,.sv-card,.about,.event{border-radius:22px}
+.quick-card{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(232,185,35,.10),transparent 46%),
+    #1A120E;
+}
+.quick-icon{
+  width:40px;height:40px;margin:0 auto 8px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#F5D76E,#E8B923);color:#0F0A08;
+  font-size:18px;box-shadow:0 8px 16px rgba(232,185,35,.22);
+}
+.circle-arrow{background:#E65100;border-color:#E65100;color:#FFF8F0}
+.stat{border-right:0;align-items:center}
+.stat-icon{
+  width:34px;height:34px;border-radius:50%;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#E65100;color:#FFF8F0;font-size:13px;
+  box-shadow:0 8px 16px rgba(230,81,0,.28);
+}
+.stat strong{font-size:26px;line-height:1}
+.stat small{letter-spacing:.04em;text-transform:uppercase}
+.hero-marks{display:flex;align-items:center;gap:8px;margin:16px 0 12px}
+.hero-marks span{
+  width:34px;height:34px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#E8B923;color:#0F0A08;
+  font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;line-height:1;
+  box-shadow:0 8px 16px rgba(0,0,0,.28);
+}
+.hero-marks span:nth-child(2){background:#E65100;color:#FFF8F0}
+.hero-marks span:nth-child(3){background:#F5D76E}
+.hero-watch{
+  position:relative;display:inline-block;width:176px;height:84px;
+  margin-left:16px;vertical-align:middle;text-decoration:none;
+}
+.hero-ripples{
+  position:absolute;right:6px;top:-8px;width:86px;height:86px;border-radius:50%;
+  background:
+    radial-gradient(circle,transparent 42%,rgba(232,185,35,.34) 43% 46%,transparent 47%),
+    radial-gradient(circle,transparent 62%,rgba(232,185,35,.22) 63% 66%,transparent 67%),
+    radial-gradient(circle,transparent 80%,rgba(230,81,0,.2) 81% 84%,transparent 85%);
+  pointer-events:none;
+}
+.hero-watch-pill{
+  position:absolute;left:0;top:22px;
+  background:#E65100;color:#FFF8F0;
+  font-family:"Cormorant Garamond",serif;font-weight:700;font-size:30px;line-height:1;
+  padding:9px 20px 11px;border-radius:16px;letter-spacing:-.02em;
+  transform:rotate(-8deg);
+  box-shadow:0 16px 28px rgba(230,81,0,.34);
+  transition:transform .25s ease;
+}
+.hero-watch-play{
+  position:absolute;right:10px;top:2px;width:32px;height:32px;border-radius:50%;
+  background:#E65100;color:#FFF8F0;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 16px rgba(230,81,0,.4);
+}
+.hero-watch-play svg{display:block}
+.hero-watch:hover .hero-watch-pill{transform:rotate(-2deg) translateY(-2px)}
+@media(min-width:801px){
+  .hero h1{font-size:clamp(58px,6vw,76px);letter-spacing:-.02em}
+}
+@media(max-width:800px){
+  .hero-watch{margin:14px 0 0;display:block}
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -732,7 +809,7 @@ input[type="checkbox"]{accent-color:#E65100}
   <div class="container hero-content">
     <div class="kicker">Sarvam Sabarigireesha</div>
     <h1>Sabarimala Ayyappa Photo Gallery</h1>
-    <div class="ornament">— ◇ ◇ ◇ —</div>
+    <div class="ornament hero-marks" aria-hidden="true"><span>ॐ</span><span>✦</span><span>◈</span></div>
     <p class="hero-copy" data-i18n="hero_copy">A Sacred Path. A Divine Presence.<br>A Community United in Devotion.</p>
     <a href="/community/" class="btn btn-gold">♟ <span data-i18n="join">Join Our Community</span></a>
 

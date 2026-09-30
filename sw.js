@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v14: drop cursor ring; gold dot only, ॐ tab mark stays; pages cached under their own URL, home page stays the
+   v15: temple pills, icon chips, saffron Watch mark; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v14';
+var CACHE = 'thathwamasi-v15';
 var CORE = [
   '/',
   '/manifest.json',
