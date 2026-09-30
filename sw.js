@@ -2,10 +2,10 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
-   v12: rollback — hero images restored (Ayyappa and hills); Ayyappa palette kept; pages cached under their own URL, home page stays the
+   v13: temple cursor and ॐ tab mark; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v12';
+var CACHE = 'thathwamasi-v13';
 var CORE = [
   '/',
   '/manifest.json',
