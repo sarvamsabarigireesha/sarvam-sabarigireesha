@@ -45,6 +45,10 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>https://www.sarvamsabarigireesha.com/contact/</loc>
     <lastmod>2026-09-22</lastmod>
   </url>
+  <url>
+    <loc>https://www.sarvamsabarigireesha.com/pilgrimage/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
 </urlset>`;
 
 const NOT_FOUND = `<!DOCTYPE html>
