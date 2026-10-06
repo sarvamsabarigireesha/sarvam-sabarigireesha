@@ -49,6 +49,22 @@ const SITEMAP = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>https://www.sarvamsabarigireesha.com/pilgrimage/</loc>
     <lastmod>2026-10-06</lastmod>
   </url>
+  <url>
+    <loc>https://www.sarvamsabarigireesha.com/makaravilakku/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sarvamsabarigireesha.com/mandala-pooja/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sarvamsabarigireesha.com/ayyappa-vratham/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sarvamsabarigireesha.com/travel-guide/</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
 </urlset>`;
 
 const NOT_FOUND = `<!DOCTYPE html>
