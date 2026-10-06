@@ -11,7 +11,7 @@
   },
   "assets": {
     "directory": ".",
-    "not_found_handling": "single-page-application",
+    "not_found_handling": "none",
     // Worker must run BEFORE static assets, otherwise the 301
     // canonical redirects (non-www -> www, http -> https) and the
     // inline /sitemap.xml handler are never executed.
