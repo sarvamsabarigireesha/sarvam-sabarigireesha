@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+Telugu:wght@500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&family=Noto+Sans+Kannada:wght@400;600&display=swap" rel="stylesheet">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact Sarvam Sabarigireesha | Thathwamasi</title>
 
@@ -151,7 +155,7 @@
 }</script>
 <!-- PWA — Thathwamasi mobile app -->
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0F0A08">
+<meta name="theme-color" content="#071A2B">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -166,19 +170,19 @@
 
 @font-face{font-family:"Absans";src:url("/assets/fonts/absans.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
 :root{
-  /* Ayyappa — sacred black #0F0A08 · temple gold #E8B923 · saffron #E65100 · earth #8B4513 */
-  --bg:#0F0A08;
-  --paper:#1A120E;
-  --paper2:#241810;
-  --gold:#E8B923;
-  --gold2:#F5D76E;
-  --gold-soft:rgba(232,185,35,.30);
-  --brown:#FFF8F0;
-  --muted:#C9B8A0;
-  --line:rgba(232,185,35,.18);
-  --green:#E8B923;
-  --saffron:#E65100;
-  --earth:#8B4513;
+  /* Ayyappa — sacred black #071A2B · temple gold #D4AF37 · saffron #E58A24 · earth #E58A24 */
+  --bg:#071A2B;
+  --paper:#0D2438;
+  --paper2:#142C42;
+  --gold:#D4AF37;
+  --gold2:#F5D77A;
+  --gold-soft:rgba(212,175,55,.30);
+  --brown:#FFF8E7;
+  --muted:#B9B09A;
+  --line:rgba(212,175,55,.18);
+  --green:#D4AF37;
+  --saffron:#E58A24;
+  --earth:#E58A24;
   --shadow:0 14px 34px rgba(0,0,0,.38);
   --radius:14px;
 }
@@ -186,17 +190,17 @@
 html{scroll-behavior:smooth;color-scheme:dark}
 body{
   background:
-    radial-gradient(ellipse 50% 32% at 88% -6%,rgba(232,185,35,.06),transparent 58%),
-    #0F0A08;
-  color:#FFF8F0;
-  font-family:"Noto Sans","Noto Sans Telugu",sans-serif;
+    radial-gradient(ellipse 50% 32% at 88% -6%,rgba(212,175,55,.06),transparent 58%),
+    #071A2B;
+  color:#FFF8E7;
+  font-family:"Inter","Noto Sans Telugu","Noto Sans Malayalam","Noto Sans Tamil","Noto Sans Kannada",sans-serif;
   line-height:1.55;
 }
 h1,h2,.brand-name{
-  font-family:"Absans","Cormorant Garamond","Noto Serif Telugu",serif;
+  font-family:"Cinzel","Noto Serif Telugu","Noto Serif Malayalam","Noto Serif Tamil","Noto Serif Kannada",serif;
 }
 h3,h4,.card-title,.event-name{
-  font-family:"Absans","Cormorant Garamond","Noto Serif Telugu",serif;
+  font-family:"Cinzel","Noto Serif Telugu","Noto Serif Malayalam","Noto Serif Tamil","Noto Serif Kannada",serif;
 }
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
@@ -207,19 +211,19 @@ img{display:block;max-width:100%}
 .notice-bar{
   height:38px;
   background:#0C0907;
-  color:#FFF8F0;
+  color:#FFF8E7;
   display:flex;
   align-items:center;
   overflow:hidden;
-  border-bottom:1px solid rgba(232,185,35,.28);
+  border-bottom:1px solid rgba(212,175,55,.28);
 }
 .notice-label{
   height:100%;
   display:flex;
   align-items:center;
   padding:0 20px;
-  background:#E8B923;
-  color:#0F0A08;
+  background:#D4AF37;
+  color:#071A2B;
   font-size:12px;
   font-weight:800;
   letter-spacing:.08em;
@@ -259,7 +263,7 @@ img{display:block;max-width:100%}
   padding:8px min(4vw,46px);
   background:
     linear-gradient(90deg,rgba(15,10,8,.62) 0%,rgba(15,10,8,.28) 50%,rgba(15,10,8,.50) 100%),
-    linear-gradient(115deg,#1A120E 0%,#2A1A12 62%,#3D2918 100%);
+    linear-gradient(115deg,#0D2438 0%,#2A1A12 62%,#3D2918 100%);
 }
 .top-band:before{ /* Sabarimala hills — LEFT */
   content:"";position:absolute;left:0;top:0;bottom:0;width:38%;
@@ -274,24 +278,24 @@ img{display:block;max-width:100%}
   mask-image:linear-gradient(270deg,#000 42%,transparent 100%);
 }
 .top-band .brand{position:relative;z-index:2;min-width:0}
-.top-band .brand-name{color:#FFF8F0;text-shadow:0 1px 2px rgba(15,10,8,.92),0 6px 16px rgba(15,10,8,.7)}
-.top-band .brand-sub{color:#FFF8F0;font-weight:600;text-shadow:0 1px 2px rgba(15,10,8,.9),0 4px 12px rgba(15,10,8,.65)}
-.top-band .brand-logo{border:3px solid rgba(232,185,35,.88);box-shadow:0 4px 16px rgba(15,10,8,.45)}
+.top-band .brand-name{color:#FFF8E7;text-shadow:0 1px 2px rgba(15,10,8,.92),0 6px 16px rgba(15,10,8,.7)}
+.top-band .brand-sub{color:#FFF8E7;font-weight:600;text-shadow:0 1px 2px rgba(15,10,8,.9),0 4px 12px rgba(15,10,8,.65)}
+.top-band .brand-logo{border:3px solid rgba(212,175,55,.88);box-shadow:0 4px 16px rgba(15,10,8,.45)}
 .band-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px;
   background:rgba(15,10,8,.46);padding:6px 16px 7px;border-radius:999px;
   border:1px solid rgba(255,248,240,.16);backdrop-filter:blur(8px)}
 .band-motifs{display:flex;align-items:center;gap:12px}
-.band-motifs svg{width:17px;height:17px;fill:#E8B923;filter:drop-shadow(0 1px 2px rgba(15,10,8,.55))}
+.band-motifs svg{width:17px;height:17px;fill:#D4AF37;filter:drop-shadow(0 1px 2px rgba(15,10,8,.55))}
 .band-om{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:25px;line-height:1;
-  color:#E8B923;text-shadow:0 2px 8px rgba(15,10,8,.55)}
+  color:#D4AF37;text-shadow:0 2px 8px rgba(15,10,8,.55)}
 .band-mantra{font-family:"Cormorant Garamond",serif;font-weight:700;
-  font-size:clamp(15px,2vw,24px);color:#FFF8F0;
+  font-size:clamp(15px,2vw,24px);color:#FFF8E7;
   text-shadow:0 2px 10px rgba(15,10,8,.55);white-space:nowrap}
 .nav-bar{
   position:sticky;top:0;z-index:1000;
   background:rgba(15,10,8,.94);backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(232,185,35,.22);
+  border-bottom:1px solid rgba(212,175,55,.22);
   box-shadow:0 8px 24px rgba(0,0,0,.32);
 }
 .header-row{height:64px;display:flex;align-items:center;gap:24px;justify-content:space-between}
@@ -300,19 +304,19 @@ img{display:block;max-width:100%}
   width:64px;height:64px;border-radius:50%;
   object-fit:cover;border:1px solid var(--gold-soft);
 }
-.brand-name{font-size:22px;letter-spacing:.03em;color:#E8B923;font-weight:700}
+.brand-name{font-size:22px;letter-spacing:.03em;color:#D4AF37;font-weight:700}
 .brand-sub{font-size:13px;line-height:1.3;color:var(--brown)}
 .nav{display:flex;align-items:center;justify-content:center;gap:22px;flex:1}
-.nav a{font-size:12px;font-weight:600;text-transform:uppercase;position:relative;padding:22px 0 19px;color:#FFF8F0}
-.nav a.active,.nav a:hover{color:#E8B923}
+.nav a{font-size:12px;font-weight:600;text-transform:uppercase;position:relative;padding:22px 0 19px;color:#FFF8E7}
+.nav a.active,.nav a:hover{color:#D4AF37}
 .nav a{display:inline-flex;align-items:center}
 .nav a.active:after{
-  content:"";position:absolute;left:0;right:0;bottom:13px;height:2px;background:#E65100;border-radius:2px;
+  content:"";position:absolute;left:0;right:0;bottom:13px;height:2px;background:#E58A24;border-radius:2px;
 }
 .nav a::before{
   content:"ॐ";
   font-family:"Cormorant Garamond","Noto Serif Telugu",serif;
-  font-weight:700;color:#E8B923;font-size:15px;line-height:1;
+  font-weight:700;color:#D4AF37;font-size:15px;line-height:1;
   width:0;margin-right:0;opacity:0;overflow:hidden;
   transform:translateX(-4px);
   transition:width .28s ease,margin .28s ease,opacity .28s ease,transform .28s ease;
@@ -322,16 +326,16 @@ img{display:block;max-width:100%}
 }
 .lang{
   border:1px solid var(--gold-soft);border-radius:22px;
-  background:#1A120E;padding:8px 12px;display:flex;align-items:center;gap:6px;
+  background:#0D2438;padding:8px 12px;display:flex;align-items:center;gap:6px;
 }
 .lang select{border:0;background:transparent;color:var(--brown);font:600 12px inherit;outline:none}
-.menu{display:none;border:1px solid var(--gold-soft);background:#1A120E;color:#FFF8F0;border-radius:8px;padding:8px 11px}
+.menu{display:none;border:1px solid var(--gold-soft);background:#0D2438;color:#FFF8E7;border-radius:8px;padding:8px 11px}
 
 /* Hero */
 .hero{min-height:550px;position:relative;overflow:hidden;background:
-    radial-gradient(ellipse 62% 48% at 76% 16%,rgba(232,185,35,.10),transparent 56%),
+    radial-gradient(ellipse 62% 48% at 76% 16%,rgba(212,175,55,.10),transparent 56%),
     radial-gradient(ellipse 42% 36% at 10% 92%,rgba(230,81,0,.05),transparent 52%),
-    linear-gradient(165deg,#16100C 0%,#0F0A08 60%,#1A120E 100%)}
+    linear-gradient(165deg,#16100C 0%,#071A2B 60%,#0D2438 100%)}
 .hero:before{ /* LEFT — Sabarimala hills fading into gold */
   content:"";position:absolute;left:0;top:0;bottom:0;width:45%;
   background:url("/assets/journey-pampa.jpeg") center 38%/cover no-repeat;
@@ -344,32 +348,32 @@ img{display:block;max-width:100%}
   -webkit-mask-image:linear-gradient(270deg,#000 62%,transparent 100%);
   mask-image:linear-gradient(270deg,#000 62%,transparent 100%);
 }
-.hero .kicker{color:#E8B923;text-shadow:0 2px 12px rgba(15,10,8,.7)}
-.hero .ornament{color:#E65100}
-.hero .hero-copy{color:#FFF8F0;text-shadow:0 2px 14px rgba(15,10,8,.72)}
-.hero-stats .stat strong{color:#FFF8F0}
+.hero .kicker{color:#D4AF37;text-shadow:0 2px 12px rgba(15,10,8,.7)}
+.hero .ornament{color:#E58A24}
+.hero .hero-copy{color:#FFF8E7;text-shadow:0 2px 14px rgba(15,10,8,.72)}
+.hero-stats .stat strong{color:#FFF8E7}
 .hero-stats .stat small{color:#E4D2BC}
-.hero-stats .stat-icon{color:#E8B923}
+.hero-stats .stat-icon{color:#D4AF37}
 .hero-content{position:relative;z-index:2;padding:70px 0 34px}
-.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8B923;margin-bottom:10px}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#D4AF37;margin-bottom:10px}
 .hero h1{font-size:70px;line-height:.92;max-width:580px;letter-spacing:.02em}
-.hero h1 span{color:#FFF8F0;text-shadow:0 2px 18px rgba(15,10,8,.62)}
-.ornament{color:#E65100;font-size:22px;margin:17px 0}
+.hero h1 span{color:#FFF8E7;text-shadow:0 2px 18px rgba(15,10,8,.62)}
+.ornament{color:#E58A24;font-size:22px;margin:17px 0}
 .hero-copy{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.45;max-width:370px;margin-bottom:20px}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border:1px solid rgba(232,185,35,.45);border-radius:7px;padding:11px 22px;
+  border:1px solid rgba(212,175,55,.45);border-radius:7px;padding:11px 22px;
   font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
-  transition:.2s;cursor:pointer;background:transparent;color:#FFF8F0
+  transition:.2s;cursor:pointer;background:transparent;color:#FFF8E7
 }
-.btn:hover:not(.btn-gold){background:rgba(232,185,35,.10);color:#E8B923;border-color:#E8B923}
-.btn-gold{background:linear-gradient(180deg,#F5D76E 0%,#E8B923 100%);border-color:#E8B923;color:#0F0A08}
-.btn-gold:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(230,81,0,.28);color:#0F0A08;background:linear-gradient(180deg,#FBE7A0,#F0C94A)}
-.btn-light{background:#241810;color:#E8B923;border-color:rgba(230,81,0,.40)}
+.btn:hover:not(.btn-gold){background:rgba(212,175,55,.10);color:#D4AF37;border-color:#D4AF37}
+.btn-gold{background:linear-gradient(180deg,#F5D77A 0%,#D4AF37 100%);border-color:#D4AF37;color:#071A2B}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(230,81,0,.28);color:#071A2B;background:linear-gradient(180deg,#FBE7A0,#F0C94A)}
+.btn-light{background:#142C42;color:#D4AF37;border-color:rgba(230,81,0,.40)}
 .hero-stats{display:flex;gap:22px;margin-top:32px;flex-wrap:wrap}
 .stat{display:flex;gap:9px;align-items:center;padding-right:20px;border-right:1px solid var(--gold-soft)}
 .stat:last-child{border-right:0}
-.stat-icon{font-size:25px;color:#E8B923}
+.stat-icon{font-size:25px;color:#D4AF37}
 .stat strong{font-family:"Cormorant Garamond",serif;font-size:17px}
 .stat small{display:block;color:var(--muted);font-size:10px}
 
@@ -377,43 +381,43 @@ img{display:block;max-width:100%}
 .quick{margin-top:-4px;position:relative;z-index:5}
 .quick-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
 .quick-card{
-  background:#1A120E;border:1px solid rgba(232,185,35,.16);
+  background:#0D2438;border:1px solid rgba(212,175,55,.16);
   border-radius:13px;padding:23px 15px 17px;min-height:180px;
   text-align:center;box-shadow:var(--shadow);transition:.2s
 }
-.quick-card:hover{transform:translateY(-4px);border-color:#E65100;box-shadow:0 16px 32px rgba(0,0,0,.42)}
-.quick-icon{font-size:30px;color:#E8B923;height:45px}
+.quick-card:hover{transform:translateY(-4px);border-color:#E58A24;box-shadow:0 16px 32px rgba(0,0,0,.42)}
+.quick-icon{font-size:30px;color:#D4AF37;height:45px}
 .card-title{font-size:18px;line-height:1.05;text-transform:uppercase}
-.quick-card p{font-size:11px;color:#C9B8A0;margin:11px 0 14px}
+.quick-card p{font-size:11px;color:#B9B09A;margin:11px 0 14px}
 .circle-arrow{
-  width:22px;height:22px;background:rgba(230,81,0,.12);border:2px solid #E65100;border-radius:50%;
-  display:inline-flex;align-items:center;justify-content:center;color:#E8B923
+  width:22px;height:22px;background:rgba(230,81,0,.12);border:2px solid #E58A24;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;color:#D4AF37
 }
 
 /* Sections */
 .section{padding:42px 0}
 .section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}
-.section-kicker{font-size:11px;color:#E8B923;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.section-kicker{font-size:11px;color:#D4AF37;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .section-title{font-size:30px;line-height:1.05}
 .about{
   display:grid;grid-template-columns:1fr 1.35fr;overflow:hidden;
-  background:#1A120E;border:1px solid rgba(232,185,35,.16);border-radius:15px;box-shadow:var(--shadow)
+  background:#0D2438;border:1px solid rgba(212,175,55,.16);border-radius:15px;box-shadow:var(--shadow)
 }
 .about-copy{padding:38px 28px}
-.about-copy p{font-size:13px;color:#C9B8A0;margin:14px 0 22px}
+.about-copy p{font-size:13px;color:#B9B09A;margin:14px 0 22px}
 .about-photo{min-height:300px;background:url("/assets/about-feature.jpeg") center/cover}
 
 /* Events */
 .event-strip{display:grid;grid-template-columns:repeat(4,1fr) 150px;gap:10px}
 .event{
-  background:#1A120E;border:1px solid rgba(232,185,35,.14);border-radius:13px;
+  background:#0D2438;border:1px solid rgba(212,175,55,.14);border-radius:13px;
   min-height:105px;padding:13px;display:flex;gap:12px;align-items:center;box-shadow:0 8px 20px rgba(0,0,0,.28)
 }
 .event img{width:65px;height:65px;object-fit:cover;border-radius:50%;border:1px solid var(--gold-soft)}
-.event-date{font-size:10px;color:#E8B923}
+.event-date{font-size:10px;color:#D4AF37}
 .event-name{font-size:18px;line-height:1.05;margin:4px 0}
 .event-desc{font-size:10px;color:var(--muted)}
-.calendar-box{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(232,185,35,.28);border-radius:13px;background:#241810;color:#E8B923}
+.calendar-box{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(212,175,55,.28);border-radius:13px;background:#142C42;color:#D4AF37}
 .calendar-box .quick-icon{height:auto;margin-bottom:5px}
 
 /* Gallery */
@@ -421,59 +425,59 @@ img{display:block;max-width:100%}
 .gallery-item{height:145px;border-radius:11px;overflow:hidden;border:1px solid var(--line)}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.25s}
 .gallery-item:hover img{transform:scale(1.04)}
-.gallery-more{display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(230,81,0,.32);border-radius:11px;background:#1A120E;color:#E8B923;font-size:12px;font-weight:700}
+.gallery-more{display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(230,81,0,.32);border-radius:11px;background:#0D2438;color:#D4AF37;font-size:12px;font-weight:700}
 
 /* Prasadam */
 .prasadam{
   display:grid;grid-template-columns:1fr 1fr;gap:24px;
-  background:linear-gradient(145deg,#1A120E 0%,#241810 58%,#2A1C14 100%);
+  background:linear-gradient(145deg,#0D2438 0%,#142C42 58%,#2A1C14 100%);
   border:1px solid rgba(230,81,0,.28);border-radius:15px;padding:30px;box-shadow:var(--shadow)
 }
 .prasadam h2{font-size:34px}
 .prasadam p{font-size:13px;color:var(--muted);margin:10px 0}
 .prasadam-form{
-  background:#14100C;border:1px solid rgba(232,185,35,.18);border-radius:12px;padding:20px
+  background:#14100C;border:1px solid rgba(212,175,55,.18);border-radius:12px;padding:20px
 }
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .field{display:flex;flex-direction:column;gap:5px}
 .field.full{grid-column:1/-1}
-.field label{font-size:11px;font-weight:700;color:#E8B923}
+.field label{font-size:11px;font-weight:700;color:#D4AF37}
 .field input,.field textarea{
-  width:100%;padding:10px 11px;border:1px solid rgba(232,185,35,.30);border-radius:7px;
-  background:#0C0907;color:#FFF8F0;font:13px inherit;outline:none
+  width:100%;padding:10px 11px;border:1px solid rgba(212,175,55,.30);border-radius:7px;
+  background:#0C0907;color:#FFF8E7;font:13px inherit;outline:none
 }
-.field input:focus,.field textarea:focus{border-color:#E65100;box-shadow:0 0 0 3px rgba(230,81,0,.22)}
+.field input:focus,.field textarea:focus{border-color:#E58A24;box-shadow:0 0 0 3px rgba(230,81,0,.22)}
 .form-actions{margin-top:14px}
 .form-note{font-size:10px;color:var(--muted);margin-top:8px}
-.form-msg{font-size:12px;color:#F5D76E;margin-top:8px}
+.form-msg{font-size:12px;color:#F5D77A;margin-top:8px}
 
 /* Social */
 .subscribe{
   display:flex;align-items:center;gap:18px;padding:18px 24px;
-  background:#1A120E;border:1px solid rgba(232,185,35,.22);border-radius:14px
+  background:#0D2438;border:1px solid rgba(212,175,55,.22);border-radius:14px
 }
-.subscribe-icon{font-size:28px;color:#E8B923}
+.subscribe-icon{font-size:28px;color:#D4AF37}
 .subscribe-copy{flex:1}
 .subscribe-copy strong{font-family:"Absans","Cormorant Garamond",serif;font-size:23px}
 .subscribe-copy p{font-size:11px;color:var(--muted)}
 .subscribe form{display:flex;width:44%;max-width:430px}
-.subscribe input{flex:1;border:1px solid rgba(232,185,35,.30);border-radius:6px 0 0 6px;padding:11px;background:#0C0907;color:#FFF8F0}
-.subscribe button{border:0;border-radius:0 6px 6px 0;background:#E8B923;color:#0F0A08;padding:0 22px;font-weight:700;font-size:11px}
+.subscribe input{flex:1;border:1px solid rgba(212,175,55,.30);border-radius:6px 0 0 6px;padding:11px;background:#0C0907;color:#FFF8E7}
+.subscribe button{border:0;border-radius:0 6px 6px 0;background:#D4AF37;color:#071A2B;padding:0 22px;font-weight:700;font-size:11px}
 
 /* Footer */
-footer{padding:30px 0 18px;border-top:1px solid rgba(232,185,35,.18);background:linear-gradient(180deg,rgba(139,69,19,0),rgba(139,69,19,.30))}
+footer{padding:30px 0 18px;border-top:1px solid rgba(212,175,55,.18);background:linear-gradient(180deg,rgba(139,69,19,0),rgba(139,69,19,.30))}
 .footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:30px}
 .footer-brand .brand{margin-bottom:10px}
-.footer-title{font-size:12px;color:#E8B923;font-weight:700;text-transform:uppercase;margin-bottom:9px}
-footer p,footer li,footer a{font-size:11px;color:#C9B8A0}
+.footer-title{font-size:12px;color:#D4AF37;font-weight:700;text-transform:uppercase;margin-bottom:9px}
+footer p,footer li,footer a{font-size:11px;color:#B9B09A}
 footer ul{list-style:none;display:grid;gap:5px}
 .socials{display:flex;gap:7px;margin-top:12px}
-.socials a{width:29px;height:29px;border-radius:50%;border:1px solid rgba(232,185,35,.28);display:flex;align-items:center;justify-content:center;background:#1A120E}
+.socials a{width:29px;height:29px;border-radius:50%;border:1px solid rgba(212,175,55,.28);display:flex;align-items:center;justify-content:center;background:#0D2438}
 .socials svg{width:15px;height:15px;display:block}
 .soc-insta{color:#d6249f}.soc-yt{color:#FF0000}.soc-fb{color:#1877F2}.soc-wa{color:#25D366}
 .socials svg{fill:currentColor}
-.footer-bottom{text-align:center;margin-top:22px;padding-top:13px;border-top:1px solid rgba(232,185,35,.16);font-size:10px;color:#A89880}
-.lang-bless{text-align:center;padding:18px 10px 4px;line-height:2.05;font-size:13px;color:#E8B923}
+.footer-bottom{text-align:center;margin-top:22px;padding-top:13px;border-top:1px solid rgba(212,175,55,.16);font-size:10px;color:#A89880}
+.lang-bless{text-align:center;padding:18px 10px 4px;line-height:2.05;font-size:13px;color:#D4AF37}
 .lang-bless .lb-deity{font-size:11.5px;color:#E4D2BC}
 
 /* Floating social */
@@ -527,27 +531,27 @@ footer ul{list-style:none;display:grid;gap:5px}
 /* CALENDAR SECTION (home) */
 .controls{display:flex;gap:9px;flex-wrap:wrap}
 .calendar-intro{
-  background:#1A120E;border:1px solid rgba(232,185,35,.16);
+  background:#0D2438;border:1px solid rgba(212,175,55,.16);
   border-radius:15px;padding:18px 22px;
   margin-bottom:20px;box-shadow:var(--shadow);
   color:var(--muted);font-size:13px;
 }
 .month-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .month-card{
-  background:#1A120E;
+  background:#0D2438;
   border:1px solid var(--line);
   border-radius:13px;overflow:hidden;
   box-shadow:var(--shadow);transition:.2s;
 }
-.month-card:hover{transform:translateY(-3px);border-color:#E65100}
+.month-card:hover{transform:translateY(-3px);border-color:#E58A24}
 .month-top{
   padding:17px 18px;
   display:flex;align-items:end;justify-content:space-between;
-  background:linear-gradient(135deg,#2A1A12,#1A120E);
-  border-bottom:1px solid rgba(232,185,35,.16);
+  background:linear-gradient(135deg,#2A1A12,#0D2438);
+  border-bottom:1px solid rgba(212,175,55,.16);
 }
-.month-name{font-size:26px;color:#E8B923;font-family:"Absans","Cormorant Garamond","Noto Serif Telugu",serif}
-.month-number{color:#E65100;font:700 10px Arial,sans-serif;letter-spacing:1px}
+.month-name{font-size:26px;color:#D4AF37;font-family:"Absans","Cormorant Garamond","Noto Serif Telugu",serif}
+.month-number{color:#E58A24;font:700 10px Arial,sans-serif;letter-spacing:1px}
 .cal-table{padding:15px 16px 12px}
 .weekdays,.days{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}
 .weekdays{margin-bottom:7px}
@@ -557,19 +561,19 @@ footer ul{list-style:none;display:grid;gap:5px}
   justify-content:center;color:var(--brown);
   font:13px Arial,sans-serif;position:relative;
 }
-.days .sun{color:#E8B923}
-.days .cal-day-event{color:#E65100;font-weight:800}
+.days .sun{color:#D4AF37}
+.days .cal-day-event{color:#E58A24;font-weight:800}
 .days .cal-day-event::after{
   content:"";position:absolute;bottom:2px;
   width:5px;height:5px;border-radius:50%;
-  background:#E65100;
+  background:#E58A24;
 }
-.days .today{background:rgba(232,185,35,.16);border:2px solid #E8B923;border-radius:50%;color:#FFF8F0}
+.days .today{background:rgba(212,175,55,.16);border:2px solid #D4AF37;border-radius:50%;color:#FFF8E7}
 .cal-events{padding:0 16px 16px}
 .cal-event{display:flex;gap:11px;padding:8px 0;border-top:1px solid var(--line)}
-.cal-event-date{min-width:35px;color:#E8B923;font:800 11px Arial,sans-serif}
+.cal-event-date{min-width:35px;color:#D4AF37;font:800 11px Arial,sans-serif}
 .cal-event-text{color:#E4D2BC;font:12px/1.45 Arial,sans-serif}
-.pdf-status{margin-top:12px;min-height:18px;font-size:11px;color:#F5D76E;text-align:right}
+.pdf-status{margin-top:12px;min-height:18px;font-size:11px;color:#F5D77A;text-align:right}
 @media(max-width:1100px){.month-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.month-grid{grid-template-columns:1fr}.controls{width:100%}}
 @media(max-width:500px){.controls .btn{flex:1}}
@@ -577,20 +581,20 @@ footer ul{list-style:none;display:grid;gap:5px}
 /* Floating upcoming temple openings */
 .float-opens{
   position:fixed;left:15px;top:60%;z-index:900;
-  background:rgba(15,10,8,.94);border:1px solid rgba(232,185,35,.30);
+  background:rgba(15,10,8,.94);border:1px solid rgba(212,175,55,.30);
   border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.45);backdrop-filter:blur(10px);
   padding:11px 12px;width:158px;
 }
 .float-opens h4{
   margin:0 0 5px;font-size:10px;font-family:"Noto Sans",sans-serif;
-  letter-spacing:.07em;text-transform:uppercase;color:#E8B923;
+  letter-spacing:.07em;text-transform:uppercase;color:#D4AF37;
 }
-.float-opens a{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(232,185,35,.16)}
-.float-opens a:hover .fo-d{color:#E65100}
-.fo-d{font:800 12px Arial,sans-serif;color:#E8B923;min-width:52px}
-.fo-t{font:600 9.5px Arial,sans-serif;color:#C9B8A0;line-height:1.3}
+.float-opens a{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid rgba(212,175,55,.16)}
+.float-opens a:hover .fo-d{color:#E58A24}
+.fo-d{font:800 12px Arial,sans-serif;color:#D4AF37;min-width:52px}
+.fo-t{font:600 9.5px Arial,sans-serif;color:#B9B09A;line-height:1.3}
 .month-card.flash{animation:flashRing 1.6s ease}
-@keyframes flashRing{0%,40%{box-shadow:0 0 0 3px #E65100}100%{box-shadow:0 0 0 3px rgba(230,81,0,0)}}
+@keyframes flashRing{0%,40%{box-shadow:0 0 0 3px #E58A24}100%{box-shadow:0 0 0 3px rgba(230,81,0,0)}}
 @media(max-width:700px){
   .float-opens{display:block;left:8px;top:auto;bottom:66px;width:130px;padding:8px 9px;opacity:.95}
   .float-opens h4{font-size:8px;margin:0 0 3px}
@@ -604,28 +608,28 @@ footer ul{list-style:none;display:grid;gap:5px}
 .sv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .sv-card{
   display:flex;flex-direction:column;gap:8px;height:100%;
-  background:#1A120E;border:1px solid rgba(232,185,35,.14);border-radius:14px;
+  background:#0D2438;border:1px solid rgba(212,175,55,.14);border-radius:14px;
   padding:20px 20px 17px;box-shadow:var(--shadow);transition:.2s;
 }
 .sv-card:hover{transform:translateY(-3px);border-color:var(--gold)}
 .sv-icon{font-size:26px}
 .sv-card strong{font-size:17px;line-height:1.25;font-family:"Cormorant Garamond","Noto Serif Telugu",serif}
 .sv-card p{font-size:12px;color:var(--muted);line-height:1.5}
-.sv-go{font-size:11px;font-weight:800;color:#E8B923;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
-.sv-card:hover .sv-go{color:#E65100}
+.sv-go{font-size:11px;font-weight:800;color:#D4AF37;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.sv-card:hover .sv-go{color:#E58A24}
 
 /* 🎉 PRASADAM MONTHLY LUCKY DRAW — WINNERS */
-.pras-win{margin-top:28px;background:linear-gradient(145deg,#1A120E,#2A1C14);border:1px solid rgba(232,185,35,.28);border-radius:16px;padding:22px 22px 20px;box-shadow:0 14px 34px rgba(0,0,0,.38);position:relative;overflow:hidden}
-.pras-win:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:#E8B923}
-.pras-win h3{margin:2px 0 4px;font-size:22px;color:#FFF8F0}
+.pras-win{margin-top:28px;background:linear-gradient(145deg,#0D2438,#2A1C14);border:1px solid rgba(212,175,55,.28);border-radius:16px;padding:22px 22px 20px;box-shadow:0 14px 34px rgba(0,0,0,.38);position:relative;overflow:hidden}
+.pras-win:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:#D4AF37}
+.pras-win h3{margin:2px 0 4px;font-size:22px;color:#FFF8E7}
 .pras-win .pw-sub{font-size:13px;color:#E4D2BC;margin:0 0 12px;line-height:1.5}
 .pw-list{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 2px}
-.pw-chip{display:flex;align-items:center;gap:9px;background:#14100C;border:1px solid rgba(232,185,35,.28);border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px rgba(0,0,0,.28)}
-.pw-chip .pw-ava{width:30px;height:30px;border-radius:50%;background:#8B4513;display:flex;align-items:center;justify-content:center;font-weight:800;color:#FFF8F0;font-size:14px;flex:none}
-.pw-chip .pw-n{font-weight:700;color:#FFF8F0;font-size:14px}
-.pw-chip .pw-m{font-size:11px;color:#E8B923;font-weight:600}
-.pw-month{font-size:12px;font-weight:700;color:#E65100;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
-.pw-pending{font-size:13.5px;color:#E4D2BC;background:rgba(232,185,35,.06);border:1px dashed rgba(230,81,0,.45);border-radius:10px;padding:12px 14px}
+.pw-chip{display:flex;align-items:center;gap:9px;background:#14100C;border:1px solid rgba(212,175,55,.28);border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px rgba(0,0,0,.28)}
+.pw-chip .pw-ava{width:30px;height:30px;border-radius:50%;background:#E58A24;display:flex;align-items:center;justify-content:center;font-weight:800;color:#FFF8E7;font-size:14px;flex:none}
+.pw-chip .pw-n{font-weight:700;color:#FFF8E7;font-size:14px}
+.pw-chip .pw-m{font-size:11px;color:#D4AF37;font-weight:600}
+.pw-month{font-size:12px;font-weight:700;color:#E58A24;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.pw-pending{font-size:13.5px;color:#E4D2BC;background:rgba(212,175,55,.06);border:1px dashed rgba(230,81,0,.45);border-radius:10px;padding:12px 14px}
 @media(max-width:700px){.pras-win{padding:16px 14px}.pw-chip{flex:1 1 46%}}
 .sv-note{margin-top:13px;font-size:11px;color:var(--muted)}
 @media(max-width:800px){.sv-grid{grid-template-columns:1fr}}
@@ -650,32 +654,32 @@ footer ul{list-style:none;display:grid;gap:5px}
 }
 
 /* Ayyappa palette — quiet temple light */
-::selection{background:#E65100;color:#0F0A08}
-:focus-visible{outline:2px solid #E8B923;outline-offset:3px}
+::selection{background:#E58A24;color:#071A2B}
+:focus-visible{outline:2px solid #D4AF37;outline-offset:3px}
 ::placeholder{color:#A89880;opacity:1}
-input,textarea,select{caret-color:#E8B923}
+input,textarea,select{caret-color:#D4AF37}
 input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{
-  -webkit-text-fill-color:#FFF8F0;
+  -webkit-text-fill-color:#FFF8E7;
   box-shadow:0 0 0 1000px #0C0907 inset;
   -webkit-box-shadow:0 0 0 1000px #0C0907 inset;
   transition:background-color 9999s ease-out 0s;
 }
 .nav-bar:after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:2px;pointer-events:none;
-  background:linear-gradient(90deg,transparent,#E8B923 16%,#E8B923 84%,transparent);
+  background:linear-gradient(90deg,transparent,#D4AF37 16%,#D4AF37 84%,transparent);
 }
-.lang select option{background:#1A120E;color:#FFF8F0}
-footer a:hover{color:#E65100}
-.prasadam strong,.calendar-intro strong{color:#E8B923}
-.gallery-item{border-color:rgba(232,185,35,.16)}
-.gallery-item:hover{border-color:#E8B923}
-h1,h2,h3,.section-title,.card-title,.event-name{color:#FFF8F0}
-.card-title{color:#FFF8F0}
-input[type="checkbox"]{accent-color:#E65100}
+.lang select option{background:#0D2438;color:#FFF8E7}
+footer a:hover{color:#E58A24}
+.prasadam strong,.calendar-intro strong{color:#D4AF37}
+.gallery-item{border-color:rgba(212,175,55,.16)}
+.gallery-item:hover{border-color:#D4AF37}
+h1,h2,h3,.section-title,.card-title,.event-name{color:#FFF8E7}
+.card-title{color:#FFF8E7}
+input[type="checkbox"]{accent-color:#E58A24}
 ::-webkit-scrollbar{width:10px;height:10px}
-::-webkit-scrollbar-track{background:#0F0A08}
-::-webkit-scrollbar-thumb{background:#8B4513;border-radius:99px;border:2px solid #0F0A08}
-::-webkit-scrollbar-thumb:hover{background:#E65100}
+::-webkit-scrollbar-track{background:#071A2B}
+::-webkit-scrollbar-thumb{background:#E58A24;border-radius:99px;border:2px solid #071A2B}
+::-webkit-scrollbar-thumb:hover{background:#E58A24}
 
 
 /* Temple cursor — small gold dot only. No ring, so it does not sit in the nav as a circle. */
@@ -684,7 +688,7 @@ input[type="checkbox"]{accent-color:#E65100}
   html.has-cursor input, html.has-cursor textarea, html.has-cursor select, html.has-cursor option{cursor:auto}
   .cursor-dot{
     position:fixed;top:0;left:0;z-index:100000;pointer-events:none;border-radius:50%;
-    width:8px;height:8px;background:#E8B923;
+    width:8px;height:8px;background:#D4AF37;
     transform:translate(-50%,-50%);
     opacity:0;
   }
@@ -694,32 +698,32 @@ input[type="checkbox"]{accent-color:#E65100}
 
 /* Temple reading of the Fluent layout — pills, chips, soft cards. Sacred black stays. */
 .btn{border-radius:999px}
-.btn-gold{box-shadow:0 10px 22px rgba(232,185,35,.22)}
+.btn-gold{box-shadow:0 10px 22px rgba(212,175,55,.22)}
 .btn-gold:hover{transform:translateY(-1px)}
 .kicker,.section-kicker{
   display:inline-flex;align-items:center;width:fit-content;
-  border:1px solid rgba(232,185,35,.34);background:rgba(232,185,35,.08);
+  border:1px solid rgba(212,175,55,.34);background:rgba(212,175,55,.08);
   border-radius:999px;padding:5px 11px;
 }
 .section-kicker{margin-bottom:8px}
 .quick-card,.sv-card,.about,.event{border-radius:22px}
 .quick-card{
   background:
-    radial-gradient(circle at 100% 0%,rgba(232,185,35,.10),transparent 46%),
-    #1A120E;
+    radial-gradient(circle at 100% 0%,rgba(212,175,55,.10),transparent 46%),
+    #0D2438;
 }
 .quick-icon{
   width:40px;height:40px;margin:0 auto 8px;border-radius:14px;
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,#F5D76E,#E8B923);color:#0F0A08;
-  font-size:18px;box-shadow:0 8px 16px rgba(232,185,35,.22);
+  background:linear-gradient(180deg,#F5D77A,#D4AF37);color:#071A2B;
+  font-size:18px;box-shadow:0 8px 16px rgba(212,175,55,.22);
 }
-.circle-arrow{background:#E65100;border-color:#E65100;color:#FFF8F0}
+.circle-arrow{background:#E58A24;border-color:#E58A24;color:#FFF8E7}
 .stat{border-right:0;align-items:center}
 .stat-icon{
   width:34px;height:34px;border-radius:50%;flex:none;
   display:inline-flex;align-items:center;justify-content:center;
-  background:#E65100;color:#FFF8F0;font-size:13px;
+  background:#E58A24;color:#FFF8E7;font-size:13px;
   box-shadow:0 8px 16px rgba(230,81,0,.28);
 }
 .stat strong{font-size:26px;line-height:1}
@@ -728,12 +732,12 @@ input[type="checkbox"]{accent-color:#E65100}
 .hero-marks span{
   width:34px;height:34px;border-radius:50%;
   display:inline-flex;align-items:center;justify-content:center;
-  background:#E8B923;color:#0F0A08;
+  background:#D4AF37;color:#071A2B;
   font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:700;line-height:1;
   box-shadow:0 8px 16px rgba(0,0,0,.28);
 }
-.hero-marks span:nth-child(2){background:#E65100;color:#FFF8F0}
-.hero-marks span:nth-child(3){background:#F5D76E}
+.hero-marks span:nth-child(2){background:#E58A24;color:#FFF8E7}
+.hero-marks span:nth-child(3){background:#F5D77A}
 .hero-watch{
   position:relative;display:inline-block;width:176px;height:84px;
   margin-left:16px;vertical-align:middle;text-decoration:none;
@@ -741,14 +745,14 @@ input[type="checkbox"]{accent-color:#E65100}
 .hero-ripples{
   position:absolute;right:6px;top:-8px;width:86px;height:86px;border-radius:50%;
   background:
-    radial-gradient(circle,transparent 42%,rgba(232,185,35,.34) 43% 46%,transparent 47%),
-    radial-gradient(circle,transparent 62%,rgba(232,185,35,.22) 63% 66%,transparent 67%),
+    radial-gradient(circle,transparent 42%,rgba(212,175,55,.34) 43% 46%,transparent 47%),
+    radial-gradient(circle,transparent 62%,rgba(212,175,55,.22) 63% 66%,transparent 67%),
     radial-gradient(circle,transparent 80%,rgba(230,81,0,.2) 81% 84%,transparent 85%);
   pointer-events:none;
 }
 .hero-watch-pill{
   position:absolute;left:0;top:22px;
-  background:#E65100;color:#FFF8F0;
+  background:#E58A24;color:#FFF8E7;
   font-family:"Cormorant Garamond",serif;font-weight:700;font-size:30px;line-height:1;
   padding:9px 20px 11px;border-radius:16px;letter-spacing:-.02em;
   transform:rotate(-8deg);
@@ -757,7 +761,7 @@ input[type="checkbox"]{accent-color:#E65100}
 }
 .hero-watch-play{
   position:absolute;right:10px;top:2px;width:32px;height:32px;border-radius:50%;
-  background:#E65100;color:#FFF8F0;display:flex;align-items:center;justify-content:center;
+  background:#E58A24;color:#FFF8E7;display:flex;align-items:center;justify-content:center;
   box-shadow:0 8px 16px rgba(230,81,0,.4);
 }
 .hero-watch-play svg{display:block}
@@ -777,81 +781,81 @@ input[type="checkbox"]{accent-color:#E65100}
   font-weight:700;
   letter-spacing:.01em;
   text-transform:none;
-  border:1px solid rgba(232,185,35,.45);
+  border:1px solid rgba(212,175,55,.45);
   background:transparent;
-  color:#FFF8F0;
+  color:#FFF8E7;
   box-shadow:none;
   transition:transform .2s ease,background .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease;
 }
 .btn:hover:not(.btn-gold){
-  background:rgba(232,185,35,.10);
-  color:#E8B923;
-  border-color:#E8B923;
+  background:rgba(212,175,55,.10);
+  color:#D4AF37;
+  border-color:#D4AF37;
   transform:translateY(-1px);
 }
 .btn-gold{
-  background:linear-gradient(180deg,#F5D76E 0%,#E8B923 100%);
-  border-color:#E8B923;
-  color:#0F0A08;
-  box-shadow:0 10px 22px rgba(232,185,35,.24);
+  background:linear-gradient(180deg,#F5D77A 0%,#D4AF37 100%);
+  border-color:#D4AF37;
+  color:#071A2B;
+  box-shadow:0 10px 22px rgba(212,175,55,.24);
 }
 .btn-gold:hover{
-  color:#0F0A08;
+  color:#071A2B;
   background:linear-gradient(180deg,#FBE7A0,#F0C94A);
-  border-color:#F5D76E;
+  border-color:#F5D77A;
   box-shadow:0 14px 26px rgba(230,81,0,.28);
   transform:translateY(-1px);
 }
 .btn-light{
-  background:#241810;
-  color:#E8B923;
-  border-color:rgba(232,185,35,.42);
+  background:#142C42;
+  color:#D4AF37;
+  border-color:rgba(212,175,55,.42);
   box-shadow:0 8px 18px rgba(0,0,0,.22);
 }
-.btn-light:hover{background:#2C1C12;color:#F5D76E;border-color:#E8B923}
+.btn-light:hover{background:#2C1C12;color:#F5D77A;border-color:#D4AF37}
 .field label{
-  font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#E8B923;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#D4AF37;
 }
 .field input,.field textarea,.field select,
 .subscribe input{
-  border:1px solid rgba(232,185,35,.32);
+  border:1px solid rgba(212,175,55,.32);
   border-radius:999px;
   background:#14100C;
-  color:#FFF8F0;
+  color:#FFF8E7;
   padding:12px 16px;
   font:500 14px/1.4 "Noto Sans","Noto Sans Telugu",sans-serif;
 }
 .field textarea{border-radius:16px;min-height:108px;resize:vertical}
 .field input:focus,.field textarea:focus,.field select:focus,.subscribe input:focus{
-  border-color:#E8B923;
-  box-shadow:0 0 0 4px rgba(232,185,35,.16);
+  border-color:#D4AF37;
+  box-shadow:0 0 0 4px rgba(212,175,55,.16);
 }
 .prasadam-form{
   border-radius:22px;
-  border-color:rgba(232,185,35,.22);
-  background:#1A120E;
+  border-color:rgba(212,175,55,.22);
+  background:#0D2438;
   padding:22px;
 }
-.subscribe{border-radius:22px;border-color:rgba(232,185,35,.22)}
+.subscribe{border-radius:22px;border-color:rgba(212,175,55,.22)}
 .subscribe form{gap:8px;align-items:center}
 .subscribe input{min-width:0}
 .subscribe button{
   border:0;border-radius:999px;height:44px;padding:0 18px;flex:none;
-  background:linear-gradient(180deg,#F5D76E,#E8B923);
-  color:#0F0A08;font-weight:700;font-size:13px;letter-spacing:.01em;text-transform:none;
-  box-shadow:0 8px 18px rgba(232,185,35,.22);
+  background:linear-gradient(180deg,#F5D77A,#D4AF37);
+  color:#071A2B;font-weight:700;font-size:13px;letter-spacing:.01em;text-transform:none;
+  box-shadow:0 8px 18px rgba(212,175,55,.22);
 }
 .subscribe button:hover{background:linear-gradient(180deg,#FBE7A0,#F0C94A)}
 .lang{
   border-radius:999px;min-height:40px;
-  border-color:rgba(232,185,35,.42);background:#1A120E;
+  border-color:rgba(212,175,55,.42);background:#0D2438;
 }
-.lang select{color:#FFF8F0;font-weight:700}
+.lang select{color:#FFF8E7;font-weight:700}
 .menu{
-  border-radius:999px;border-color:rgba(232,185,35,.42);
-  background:#1A120E;color:#E8B923;padding:8px 14px;
+  border-radius:999px;border-color:rgba(212,175,55,.42);
+  background:#0D2438;color:#D4AF37;padding:8px 14px;
 }
-input[type="checkbox"]{accent-color:#E8B923;width:16px;height:16px}
+input[type="checkbox"]{accent-color:#D4AF37;width:16px;height:16px}
 .month-card,.gallery-item,.pw-chip,.event{border-radius:20px}
 .float-social a{border-radius:50%}
 .quick-card,.sv-card,.about{border-radius:22px}
@@ -869,9 +873,9 @@ body::before{
   background-color:#F6E4C8;
   background-image:
     radial-gradient(ellipse 72% 40% at 50% -8%, rgba(230,81,0,.34), transparent 58%),
-    radial-gradient(ellipse 38% 30% at 0% 28%, rgba(232,185,35,.42), transparent 68%),
+    radial-gradient(ellipse 38% 30% at 0% 28%, rgba(212,175,55,.42), transparent 68%),
     radial-gradient(ellipse 34% 28% at 100% 68%, rgba(194,65,12,.18), transparent 70%),
-    radial-gradient(ellipse 80% 28% at 50% 108%, rgba(232,185,35,.28), transparent 62%),
+    radial-gradient(ellipse 80% 28% at 50% 108%, rgba(212,175,55,.28), transparent 62%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath d='M36 2 L70 36 L36 70 L2 36 Z' fill='none' stroke='%238C3A1E' stroke-opacity='0.16' stroke-width='0.8'/%3E%3Ccircle cx='36' cy='36' r='1.15' fill='%23C45C26' fill-opacity='0.28'/%3E%3C/svg%3E");
   background-size:auto,auto,auto,auto,72px 72px;
   background-repeat:no-repeat,no-repeat,no-repeat,no-repeat,repeat;
@@ -884,27 +888,33 @@ body::before{
   background:rgba(230,81,0,.10);
 }
 .about .section-title,.about .section-kicker,.prasadam .section-kicker,.hero .kicker{
-  color:#E8B923;
-  border-color:rgba(232,185,35,.34);
-  background:rgba(232,185,35,.08);
+  color:#D4AF37;
+  border-color:rgba(212,175,55,.34);
+  background:rgba(212,175,55,.08);
 }
-.about .section-title{color:#FFF8F0;background:transparent;border:0;padding:0}
-.notice-bar{background:#8C3A1E;color:#FFF8F0}
-.nav-bar{background:#7A3418;color:#FFF8F0}
+.about .section-title{color:#FFF8E7;background:transparent;border:0;padding:0}
+.notice-bar{background:#8C3A1E;color:#FFF8E7}
+.nav-bar{background:#7A3418;color:#FFF8E7}
 .hero{
   background:
     radial-gradient(ellipse 62% 48% at 76% 16%,rgba(245,215,110,.16),transparent 56%),
     linear-gradient(165deg,#8C3A1E 0%,#6B2412 58%,#A3522A 100%);
 }
 .notice-bar,.top-band,.nav-bar,.hero,.quick-card,.sv-card,.about,.event,.month-card,.prasadam,.subscribe,.prasadam-form,.float-opens{
-  color:#FFF8F0;
+  color:#FFF8E7;
 }
 footer{
   background:#7C2D12;
-  color:#FFF8F0;
+  color:#FFF8E7;
   border-top:1px solid rgba(245,215,110,.35);
 }
-footer a{color:#FFF8F0}
+footer a{color:#FFF8E7}
+
+/* ===== Royal Sabarimala Night — gold discipline ===== */
+.hero h1 span{color:#FFF8E7;}
+.hero h1 span.gold-sacred{color:var(--gold);text-shadow:0 0 34px rgba(212,175,55,.35);}
+.brand-platform{font-family:"Cinzel",serif;font-size:.6rem;letter-spacing:.26em;color:var(--saffron);margin-top:3px;text-transform:uppercase;}
+.brand-name{color:#FFF8E7;}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -942,8 +952,9 @@ footer a{color:#FFF8F0}
     <a class="brand" href="/">
       <img class="brand-logo" src="/assets/logo.jpg" alt="Thathwamasi logo" onerror="this.style.display='none'">
       <div>
-        <div class="brand-name">THATHWAMASI</div>
-        <div class="brand-sub" data-i18n="brand_sub">The Digital Home of<br>Sarvam Sabarigireesha</div>
+        <div class="brand-name">SARVAM SABARIGIREESHA</div>
+        <div class="brand-sub" data-i18n="brand_sub">The Digital Home of<br>Ayyappa Devotees</div>
+        <div class="brand-platform">Thathwamasi</div>
       </div>
     </a>
     <div class="band-center">
@@ -965,7 +976,7 @@ footer a{color:#FFF8F0}
         <a href="/contact/" data-i18n="contact">Contact</a>
       </nav>
       <div class="lang">
-        <span style="display:flex;align-items:center;color:#E8B923"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+        <span style="display:flex;align-items:center;color:#D4AF37"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
         <select id="language" aria-label="Language">
           <option value="en">English</option>
           <option value="te">తెలుగు</option>
@@ -1274,7 +1285,7 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxGRL8iwvCfVQO
 const T = {
 en:{
 notice:"Mandala Kalam Vratham period — special Darshan and Puja schedule in effect.",
-brand_sub:"The Digital Home of<br>Sarvam Sabarigireesha",home:"Home",about:"About",journey:"Journey",calendar:"Calendar",prasadam:"Prasadam",reels:"Reels",videos:"Videos",gallery:"Gallery",community:"Community",contact:"Contact",
+brand_sub:"The Digital Home of<br>Ayyappa Devotees",home:"Home",about:"About",journey:"Journey",calendar:"Calendar",prasadam:"Prasadam",reels:"Reels",videos:"Videos",gallery:"Gallery",community:"Community",contact:"Contact",
 hero_kicker:"Sarvam Sabarigireesha",hero_line1:"SWAMIYE",hero_line2:"SHARANAM",hero_line3:"AYYAPPA",hero_copy:"A Sacred Path. A Divine Presence.<br>A Community United in Devotion.",join:"Join Our Community",devotees:"Devotees",journeys:"Journeys",videos_stat:"Videos",years:"Years of Seva",
 q_calendar:"Sabarimala<br>Calendar",q_calendar_p:"Sacred dates, Uthiram, Sreekovil openings and important events.",q_prasadam:"Ayyappa<br>Prasadam",q_prasadam_p:"Register for prasadam. Selected devotees are notified and prasadam is shipped.",q_journey:"The<br>Journey",q_journey_p:"Walk of devotion, faith and surrender to Lord Ayyappa.",q_reels_p:"Short divine moments shared with love and devotion.",q_videos_p:"Watch spiritual videos, discourses and temple experiences.",q_gallery:"Gallery",q_gallery_p:"Divine photos from Sabarimala and our journeys.",
 about_kicker:"About Thathwamasi",about_title:"More Than a Website,<br>It’s a Spiritual Movement",about_text:"Thathwamasi is the digital home of Sarvam Sabarigireesha, created to inspire devotees, share divine content, document sacred journeys and build a global community of Ayyappa bhaktas.",know_more:"Know More About Us",
@@ -1286,7 +1297,7 @@ fo_title:"Upcoming Temple Open Dates",cal_sectionKicker:"Sabarimala Calendar",ca
 },
 te:{
 notice:"మండల కాల వ్రత కాలం — ప్రత్యేక దర్శనం మరియు పూజా కార్యక్రమాల షెడ్యూల్ అమలులో ఉంది.",
-brand_sub:"సర్వం సబరిగిరీశ యొక్క డిజిటల్ హోమ్",home:"హోమ్",about:"గురించి",journey:"యాత్ర",calendar:"క్యాలెండర్",prasadam:"ప్రసాదం",reels:"రీల్స్",videos:"వీడియోలు",gallery:"గ్యాలరీ",community:"కమ్యూనిటీ",contact:"సంప్రదించండి",
+brand_sub:"అయ్యప్ప భక్తుల డిజిటల్ హోమ్",home:"హోమ్",about:"గురించి",journey:"యాత్ర",calendar:"క్యాలెండర్",prasadam:"ప్రసాదం",reels:"రీల్స్",videos:"వీడియోలు",gallery:"గ్యాలరీ",community:"కమ్యూనిటీ",contact:"సంప్రదించండి",
 hero_kicker:"స్వామియే శరణం అయ్యప్ప",hero_line1:"స్వామియే",hero_line2:"శరణం",hero_line3:"అయ్యప్ప",hero_copy:"ఒక పవిత్ర మార్గం. ఒక దైవిక సాన్నిధ్యం.<br>భక్తితో ఏకమైన సమాజం.",join:"మన కమ్యూనిటీలో చేరండి",devotees:"భక్తులు",journeys:"యాత్రలు",videos_stat:"వీడియోలు",years:"సేవా సంవత్సరాలు",
 q_calendar:"శబరిమల<br>క్యాలెండర్",q_calendar_p:"పవిత్ర తేదీలు, ఉత్రం, శ్రీకోవిల్ ప్రారంభాలు మరియు ముఖ్యమైన కార్యక్రమాలు.",q_prasadam:"అయ్యప్ప<br>ప్రసాదం",q_prasadam_p:"ప్రసాదం కోసం నమోదు చేసుకోండి. ఎంపికైన భక్తులకు సమాచారం పంపబడుతుంది.",q_journey:"పవిత్ర<br>యాత్ర",q_journey_p:"అయ్యప్ప స్వామిపై భక్తి, విశ్వాసం మరియు శరణాగతి మార్గం.",q_reels_p:"భక్తితో పంచుకునే చిన్న దైవిక క్షణాలు.",q_videos_p:"ఆధ్యాత్మిక వీడియోలు, ప్రసంగాలు మరియు ఆలయ అనుభవాలు చూడండి.",q_gallery:"గ్యాలరీ",q_gallery_p:"శబరిమల మరియు మా యాత్రల దైవిక చిత్రాలు.",
 about_kicker:"తత్వమసి గురించి",about_title:"ఇది కేవలం వెబ్‌సైట్ కాదు,<br>ఇది ఒక ఆధ్యాత్మిక ఉద్యమం",about_text:"తత్వమసి సర్వం సబరిగిరీశ యొక్క డిజిటల్ హోమ్. భక్తులను ప్రేరేపించడం, దైవిక కంటెంట్ పంచుకోవడం, పవిత్ర యాత్రలను నమోదు చేయడం మరియు అయ్యప్ప భక్తుల గ్లోబల్ కమ్యూనిటీని నిర్మించడం దీని లక్ష్యం.",know_more:"మా గురించి మరింత తెలుసుకోండి",
@@ -1299,7 +1310,7 @@ fo_title:"రాబోయే టెంపుల్ ఓపెనింగ్ త�
 };
 T.hi={
 notice:"मंडल काल व्रत अवधि — विशेष दर्शन और पूजा कार्यक्रम लागू है।",
-brand_sub:"सर्वम सबरीगिरीश का<br>डिजिटल घर",home:"होम",about:"परिचय",journey:"यात्रा",calendar:"कैलेंडर",prasadam:"प्रसाद",reels:"रील्स",videos:"वीडियो",gallery:"गैलरी",community:"समुदाय",contact:"संपर्क",
+brand_sub:"अय्यप्पा भक्तों का<br>डिजिटल घर",home:"होम",about:"परिचय",journey:"यात्रा",calendar:"कैलेंडर",prasadam:"प्रसाद",reels:"रील्स",videos:"वीडियो",gallery:"गैलरी",community:"समुदाय",contact:"संपर्क",
 hero_kicker:"स्वामिये शरणम अय्यप्पा",hero_line1:"स्वामिये",hero_line2:"शरणम",hero_line3:"अय्यप्पा",hero_copy:"एक पवित्र मार्ग. एक दिव्य उपस्थिति.<br>भक्ति में एकजुट समुदाय.",join:"हमारे समुदाय से जुड़ें",devotees:"भक्त",journeys:"यात्राएँ",videos_stat:"वीडियो",years:"सेवा वर्ष",
 q_calendar:"सबरीमाला<br>कैलेंडर",q_calendar_p:"पवित्र तिथियाँ, उत्तिरम, श्रीकोविल उद्घाटन और महत्वपूर्ण कार्यक्रम.",q_prasadam:"अय्यप्पा<br>प्रसाद",q_prasadam_p:"प्रसाद के लिए पंजीकरण करें. चयनित भक्तों को सूचित किया जाता है और प्रसाद भेजा जाता है.",q_journey:"पवित्र<br>यात्रा",q_journey_p:"भगवान अय्यप्पा के प्रति भक्ति, विश्वास और समर्पण की यात्रा.",q_reels_p:"प्रेम और भक्ति के साथ साझा किए गए छोटे दिव्य क्षण.",q_videos_p:"आध्यात्मिक वीडियो, प्रवचन और मंदिर अनुभव देखें.",q_gallery:"गैलरी",q_gallery_p:"सबरीमाला और हमारी यात्राओं की दिव्य तस्वीरें.",
 about_kicker:"तत्त्वमसि के बारे में",about_title:"यह सिर्फ वेबसाइट नहीं,<br>एक आध्यात्मिक आंदोलन है",about_text:"तत्त्वमसि सर्वम सबरीगिरीश का डिजिटल घर है — भक्तों को प्रेरित करने, दिव्य सामग्री साझा करने, पवित्र यात्राओं को दर्ज करने और अय्यप्पा भक्तों के वैश्विक समुदाय के निर्माण के लिए बनाया गया है.",know_more:"हमारे बारे में और जानें",
@@ -1311,7 +1322,7 @@ fo_title:"आगामी मंदिर खुलने की तिथिय
 };
 T.ml={
 notice:"മണ്ഡല കാല വ്രത സമയം — പ്രത്യേക ദർശന, പൂജാ ഷെഡ്യൂൾ പ്രാബല്യത്തിലാണ്.",
-brand_sub:"സർവ്വം ശബരിഗിരീശിന്റെ<br>ഡിജിറ്റൽ ഹോം",home:"ഹോം",about:"കുറിച്ച്",journey:"യാത്ര",calendar:"കലണ്ടർ",prasadam:"പ്രസാദം",reels:"റീൽസ്",videos:"വീഡിയോകൾ",gallery:"ഗാലറി",community:"കമ്മ്യൂണിറ്റി",contact:"ബന്ധപ്പെടുക",
+brand_sub:"അയ്യപ്പ ഭക്തരുടെ<br>ഡിജിറ്റൽ ഹോം",home:"ഹോം",about:"കുറിച്ച്",journey:"യാത്ര",calendar:"കലണ്ടർ",prasadam:"പ്രസാദം",reels:"റീൽസ്",videos:"വീഡിയോകൾ",gallery:"ഗാലറി",community:"കമ്മ്യൂണിറ്റി",contact:"ബന്ധപ്പെടുക",
 hero_kicker:"സ്വാമിയേ ശരണം അയ്യപ്പാ",hero_line1:"സ്വാമിയേ",hero_line2:"ശരണം",hero_line3:"അയ്യപ്പാ",hero_copy:"ഒരു പവിത്രമായ പാത. ഒരു ദിവ്യ സാന്നിധ്യം.<br>ഭക്തിയിൽ ഒന്നിച്ച ഒരു സമൂഹം.",join:"ഞങ്ങളുടെ കമ്മ്യൂണിറ്റിയിൽ ചേരുക",devotees:"ഭക്തർ",journeys:"യാത്രകൾ",videos_stat:"വീഡിയോകൾ",years:"സേവന വർഷങ്ങൾ",
 q_calendar:"ശബരിമല<br>കലണ്ടർ",q_calendar_p:"പവിത്ര തീയതികൾ, ഉത്തിരം, ശ്രീകോവിൽ തുറപ്പുകൾ, പ്രധാന പരിപാടികൾ.",q_prasadam:"അയ്യപ്പ<br>പ്രസാദം",q_prasadam_p:"പ്രസാദത്തിനായി രജിസ്റ്റർ ചെയ്യുക. തിരഞ്ഞെടുക്കപ്പെട്ട ഭക്തരെ അറിയിച്ച് പ്രസാദം അയയ്ക്കും.",q_journey:"പവിത്ര<br>യാത്ര",q_journey_p:"അയ്യപ്പന്മേലുള്ള ഭക്തിയുടെയും വിശ്വാസത്തിന്റെയും ശരണാഗതിയുടെയും യാത്ര.",q_reels_p:"സ്നേഹത്തോടെയും ഭക്തിയോടെയും പങ്കിടുന്ന ചെറു ദിവ്യ നിമിഷങ്ങൾ.",q_videos_p:"ആധ്യാത്മിക വീഡിയോകൾ, പ്രഭാഷണങ്ങൾ, ക്ഷേത്ര അനുഭവങ്ങൾ കാണുക.",q_gallery:"ഗാലറി",q_gallery_p:"ശബരിമലയിലെയും ഞങ്ങളുടെ യാത്രകളിലെയും ദിവ്യ ചിത്രങ്ങൾ.",
 about_kicker:"തത്ത്വമസിയെ കുറിച്ച്",about_title:"ഇതൊരു വെബ്സൈറ്റ് മാത്രമല്ല,<br>ഒരു ആധ്യാത്മിക പ്രസ്ഥാനമാണ്",about_text:"തത്ത്വമസി സർവ്വം ശബരിഗിരീശിന്റെ ഡിജിറ്റൽ ഹോം ആണ് — ഭക്തരെ പ്രചോദിപ്പിക്കാനും ദിവ്യ ഉള്ളടക്കം പങ്കിടാനും പവിത്ര യാത്രകൾ രേഖപ്പെടുത്താനും അയ്യപ്പ ഭക്തരുടെ ആഗോള കമ്മ്യൂണിറ്റി കെട്ടിപ്പടുക്കാനും ഉദ്ദേശിച്ചുള്ളതാണ്.",know_more:"ഞങ്ങളെ കുറിച്ച് കൂടുതൽ അറിയുക",
@@ -1323,7 +1334,7 @@ fo_title:"വരാനിരിക്കുന്ന ക്ഷേത്ര ത�
 };
 T.kn={
 notice:"ಮಂಡಲ ಕಾಲ ವ್ರತ ಅವಧಿ — ವಿಶೇಷ ದರ್ಶನ ಮತ್ತು ಪೂಜಾ ವೇಳಾಪಟ್ಟಿ ಜಾರಿಯಲ್ಲಿದೆ.",
-brand_sub:"ಸರ್ವಂ ಶಬರಿಗಿರೀಶರ<br>ಡಿಜಿಟಲ್ ಮನೆ",home:"ಹೋಮ್",about:"ಕುರಿತು",journey:"ಯಾತ್ರೆ",calendar:"ಕ್ಯಾಲೆಂಡರ್",prasadam:"ಪ್ರಸಾದ",reels:"ರೀಲ್ಸ್",videos:"ವೀಡಿಯೊಗಳು",gallery:"ಗ್ಯಾಲರಿ",community:"ಸಮುದಾಯ",contact:"ಸಂಪರ್ಕಿಸಿ",
+brand_sub:"ಅಯ್ಯಪ್ಪ ಭಕ್ತರ<br>ಡಿಜಿಟಲ್ ಮನೆ",home:"ಹೋಮ್",about:"ಕುರಿತು",journey:"ಯಾತ್ರೆ",calendar:"ಕ್ಯಾಲೆಂಡರ್",prasadam:"ಪ್ರಸಾದ",reels:"ರೀಲ್ಸ್",videos:"ವೀಡಿಯೊಗಳು",gallery:"ಗ್ಯಾಲರಿ",community:"ಸಮುದಾಯ",contact:"ಸಂಪರ್ಕಿಸಿ",
 hero_kicker:"ಸ್ವಾಮಿಯೇ ಶರಣಂ ಅಯ್ಯಪ್ಪ",hero_line1:"ಸ್ವಾಮಿಯೇ",hero_line2:"ಶರಣಂ",hero_line3:"ಅಯ್ಯಪ್ಪ",hero_copy:"ಒಂದು ಪವಿತ್ರ ಹಾದಿ. ಒಂದು ದೈವಿಕ ಸಾನ್ನಿಧ್ಯ.<br>ಭಕ್ತಿಯಲ್ಲಿ ಒಂದಾಗಿರುವ ಸಮುದಾಯ.",join:"ನಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ",devotees:"ಭಕ್ತರು",journeys:"ಯಾತ್ರೆಗಳು",videos_stat:"ವೀಡಿಯೊಗಳು",years:"ಸೇವಾ ವರ್ಷಗಳು",
 q_calendar:"ಶಬರಿಮಲೆ<br>ಕ್ಯಾಲೆಂಡರ್",q_calendar_p:"ಪವಿತ್ರ ದಿನಾಂಕಗಳು, ಉತ್ತಿರಂ, ಶ್ರೀಕೋವಿಲ್ ತೆರೆಪುಗಳು ಮತ್ತು ಮುಖ್ಯ ಕಾರ್ಯಕ್ರಮಗಳು.",q_prasadam:"ಅಯ್ಯಪ್ಪ<br>ಪ್ರಸಾದ",q_prasadam_p:"ಪ್ರಸಾದಕ್ಕಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಿ. ಆಯ್ದ ಭಕ್ತರಿಗೆ ತಿಳಿಸಿ ಪ್ರಸಾದ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.",q_journey:"ಪವಿತ್ರ<br>ಯಾತ್ರೆ",q_journey_p:"ಅಯ್ಯಪ್ಪನ ಮೇಲಿನ ಭಕ್ತಿ, ನಂಬಿಕೆ ಮತ್ತು ಶರಣಾಗತಿಯ ನಡಿಗೆ.",q_reels_p:"ಪ್ರೀತಿ ಮತ್ತು ಭಕ್ತಿಯಿಂದ ಹಂಚಿಕೊಂಡ ಚಿಕ್ಕ ದೈವಿಕ ಕ್ಷಣಗಳು.",q_videos_p:"ಆಧ್ಯಾತ್ಮಿಕ ವೀಡಿಯೊಗಳು, ಪ್ರವಚನಗಳು ಮತ್ತು ದೇವಾಲಯದ ಅನುಭವಗಳನ್ನು ನೋಡಿ.",q_gallery:"ಗ್ಯಾಲರಿ",q_gallery_p:"ಶಬರಿಮಲೆ ಮತ್ತು ನಮ್ಮ ಯಾತ್ರೆಗಳ ದೈವಿಕ ಫೋಟೋಗಳು.",
 about_kicker:"ತತ್ತ್ವಮಸಿ ಬಗ್ಗೆ",about_title:"ಇದು ಕೇವಲ ವೆಬ್‌ಸೈಟ್ ಅಲ್ಲ,<br>ಇದು ಒಂದು ಆಧ್ಯಾತ್ಮಿಕ ಚಳವಳಿ",about_text:"ತತ್ತ್ವಮಸಿ ಸರ್ವಂ ಶಬರಿಗಿರೀಶರ ಡಿಜಿಟಲ್ ಮನೆ — ಭಕ್ತರನ್ನು ಪ್ರೇರೇಪಿಸಲು, ದೈವಿಕ ವಿಷಯವನ್ನು ಹಂಚಿಕೊಳ್ಳಲು, ಪವಿತ್ರ ಯಾತ್ರೆಗಳನ್ನು ದಾಖಲಿಸಲು ಮತ್ತು ಅಯ್ಯಪ್ಪ ಭಕ್ತರ ಜಾಗತಿಕ ಸಮುದಾಯವನ್ನು ಕಟ್ಟಲು ರಚಿಸಲಾಗಿದೆ.",know_more:"ನಮ್ಮ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ",
@@ -1378,7 +1389,7 @@ document.getElementById("menuBtn").addEventListener("click",()=>{
   nav.style.display=visible?"none":"flex";
   if(!visible){
     nav.style.position="absolute";nav.style.top="64px";nav.style.left="0";nav.style.right="0";
-    nav.style.background="#1A120E";nav.style.borderBottom="1px solid rgba(232,185,35,.28)";nav.style.boxShadow="0 16px 32px rgba(0,0,0,.45)";nav.style.flexDirection="column";nav.style.padding="15px 25px";nav.style.gap="0";
+    nav.style.background="#0D2438";nav.style.borderBottom="1px solid rgba(212,175,55,.28)";nav.style.boxShadow="0 16px 32px rgba(0,0,0,.45)";nav.style.flexDirection="column";nav.style.padding="15px 25px";nav.style.gap="0";
     nav.querySelectorAll("a").forEach(a=>a.style.padding="9px 0");
   }
 });
@@ -1492,7 +1503,7 @@ function makePDF(){
     pdf.setFont("helvetica","bold");
     pdf.setFontSize(12);
     pdf.text("THATHWAMASI",14,11);
-    pdf.setTextColor(232,185,35);
+    pdf.setTextColor(212,175,55);
     pdf.setFontSize(8);
     pdf.text("The Digital Home of Sarvam Sabarigireesha",14,15.5);
     pdf.setTextColor(15,10,8);
@@ -1677,7 +1688,7 @@ async function sharePDF(){
 })();
 </script>
 <!-- PWA app install button — Android/Chrome lo install prompt vachinappude kanipistundi -->
-<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:#E8B923;color:#0F0A08;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 8px 22px rgba(0,0,0,.35);cursor:pointer;">📱 Install App</button>
+<button id="appInstallBtn" onclick="installApp()" aria-label="Install Thathwamasi App" style="display:none;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:999;align-items:center;gap:8px;padding:11px 22px;border:none;border-radius:30px;background:#D4AF37;color:#071A2B;font-weight:700;font-size:15px;font-family:inherit;box-shadow:0 8px 22px rgba(0,0,0,.35);cursor:pointer;">📱 Install App</button>
 <script>
 /* PWA — service worker + app install prompt */
 (function(){
