@@ -2,10 +2,11 @@
    - Offline support
    - Clean URLs (/about etc.) work offline
    - Static assets cache-first; pages network-first
+   v19: images switched to WebP (new filenames), jsPDF lazy-loaded
    v18: page ground is sandal and saffron, not black; pages cached under their own URL, home page stays the
        offline fallback, /index.html dropped from precache (it
        307-redirects which breaks cache.addAll) */
-var CACHE = 'thathwamasi-v18';
+var CACHE = 'thathwamasi-v19';
 var CORE = [
   '/',
   '/manifest.json',

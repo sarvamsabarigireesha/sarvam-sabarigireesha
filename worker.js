@@ -82,6 +82,16 @@ const NOT_FOUND = `<!DOCTYPE html>
 </body>
 </html>`;
 
+// Basic security headers for every HTML/asset response
+function withSecurityHeaders(h) {
+  h.set("Strict-Transport-Security", "max-age=31536000");
+  h.set("X-Content-Type-Options", "nosniff");
+  h.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  h.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+  h.set("X-Frame-Options", "SAMEORIGIN");
+  return h;
+}
+
 export default {
 
   async fetch(request, env) {
@@ -99,6 +109,10 @@ export default {
 
       url.hostname = "www.sarvamsabarigireesha.com";
       url.protocol = "https:";
+
+      // Add the trailing slash here too (/about -> /about/), so it's ONE hop
+      const last = url.pathname.split("/").pop();
+      if (last && !last.includes(".")) url.pathname += "/";
 
       return Response.redirect(url.toString(), 301);
 
@@ -139,17 +153,39 @@ export default {
 
     const res = await env.ASSETS.fetch(request);
 
+    // The assets layer answers /about -> /about/ and /index.html -> /
+    // with a TEMPORARY 307. Search engines prefer a permanent 301.
+    if (res.status === 307 || res.status === 308) {
+      const loc = res.headers.get("Location");
+      if (loc) {
+        return Response.redirect(new URL(loc, url).toString(), 301);
+      }
+    }
+
     if (res.status === 404) {
       return new Response(NOT_FOUND, {
         status: 404,
-        headers: {
+        headers: withSecurityHeaders(new Headers({
           "Content-Type": "text/html; charset=UTF-8",
           "Cache-Control": "public, max-age=300",
-        },
+        })),
       });
     }
 
-    return res;
+    const headers = withSecurityHeaders(new Headers(res.headers));
+
+    // Images / icons rarely change: let browsers keep them for 7 days.
+    // If you REPLACE a file, give it a new name (e.g. hero-v2.webp)
+    // or visitors may see the old one for up to a week.
+    if (url.pathname.startsWith("/assets/") || url.pathname === "/favicon.ico") {
+      headers.set("Cache-Control", "public, max-age=604800");
+    }
+
+    return new Response(res.body, {
+      status: res.status,
+      statusText: res.statusText,
+      headers,
+    });
 
   },
 
