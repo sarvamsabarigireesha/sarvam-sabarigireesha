@@ -36,3 +36,16 @@ Privacy: the winners endpoint should return **first name + city only**. The site
 Cloudflare tells browsers to cache `/assets/` for 7 days. When you replace a picture, **upload it under a new
 file name** (e.g. `ayyappa-hero-v2.webp`) and update the references, otherwise returning visitors keep the old one.
 Convert new photos to WebP and keep them ≤1200 px on the long side (≈100 KB each).
+
+## Little Ayyappa cursor companion
+
+`assets/ayyappa-buddy.js` + `assets/buddy/ayyappa-{walk,stand,bless,sit}.webp` (≈47 KB total).
+Included at the end of every page: `<script src="/assets/ayyappa-buddy.js?v=1" defer></script>`.
+
+- Walks after the mouse; stands → blesses with a "Swamiye Sharanam Ayyappa" bubble (in the selected
+  language) → sits & waves when idle. Hops when you click. Never blocks clicks.
+- Desktop/laptop only (hidden on phones/tablets) and hidden for users who turn on "reduce motion".
+- Blessing/waving poses are never mirrored, so Swamy always blesses with the right hand.
+- Size: edit `POSES` at the top of the JS. Text: edit `SAY`.
+- After changing the JS, bump `?v=1` → `?v=2` in all 13 pages so browsers fetch the new file.
+- To remove: delete that one `<script>` line from the pages.
