@@ -1,17 +1,19 @@
 /* =========================================================
    Little Ayyappa Swamy — cursor companion
-   - Walks after the mouse pointer with a REAL step cycle:
-     footfalls come from distance & speed (never a fixed timer),
-     the body bobs & sways once per step, squashes on landing and
-     stretches in the air, leans into the run, turns smoothly,
-     and takes bigger little hops when climbing up or down.
-     The walk pose is mirrored every footfall -> the other leg
-     leads (a 2-frame stride cycle from one picture).
+   - Walks after the mouse pointer with a REAL 4-frame walk
+     cycle (stride A -> pass -> stride B -> pass) played at
+     footfall rate, so the legs genuinely alternate. The body
+     bobs & sways once per step, squashes on landing, leans
+     into the run and takes bigger little hops up/down.
+   - Follow uses a soft spring (the qtology Little-Ganesha
+     feel): accelerates from a stop, brakes with a gentle
+     settle instead of sliding like a sticker.
    - Stops beside the cursor -> stands -> blesses (with a
      "Swamiye Sharanam Ayyappa" bubble) -> sits down & waves
    - Never blocks clicks (pointer-events: none)
    - Hidden on phones/tablets and for "reduce motion" users
-   Images: /assets/buddy/ayyappa-{walk,stand,bless,sit}.webp
+   Images: /assets/buddy/ayyappa-{walka,passa,walkb,passb,
+           stand,bless,sit}.webp
    ========================================================= */
 (function () {
   "use strict";
@@ -23,6 +25,8 @@
   if (mq("(prefers-reduced-motion: reduce)")) return;         // accessibility: off
 
   var BASE = "/assets/buddy/ayyappa-";
+  // the walk cycle, in order: leg A leads -> passing -> leg B leads -> passing
+  var WALK = [BASE + "walka.webp", BASE + "passa.webp", BASE + "walkb.webp", BASE + "passb.webp"];
   var POSES = {               // CSS size of each pose (px)
     walk:  { w: 55, h: 110 },
     stand: { w: 46, h: 120 },
@@ -66,24 +70,26 @@
   var say = root.querySelector(".bd-say");
   var shadow = root.querySelector(".bd-shadow");
 
-  // preload all poses, then start
-  var loaded = 0, names = Object.keys(POSES);
-  names.forEach(function (n) {
+  // preload every frame, then start
+  var preload = WALK.concat([BASE + "stand.webp", BASE + "bless.webp", BASE + "sit.webp"]);
+  var loaded = 0;
+  preload.forEach(function (src) {
     var i = new Image();
-    i.onload = i.onerror = function () { if (++loaded === names.length) start(); };
-    i.src = BASE + n + ".webp";
+    i.onload = i.onerror = function () { if (++loaded === preload.length) start(); };
+    i.src = src;
   });
 
   /* ---------- state ---------- */
   var W = window.innerWidth, H = window.innerHeight;
   var x = W - 70, y = H - 20;            // his feet position (starts bottom-right)
-  var vx = 0, vy = 0;                    // velocity (px per 60 fps frame) -> accel / brake feel
+  var vx = 0, vy = 0;                    // velocity (px per 60 fps frame)
   var mx = x, my = y;                    // mouse
   var hasMouse = false, inside = true;
   var face = -1;                         // walking direction: 1 = right, -1 = left
-  var dirSmooth = -1;                    // face eased through 0 -> cartoon turn when he turns around
-  var strideFlip = 1;                    // mirrors the walk pose every footfall = the other leg leads
-  var stepPhase = 0, stepK = 0;          // walk-cycle phase (radians) and footfall counter
+  var dirSmooth = -1;                    // face eased through 0 -> cartoon turn on direction change
+  var stepPhase = 0;                     // walk-cycle phase (radians): 0 = foot down, PI/2 = mid-air
+  var walkIdx = 0;                       // current frame in WALK[]
+  var movingHold = false;                // hysteresis so the pose never flickers at a stop
   var side = 1;                          // he stands on this side of the cursor: 1 = right, -1 = left
   var pose = "";
   var lastMove = performance.now();
@@ -94,7 +100,7 @@
   function setPose(p) {
     if (p === pose) return;
     pose = p;
-    img.src = BASE + p + ".webp";
+    img.src = p === "walk" ? WALK[walkIdx] : BASE + p + ".webp";
     bodyEl.style.width = POSES[p].w + "px";
     bodyEl.style.height = POSES[p].h + "px";
     bodyEl.style.left = (-POSES[p].w / 2) + "px";
@@ -150,20 +156,18 @@
 
     var dx = tx - x, dy = ty - y;
     var dist = Math.sqrt(dx * dx + dy * dy);
-    var want = inside && hasMouse && dist > 7;
 
-    if (want) {
-      // full tilt far away, smooth brake close to the spot -> no magnet snap
-      var vmax = 7.6;
-      var a = Math.min(1, dist / 150);
-      var brake = a * a * (3 - 2 * a);              // smoothstep
-      var desX = (dx / dist) * vmax * brake;
-      var desY = (dy / dist) * vmax * brake * 0.82;
-      var acc = Math.min(1, 0.13 * dt);             // ease into the new speed (acceleration)
-      vx += (desX - vx) * acc;
-      vy += (desY - vy) * acc;
+    if (inside && hasMouse) {
+      // soft spring toward the spot (the qtology Little-Ganesha feel):
+      // a slight overshoot & settle instead of a magnet snap
+      var K = 0.02, DAMP = 0.19, VMAX = 7.6;
+      vx += (dx * K - vx * DAMP) * dt;
+      vy += (dy * K - vy * DAMP) * dt;
+      var sp = Math.sqrt(vx * vx + vy * vy);
+      if (sp > VMAX) { vx *= VMAX / sp; vy *= VMAX / sp; }
+      if (vy > VMAX * 0.85) vy = VMAX * 0.85; else if (vy < -VMAX * 0.85) vy = -VMAX * 0.85;
     } else {
-      // skid to a natural stop instead of freezing mid-slide
+      // let him come to rest where he is
       var dec = Math.max(0, 1 - 0.22 * dt);
       vx *= dec; vy *= dec;
       if (Math.abs(vx) < 0.05) vx = 0;
@@ -172,20 +176,25 @@
 
     x += vx * dt; y += vy * dt;
     var speed = Math.sqrt(vx * vx + vy * vy);
-    var moving = speed > 0.5 && inside && hasMouse;
 
-    // face the way he is actually going (not the way the target is)
+    // hysteresis: start walking above 0.8, stop below 0.35 -> no pose flicker
+    if (speed > 0.8) movingHold = true;
+    else if (speed < 0.35) movingHold = false;
+    var moving = movingHold && inside && hasMouse;
+
+    // face the way he is actually going
     if (moving && Math.abs(vx) > 0.3) face = vx > 0 ? 1 : -1;
 
     /* ---- walk cycle: footfalls come from movement, not from a clock ---- */
     if (moving) {
       // step rate scales with speed: slow baby steps -> hurried bounding strides
-      var stepHz = Math.max(1.8, Math.min(6.5, speed * 60 / 70));
+      var stepHz = Math.max(1.8, Math.min(6.2, speed * 60 / 70));
       stepPhase += Math.PI * stepHz * (dt / 60);   // PI of phase = one footfall
-      // swap the leading leg in mid-air (mirrored walk pose = the other leg forward)
-      var k = Math.floor(stepPhase / Math.PI + 0.5);
-      if (k !== stepK) { stepK = k; strideFlip = -strideFlip; }
+      if (stepPhase >= Math.PI * 2) stepPhase -= Math.PI * 2;
     }
+    // frame: 0 = leg A down, 1 = passing (air), 2 = leg B down, 3 = passing (air)
+    var idx = Math.floor(stepPhase / (Math.PI / 2)) % 4;
+    if (pose === "walk" && idx !== walkIdx) { walkIdx = idx; img.src = WALK[idx]; }
 
     // smooth turn-around when he changes direction
     dirSmooth += (face - dirSmooth) * Math.min(1, 0.3 * dt);
@@ -223,19 +232,19 @@
     var lift = 0, bob = 0, rock = 0, sway = 0, rot = 0, sx = 1, sy = 1, flip = 1;
     if (pose === "walk" && moving) {
       var spd01 = Math.min(1, speed / 3.6);          // how energetic the steps are
-      lift = Math.abs(Math.sin(stepPhase));          // 0 = foot on the ground, 1 = mid-air
-      var amp = (2.4 + speed * 0.8) * spd01;
-      if (Math.abs(vy) > Math.abs(vx)) amp *= 1.3;   // climbing up/down: bigger little hops
-      bob = -lift * amp;                             // body rises once per footfall
-      rock = Math.sin(stepPhase) * (2.6 + speed * 0.55) * spd01;
-      sway = Math.sin(stepPhase) * (0.7 + speed * 0.22) * spd01 * face;
-      var lean = Math.min(7, speed * 1.15);          // lean into the run
-      // squash on landing, stretch in the air
-      sy = 1 + (lift - 0.45) * 0.075;
-      sx = 1 + (0.45 - lift) * 0.048;
+      lift = Math.abs(Math.sin(stepPhase));          // 0 = foot on the ground, 1 = mid-air (matches frames)
+      var amp = (1.8 + speed * 0.55) * spd01;
+      if (Math.abs(vy) > Math.abs(vx)) amp *= 1.25;  // climbing up/down: bigger little hops
+      bob = -lift * amp;
+      // subtle only — the legs already move in the frames
+      rock = Math.sin(stepPhase) * (1.4 + speed * 0.3) * spd01;
+      sway = Math.sin(stepPhase) * (0.45 + speed * 0.14) * spd01 * face;
+      var lean = Math.min(5.5, speed * 0.9);         // lean into the run
+      sy = 1 + (lift - 0.45) * 0.05;                 // squash on landing, stretch in the air
+      sx = 1 + (0.45 - lift) * 0.032;
       // Only the walking pose is mirrored. Blessing / waving poses are NEVER mirrored,
       // so Swamy always blesses with his RIGHT hand (abhaya mudra).
-      flip = dirSmooth * strideFlip;
+      flip = dirSmooth;
       rot = (lean + rock) * face;
     } else {
       // still: gentle breathing; the click-hop still works
