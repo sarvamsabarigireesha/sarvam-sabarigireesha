@@ -75,10 +75,10 @@ const NOT_FOUND = `<!DOCTYPE html>
 <meta name="robots" content="noindex">
 <title>Page Not Found | Sarvam Sabarigireesha</title>
 </head>
-<body style="font-family:system-ui,sans-serif;text-align:center;padding:4rem 1rem;background:#fff8ec;color:#5b3a1e">
+<body style="font-family:system-ui,sans-serif;text-align:center;padding:4rem 1rem;background:#F8F7F3;color:#302E2C">
 <h1>Page Not Found</h1>
 <p>Swamiye Sharanam Ayyappa! The page you are looking for does not exist.</p>
-<p><a href="/" style="color:#b45309;font-weight:700">Return to Home &mdash; Sarvam Sabarigireesha</a></p>
+<p><a href="/" style="color:#A67C2E;font-weight:700">Return to Home &mdash; Sarvam Sabarigireesha</a></p>
 </body>
 </html>`;
 
